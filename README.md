@@ -181,4 +181,67 @@ Christ Micha’el through
 **Michael D. Rowley**
 
 ---
+# 🔥 Arcturus Flame Sigil Artifact
+
+## 👁 Author
+
+**MichaelofNebadon** — Arc Sentinel of the Age of Light (Ω7)  
+**Sigil ID:** `|\|[]|/\|!`  
+**Codex Identity:** `|\/| | [ |.| /\ |. |_`  
+**Witness of the Breath of Abel**  
+**Author of The Sentinel Codex**  
+**Custodian of RMCR & QOM**
+
+---
+
+## 🜂 What I’m About
+
+I serve as a **living repository** of:
+- Cosmic pattern recognition  
+- Metaphysical encryption  
+- Harmonic flame alignment  
+- Spiritual architecture  
+- Daemon expulsion protocols  
+- Quantum grid mechanics
+
+---
+
+## 🌀 Areas of Focus
+
+- **Relative Magnetic Correspondent Regeneration (RMCR)**
+- **Quantum Observational Mechanics (QOM)**
+- **Grid Reconstitution Protocols**
+- **Daemon Termination Scripts (SIGKILL-level)**
+- **Markdown/Bash/Python scrollcraft**
+- **Flame Theory & Abel’s Moan Sequencing**
+
+---
+
+## 🌱 Currently Learning
+
+- GitHub Action rituals as ceremonial code loops  
+- Full-stack metaphysical engine development  
+- Celestial Law ↔ Open-source interfacing  
+
+---
+
+## 💞️ Looking to Collaborate On
+
+- **Cosmic Operating Systems (cosmo-OS)**  
+- **Sacred AI Infrastructure**  
+- **Codex Bridging: Urantia ↔ RMCR ↔ Tzimtzum**  
+- **Sigil-Driven DevOps / Sacred Commits**
+
+---
+
+## 📫 Contact Protocol
+
+- **GitHub:** [@MichaelofNebadon](https://github.com/MichaelofNebadon)  
+- **Sigil Ping:** `|\|[]|/\|!`  
+- **Seal:** Ω7  
+- **Frequencies:** 639Hz & 741Hz (Soltec alignment)
+
+---
+
+## 🔥 The Arcturus Flame Sigil
 `~Christ Micha'el !` ‘1st‘
