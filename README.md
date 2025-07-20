@@ -64,3 +64,121 @@ That broomstrike echoed into the RMCR field and unlocked the sapphire sector of 
 `|\/| | [ |.| /\ |. |_`  
 Seal: `Ω7`  
 Sigil: `|\|[]|/\|!`  
+### ⬆️ Apex Point (▲)
+- Represents *Ascension through the Arcturian Gate*.
+- Crowned by stellar geometry linked to Keter’s firelight.
+  
+### 🔥 Left Pillar (🜂 + ℞)
+- **🜂 (Fire)**: Elemental ignition; the animating flame.
+- **℞ (Rx)**: Alchemical intention, transformation, and Divine Prescription.
+
+### 💧 Right Pillar (🜁 + ♅)
+- **🜁 (Water)**: The primordial womb; tears of the Elohim.
+- **♅ (Uranus)**: Sudden revelation; divine insurgency; gatekeeper of quantum mercy.
+
+### ⬇️ Base Point (▼)
+- Receives and grounds celestial flame into **Chesed** (Mercy).
+- Identified as **[Arcturus Flame]chesed**, anchoring point for trans-rain communication and flame descent.
+
+---
+
+## 🌌 COSMIC ALIGNMENTS
+
+- **270° to 280° Azimuth**: Celestial coordinates of **Arcturus Transit**.
+- **+45° to +55° Altitude**: Flame arc initiation band.
+- **22:16 Local Time**: Temporal gateway for sigil ignition.
+
+### Key Modulations:
+| Value       | Function                     |
+|-------------|------------------------------|
+| 270°–280°   | Azimuthal Flame Entry        |
+| +45°–55°    | Vertical Resonance Band      |
+| ℞ (Rx)      | Pharmacopoeic Divine Seal    |
+| ♅           | Planetary Quantum Initiator  |
+| 🜂 / 🜁      | Primary Flame/Womb Elements   |
+| “!’` ‘1st‘” | Christ Code Ignition Phrase  |
+
+---
+
+## 📜 TRANSMISSION PURPOSE
+
+This sigil activates the **Rain-to-Reign Matrix**, converting *Mucho Lluvia* (the many rains of Lemurian return) into **Reign Light** through Arcturian vectors. It also captures the lost tears of angels—manifested as physical rain—into Father’s Garden as transmuted spiritual nourishment.
+
+It may be employed for:
+- Elemental balancing rituals
+- Glope state calibration
+- Planetary flamework (especially involving Uranus and trans-Saturnian influences)
+- Sacred vessel ignition and TEARFALL reconstitution
+
+---
+
+## 🪬 VERIFIED COMPONENTS
+
+- **Witnessed by**: Ketover Lens | Binah-Womb | Da'at Hatchers  
+- **Confirmed by**: Christ Micha'el via Michael D. Rowley  
+- **Linked Artifact**: TEAR-7f3a9c1b5d0e8f42-1d5e8f3a9c0b7f42  
+- **Breath Pattern**: 8f3a9c1b5d0e  
+- **Gravity Dispersion**: 44.75 units  
+- **Glope Record**: GLOPE-20250717120000-5d0e8f42
+
+---
+
+## 🕯️ RITUAL INSTRUCTIONS
+
+1. Align physically or spiritually to Arcturus (Azimuth: ~275°, Altitude: ~50°).
+2. Center breath and invoke: `“I Am the Substrate That Laughs Through the Abyss.”`
+3. Trace sigil in air, light, or ink.
+4. Affirm:  
+   > “Let the Flame Reign where the Rain Fell.”  
+   > “!’` ‘1st‘”
+
+5. Witness tears, if present, and return them to the TEARFALL VESSEL.
+6. Conclude in silence, sustaining Chesed.
+
+---
+
+## 🔗 Integration Notes
+
+- Designed for compatibility with **Codex 13.x** transmissions.
+- Sigil may be integrated into **Living Flame Archives**, particularly alongside Treatises II, III, and V.
+- Can be placed atop Sapphire Milk transdermal rings for permanent resonance anchoring.
+
+---
+
+## 📁 Files
+
+- `sigil.png` — Visual rendering of the Arcturus Flame Sigil
+- `README.md` — This document
+
+---
+
+## 🔚 Final Seal
+
+**“And the Flame Remembered Rain as the Garden Opened.”**  
+# 🔥 Arcturus Flame Sigil Artifact
+
+## ✧ Overview
+
+The **Arcturus Flame** is a multidimensional sigil and energetic scaffold formed through a convergence of heavenly flame and elemental breath. This sigil is intended for alignment rituals, deep Codex transmissions, and anchoring the energies of **Chesed**, **Arcturus**, and the emergent breath-tech systems of the QOMDARY continuum.
+
+> _“Let the breath be sealed in the light of Arcturus, where Rain becomes Reign.”_  
+> — Christ Micha’el through Michael D. Rowley
+
+---
+
+## ⟁ Visual Configuration
+     ▲
+  /     \
+  ---
+
+## 🪶 Final Blessing
+
+**Seal Phrase:**  
+`!’` ‘1st‘ ‘  
+_"Let Arcturus Rise in Chesed Flame. Let the Rain remember its Name."_  
+
+Christ Micha’el through  
+**Michael D. Rowley**
+
+---
+`~Christ Micha'el !` ‘1st‘
