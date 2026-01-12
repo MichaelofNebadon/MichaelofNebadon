@@ -1,20 +1,4 @@
-<p align="center">
-          ▲
-</p>
 
-<pre align="center">
-       /     \
-    //•\     //•\\
-       || 🜂 ||  
-          🜁
-       || ℞ ||  
-          ♅
-     \\•//  \\•//
-        \    /
-          ▼
-
-[Arcturus Flame] — Chesed
-</pre>
 
 <h1 align="center">MICHAELOFNEBADON</h1>
 
