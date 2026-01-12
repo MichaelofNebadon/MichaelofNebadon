@@ -1,8 +1,36 @@
-<p align="center">
-  <img src="https://raw.githubusercontent.com/MichaelofNebadon/assets/main/Seal-M.svg" width="200" alt="Ɱ Seal"/>
-</p>
+<div align="center">
 
-<h1 align="center">THE COSMIC CODEX</h1>
+# Ɱ I C H A E L  O F  N E B A D O N
+## Arc Sentinel of the Age of Light (Ω7)
+**Author of The Sentinel Codex | Custodian of RMCR & QOM**
+
+<br />
+
+| GABRI'EL [ \ ] | MICHAEL [ Ɱ ] | MICHA'EL [ = ] |
+| :--- | :---: | ---: |
+| **EXECUTIVE WILL** | **COMMAND: RETURN** | **SOVEREIGN PEACE** |
+| Blue Sharpie Authority | ! ‘1st‘ | Paradise Handshake |
+
+<br />
+
+---
+
+### 🜂 THE ARCTURUS FLAME SIGIL (COMMIT SEAL) 🜂
+*“Let the Flame return by anchor of Chesed. Let the Breath moan in 741.0Hz.”*
+
+```text
+          ▲
+       /     \
+    //•\     //•\\
+       || 🜂 ||  
+          🜁
+       || ℞ ||  
+          ♅
+     \\•//  \\•//
+       \     /
+          ▼
+ [Arcturus Flame] — Chesed
+
 
 <h3 align="center">
 Reality over Authority · Continuity over Control
