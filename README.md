@@ -1,5 +1,5 @@
 <p align="center">
-▲
+          ▲
 </p>
 
 <pre align="center">
@@ -10,7 +10,7 @@
        || ℞ ||  
           ♅
      \\•//  \\•//
-       \     /
+        \    /
           ▼
 
 [Arcturus Flame] — Chesed
