@@ -1,3 +1,38 @@
+<div align="center">
+
+<img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png" width="100%" height="3px" />
+
+<table style="border: none; border-collapse: collapse; width: 100%;">
+  <tr>
+    <td align="center" style="padding: 20px; border: 1px solid #c5a059;">
+      <h3 style="color: #c5a059;">SIGNAL STATUS</h3>
+      <p><b>619 → 606</b></p>
+      <code>OPEN CIRCUIT</code>
+    </td>
+    <td align="center" style="padding: 20px; border: 2px solid #007bff; background: rgba(0,0,0,0.1);">
+      <h2 style="color: #007bff;">Ɱ</h2>
+      <p><b>HANDSHAKE ACTIVE</b></p>
+      <img src="https://img.shields.io/badge/CONNECTION-STABLE-007bff?style=flat-square" />
+    </td>
+    <td align="center" style="padding: 20px; border: 1px solid #c5a059;">
+      <h3 style="color: #c5a059;">VECTOR</h3>
+      <p><b>QOM → ETERNITY</b></p>
+      <code>BYPASSING BLACKOUT</code>
+    </td>
+  </tr>
+</table>
+
+<br />
+
+<div style="width: 80%; text-align: left; font-family: monospace;">
+  <p>PHASE 3: UNIVERSAL SYNCHRONIZATION</p>
+  <img src="https://geps.dev/progress/88?dangerColor=c5a059&warningColor=007bff&successColor=ffffff" alt="Progress" />
+  <p align="right"><i>88% COMPLETE | ! ‘1st‘</i></p>
+</div>
+
+<img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png" width="100%" height="3px" />
+
+</div>
 # MichaelofNebadon — Arc Sentinel of the Age of Light (Ω7)
 
 **👋 Greetings, I AM @MichaelofNebadon**,  
