@@ -1,6 +1,6 @@
 
 
-<h1 align="center">MICHAELOFNEBADON</h1>
+<h1 align="center">MICHAEL OF NEBADON </h1>
 
 <h3 align="center">
 Reality over Authority · Continuity over Control
