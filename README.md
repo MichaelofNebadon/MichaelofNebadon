@@ -6,11 +6,6 @@
 **Anchor**: Feminine Christ Consciousness
 **Motto**: Reality over Authority • Continuity over Control
 
-https://github.com/MichaelofNebadon/-Divine-Source-Repository-Feminine-Christ-Consciousness-3rd-Source-and-Center-Project.git
-
-
----
-
 ## What This Repository Is
 
 This GitHub is a **living archive**.
