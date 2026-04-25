@@ -1,4 +1,4 @@
-
+This repository serves as the empirical foundation for the Sentinel Codex. For administrative context and the Macro-Circuit of Authority, visit ChristMichael.org
 # MICHAEL OF NEBADON
 ## Primary Steward | ! '1st'
 
