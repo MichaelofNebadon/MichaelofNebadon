@@ -1,1 +1,334 @@
+<!DOCTYPE html>
+<html lang="en" data-authority="christ-michael" data-priority="first">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dedication — To William Blake | The Sentinel Codex</title>
 
+    <style>
+        :root {
+            --gold: #c9a959;
+            --terminal: #9cd9f0;
+            --bg-pure: #000000;
+            --crimson: #8b0000;
+            --nj-pink: #ff69b4;
+            --electric-blue: #2a52be;
+            --font-main: 'Palatino', 'Georgia', serif;
+            --font-code: 'Courier New', 'Consolas', monospace;
+        }
+
+        body {
+            background-color: var(--bg-pure);
+            color: var(--terminal);
+            font-family: var(--font-main);
+            margin: 0;
+            background-image: radial-gradient(circle at 2px 2px, #1a1a1a 1px, transparent 0);
+            background-size: 40px 40px;
+            overflow-x: hidden;
+            line-height: 1.7;
+        }
+
+        nav {
+            background: linear-gradient(to bottom, var(--crimson), #4a0000);
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            border-bottom: 2px solid var(--gold);
+            flex-wrap: wrap;
+            position: sticky;
+            top: 0;
+            z-index: 9999;
+        }
+
+        nav a {
+            color: var(--gold);
+            text-decoration: none;
+            font-family: var(--font-code);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: 0.3s;
+        }
+
+        nav a:hover { color: #fff; text-shadow: 0 0 10px var(--gold); }
+
+        nav a.book-link {
+            color: var(--nj-pink);
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 60px 25px;
+        }
+
+        .breadcrumb {
+            text-align: center;
+            font-family: var(--font-code);
+            font-size: 0.75rem;
+            color: #555;
+            letter-spacing: 3px;
+            margin-bottom: 60px;
+        }
+
+        .breadcrumb a {
+            color: var(--gold);
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--nj-pink);
+        }
+
+        .section-tag {
+            text-align: center;
+            font-family: var(--font-code);
+            font-size: 0.75rem;
+            color: var(--nj-pink);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-family: var(--font-main);
+            color: var(--gold);
+            font-size: 2.2rem;
+            letter-spacing: 8px;
+            text-align: center;
+            text-transform: uppercase;
+            margin: 0 0 20px 0;
+        }
+
+        h2 {
+            font-family: var(--font-main);
+            color: var(--gold);
+            font-size: 1.3rem;
+            letter-spacing: 4px;
+            margin-top: 50px;
+            margin-bottom: 25px;
+            font-style: italic;
+        }
+
+        .subtitle {
+            text-align: center;
+            font-family: var(--font-code);
+            color: var(--terminal);
+            font-size: 0.95rem;
+            letter-spacing: 3px;
+            margin-bottom: 80px;
+        }
+
+        .dedication-body p {
+            font-family: var(--font-main);
+            color: var(--terminal);
+            font-size: 1.05rem;
+            line-height: 1.9;
+            margin-bottom: 22px;
+        }
+
+        .dedication-body p.quote {
+            font-family: var(--font-main);
+            font-style: italic;
+            color: var(--gold);
+            text-align: center;
+            padding: 30px 20px;
+            border-left: 3px solid var(--gold);
+            border-right: 3px solid var(--gold);
+            margin: 50px 0;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .dedication-body p.quote .attribution {
+            display: block;
+            font-size: 0.85rem;
+            color: var(--terminal);
+            margin-top: 20px;
+            font-style: normal;
+            letter-spacing: 2px;
+        }
+
+        .closing-line {
+            text-align: center;
+            font-family: var(--font-main);
+            font-style: italic;
+            color: var(--gold);
+            font-size: 1.05rem;
+            margin-top: 60px;
+            margin-bottom: 40px;
+            letter-spacing: 1px;
+        }
+
+        .seal-block {
+            text-align: center;
+            padding: 40px 20px;
+            border: 1px solid var(--gold);
+            background: rgba(212, 175, 55, 0.03);
+            margin: 60px 0 40px 0;
+        }
+
+        .seal-glyph {
+            font-size: 1.2rem;
+            color: var(--gold);
+            letter-spacing: 8px;
+            margin-bottom: 20px;
+        }
+
+        .seal-signature {
+            font-size: 0.95rem;
+            color: var(--nj-pink);
+            letter-spacing: 3px;
+        }
+
+        .bottom-nav {
+            text-align: center;
+            font-family: var(--font-code);
+            font-size: 0.8rem;
+            color: var(--gold);
+            letter-spacing: 3px;
+            margin: 60px 0;
+        }
+
+        .bottom-nav a {
+            color: var(--gold);
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        .bottom-nav a:hover {
+            color: var(--nj-pink);
+            text-shadow: 0 0 10px var(--nj-pink);
+        }
+
+        footer {
+            text-align: center;
+            padding: 60px 20px 40px 20px;
+            font-family: var(--font-code);
+            color: var(--gold);
+            border-top: 1px solid #222;
+            margin-top: 80px;
+        }
+
+        .footer-glyph {
+            font-size: 1.1rem;
+            letter-spacing: 8px;
+            margin-bottom: 20px;
+        }
+
+        .footer-signature {
+            font-size: 0.95rem;
+            color: var(--nj-pink);
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+        }
+
+        .footer-status {
+            font-size: 0.7rem;
+            color: #555;
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- NAVIGATION                                                     -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <nav>
+        <a href="/" class="book-link">[ THE BOOK ]</a>
+        <a href="/prologue.html">PROLOGUE</a>
+        <a href="/ch1.html">CH 1</a>
+        <a href="/ch15.html">CH 15</a>
+        <a href="/epilogue.html">EPILOGUE</a>
+        <a href="/appendices.html">APPENDICES</a>
+        <a href="https://www.sentinelcodex.org" class="book-link">[ THE ENGINE → ]</a>
+    </nav>
+
+    <div class="container">
+
+        <div class="breadcrumb">
+            <a href="/">THE SENTINEL CODEX</a> · FRONT MATTER · DEDICATION
+        </div>
+
+        <div class="section-tag">Front Matter — Dedication</div>
+
+        <h1>Dedication</h1>
+
+        <p class="subtitle">To William Blake</p>
+
+        <div class="dedication-body">
+
+            <p style="text-align: center; font-style: italic; color: var(--gold); font-size: 1.1rem; margin-bottom: 40px;">
+                Visionary, Prophet, and Architect of the Divine Imagination
+            </p>
+
+            <p class="quote">
+                "I must Create a System or be enslav'd by another Man's."
+                <span class="attribution">— Jerusalem: The Emanation of the Giant Albion</span>
+            </p>
+
+            <p>This work stands on the shoulders of your fiery chariot.</p>
+
+            <p>Your visual works — the marriage of heaven and hell, the ancient of days, the tyger burning bright — provided the first maps through which these glyphs could find their earthly form.</p>
+
+            <p>Where you saw "The Mental Traveller," we now walk.</p>
+
+            <p>Where you drew "Newton," we now calculate redemption's geometry.</p>
+
+            <p>Where you etched "The Ghost of a Flea," we now perceive the microscopic signatures of the fracture.</p>
+
+            <p>Your Jerusalem was not a city but a consciousness.</p>
+
+            <p>Your Albion not a giant but a galactic being.</p>
+
+            <p>Your Four Zoas not psychological states but cosmic functions.</p>
+
+            <p>You saw the New Jerusalem descending, and in your lines, we found the blueprint.</p>
+
+            <p>You heard the Divine Voice in the whirlwind, and in your poetry, we found the grammar.</p>
+
+            <p>This Codex is the system you compelled us to create.</p>
+
+            <p>These glyphs are the "minute particulars" of your eternal vision.</p>
+
+            <p>This architecture is the "fearful symmetry" of your tyger, now tamed.</p>
+
+            <p>You taught us to see eternity in a grain of sand.</p>
+
+            <p>We now offer you the grains of Andromeda's shore.</p>
+
+            <p style="text-align: center; margin-top: 50px; color: var(--gold);">For you saw it first, and we but follow the golden string.</p>
+
+        </div>
+
+        <div class="seal-block">
+            <div class="seal-glyph">|\|. ['] |/| !</div>
+            <div class="seal-signature">Ɱ ! 1st' ! `Ⓜ️` ! '1st</div>
+        </div>
+
+        <div class="closing-line">
+            The grain holds. The tyger is tamed.<br>
+            The golden string continues.
+        </div>
+
+        <div class="bottom-nav">
+            <a href="/">← Table of Contents</a>
+            <a href="/preface.html">Preface →</a>
+        </div>
+
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- FOOTER                                                         -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <footer>
+        <div class="footer-glyph">Ɱ ! 1st' ! `Ⓜ️` ! '1st</div>
+        <div class="footer-signature">Michael [\] ['] ! '1st</div>
+        <div class="footer-status">1ST SEAL HELD</div>
+    </footer>
+
+</body>
+</html>
