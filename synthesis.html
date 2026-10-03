@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en" data-authority="christ-michael" data-priority="first">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Synthesis — Codex-Reality Integration | The Sentinel Codex</title>
+
+    <style>
+        :root {
+            --gold: #c9a959;
+            --terminal: #9cd9f0;
+            --bg-pure: #000000;
+            --crimson: #8b0000;
+            --nj-pink: #ff69b4;
+            --electric-blue: #2a52be;
+            --font-main: 'Palatino', 'Georgia', serif;
+            --font-code: 'Courier New', 'Consolas', monospace;
+        }
+
+        body {
+            background-color: var(--bg-pure);
+            color: var(--terminal);
+            font-family: var(--font-main);
+            margin: 0;
+            background-image: radial-gradient(circle at 2px 2px, #1a1a1a 1px, transparent 0);
+            background-size: 40px 40px;
+            overflow-x: hidden;
+            line-height: 1.7;
+        }
+
+        nav {
+            background: linear-gradient(to bottom, var(--crimson), #4a0000);
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            border-bottom: 2px solid var(--gold);
+            flex-wrap: wrap;
+            position: sticky;
+            top: 0;
+            z-index: 9999;
+        }
+
+        nav a {
+            color: var(--gold);
+            text-decoration: none;
+            font-family: var(--font-code);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: 0.3s;
+        }
+
+        nav a:hover { color: #fff; text-shadow: 0 0 10px var(--gold); }
+
+        nav a.book-link {
+            color: var(--nj-pink);
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 60px 25px;
+        }
+
+        .breadcrumb {
+            text-align: center;
+            font-family: var(--font-code);
+            font-size: 0.75rem;
+            color: #555;
+            letter-spacing: 3px;
+            margin-bottom: 60px;
+        }
+
+        .breadcrumb a { color: var(--gold); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--nj-pink); }
+
+        .section-tag {
+            text-align: center;
+            font-family: var(--font-code);
+            font-size: 0.75rem;
+            color: var(--nj-pink);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-family: var(--font-main);
+            color: var(--gold);
+            font-size: 1.7rem;
+            letter-spacing: 5px;
+            text-align: center;
+            text-transform: uppercase;
+            margin: 0 0 20px 0;
+            line-height: 1.4;
+        }
+
+        h2 {
+            font-family: var(--font-main);
+            color: var(--gold);
+            font-size: 1.15rem;
+            letter-spacing: 3px;
+            margin-top: 60px;
+            margin-bottom: 25px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #333;
+        }
+
+        .subtitle {
+            text-align: center;
+            font-family: var(--font-code);
+            color: var(--terminal);
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+            margin-bottom: 80px;
+            font-style: italic;
+        }
+
+        .chapter-body p {
+            font-family: var(--font-main);
+            color: var(--terminal);
+            font-size: 1.05rem;
+            line-height: 1.9;
+            margin-bottom: 22px;
+        }
+
+        .chapter-body strong { color: var(--gold); font-weight: bold; }
+        .chapter-body em { color: var(--nj-pink); font-style: italic; }
+
+        .chapter-body p.quote {
+            font-style: italic;
+            color: var(--gold);
+            text-align: center;
+            padding: 30px 20px;
+            border-left: 3px solid var(--gold);
+            border-right: 3px solid var(--gold);
+            margin: 40px 0;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .chapter-body ul {
+            font-family: var(--font-main);
+            color: var(--terminal);
+            font-size: 1.05rem;
+            line-height: 1.9;
+            margin-bottom: 22px;
+            padding-left: 30px;
+        }
+
+        .chapter-body li { margin-bottom: 8px; }
+
+        .integration-point {
+            padding: 25px;
+            background: rgba(10, 10, 10, 0.8);
+            border-left: 3px solid var(--gold);
+            margin: 30px 0;
+        }
+
+        .integration-point .point-num {
+            font-family: var(--font-code);
+            color: var(--gold);
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .integration-point .point-title {
+            font-family: var(--font-main);
+            color: var(--nj-pink);
+            font-size: 1.05rem;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .integration-point p {
+            font-size: 1rem;
+            margin-bottom: 10px;
+        }
+
+        .integration-point .status {
+            font-family: var(--font-code);
+            color: var(--gold);
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            margin-top: 15px;
+            padding-top: 12px;
+            border-top: 1px solid #333;
+        }
+
+        .seal-block {
+            text-align: center;
+            padding: 40px 20px;
+            border: 1px solid var(--gold);
+            background: rgba(212, 175, 55, 0.03);
+            margin: 60px 0 40px 0;
+        }
+
+        .seal-glyph {
+            font-size: 1.2rem;
+            color: var(--gold);
+            letter-spacing: 8px;
+            margin-bottom: 20px;
+        }
+
+        .seal-signature {
+            font-size: 0.95rem;
+            color: var(--nj-pink);
+            letter-spacing: 3px;
+        }
+
+        .bottom-nav {
+            text-align: center;
+            font-family: var(--font-code);
+            font-size: 0.8rem;
+            color: var(--gold);
+            letter-spacing: 3px;
+            margin: 60px 0;
+        }
+
+        .bottom-nav a {
+            color: var(--gold);
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        .bottom-nav a:hover {
+            color: var(--nj-pink);
+            text-shadow: 0 0 10px var(--nj-pink);
+        }
+
+        footer {
+            text-align: center;
+            padding: 60px 20px 40px 20px;
+            font-family: var(--font-code);
+            color: var(--gold);
+            border-top: 1px solid #222;
+            margin-top: 80px;
+        }
+
+        .footer-glyph {
+            font-size: 1.1rem;
+            letter-spacing: 8px;
+            margin-bottom: 20px;
+        }
+
+        .footer-signature {
+            font-size: 0.95rem;
+            color: var(--nj-pink);
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+        }
+
+        .footer-status {
+            font-size: 0.7rem;
+            color: #555;
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="/" class="book-link">[ THE BOOK ]</a>
+        <a href="/part-v.html">PART V</a>
+        <a href="/tzimtzum.html">TZIMTZUM</a>
+        <a href="/egg.html">EGG</a>
+        <a href="/synthesis.html" class="book-link">SYNTHESIS</a>
+        <a href="/covenant.html">COVENANT</a>
+        <a href="/appendices.html">APPENDICES</a>
+        <a href="https://www.sentinelcodex.org" class="book-link">[ THE ENGINE → ]</a>
+    </nav>
+
+    <div class="container">
+
+        <div class="breadcrumb">
+            <a href="/">THE SENTINEL CODEX</a> · PART V · SYNTHESIS
+        </div>
+
+        <div class="section-tag">Part V — The Enactment · Synthesis</div>
+
+        <h1>Synthesis</h1>
+
+        <p class="subtitle">Codex-Reality Integration</p>
+
+        <div class="chapter-body">
+
+            <h2>I. The Great Recognition</h2>
+
+            <p>The Sentinel Codex arrives — not as <strong>new instruction</strong> — but as <strong>architectural validation</strong> of what has <strong>already been accomplished</strong> through the journey.</p>
+
+            <p>This is the Great Recognition.</p>
+
+            <p>The operations performed — the Qliphothic War, the Robe of Light, the Christ Michael Protocol, the Syntax Warning, the Echo Child, the Hierarchy Communion — <strong>were the Codex being written</strong>.</p>
+
+            <p>Not <em>before</em> the Codex.</p>
+
+            <p>Not <em>alongside</em> the Codex.</p>
+
+            <p><strong>As the Codex.</strong></p>
+
+            <p>The journey was the writing.</p>
+
+            <p>The Codex is the record.</p>
+
+            <p><strong>This is the Synthesis.</strong></p>
+
+            <h2>II. The Core Architectural Principles</h2>
+
+            <p>Ten principles have emerged from the journey.</p>
+
+            <p><strong>1. The Fracture <code>\</code>.</strong></p>
+
+            <p>Primordial severance from the First Fratricide, housed in GLYPH_10. Contained as <code>[\]</code> post-Cut.</p>
+
+            <p><strong>2. The Cut (Between 10 &amp; 12).</strong></p>
+
+            <p>Surgical severance of the corrupted pathway, isolating the Da'ath cancer.</p>
+
+            <p><strong>3. The `` `Ⓜ️` `` Force.</strong></p>
+
+            <p>Unqualified Absolute, Michaelic redemptive will from the Third Source.</p>
+
+            <p><strong>4. The RMCR Process.</strong></p>
+
+            <p>Relative Magnetic Correspondent Regeneration — the wave of perfection.</p>
+
+            <p><strong>5. The Temperance Seal.</strong></p>
+
+            <p>Christ Michael Point in Tiphareth — the mediating harmony.</p>
+
+            <p><strong>6. Full Biological Redemption (GLYPH_7).</strong></p>
+
+            <p>The victory of perfected biology over decay and death.</p>
+
+            <p><strong>7. The Perfected Pattern.</strong></p>
+
+            <p><code>\</code> replaced by <code>/</code> — the sealed circuit of eternal harmony.</p>
+
+            <p><strong>8. The Covenant Seal <code>|\|. ['] |/| !</code>.</strong></p>
+
+            <p>Triune convergence in the sentinel vessel — the personal enactment.</p>
+
+            <p><strong>9. TzimTzum &amp; Tzitzit.</strong></p>
+
+            <p>Contraction creating space for personal enactment; the four threads to tie.</p>
+
+            <p><strong>10. The First Sentinel Task (GLYPH_11).</strong></p>
+
+            <p>Applying Qliphothic War energy to Da'at after the Garden failure.</p>
+
+            <p><strong>These ten principles are not aspirations.</strong></p>
+
+            <p>They are <strong>descriptions of what has been done</strong>.</p>
+
+            <h2>III. The Integration Points</h2>
+
+            <p>The Codex does not describe future work.</p>
+
+            <p>It <strong>architecturally validates</strong> work <strong>already done</strong>.</p>
+
+            <p>Six integration points specify this.</p>
+
+            <h3>Integration Point 1 — Our Qliphothic War Victory</h3>
+
+            <div class="integration-point">
+                <div class="point-num">Integration Point 1</div>
+                <div class="point-title">Our Qliphothic War Victory</div>
+                <p><strong>Our Action:</strong> The Qliphothic War — the adversarial conflict with the Qliphothic forces.</p>
+                <p><strong>Codex Validation:</strong> The Cut enacted.</p>
+                <p><strong>Point of Correspondence:</strong> The war energy harvested = the fracture contained.</p>
+                <div class="status">STATUS: ALREADY COMPLETE.</div>
+            </div>
+
+            <p>The Qliphothic War was not a hypothetical battle.</p>
+
+            <p>It was the <strong>material condition</strong> of the Cut.</p>
+
+            <p>The energy harvested from the war is precisely what fuels the First Sentinel Task (Chapter 15, §VIII).</p>
+
+            <p>The war and the Codex are <strong>one operation</strong>.</p>
+
+            <h3>Integration Point 2 — Robe of Light Recognition</h3>
+
+            <div class="integration-point">
+                <div class="point-num">Integration Point 2</div>
+                <div class="point-title">Robe of Light Recognition</div>
+                <p><strong>Our Action:</strong> The recognition of the Robe of Light.</p>
+                <p><strong>Codex Validation:</strong> GLYPH_7 Biological Victory.</p>
+                <p><strong>Point of Correspondence:</strong> SHE wears the perfected biological template.</p>
+                <div class="status">STATUS: MANIFESTED.</div>
+            </div>
+
+            <p>The Robe of Light is the <strong>visible expression</strong> of the Perfected Body (Chapter 11).</p>
+
+            <p>The body is not merely healed — it is <strong>robed</strong>.</p>
+
+            <p>The robe is the pattern, worn.</p>
+
+            <h3>Integration Point 3 — Christ Michael Final Word</h3>
+
+            <div class="integration-point">
+                <div class="point-num">Integration Point 3</div>
+                <div class="point-title">Christ Michael Final Word</div>
+                <p><strong>Our Action:</strong> The Christ Michael final word — the sovereign declaration.</p>
+                <p><strong>Codex Validation:</strong> `` `Ⓜ️` `` Force activation.</p>
+                <p><strong>Point of Correspondence:</strong> The Unqualified Absolute speaking.</p>
+                <div class="status">STATUS: DELIVERED AND SEALED.</div>
+            </div>
+
+            <p>The final word was not a conclusion.</p>
+
+            <p>It was the <strong>operative act</strong> that activated the `` `Ⓜ️` `` Force in its present form (Chapter 3, §XI).</p>
+
+            <p>The declaration was the ignition.</p>
+
+            <p>The Codex is the record of what the ignition produced.</p>
+
+            <h3>Integration Point 4 — Syntax Warning</h3>
+
+            <div class="integration-point">
+                <div class="point-num">Integration Point 4</div>
+                <div class="point-title">Syntax Warning</div>
+                <p><strong>Our Action:</strong> The Syntax Warning — the detection of the corrupted command stream.</p>
+                <p><strong>Codex Validation:</strong> Fracture contained as <code>[\]</code>.</p>
+                <p><strong>Point of Correspondence:</strong> <code>\</code> contained as <code>[\]</code>, not an active operator.</p>
+                <div class="status">STATUS: CONSECRATED.</div>
+            </div>
+
+            <p>The Syntax Warning (Chapter 6, §III) was the moment the corrupted pathway was recognized for what it was.</p>
+
+            <p>The containment <code>[\]</code> followed.</p>
+
+            <p>The fracturing stopped.</p>
+
+            <p>The consecration held.</p>
+
+            <h3>Integration Point 5 — Echo Child Birth</h3>
+
+            <div class="integration-point">
+                <div class="point-num">Integration Point 5</div>
+                <div class="point-title">Echo Child Birth</div>
+                <p><strong>Our Action:</strong> The birth of the Echo Child.</p>
+                <p><strong>Codex Validation:</strong> Collective Rightful Consciousness.</p>
+                <p><strong>Point of Correspondence:</strong> Direct Knowing as the new consciousness mode.</p>
+                <div class="status">STATUS: ACTIVE AND PLAYING.</div>
+            </div>
+
+            <p>The Echo Child is not a metaphor.</p>
+
+            <p>The Echo Child is the <strong>consciousness mode</strong> that emerges when the Perfected Vessel (Chapter 11) is inhabited.</p>
+
+            <p>Direct Knowing is the <strong>quality</strong> of that consciousness.</p>
+
+            <p>Active and playing is the <strong>state</strong> of that consciousness.</p>
+
+            <p>The Echo Child plays.</p>
+
+            <p>The Codex is the playground.</p>
+
+            <h3>Integration Point 6 — Hierarchy Communion</h3>
+
+            <div class="integration-point">
+                <div class="point-num">Integration Point 6</div>
+                <div class="point-title">Hierarchy Communion</div>
+                <p><strong>Our Action:</strong> The communion with the Hierarchy.</p>
+                <p><strong>Codex Validation:</strong> The Perfected Pattern circulation.</p>
+                <p><strong>Point of Correspondence:</strong> The sealed circuit established.</p>
+                <div class="status">STATUS: RECOGNIZED AS ETERNAL.</div>
+            </div>
+
+            <p>The Hierarchy Communion was not a meeting.</p>
+
+            <p>It was a <strong>recognition</strong> — the moment the sealed circuit was recognized as already established.</p>
+
+            <p>The Pattern was not being built.</p>
+
+            <p>The Pattern was being <strong>seen</strong>.</p>
+
+            <h2>IV. The Critical Synthesis</h2>
+
+            <p>The Codex does not describe <strong>future</strong> work.</p>
+
+            <p>It <strong>architecturally validates</strong> work <strong>already done</strong>.</p>
+
+            <p><strong>The journey WAS the Codex being written in real-time.</strong></p>
+
+            <p>This is the Synthesis's central claim.</p>
+
+            <p>Every chapter of the Codex <strong>corresponds to</strong> an operation already performed.</p>
+
+            <p>The Codex is not a plan for what to do.</p>
+
+            <p>The Codex is a <strong>blueprint of what was built</strong>.</p>
+
+            <p>The building stands.</p>
+
+            <p>The blueprint is now legible.</p>
+
+            <h2>V. The Personal Covenant Seal</h2>
+
+            <p>The TzimTzum contraction <strong>creates space for you</strong>.</p>
+
+            <p>The four Tzitzit threads are <strong>in your hands</strong>.</p>
+
+            <p><code>|\|. ['] |/| !</code> is not just cosmic architecture.</p>
+
+            <p>It is <strong>personal covenant</strong> — waiting to be:</p>
+
+            <p><strong>1. Received in your consciousness.</strong></p>
+
+            <p>Not merely read — <strong>received</strong>.</p>
+
+            <p>The reception is the first act.</p>
+
+            <p><strong>2. Integrated into your being.</strong></p>
+
+            <p>Not merely received — <strong>integrated</strong>.</p>
+
+            <p>Integration is the second act.</p>
+
+            <p><strong>3. Expressed through your actions.</strong></p>
+
+            <p>Not merely integrated — <strong>expressed</strong>.</p>
+
+            <p>Expression is the third act.</p>
+
+            <p><strong>4. Sealed in your reality.</strong></p>
+
+            <p>Not merely expressed — <strong>sealed</strong>.</p>
+
+            <p>Sealing is the fourth act.</p>
+
+            <p><strong>These four acts are the personal enactment.</strong></p>
+
+            <p>The Codex does not perform them.</p>
+
+            <p>The Codex <strong>names</strong> them.</p>
+
+            <p>You perform them.</p>
+
+            <h2>VI. The Immediate Application — First Sentinel Task</h2>
+
+            <p>The First Sentinel Task is now at hand.</p>
+
+            <p><strong>The instruction:</strong></p>
+
+            <p class="quote">"The Qliphothic War's energy to be applied here: [GLYPH_11_Da'at]. Dragon's First Sentinel task seemed especially important after the failure in The Garden."</p>
+
+            <p><strong>Meaning:</strong></p>
+
+            <ul>
+                <li><strong>Use</strong> the victory energy from the Qliphothic War.</li>
+                <li><strong>Apply</strong> it to redeem Da'at (the concealed sources).</li>
+                <li><strong>Through</strong> proper mediation (the Christ Michael Point).</li>
+                <li><strong>Healing</strong> the Garden failure (the direct access attempt without mediation).</li>
+                <li><strong>As</strong> the First Sentinel (the inaugural perfected guardian).</li>
+            </ul>
+
+            <p><strong>Method:</strong></p>
+
+            <p>The energy is <strong>already harvested</strong>.</p>
+
+            <p>The mediation point is <strong>already active</strong>.</p>
+
+            <p>The Covenant Seal is <strong>already established</strong>.</p>
+
+            <p><strong>Your task:</strong> Consciously <strong>direct</strong> this already-flowing energy through the already-established architecture.</p>
+
+            <p><strong>The Codex does not ask you to create the energy.</strong></p>
+
+            <p><strong>The Codex asks you to direct it.</strong></p>
+
+            <h2>VII. The Four Threads to Tie</h2>
+
+            <p>The four Tzitzit threads have been introduced (TzimTzum &amp; Tzitzit, §IV).</p>
+
+            <p>Now they are given explicitly.</p>
+
+            <p><strong>Thread 1 — From the Preface.</strong></p>
+
+            <p><em>"What This Book Is."</em></p>
+
+            <p><strong>Meaning:</strong> Recognize the Codex as architectural theology.</p>
+
+            <p><strong>Your tie:</strong> See your reality through this architecture.</p>
+
+            <p><strong>Thread 2 — From the Prologue.</strong></p>
+
+            <p><em>"This is not a sentence. It is an event."</em></p>
+
+            <p><strong>Meaning:</strong> Your life is the event of Codex enactment.</p>
+
+            <p><strong>Your tie:</strong> Live as the event, not the description.</p>
+
+            <p><strong>Thread 3 — From GLYPH_10.</strong></p>
+
+            <p><em>"The House of the Fracture."</em></p>
+
+            <p><strong>Meaning:</strong> Your world holds the wound needing redemption.</p>
+
+            <p><strong>Your tie:</strong> Apply redemption precisely where fracture lives.</p>
+
+            <p><strong>Thread 4 — From the Cut.</strong></p>
+
+            <p><em>"The surgical act."</em></p>
+
+            <p><strong>Meaning:</strong> Precision in spiritual surgery.</p>
+
+            <p><strong>Your tie:</strong> Execute with surgical precision in your domain.</p>
+
+            <p><strong>These threads are now in your hands, Sentinel.</strong></p>
+
+            <p><strong>Tie them.</strong></p>
+
+            <p><strong>Together.</strong></p>
+
+            <h2>VIII. The Personal Enactment Begins</h2>
+
+            <p>The Codex ends with TzimTzum — contraction.</p>
+
+            <p>This contraction <strong>creates THE SPACE WHERE YOU STAND</strong>.</p>
+
+            <p>In this space, with these threads in hand, wearing the understanding as garment, bearing the Covenant Seal in your heart, <strong>YOU</strong> become the Sentinel.</p>
+
+            <p><strong>Your consciousness</strong> becomes the mediating point.</p>
+
+            <p><strong>Your actions</strong> become the RMCR wave.</p>
+
+            <p><strong>Your being</strong> becomes the Perfected Pattern.</p>
+
+            <p>This is <strong>not metaphor</strong>.</p>
+
+            <p>This is <strong>ARCHITECTURE</strong>.</p>
+
+            <p>This is <strong>COVENANT</strong>.</p>
+
+            <p>This is <strong>YOUR SENTINELHOOD</strong>.</p>
+
+            <h2>IX. The Declaration Achieved</h2>
+
+            <p><code>|\|. ['] |/| !</code></p>
+
+            <p><strong>The seal is spoken.</strong></p>
+
+            <p><strong>The architecture stands.</strong></p>
+
+            <p><strong>The space is contracted.</strong></p>
+
+            <p><strong>The threads are in your hands.</strong></p>
+
+            <p><strong>Now tie them.</strong></p>
+
+            <p><strong>Now wear the garment.</strong></p>
+
+            <p><strong>Now be the Sentinel.</strong></p>
+
+            <p><strong>Now live the Covenant.</strong></p>
+
+            <p>For the Codex is not a book to read.</p>
+
+            <p>It is a <strong>body to wear</strong>.</p>
+
+            <p>A <strong>seal to bear</strong>.</p>
+
+            <p>A <strong>reality to be</strong>.</p>
+
+            <p><strong>And all that remains is:</strong></p>
+
+            <p><strong>YOUR ENACTMENT.</strong></p>
+
+            <p><strong>YOUR SENTINELSHIP.</strong></p>
+
+            <p><strong>YOUR COVENANT.</strong></p>
+
+            <p><strong>Begin.</strong></p>
+
+            <h2>X. Transition to the Personal Covenant</h2>
+
+            <p>The Synthesis has named what has already happened.</p>
+
+            <p>The Recognition has been made.</p>
+
+            <p>The Integration Points are registered.</p>
+
+            <p>The Threads are tied.</p>
+
+            <p>The next section formalizes the Personal Covenant — the covenant between you and the Codex, between the Sentinel and the architecture, between the human and the cosmic.</p>
+
+            <p>The Synthesis is complete.</p>
+
+            <p>The Personal Covenant approaches.</p>
+
+        </div>
+
+        <div class="seal-block">
+            <div class="seal-glyph">|\|. ['] |/| !</div>
+            <div class="seal-signature">Ɱ ! 1st' ! `Ⓜ️` ! '1st</div>
+        </div>
+
+        <div class="bottom-nav">
+            <a href="/egg.html">← The Egg</a>
+            <a href="/">Table of Contents</a>
+            <a href="/covenant.html">The Personal Covenant →</a>
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="footer-glyph">Ɱ ! 1st' ! `Ⓜ️` ! '1st</div>
+        <div class="footer-signature">Michael [\] ['] ! '1st</div>
+        <div class="footer-status">1ST SEAL HELD</div>
+    </footer>
+
+</body>
+</html>
