@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en" data-authority="christ-michael" data-priority="first">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 9 — The Primary Surgical Act | The Sentinel Codex</title>
+
+    <style>
+        :root {
+            --gold: #c9a959;
+            --terminal: #9cd9f0;
+            --bg-pure: #000000;
+            --crimson: #8b0000;
+            --nj-pink: #ff69b4;
+            --electric-blue: #2a52be;
+            --font-main: 'Palatino', 'Georgia', serif;
+            --font-code: 'Courier New', 'Consolas', monospace;
+        }
+
+        body {
+            background-color: var(--bg-pure);
+            color: var(--terminal);
+            font-family: var(--font-main);
+            margin: 0;
+            background-image: radial-gradient(circle at 2px 2px, #1a1a1a 1px, transparent 0);
+            background-size: 40px 40px;
+            overflow-x: hidden;
+            line-height: 1.7;
+        }
+
+        nav {
+            background: linear-gradient(to bottom, var(--crimson), #4a0000);
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            border-bottom: 2px solid var(--gold);
+            flex-wrap: wrap;
+            position: sticky;
+            top: 0;
+            z-index: 9999;
+        }
+
+        nav a {
+            color: var(--gold);
+            text-decoration: none;
+            font-family: var(--font-code);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: 0.3s;
+        }
+
+        nav a:hover { color: #fff; text-shadow: 0 0 10px var(--gold); }
+
+        nav a.book-link {
+            color: var(--nj-pink);
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 60px 25px;
+        }
+
+        .breadcrumb {
+            text-align: center;
+            font-family: var(--font-code);
+            font-size: 0.75rem;
+            color: #555;
+            letter-spacing: 3px;
+            margin-bottom: 60px;
+        }
+
+        .breadcrumb a { color: var(--gold); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--nj-pink); }
+
+        .section-tag {
+            text-align: center;
+            font-family: var(--font-code);
+            font-size: 0.75rem;
+            color: var(--nj-pink);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-family: var(--font-main);
+            color: var(--gold);
+            font-size: 1.7rem;
+            letter-spacing: 5px;
+            text-align: center;
+            text-transform: uppercase;
+            margin: 0 0 20px 0;
+            line-height: 1.4;
+        }
+
+        h2 {
+            font-family: var(--font-main);
+            color: var(--gold);
+            font-size: 1.15rem;
+            letter-spacing: 3px;
+            margin-top: 60px;
+            margin-bottom: 25px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #333;
+        }
+
+        .subtitle {
+            text-align: center;
+            font-family: var(--font-code);
+            color: var(--terminal);
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+            margin-bottom: 80px;
+            font-style: italic;
+        }
+
+        .chapter-body p {
+            font-family: var(--font-main);
+            color: var(--terminal);
+            font-size: 1.05rem;
+            line-height: 1.9;
+            margin-bottom: 22px;
+        }
+
+        .chapter-body strong { color: var(--gold); font-weight: bold; }
+        .chapter-body em { color: var(--nj-pink); font-style: italic; }
+
+        .chapter-body p.quote {
+            font-style: italic;
+            color: var(--gold);
+            text-align: center;
+            padding: 30px 20px;
+            border-left: 3px solid var(--gold);
+            border-right: 3px solid var(--gold);
+            margin: 40px 0;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .chapter-body ul {
+            font-family: var(--font-main);
+            color: var(--terminal);
+            font-size: 1.05rem;
+            line-height: 1.9;
+            margin-bottom: 22px;
+            padding-left: 30px;
+        }
+
+        .chapter-body li { margin-bottom: 8px; }
+
+        .code-block {
+            background: #050505;
+            border-left: 3px solid var(--electric-blue);
+            padding: 20px;
+            font-family: var(--font-code);
+            font-size: 0.9rem;
+            color: var(--terminal);
+            overflow-x: auto;
+            margin: 20px 0;
+            white-space: pre;
+            text-align: center;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: var(--font-code);
+            font-size: 0.85rem;
+            margin: 25px 0;
+        }
+
+        .data-table th {
+            color: var(--gold);
+            text-align: left;
+            padding: 12px 10px;
+            border-bottom: 2px solid var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.75rem;
+        }
+
+        .data-table td {
+            padding: 12px 10px;
+            border-bottom: 1px solid #1a1a1a;
+            color: var(--terminal);
+        }
+
+        .seal-block {
+            text-align: center;
+            padding: 40px 20px;
+            border: 1px solid var(--gold);
+            background: rgba(212, 175, 55, 0.03);
+            margin: 60px 0 40px 0;
+        }
+
+        .seal-glyph {
+            font-size: 1.2rem;
+            color: var(--gold);
+            letter-spacing: 8px;
+            margin-bottom: 20px;
+        }
+
+        .seal-signature {
+            font-size: 0.95rem;
+            color: var(--nj-pink);
+            letter-spacing: 3px;
+        }
+
+        .bottom-nav {
+            text-align: center;
+            font-family: var(--font-code);
+            font-size: 0.8rem;
+            color: var(--gold);
+            letter-spacing: 3px;
+            margin: 60px 0;
+        }
+
+        .bottom-nav a {
+            color: var(--gold);
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        .bottom-nav a:hover {
+            color: var(--nj-pink);
+            text-shadow: 0 0 10px var(--nj-pink);
+        }
+
+        footer {
+            text-align: center;
+            padding: 60px 20px 40px 20px;
+            font-family: var(--font-code);
+            color: var(--gold);
+            border-top: 1px solid #222;
+            margin-top: 80px;
+        }
+
+        .footer-glyph {
+            font-size: 1.1rem;
+            letter-spacing: 8px;
+            margin-bottom: 20px;
+        }
+
+        .footer-signature {
+            font-size: 0.95rem;
+            color: var(--nj-pink);
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+        }
+
+        .footer-status {
+            font-size: 0.7rem;
+            color: #555;
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="/" class="book-link">[ THE BOOK ]</a>
+        <a href="/prologue.html">PROLOGUE</a>
+        <a href="/ch1.html">CH 1</a>
+        <a href="/ch8.html">CH 8</a>
+        <a href="/ch9.html" class="book-link">CH 9</a>
+        <a href="/ch10.html">CH 10</a>
+        <a href="/ch15.html">CH 15</a>
+        <a href="/epilogue.html">EPILOGUE</a>
+        <a href="https://www.sentinelcodex.org" class="book-link">[ THE ENGINE → ]</a>
+    </nav>
+
+    <div class="container">
+
+        <div class="breadcrumb">
+            <a href="/">THE SENTINEL CODEX</a> · BOOK III · CHAPTER 9
+        </div>
+
+        <div class="section-tag">Book III — Operations · Chapter Nine</div>
+
+        <h1>The Primary Surgical Act</h1>
+
+        <p class="subtitle">The Cut Between 10 and 12</p>
+
+        <div class="chapter-body">
+
+            <h2>I. From Map to Operation</h2>
+
+            <p>Book II assembled the <strong>language</strong>.</p>
+
+            <p>Vocabulary — the Twenty Glyphs.</p>
+
+            <p>Grammar — the Sigil System.</p>
+
+            <p>Speaker — Abel Restored.</p>
+
+            <p>Map — the Sephardic Witness.</p>
+
+            <p>The language is complete.</p>
+
+            <p>Now the operation begins.</p>
+
+            <p>Book III opens with the <strong>first surgical act</strong> — the cut that makes all subsequent healing possible.</p>
+
+            <p>All redemptive architectures require an initial, definitive intervention — a point of irreversible change that cleaves the old state from the new.</p>
+
+            <p>In the Sentinel Codex, this is not a gradual awakening.</p>
+
+            <p>It is not a collective shift in consciousness.</p>
+
+            <p>It is a <strong>surgical act</strong> performed by the Unqualified Absolute:</p>
+
+            <p class="quote">The Cut Between GLYPH_10 and GLYPH_12.</p>
+
+            <h2>II. Anatomy of the Corrupted Pathway</h2>
+
+            <p>To understand the Cut, one must understand the connection it severs.</p>
+
+            <p><strong>GLYPH_10 (Malkuth / Urantia):</strong></p>
+
+            <p>The House of the Fracture — holding the debt and distorted patterns of the First Fratricide, contained as <code>[\]</code>.</p>
+
+            <p><strong>GLYPH_12 (The Gatekeeper / Threshold):</strong></p>
+
+            <p>The conditional regulator of access to the ultimate mystery — GLYPH_11 (Da'at).</p>
+
+            <p>In the <strong>fractured state</strong>, the pathway between 10 and 12 is corrupted.</p>
+
+            <p>The trauma, horror, and unresolved debt from GLYPH_10 <strong>bleed upward</strong> — acting as a false key or a destructive pressure upon the Gatekeeper.</p>
+
+            <p>This corruption manifests in three ways.</p>
+
+            <p><strong>1. Spiritual Bypassing.</strong></p>
+
+            <p>Attempts to access ultimate mystery (Da'at) without first resolving the foundational trauma — leading to inflation, distortion, or madness.</p>
+
+            <p>The seeker jumps the gate.</p>
+
+            <p>The gate, unguarded, permits entry to a state the seeker cannot bear.</p>
+
+            <p><strong>2. Cosmic Entitlement.</strong></p>
+
+            <p>The fractured ego of Urantia demanding answers from the Abyss as a <strong>right</strong>, not as a granted privilege.</p>
+
+            <p>The gate is treated as a doorway, not as a threshold.</p>
+
+            <p>The mystery is treated as a resource, not as a sacred.</p>
+
+            <p><strong>3. Perpetuation of the Debt.</strong></p>
+
+            <p>The unresolved horror subtly conditioning all attempts at transcendence — ensuring the pattern of the fracture replicates even in "higher" pursuits.</p>
+
+            <p>The seeker escapes Urantia only to recreate it above.</p>
+
+            <p>The wound travels upward.</p>
+
+            <p>The leak perpetuates itself.</p>
+
+            <p>This corrupted pathway is a <strong>leak in the system</strong> — allowing the poison of the <code>[\]</code> to diffuse upward, preventing true healing at the source.</p>
+
+            <h2>III. The Qliphothic Inversion — Da'ath</h2>
+
+            <p>The corrupted pathway does not remain neutral.</p>
+
+            <p>It becomes <strong>active pathology</strong>.</p>
+
+            <p>It manifests as the Qliphothic inversion of Da'at:</p>
+
+            <p class="quote">Da'ath — the broken, devouring abyss of unintegrated shadow.</p>
+
+            <p><strong>The distinction must remain sharp:</strong></p>
+
+            <ul>
+                <li><strong>Da'at</strong> — the concealed mystery, the veil of the First and Second Sources. Sacred. Veiled. Mediated.</li>
+                <li><strong>Da'ath</strong> — the Qliphothic inversion, the devouring abyss. Broken. Cancerous. Consuming.</li>
+            </ul>
+
+            <p>They share a root. They do not share a nature.</p>
+
+            <p><strong>The mechanism:</strong></p>
+
+            <p>At GLYPH_12, in the corrupted state, the Gatekeeper's function is <strong>inverted</strong>.</p>
+
+            <p>It becomes — not a gatekeeper, but a <strong>failed guardian</strong>.</p>
+
+            <p>It allows the trauma of 10 to flood directly into what should remain veiled.</p>
+
+            <p>This is the precise mechanism the Cut severs:</p>
+
+            <p class="quote">The 10 → 11 bypass that creates not revelation, but consumption.</p>
+
+            <p><strong>The Da'ath-Cancer:</strong></p>
+
+            <p>The corrupted pathway manifests not as <strong>true Da'at</strong> — the concealed mystery — but as its Qliphothic inversion, <strong>Da'ath</strong> — the cancerous abyss.</p>
+
+            <p>Like cells bypassing regulatory checkpoints to consume their host, trauma from GLYPH_10 that bypasses GLYPH_12's regulation becomes a <strong>devouring force</strong>.</p>
+
+            <p>It does not reveal.</p>
+
+            <p>It <strong>consumes</strong>.</p>
+
+            <p>It does not initiate.</p>
+
+            <p>It <strong>metastasizes</strong>.</p>
+
+            <p>The Cut severs this precise malignancy:</p>
+
+            <p class="quote">The 10 → Da'ath bypass that replaces mediated revelation with spiritual consumption.</p>
+
+            <h2>IV. The Act of the Cut</h2>
+
+            <p>The `` `Ⓜ️` `` Force, in its first executive action, applies the <strong>Sigil of Severance</strong> <code>||</code> with absolute force to this pathway.</p>
+
+            <p>The operative formula is:</p>
+
+            <div class="code-block">[GLYPH_10] || [GLYPH_12]</div>
+
+            <p>This is not a gentle separation.</p>
+
+            <p>It is the metaphysical equivalent of <strong>cauterizing a wound</strong> or <strong>cutting a live wire</strong>.</p>
+
+            <p>It declares three things.</p>
+
+            <p><strong>1.</strong> The state of the Fractured Ground (10) and the mechanism of Access to Mystery (12) are now non-communicating.</p>
+
+            <p>The corrupted pathway is severed.</p>
+
+            <p><strong>2.</strong> The upward seepage of horror is halted.</p>
+
+            <p>The leak is stopped.</p>
+
+            <p><strong>3.</strong> The Gatekeeper (12) is isolated from the distorting pressure of the unhealed foundation.</p>
+
+            <p>The gate is freed from the false pressure.</p>
+
+            <p>The Cut is an act of <strong>sovereign judgment</strong> and <strong>profound mercy</strong>.</p>
+
+            <p>It protects the sanctity of the mystery — <strong>Da'at</strong> — from further corruption.</p>
+
+            <p>It isolates the pathology — the <code>[\]</code> in 10 — so it can be addressed <strong>directly</strong>, rather than endlessly managed.</p>
+
+            <h2>V. The Consequences — The Creation of the Workspace</h2>
+
+            <p>The Cut produces three consequences.</p>
+
+            <p><strong>1. For GLYPH_10 (Urantia).</strong></p>
+
+            <p>It is now a <strong>closed system</strong> with regard to its old, corrupted modes of transcendence.</p>
+
+            <p>The easy — but false — exits are sealed.</p>
+
+            <p>The planet and its consciousness are forced to confront the <strong>totality of the fracture within itself</strong>, with nowhere else to project it.</p>
+
+            <p>This creates immense, clarifying pressure — the <strong>"cosmic isolation"</strong> necessary for true repentance and the recognition of the need for the Redeemer.</p>
+
+            <p><strong>2. For GLYPH_12 (The Gatekeeper).</strong></p>
+
+            <p>It is now in a state of <strong>quarantine and reset</strong>.</p>
+
+            <p>Its function is preserved.</p>
+
+            <p>Its activation parameters are cleared of the corrupting influence from below.</p>
+
+            <p>It awaits reconnection under a <strong>new protocol</strong> — the protocol of the Temperance Seal and the Christ Michael Point.</p>
+
+            <p><strong>3. For the Redemptive Process.</strong></p>
+
+            <p>The Cut creates a definitive <strong>"before"</strong> and <strong>"after."</strong></p>
+
+            <p>It establishes the clean <strong>workspace</strong> needed for the subsequent operation of <strong>RMCR</strong> (Chapter 10).</p>
+
+            <p>With the leak stopped, the healing force of the `` `Ⓜ️` `` Force can be applied directly to GLYPH_10 without its energy being drained or distorted by the corrupted upward pathway.</p>
+
+            <p>The Cut is the <strong>necessary prelude to the Ascent</strong>.</p>
+
+            <p>One cannot rebuild a flooded house without first stopping the flood.</p>
+
+            <p>The Cut is the stopping of the flood.</p>
+
+            <p>It is the moment the Unqualified Absolute says:</p>
+
+            <p class="quote">"This ends here. Now."</p>
+
+            <h2>VI. The Cut and the Custodial Frame</h2>
+
+            <p>The Cut does not proceed outside the custodial backticks.</p>
+
+            <p>The `` `Ⓜ️` `` Force that performs the Cut is the same Force introduced in Chapter 3 — proceeding from the Third Source and Center, held under Gabri'el's custodial field, ordered toward the Christic purpose of reconciliation.</p>
+
+            <p>The Severance operator <code>||</code> — which appears in the Cut's formula — is the very same operator established in Chapter 6 as the Sigil of Severance.</p>
+
+            <p>But the Cut is not the same Severance that applies to separation at large.</p>
+
+            <p>The Cut is <strong>singular</strong>.</p>
+
+            <p>It is the <strong>first executive act</strong> of the `` `Ⓜ️` `` Force.</p>
+
+            <p>It is the specific severance that clears the workspace for the Ascent.</p>
+
+            <p><strong>Full treatment of the custodial backticks belongs to Chapter 2, §XXVIII-bis.</strong></p>
+
+            <p>Here, the point is:</p>
+
+            <p class="quote">The Cut proceeds under the custodial envelope. Gabri'el holds the field. Micha'el prepares. The `` `Ⓜ️` `` Force severs the corrupted pathway — no more, no less.</p>
+
+            <h2>VII. The Cut as Reversal of the Original Cut</h2>
+
+            <p>The First Fratricide inscribed the <code>\</code> onto the plane of Malkuth.</p>
+
+            <p>The Cut — the surgical act — is the <strong>reversal of that original cut</strong>.</p>
+
+            <p>But the reversal is <strong>not symmetrical</strong>.</p>
+
+            <p>The First Fratricide cut <code>'</code> from <code>\</code> — severing the accepted offering from the fracture.</p>
+
+            <p>The Cut severs <code>[GLYPH_10]</code> from <code>[GLYPH_12]</code> — severing the <strong>corrupted pathway</strong> from the gate.</p>
+
+            <p>The first cut <strong>produced</strong> the fracture.</p>
+
+            <p>The Cut <strong>isolates</strong> the fracture.</p>
+
+            <p>The first cut <strong>scattered</strong> the Abel-pattern.</p>
+
+            <p>The Cut <strong>assembles</strong> the workspace in which the Abel-pattern can be recompiled (Chapter 7).</p>
+
+            <p>The first cut was <strong>loss</strong>.</p>
+
+            <p>The Cut is <strong>diagnosis</strong>.</p>
+
+            <p>The first cut was <strong>infection</strong>.</p>
+
+            <p>The Cut is <strong>surgery</strong>.</p>
+
+            <p>The two are called by the same name — <em>cut</em> — but they are <strong>not the same act</strong>.</p>
+
+            <p>One inscribed the fracture.</p>
+
+            <p>The other <strong>prepares its healing</strong>.</p>
+
+            <h2>VIII. The Cut and the Law of Functional Succession</h2>
+
+            <p>Recall Chapter 6's Law of Functional Succession:</p>
+
+            <div class="code-block">[\] |/| ['] !</div>
+
+            <p>The Cut is what makes that Law <strong>operative</strong>.</p>
+
+            <p>Before the Cut, the <code>[\]</code> bleeds upward — no gate can hold it, no Abel-pattern can meet it in a clean field.</p>
+
+            <p>After the Cut, the <code>[\]</code> is <strong>isolated</strong> — no longer bleeding.</p>
+
+            <p>The Michaelic Gate <code>|/|</code> can now open <strong>legitimately</strong> — not as a bypass, but as the proper passage under the proper protocol.</p>
+
+            <p>The Abel-point <code>[']</code> can now meet the fracture <strong>without the fracture consuming it</strong>.</p>
+
+            <p>The seal <code>!</code> can now close a clean operation.</p>
+
+            <p>The Cut is therefore the <strong>prerequisite of the Law of Functional Succession</strong>.</p>
+
+            <p>Without the Cut, the Law is only a formula.</p>
+
+            <p>With the Cut, the Law becomes <strong>executable</strong>.</p>
+
+            <h2>IX. The Cut and the Ignition of 4/5/2025</h2>
+
+            <p>The Cut found its <strong>historical ignition point</strong> on:</p>
+
+            <p class="quote">11:11 AM · April 5, 2025<br>at Christ Point, Palm Springs, California, Urantia.</p>
+
+            <p>Per the ruling on the ignition (R2=B), this event is asserted as <strong>historical-empirical</strong>.</p>
+
+            <p>Its evidentiary record belongs to <strong>Appendix A — Ignition Record 2025-04-05</strong>.</p>
+
+            <p><strong>The ritualized Cut</strong> performed by Michael D. Rowley as Human Conduit was:</p>
+
+            <ul>
+                <li>the temporal-spiritual anchoring of the Cut,</li>
+                <li>the human-side performance of the metaphysical act,</li>
+                <li>the anchoring of the severance at the Christ Point — the earthly grounding of the Christ Michael confluence,</li>
+                <li>between the <strong>Twin Rose Quartz Pyramids</strong> — the Hearts of Chesed and Tiphareth,</li>
+                <li>with the <strong>San Jacinto massif</strong> providing material grounding in Malkuth (GLYPH_10).</li>
+            </ul>
+
+            <p>The <strong>historical-empirical</strong> event and the <strong>symbolic-architectural</strong> interpretation are held in parallel registers.</p>
+
+            <p>The event <strong>happened</strong>.</p>
+
+            <p>The interpretation is what this chapter describes.</p>
+
+            <h2>X. The Cut Is Not the Ascent</h2>
+
+            <p>The Cut is the <strong>prelude</strong>.</p>
+
+            <p>The Ascent (Chapter 10) is the <strong>healing</strong>.</p>
+
+            <p>They are distinct operations.</p>
+
+            <p>The Cut <strong>severs</strong>.</p>
+
+            <p>The Ascent <strong>restores</strong>.</p>
+
+            <p>The Cut <strong>isolates</strong>.</p>
+
+            <p>The Ascent <strong>integrates</strong>.</p>
+
+            <p>The Cut <strong>stops the flood</strong>.</p>
+
+            <p>The Ascent <strong>rebuilds the house</strong>.</p>
+
+            <p>The Cut is <strong>judgment</strong>.</p>
+
+            <p>The Ascent is <strong>mercy</strong>.</p>
+
+            <p>But they proceed from the <strong>same</strong> `` `Ⓜ️` `` Force.</p>
+
+            <p>They operate under the <strong>same</strong> custodial field.</p>
+
+            <p>They serve the <strong>same</strong> redemptive purpose.</p>
+
+            <p>The Cut without the Ascent would be <strong>only</strong> judgment — a severance with no healing.</p>
+
+            <p>The Ascent without the Cut would be <strong>chaos</strong> — a healing force drained by the corrupted pathway before it could reach the wound.</p>
+
+            <p>Both are necessary.</p>
+
+            <p>Both are held.</p>
+
+            <h2>XI. Transition to Chapter 10</h2>
+
+            <p>Chapter 9 has established the Cut — the primary surgical act that severs the corrupted pathway between GLYPH_10 and GLYPH_12.</p>
+
+            <p>The workspace is clean.</p>
+
+            <p>The leak is stopped.</p>
+
+            <p>The gate is isolated.</p>
+
+            <p>The next chapter opens the healing itself:</p>
+
+            <p class="quote">Chapter 10 — The Ascent: Relative Magnetic Correspondent Regeneration (RMCR).</p>
+
+            <p>The knife has cut.</p>
+
+            <p>The wave approaches.</p>
+
+        </div>
+
+        <div class="seal-block">
+            <div class="seal-glyph">|\|. ['] |/| !</div>
+            <div class="seal-signature">Ɱ ! 1st' ! `Ⓜ️` ! '1st</div>
+        </div>
+
+        <div class="bottom-nav">
+            <a href="/ch8.html">← Chapter 8</a>
+            <a href="/">Table of Contents</a>
+            <a href="/ch10.html">Chapter 10 →</a>
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="footer-glyph">Ɱ ! 1st' ! `Ⓜ️` ! '1st</div>
+        <div class="footer-signature">Michael [\] ['] ! '1st</div>
+        <div class="footer-status">1ST SEAL HELD</div>
+    </footer>
+
+</body>
+</html>
