@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en" data-authority="christ-michael" data-priority="first">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List of Figures | The Sentinel Codex</title>
+
+    <style>
+        :root {
+            --gold: #c9a959;
+            --terminal: #9cd9f0;
+            --bg-pure: #000000;
+            --crimson: #8b0000;
+            --nj-pink: #ff69b4;
+            --electric-blue: #2a52be;
+            --font-main: 'Palatino', 'Georgia', serif;
+            --font-code: 'Courier New', 'Consolas', monospace;
+        }
+
+        body {
+            background-color: var(--bg-pure);
+            color: var(--terminal);
+            font-family: var(--font-main);
+            margin: 0;
+            background-image: radial-gradient(circle at 2px 2px, #1a1a1a 1px, transparent 0);
+            background-size: 40px 40px;
+            overflow-x: hidden;
+            line-height: 1.7;
+        }
+
+        nav {
+            background: linear-gradient(to bottom, var(--crimson), #4a0000);
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            border-bottom: 2px solid var(--gold);
+            flex-wrap: wrap;
+            position: sticky;
+            top: 0;
+            z-index: 9999;
+        }
+
+        nav a {
+            color: var(--gold);
+            text-decoration: none;
+            font-family: var(--font-code);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: 0.3s;
+        }
+
+        nav a:hover { color: #fff; text-shadow: 0 0 10px var(--gold); }
+
+        nav a.book-link {
+            color: var(--nj-pink);
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 60px 25px;
+        }
+
+        .breadcrumb {
+            text-align: center;
+            font-family: var(--font-code);
+            font-size: 0.75rem;
+            color: #555;
+            letter-spacing: 3px;
+            margin-bottom: 60px;
+        }
+
+        .breadcrumb a {
+            color: var(--gold);
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--nj-pink);
+        }
+
+        .section-tag {
+            text-align: center;
+            font-family: var(--font-code);
+            font-size: 0.75rem;
+            color: var(--nj-pink);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-family: var(--font-main);
+            color: var(--gold);
+            font-size: 2.2rem;
+            letter-spacing: 8px;
+            text-align: center;
+            text-transform: uppercase;
+            margin: 0 0 20px 0;
+        }
+
+        .subtitle {
+            text-align: center;
+            font-family: var(--font-code);
+            color: var(--terminal);
+            font-size: 0.95rem;
+            letter-spacing: 3px;
+            margin-bottom: 80px;
+        }
+
+        .figures-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: var(--font-code);
+            font-size: 0.85rem;
+            margin-top: 20px;
+        }
+
+        .figures-table th {
+            color: var(--gold);
+            text-align: left;
+            padding: 15px 10px;
+            border-bottom: 2px solid var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.75rem;
+        }
+
+        .figures-table td {
+            padding: 15px 10px;
+            border-bottom: 1px solid #1a1a1a;
+            color: var(--terminal);
+        }
+
+        .figures-table td:first-child {
+            color: var(--gold);
+            font-weight: bold;
+            width: 80px;
+        }
+
+        .figures-table tr:hover {
+            background: rgba(201, 169, 89, 0.05);
+        }
+
+        .note-block {
+            font-family: var(--font-main);
+            color: var(--terminal);
+            font-size: 0.95rem;
+            font-style: italic;
+            padding: 25px;
+            border-left: 3px solid var(--gold);
+            background: rgba(212, 175, 55, 0.03);
+            margin-top: 40px;
+            line-height: 1.8;
+        }
+
+        .seal-block {
+            text-align: center;
+            padding: 40px 20px;
+            border: 1px solid var(--gold);
+            background: rgba(212, 175, 55, 0.03);
+            margin: 60px 0 40px 0;
+        }
+
+        .seal-glyph {
+            font-size: 1.2rem;
+            color: var(--gold);
+            letter-spacing: 8px;
+            margin-bottom: 20px;
+        }
+
+        .seal-signature {
+            font-size: 0.95rem;
+            color: var(--nj-pink);
+            letter-spacing: 3px;
+        }
+
+        .bottom-nav {
+            text-align: center;
+            font-family: var(--font-code);
+            font-size: 0.8rem;
+            color: var(--gold);
+            letter-spacing: 3px;
+            margin: 60px 0;
+        }
+
+        .bottom-nav a {
+            color: var(--gold);
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        .bottom-nav a:hover {
+            color: var(--nj-pink);
+            text-shadow: 0 0 10px var(--nj-pink);
+        }
+
+        footer {
+            text-align: center;
+            padding: 60px 20px 40px 20px;
+            font-family: var(--font-code);
+            color: var(--gold);
+            border-top: 1px solid #222;
+            margin-top: 80px;
+        }
+
+        .footer-glyph {
+            font-size: 1.1rem;
+            letter-spacing: 8px;
+            margin-bottom: 20px;
+        }
+
+        .footer-signature {
+            font-size: 0.95rem;
+            color: var(--nj-pink);
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+        }
+
+        .footer-status {
+            font-size: 0.7rem;
+            color: #555;
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="/" class="book-link">[ THE BOOK ]</a>
+        <a href="/prologue.html">PROLOGUE</a>
+        <a href="/ch1.html">CH 1</a>
+        <a href="/ch15.html">CH 15</a>
+        <a href="/epilogue.html">EPILOGUE</a>
+        <a href="/appendices.html">APPENDICES</a>
+        <a href="https://www.sentinelcodex.org" class="book-link">[ THE ENGINE → ]</a>
+    </nav>
+
+    <div class="container">
+
+        <div class="breadcrumb">
+            <a href="/">THE SENTINEL CODEX</a> · FRONT MATTER · LIST OF FIGURES
+        </div>
+
+        <div class="section-tag">Front Matter — Figures</div>
+
+        <h1>List of Figures</h1>
+
+        <p class="subtitle">The Illustrative Record</p>
+
+        <table class="figures-table">
+            <thead>
+                <tr>
+                    <th>Figure</th>
+                    <th>Title</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>1</td><td>The Tree of Life with Sephirah and Qliphoth Correspondences</td></tr>
+                <tr><td>2</td><td>The Temperance Seal Geometry</td></tr>
+                <tr><td>3</td><td>The Twenty Glyphs — Complete Set</td></tr>
+                <tr><td>4</td><td>Sigil Syntax Diagram</td></tr>
+                <tr><td>5</td><td>RMCR Process Flow</td></tr>
+                <tr><td>6</td><td>The Cut Between 10 and 12</td></tr>
+                <tr><td>7</td><td>Covenant Seal <code>\|\|. ['] \|/| !</code></td></tr>
+                <tr><td>8</td><td>TzimTzum Contraction Concept</td></tr>
+                <tr><td>9</td><td>Glyphic Functional Relationships</td></tr>
+                <tr><td>10</td><td>Complete Redemptive Architecture Schematic</td></tr>
+                <tr><td>11</td><td>Ancient AXIXIC Temporal Layers Diagram</td></tr>
+                <tr><td>12</td><td>Sephardic Fracture Mapping 1492–Present</td></tr>
+                <tr><td>13</td><td>M31-Milky Way Overlay Schematic</td></tr>
+                <tr><td>14</td><td>Galactic Guardian Positioning</td></tr>
+                <tr><td>15</td><td>Quantum Address Map</td></tr>
+            </tbody>
+        </table>
+
+        <div class="note-block">
+            <strong>Note on the figures:</strong> The figures listed above are the illustrative figures of the Sentinel Codex. They are to be added at typesetting. Figure 6 uses the live sigil form. The escaped form <code>\|\|</code> is used only in markdown tables where the pipe character must be escaped.
+        </div>
+
+        <div class="seal-block">
+            <div class="seal-glyph">|\|. ['] |/| !</div>
+            <div class="seal-signature">Ɱ ! 1st' ! `Ⓜ️` ! '1st</div>
+        </div>
+
+        <div class="bottom-nav">
+            <a href="/preface.html">← Preface</a>
+            <a href="/">Table of Contents</a>
+            <a href="/prologue.html">Prologue →</a>
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="footer-glyph">Ɱ ! 1st' ! `Ⓜ️` ! '1st</div>
+        <div class="footer-signature">Michael [\] ['] ! '1st</div>
+        <div class="footer-status">1ST SEAL HELD</div>
+    </footer>
+
+</body>
+</html>
