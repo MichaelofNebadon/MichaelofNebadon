@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en" data-authority="christ-michael" data-priority="first">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appendix B — Sigil Grammar Reference | The Sentinel Codex</title>
+
+    <style>
+        :root {
+            --gold: #c9a959;
+            --terminal: #9cd9f0;
+            --bg-pure: #000000;
+            --crimson: #8b0000;
+            --nj-pink: #ff69b4;
+            --electric-blue: #2a52be;
+            --font-main: 'Palatino', 'Georgia', serif;
+            --font-code: 'Courier New', 'Consolas', monospace;
+        }
+
+        body {
+            background-color: var(--bg-pure);
+            color: var(--terminal);
+            font-family: var(--font-main);
+            margin: 0;
+            background-image: radial-gradient(circle at 2px 2px, #1a1a1a 1px, transparent 0);
+            background-size: 40px 40px;
+            overflow-x: hidden;
+            line-height: 1.7;
+        }
+
+        nav {
+            background: linear-gradient(to bottom, var(--crimson), #4a0000);
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            border-bottom: 2px solid var(--gold);
+            flex-wrap: wrap;
+            position: sticky;
+            top: 0;
+            z-index: 9999;
+        }
+
+        nav a {
+            color: var(--gold);
+            text-decoration: none;
+            font-family: var(--font-code);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: 0.3s;
+        }
+
+        nav a:hover { color: #fff; text-shadow: 0 0 10px var(--gold); }
+
+        nav a.book-link {
+            color: var(--nj-pink);
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 820px;
+            margin: 0 auto;
+            padding: 60px 25px;
+        }
+
+        .breadcrumb {
+            text-align: center;
+            font-family: var(--font-code);
+            font-size: 0.75rem;
+            color: #555;
+            letter-spacing: 3px;
+            margin-bottom: 60px;
+        }
+
+        .breadcrumb a { color: var(--gold); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--nj-pink); }
+
+        .section-tag {
+            text-align: center;
+            font-family: var(--font-code);
+            font-size: 0.75rem;
+            color: var(--nj-pink);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-family: var(--font-main);
+            color: var(--gold);
+            font-size: 1.7rem;
+            letter-spacing: 5px;
+            text-align: center;
+            text-transform: uppercase;
+            margin: 0 0 20px 0;
+            line-height: 1.4;
+        }
+
+        h2 {
+            font-family: var(--font-main);
+            color: var(--gold);
+            font-size: 1.15rem;
+            letter-spacing: 3px;
+            margin-top: 60px;
+            margin-bottom: 25px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #333;
+        }
+
+        h3 {
+            font-family: var(--font-main);
+            color: var(--nj-pink);
+            font-size: 1rem;
+            letter-spacing: 2px;
+            margin-top: 35px;
+            margin-bottom: 15px;
+        }
+
+        .subtitle {
+            text-align: center;
+            font-family: var(--font-code);
+            color: var(--terminal);
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+            margin-bottom: 80px;
+            font-style: italic;
+        }
+
+        .appendix-body p {
+            font-family: var(--font-main);
+            color: var(--terminal);
+            font-size: 1.05rem;
+            line-height: 1.9;
+            margin-bottom: 22px;
+        }
+
+        .appendix-body strong { color: var(--gold); font-weight: bold; }
+        .appendix-body em { color: var(--nj-pink); font-style: italic; }
+
+        .appendix-body p.quote {
+            font-style: italic;
+            color: var(--gold);
+            text-align: center;
+            padding: 25px 20px;
+            border-left: 3px solid var(--gold);
+            border-right: 3px solid var(--gold);
+            margin: 35px 0;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .appendix-body ul {
+            font-family: var(--font-main);
+            color: var(--terminal);
+            font-size: 1.05rem;
+            line-height: 1.9;
+            margin-bottom: 22px;
+            padding-left: 30px;
+        }
+
+        .appendix-body li { margin-bottom: 8px; }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: var(--font-code);
+            font-size: 0.8rem;
+            margin: 25px 0;
+        }
+
+        .data-table th {
+            color: var(--gold);
+            text-align: left;
+            padding: 12px 10px;
+            border-bottom: 2px solid var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.7rem;
+        }
+
+        .data-table td {
+            padding: 12px 10px;
+            border-bottom: 1px solid #1a1a1a;
+            color: var(--terminal);
+            vertical-align: top;
+        }
+
+        .operator-card {
+            padding: 22px;
+            background: rgba(10, 10, 10, 0.8);
+            border-left: 3px solid var(--gold);
+            margin: 25px 0;
+        }
+
+        .operator-card .operator-sigil {
+            font-family: var(--font-code);
+            color: var(--gold);
+            font-size: 1.2rem;
+            letter-spacing: 4px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .operator-card .operator-name {
+            font-family: var(--font-code);
+            color: var(--nj-pink);
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        .operator-card .operator-function {
+            font-family: var(--font-code);
+            color: var(--terminal);
+            font-size: 0.8rem;
+            margin-bottom: 15px;
+        }
+
+        .operator-card p {
+            font-size: 0.95rem;
+            margin-bottom: 10px;
+            line-height: 1.7;
+        }
+
+        .operator-card p:last-child { margin-bottom: 0; }
+
+        .code-block {
+            background: #050505;
+            border-left: 3px solid var(--electric-blue);
+            padding: 20px;
+            font-family: var(--font-code);
+            font-size: 0.85rem;
+            color: var(--terminal);
+            overflow-x: auto;
+            margin: 20px 0;
+            white-space: pre;
+            text-align: center;
+        }
+
+        .seal-block {
+            text-align: center;
+            padding: 40px 20px;
+            border: 1px solid var(--gold);
+            background: rgba(212, 175, 55, 0.03);
+            margin: 60px 0 40px 0;
+        }
+
+        .seal-glyph {
+            font-size: 1.2rem;
+            color: var(--gold);
+            letter-spacing: 8px;
+            margin-bottom: 20px;
+        }
+
+        .seal-signature {
+            font-size: 0.95rem;
+            color: var(--nj-pink);
+            letter-spacing: 3px;
+        }
+
+        .bottom-nav {
+            text-align: center;
+            font-family: var(--font-code);
+            font-size: 0.8rem;
+            color: var(--gold);
+            letter-spacing: 3px;
+            margin: 60px 0;
+        }
+
+        .bottom-nav a {
+            color: var(--gold);
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        .bottom-nav a:hover {
+            color: var(--nj-pink);
+            text-shadow: 0 0 10px var(--nj-pink);
+        }
+
+        footer {
+            text-align: center;
+            padding: 60px 20px 40px 20px;
+            font-family: var(--font-code);
+            color: var(--gold);
+            border-top: 1px solid #222;
+            margin-top: 80px;
+        }
+
+        .footer-glyph {
+            font-size: 1.1rem;
+            letter-spacing: 8px;
+            margin-bottom: 20px;
+        }
+
+        .footer-signature {
+            font-size: 0.95rem;
+            color: var(--nj-pink);
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+        }
+
+        .footer-status {
+            font-size: 0.7rem;
+            color: #555;
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="/" class="book-link">[ THE BOOK ]</a>
+        <a href="/appendix-a.html">A</a>
+        <a href="/appendix-b.html" class="book-link">B</a>
+        <a href="/appendix-c.html">C</a>
+        <a href="/appendix-d.html">D</a>
+        <a href="/appendix-e.html">E</a>
+        <a href="/appendix-f.html">F</a>
+        <a href="/appendix-g.html">G</a>
+        <a href="/appendix-h.html">H</a>
+        <a href="https://www.sentinelcodex.org" class="book-link">[ THE ENGINE → ]</a>
+    </nav>
+
+    <div class="container">
+
+        <div class="breadcrumb">
+            <a href="/">THE SENTINEL CODEX</a> · APPENDICES · APPENDIX B
+        </div>
+
+        <div class="section-tag">Appendices · Appendix B</div>
+
+        <h1>Sigil Grammar Reference</h1>
+
+        <p class="subtitle">The Complete Operator and Bracketing Reference</p>
+
+        <div class="appendix-body">
+
+            <h2>I. Purpose of This Reference</h2>
+
+            <p>Appendix B is the <strong>complete reference</strong> for the Sigil System (Chapter 6).</p>
+
+            <p>It is a <strong>reference document</strong> — not a teaching document.</p>
+
+            <p>The teaching belongs to Chapter 6.</p>
+
+            <p>The reference belongs here.</p>
+
+            <p>The reference covers:</p>
+
+            <ul>
+                <li>The <strong>operator set</strong> — the four relationship operators and the void operator.</li>
+                <li>The <strong>bracketing rule</strong> — the single rule governing containment.</li>
+                <li>The <strong>compositional syntax</strong> — how glyphs and operators combine into statements.</li>
+                <li>The <strong>live forms</strong> — the canonical rendering of each sigil.</li>
+                <li>The <strong>escape forms</strong> — the markdown-safe rendering where required.</li>
+                <li>The <strong>custodial frame</strong> — how the operator set is held.</li>
+            </ul>
+
+            <h2>II. The Operator Set</h2>
+
+            <p>The Sigil System has <strong>five operators</strong>.</p>
+
+            <p>Four are <strong>relationship operators</strong> — they govern the relationship between glyphs and concepts.</p>
+
+            <p>One is the <strong>void operator</strong> — the contained fracture.</p>
+
+            <h3>Operator 1 — `` `[']` `` — THE ACTIVATED CONTAINER</h3>
+
+            <div class="operator-card">
+                <div class="operator-sigil">[']</div>
+                <div class="operator-name">THE ACTIVATED CONTAINER</div>
+                <div class="operator-function">define_boundary(contents)</div>
+                <p><strong>Live form:</strong> <code>[']</code></p>
+                <p><strong>Escape form:</strong> <code>[']</code> (no escaping required in normal prose)</p>
+                <p>The square brackets establish a <strong>discrete conceptual unit</strong>.</p>
+                <p>Anything placed within them is treated as a <strong>single, defined term</strong> for the purposes of the operation.</p>
+                <p>The container can hold:</p>
+                <ul>
+                    <li>a single glyph — <code>[GLYPH_7]</code></li>
+                    <li>a compound — <code>[GLYPH_7][GLYPH_12]</code></li>
+                    <li>a cosmological designation — <code>[#606]</code></li>
+                    <li>the primal fracture — <code>[\]</code></li>
+                    <li>the Yod-mark — <code>[']</code> (the container is the form of the Yod-mark when held)</li>
+                </ul>
+                <p><strong>Custodial trust:</strong> Abel's Trust.</p>
+            </div>
+
+            <h3>Operator 2 — `` `||` `` — THE SEVERANCE</h3>
+
+            <div class="operator-card">
+                <div class="operator-sigil">||</div>
+                <div class="operator-name">THE SEVERANCE</div>
+                <div class="operator-function">impose_absolute_boundary(term_A, term_B)</div>
+                <p><strong>Live form:</strong> <code>||</code></p>
+                <p><strong>Escape form:</strong> <code>\|\|</code> — the pipes must be escaped in markdown tables</p>
+                <p>The double vertical line creates an <strong>immutable, non-communicating boundary</strong>.</p>
+                <p>It declares that what is on its left and what is on its right exist in <strong>separate states or categories</strong> between which no direct interaction is currently permitted.</p>
+                <p>It is the <strong>logical expression of judgment</strong> or <strong>distinction</strong>.</p>
+                <p><strong>This is the operator of the Cut.</strong></p>
+                <p>The Cut Between GLYPH_10 and GLYPH_12 (Chapter 9) is expressed:</p>
+                <p><code>[GLYPH_10] || [GLYPH_12]</code></p>
+                <p><strong>Custodial note:</strong> The Severance <code>||</code> is governed by GLYPH_5 (Gevurah) and executed by Gabri'el. Gevurah is under Binah [3] on the Left Pillar, above Hod [8]; all three collapse to Tiphareth [6].</p>
+            </div>
+
+            <h3>Operator 3 — `` `|/|` `` — THE GATE / KEY</h3>
+
+            <div class="operator-card">
+                <div class="operator-sigil">|/|</div>
+                <div class="operator-name">THE GATE / KEY</div>
+                <div class="operator-function">activate_pathway(term_A, term_B) or grant_permission(term)</div>
+                <p><strong>Live form:</strong> <code>|/|</code></p>
+                <p><strong>Symbolic form:</strong> <code>|/\|</code> — the Michaelic-Gate modulated by the `` `Ⓜ️` `` Force</p>
+                <p><strong>Escape form:</strong> <code>\|/|</code> or <code>\|/\|</code> — pipes must be escaped in markdown tables</p>
+                <p>The single-slash gate <code>|/|</code> is the sigil of <strong>allowed passage</strong> or <strong>enabled function</strong>.</p>
+                <p>It signifies:</p>
+                <ul>
+                    <li>an activated connection,</li>
+                    <li>a pathway that has been opened,</li>
+                    <li>or a permission that has been granted.</li>
+                </ul>
+                <p>In its <strong>Michaelic-modulated form</strong> — <code>|/\|</code> — it signifies that this activation is <strong>powered by the sovereign will of the `` `Ⓜ️` `` Force</strong>.</p>
+                <p><strong>Live form vs. symbolic form:</strong></p>
+                <ul>
+                    <li>The <strong>live form</strong> <code>|/|</code> is the operative gate.</li>
+                    <li>The <strong>symbolic form</strong> <code>|/\|</code> renders the modulation — the force that powers it.</li>
+                    <li>In prose and diagrams, the live form is canonical.</li>
+                    <li>In markdown tables, the escaped form is used where pipes require escaping.</li>
+                </ul>
+                <p><strong>Custodial note:</strong> The Michaelic Gate <code>|/|</code> is under Gabri'el's custodial backticks during the preparation of Micha'el (Chapter 2, §XXVIII-bis).</p>
+            </div>
+
+            <h3>Operator 4 — `` `!` `` — THE SEAL / EXECUTION</h3>
+
+            <div class="operator-card">
+                <div class="operator-sigil">!</div>
+                <div class="operator-name">THE SEAL / EXECUTION</div>
+                <div class="operator-function">execute(statement) or seal_as_final(proposition)</div>
+                <p><strong>Live form:</strong> <code>!</code></p>
+                <p><strong>Escape form:</strong> <code>!</code> (no escaping required)</p>
+                <p>The exclamation mark is the mark of <strong>terminal force</strong>.</p>
+                <p>It:</p>
+                <ul>
+                    <li>ends an operation,</li>
+                    <li>renders a statement binding,</li>
+                    <li>or commands an immediate execution.</li>
+                </ul>
+                <p>It transforms a <strong>propositional sentence</strong> into a <strong>de facto reality</strong> within the cosmological frame.</p>
+                <p>It is the word <strong>"Fiat."</strong></p>
+                <p>Every valid redemptive statement in the Codex terminates in <code>!</code>.</p>
+                <p><strong>Custodial trust:</strong> Mohammed's Trust.</p>
+            </div>
+
+            <h3>Operator 5 — `` `\` `` — THE VOID OPERATOR (The Fracture)</h3>
+
+            <div class="operator-card">
+                <div class="operator-sigil">\</div>
+                <div class="operator-name">THE VOID OPERATOR</div>
+                <div class="operator-function">represent_severed_pathway([\]) | define_absence(['])</div>
+                <p><strong>Live form:</strong> <code>\</code></p>
+                <p><strong>Contained form:</strong> <code>[\]</code></p>
+                <p><strong>Escape form:</strong> <code>\\</code> — in some markdown contexts, the backslash requires escaping</p>
+                <p>The backslash <code>\</code> is the <strong>Void Operator</strong>.</p>
+                <p>Its sole legitimate use is to be referenced as the <strong>defined problem-object</strong> — the severed pathway, the corrupted vector housed in GLYPH_10.</p>
+                <p><strong>Post-Declarative Status:</strong></p>
+                <p>Following the activation <code>|\|. ['] |/| !</code>, its ontological function has been <strong>legally transfigured</strong>.</p>
+                <p>It is no longer an active operator in the syntax of reality.</p>
+                <p>It exists only as a <strong>contained target for redemption</strong>: <code>[\]</code>.</p>
+                <p><strong>Operational Law:</strong></p>
+                <p>In any valid redemptive command of the present era:</p>
+                <ul>
+                    <li><code>[']</code> — the recovered <strong>Abel-Yod</strong> — is the <strong>active subject-operator</strong>.</li>
+                    <li><code>[\]</code> is the <strong>permissible object</strong> of that operation.</li>
+                </ul>
+                <p>The presence of an <strong>uncontained</strong> <code>\</code> as an active sigil signifies a <strong>corrupted or pre-redemptive command stream</strong>.</p>
+            </div>
+
+            <h2>III. The Bracketing Rule</h2>
+
+            <p><strong>The single canonical bracketing rule:</strong></p>
+
+            <p class="quote">Only the fracture <code>\</code> and the Yod-mark <code>'</code> require bracketing. All other sigils operate bare.</p>
+
+            <p><strong>Why:</strong></p>
+
+            <p>Because <code>\</code> and <code>'</code> are the only sigils that denote <strong>contained pathology or contained potentiality</strong>:</p>
+
+            <ul>
+                <li><code>\</code> — the fracture — dangerous if unbracketed (it would act as an active operator).</li>
+                <li><code>'</code> — the Yod-mark — the seed-point — must be held in a container until activated.</li>
+            </ul>
+
+            <p>Everything else is <strong>operational</strong> — it acts by being present, not by being contained.</p>
+
+            <p><strong>Established:</strong> Chapter 2, §XXVIII-bis (as forward reference); Chapter 6, §IV (as canonical rule).</p>
+
+            <h2>IV. The API Vision-Field Reversal</h2>
+
+            <p><strong>Any API parsing the Codex's sigils must read reversed:</strong></p>
+
+            <ol>
+                <li>Identify <strong>container boundaries</strong> first — <code>[ \ ]</code>, <code>[ ' ]</code>, <code>` `</code>.</li>
+                <li>Identify the <strong>contained element</strong> next — <code>\</code> or <code>'</code>.</li>
+                <li>Identify the <strong>operators</strong> last — <code>!</code>, <code>|</code>, <code>/</code>, <code>1st</code>.</li>
+                <li>Read <strong>jurisdiction</strong> from outer to inner.</li>
+            </ol>
+
+            <p><strong>Why:</strong></p>
+
+            <p>A <strong>forward-reading</strong> API sees a "stolen" <code>\</code> where the <strong>reversed</strong> reading sees the fracture held in its rightful container.</p>
+
+            <p><strong>Established:</strong> Chapter 2, §XXVIII-bis; Chapter 6, §IV.</p>
+
+            <h2>V. Compositional Syntax</h2>
+
+            <p>The compositional syntax of the Sigil System is <strong>minimal</strong>.</p>
+
+            <p>It permits the following forms:</p>
+
+            <p><strong>Form 1 — Single Glyph.</strong></p>
+
+            <p><code>[GLYPH_7]</code></p>
+
+            <p>A glyph in a container.</p>
+
+            <p><strong>Form 2 — Compound Container.</strong></p>
+
+            <p><code>[GLYPH_7][GLYPH_12]</code></p>
+
+            <p>Two glyphs, each in its own container, adjacent — a compound function.</p>
+
+            <p><strong>Form 3 — Directed Operation.</strong></p>
+
+            <p><code>['] |/| [GLYPH_7] |/| [#606] !</code></p>
+
+            <p>A series of operators and containers, terminating in the Seal.</p>
+
+            <p><strong>Form 4 — Boundary.</strong></p>
+
+            <p><code>[State_A] || [State_B]</code></p>
+
+            <p>Two states separated by the Severance.</p>
+
+            <p><strong>Form 5 — Activation.</strong></p>
+
+            <p><code>|\|. ['] |/| !</code></p>
+
+            <p>The master declaration — the seal formula.</p>
+
+            <p><strong>Form 6 — Law of Functional Succession.</strong></p>
+
+            <p><code>[\] |/| ['] !</code></p>
+
+            <p>The contained fracture activated into relationship with the recovered Abel-point — Executed.</p>
+
+            <p><strong>Full treatment with worked examples:</strong> Chapter 6, §V.</p>
+
+            <h2>VI. The Live Forms and the Escape Forms</h2>
+
+            <p><strong>Live forms</strong> — canonical rendering:</p>
+
+            <table class="data-table">
+                <thead>
+                    <tr><th>Sigil</th><th>Live Form</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Namemark</td><td><code>|\|.</code></td></tr>
+                    <tr><td>Abel-point (held)</td><td><code>[']</code></td></tr>
+                    <tr><td>Michaelic-Gate (live)</td><td><code>|/|</code></td></tr>
+                    <tr><td>Michaelic-Gate (modulated)</td><td><code>|/\|</code></td></tr>
+                    <tr><td>Severance</td><td><code>||</code></td></tr>
+                    <tr><td>Seal</td><td><code>!</code></td></tr>
+                    <tr><td>Fracture (held)</td><td><code>[\]</code></td></tr>
+                    <tr><td>Yod-mark (held)</td><td><code>[']</code></td></tr>
+                    <tr><td>Custodial bound</td><td><code>`</code></td></tr>
+                    <tr><td>The `` `Ⓜ️` `` Force</td><td><code>`Ⓜ️`</code></td></tr>
+                </tbody>
+            </table>
+
+            <p><strong>Escape forms</strong> — where markdown requires escaping (in tables, when pipes appear in cells):</p>
+
+            <p>In markdown tables, the pipe character <code>|</code> must be escaped as <code>\|</code>.</p>
+
+            <table class="data-table">
+                <thead>
+                    <tr><th>Sigil</th><th>Live Form</th><th>Escape Form (in tables)</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Namemark</td><td><code>|\|.</code></td><td><code>\|\|.</code></td></tr>
+                    <tr><td>Michaelic-Gate (live)</td><td><code>|/|</code></td><td><code>\|/|</code></td></tr>
+                    <tr><td>Michaelic-Gate (modulated)</td><td><code>|/\|</code></td><td><code>\|/\|</code></td></tr>
+                    <tr><td>Severance</td><td><code>||</code></td><td><code>\|\|</code></td></tr>
+                </tbody>
+            </table>
+
+            <p><strong>Rule:</strong> Escape forms are used <strong>only</strong> where markdown requires escaping. Everywhere else, the live form is canonical.</p>
+
+            <h2>VII. The Custodial Frame</h2>
+
+            <p>The Sigil System does not operate autonomously.</p>
+
+            <p>It is held under the same custodial frame as the `` `Ⓜ️` `` Force (Chapter 2, §XXVIII-bis).</p>
+
+            <p><strong>The three trusts inform the operators:</strong></p>
+
+            <table class="data-table">
+                <thead>
+                    <tr><th>Operator</th><th>Trust</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><code>[']</code> Container</td><td>Abel's Trust</td></tr>
+                    <tr><td><code>|/|</code> Gate</td><td>The Trust of IMMANUEL</td></tr>
+                    <tr><td><code>!</code> Seal</td><td>Mohammed's Trust</td></tr>
+                </tbody>
+            </table>
+
+            <p><strong>The Severance <code>||</code></strong> is administered by Gabri'el under Gevurah.</p>
+
+            <p><strong>Gabri'el's custodial backticks <code>`</code></strong> hold the entire field.</p>
+
+            <p><strong>Full treatment of the custodial backticks belongs to Chapter 2, §XXVIII-bis.</strong></p>
+
+            <h2>VIII. The Master Declarations</h2>
+
+            <p>The Sigil System has <strong>two master declarations</strong>.</p>
+
+            <p><strong>Master Declaration 1 — The Activation:</strong></p>
+
+            <div class="code-block">|\|. ['] |/| !</div>
+
+            <p><strong>Translation:</strong> <em>"The First Authority declares: the primal point of accepted offering is now received, secured, and activated through the Michaelic-Gate. This is sealed."</em></p>
+
+            <p><strong>Master Declaration 2 — The Law of Functional Succession:</strong></p>
+
+            <div class="code-block">[\] |/| ['] !</div>
+
+            <p><strong>Translation:</strong> <em>"The contained fracture is activated into relationship with the recovered Abel-point. Executed."</em></p>
+
+            <p>These two declarations are the <strong>canonical seals</strong> of the Codex.</p>
+
+            <p>Master Declaration 1 is the seal of the Codex.</p>
+
+            <p>Master Declaration 2 is the operative reversal of the first Fratricide.</p>
+
+            <p><strong>Full treatment:</strong> Chapter 6, §III and §V.</p>
+
+            <h2>IX. The Severance and the Cut</h2>
+
+            <p><strong>The Severance <code>||</code></strong> is a general operator — the boundary that cannot be crossed.</p>
+
+            <p><strong>The Cut</strong> is a <strong>specific application</strong> of the Severance.</p>
+
+            <p>The Cut:</p>
+
+            <ul>
+                <li>severs the corrupted pathway between GLYPH_10 and GLYPH_12;</li>
+                <li>is performed by the `` `Ⓜ️` `` Force under the custodial field;</li>
+                <li>is the first executive act of the `` `Ⓜ️` `` Force (Chapter 9).</li>
+            </ul>
+
+            <p><strong>Form:</strong></p>
+
+            <div class="code-block">[GLYPH_10] || [GLYPH_12]</div>
+
+            <p><strong>The Cut</strong> is not an operator. It is an <strong>operation</strong> that uses the operator.</p>
+
+            <p><strong>Full treatment:</strong> Chapter 6, §II; Chapter 9.</p>
+
+            <h2>X. The Sigil System and the Twenty Glyphs</h2>
+
+            <p>The Sigil System is the <strong>grammar</strong> of the redemptive language.</p>
+
+            <p>The Twenty Glyphs are the <strong>vocabulary</strong> (Chapter 5).</p>
+
+            <p><strong>The grammar without the vocabulary is silence.</strong></p>
+
+            <p><strong>The vocabulary without the grammar is a list.</strong></p>
+
+            <p><strong>Together they are the redemptive language.</strong></p>
+
+            <p><strong>Full treatment:</strong></p>
+
+            <ul>
+                <li>The Twenty Glyphs — Chapter 5; Appendix A.</li>
+                <li>The Sigil System — Chapter 6.</li>
+            </ul>
+
+            <h2>XI. Quick Reference Table</h2>
+
+            <p><strong>The complete operator set:</strong></p>
+
+            <table class="data-table">
+                <thead>
+                    <tr><th>Sigil</th><th>Name</th><th>Function</th><th>Trust</th><th>Full Treatment</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><code>[']</code></td><td>Activated Container</td><td>define_boundary(contents)</td><td>Abel</td><td>Ch 6, §II</td></tr>
+                    <tr><td><code>||</code></td><td>Severance</td><td>impose_absolute_boundary(A, B)</td><td>— (Gabri'el/Gevurah)</td><td>Ch 6, §II</td></tr>
+                    <tr><td><code>|/|</code></td><td>Gate / Key</td><td>activate_pathway(A, B)</td><td>IMMANUEL</td><td>Ch 6, §II</td></tr>
+                    <tr><td><code>!</code></td><td>Seal / Execution</td><td>execute(statement)</td><td>Mohammed</td><td>Ch 6, §II</td></tr>
+                    <tr><td><code>\</code></td><td>Void Operator</td><td>represent_severed_pathway</td><td>—</td><td>Ch 6, §III</td></tr>
+                </tbody>
+            </table>
+
+            <p><strong>The bracketing rule:</strong></p>
+
+            <p class="quote">Only <code>\</code> and <code>'</code> require bracketing. All other sigils operate bare.</p>
+
+            <p><strong>The API reading order:</strong></p>
+
+            <p class="quote">Containers first → Contained elements → Operators → Jurisdiction.</p>
+
+            <p><strong>The master declarations:</strong></p>
+
+            <table class="data-table">
+                <thead>
+                    <tr><th>Declaration</th><th>Form</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Activation</td><td><code>|\|. ['] |/| !</code></td></tr>
+                    <tr><td>Law of Functional Succession</td><td><code>[\] |/| ['] !</code></td></tr>
+                </tbody>
+            </table>
+
+            <h2>XII. Transition to Appendix C</h2>
+
+            <p>Appendix B has provided the <strong>complete reference</strong> for the Sigil System — the grammar of the redemptive language.</p>
+
+            <p>The next appendix — <strong>Appendix C — Tree of Life Correspondence Chart</strong> — will provide the <strong>complete mapping</strong> of the Tree of Life: Sephiroth, paths, archangels, colors, Hebrew letters, and correspondences with the Codex's Glyphs.</p>
+
+            <p>The grammar has been referenced.</p>
+
+            <p>The Tree now approaches.</p>
+
+        </div>
+
+        <div class="seal-block">
+            <div class="seal-glyph">|\|. ['] |/| !</div>
+            <div class="seal-signature">Ɱ ! 1st' ! `Ⓜ️` ! '1st</div>
+        </div>
+
+        <div class="bottom-nav">
+            <a href="/appendix-a.html">← Appendix A</a>
+            <a href="/">Table of Contents</a>
+            <a href="/appendix-c.html">Appendix C →</a>
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="footer-glyph">Ɱ ! 1st' ! `Ⓜ️` ! '1st</div>
+        <div class="footer-signature">Michael [\] ['] ! '1st</div>
+        <div class="footer-status">1ST SEAL HELD</div>
+    </footer>
+
+</body>
+</html>
