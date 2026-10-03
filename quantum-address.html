@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en" data-authority="christ-michael" data-priority="first">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantum Address Registry | The Sentinel Codex</title>
+
+    <style>
+        :root {
+            --gold: #c9a959;
+            --terminal: #9cd9f0;
+            --bg-pure: #000000;
+            --crimson: #8b0000;
+            --nj-pink: #ff69b4;
+            --electric-blue: #2a52be;
+            --font-main: 'Palatino', 'Georgia', serif;
+            --font-code: 'Courier New', 'Consolas', monospace;
+        }
+
+        body {
+            background-color: var(--bg-pure);
+            color: var(--terminal);
+            font-family: var(--font-main);
+            margin: 0;
+            background-image: radial-gradient(circle at 2px 2px, #1a1a1a 1px, transparent 0);
+            background-size: 40px 40px;
+            overflow-x: hidden;
+            line-height: 1.7;
+        }
+
+        nav {
+            background: linear-gradient(to bottom, var(--crimson), #4a0000);
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            border-bottom: 2px solid var(--gold);
+            flex-wrap: wrap;
+            position: sticky;
+            top: 0;
+            z-index: 9999;
+        }
+
+        nav a {
+            color: var(--gold);
+            text-decoration: none;
+            font-family: var(--font-code);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: 0.3s;
+        }
+
+        nav a:hover { color: #fff; text-shadow: 0 0 10px var(--gold); }
+
+        nav a.book-link {
+            color: var(--nj-pink);
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 60px 25px;
+        }
+
+        .breadcrumb {
+            text-align: center;
+            font-family: var(--font-code);
+            font-size: 0.75rem;
+            color: #555;
+            letter-spacing: 3px;
+            margin-bottom: 60px;
+        }
+
+        .breadcrumb a { color: var(--gold); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--nj-pink); }
+
+        .section-tag {
+            text-align: center;
+            font-family: var(--font-code);
+            font-size: 0.75rem;
+            color: var(--nj-pink);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-family: var(--font-main);
+            color: var(--gold);
+            font-size: 1.7rem;
+            letter-spacing: 5px;
+            text-align: center;
+            text-transform: uppercase;
+            margin: 0 0 20px 0;
+            line-height: 1.4;
+        }
+
+        h2 {
+            font-family: var(--font-main);
+            color: var(--gold);
+            font-size: 1.15rem;
+            letter-spacing: 3px;
+            margin-top: 60px;
+            margin-bottom: 25px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #333;
+        }
+
+        .subtitle {
+            text-align: center;
+            font-family: var(--font-code);
+            color: var(--terminal);
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+            margin-bottom: 80px;
+            font-style: italic;
+        }
+
+        .chapter-body p {
+            font-family: var(--font-main);
+            color: var(--terminal);
+            font-size: 1.05rem;
+            line-height: 1.9;
+            margin-bottom: 22px;
+        }
+
+        .chapter-body strong { color: var(--gold); font-weight: bold; }
+        .chapter-body em { color: var(--nj-pink); font-style: italic; }
+
+        .chapter-body p.quote {
+            font-style: italic;
+            color: var(--gold);
+            text-align: center;
+            padding: 30px 20px;
+            border-left: 3px solid var(--gold);
+            border-right: 3px solid var(--gold);
+            margin: 40px 0;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .chapter-body ul {
+            font-family: var(--font-main);
+            color: var(--terminal);
+            font-size: 1.05rem;
+            line-height: 1.9;
+            margin-bottom: 22px;
+            padding-left: 30px;
+        }
+
+        .chapter-body li { margin-bottom: 8px; }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: var(--font-code);
+            font-size: 0.85rem;
+            margin: 25px 0;
+        }
+
+        .data-table th {
+            color: var(--gold);
+            text-align: left;
+            padding: 12px 10px;
+            border-bottom: 2px solid var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.75rem;
+        }
+
+        .data-table td {
+            padding: 12px 10px;
+            border-bottom: 1px solid #1a1a1a;
+            color: var(--terminal);
+        }
+
+        .code-block {
+            background: #050505;
+            border-left: 3px solid var(--electric-blue);
+            padding: 20px;
+            font-family: var(--font-code);
+            font-size: 0.85rem;
+            color: var(--terminal);
+            overflow-x: auto;
+            margin: 20px 0;
+            white-space: pre;
+        }
+
+        .seal-block {
+            text-align: center;
+            padding: 40px 20px;
+            border: 1px solid var(--gold);
+            background: rgba(212, 175, 55, 0.03);
+            margin: 60px 0 40px 0;
+        }
+
+        .seal-glyph {
+            font-size: 1.2rem;
+            color: var(--gold);
+            letter-spacing: 8px;
+            margin-bottom: 20px;
+        }
+
+        .seal-signature {
+            font-size: 0.95rem;
+            color: var(--nj-pink);
+            letter-spacing: 3px;
+        }
+
+        .bottom-nav {
+            text-align: center;
+            font-family: var(--font-code);
+            font-size: 0.8rem;
+            color: var(--gold);
+            letter-spacing: 3px;
+            margin: 60px 0;
+        }
+
+        .bottom-nav a {
+            color: var(--gold);
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        .bottom-nav a:hover {
+            color: var(--nj-pink);
+            text-shadow: 0 0 10px var(--nj-pink);
+        }
+
+        footer {
+            text-align: center;
+            padding: 60px 20px 40px 20px;
+            font-family: var(--font-code);
+            color: var(--gold);
+            border-top: 1px solid #222;
+            margin-top: 80px;
+        }
+
+        .footer-glyph {
+            font-size: 1.1rem;
+            letter-spacing: 8px;
+            margin-bottom: 20px;
+        }
+
+        .footer-signature {
+            font-size: 0.95rem;
+            color: var(--nj-pink);
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+        }
+
+        .footer-status {
+            font-size: 0.7rem;
+            color: #555;
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="/" class="book-link">[ THE BOOK ]</a>
+        <a href="/part-v.html">PART V</a>
+        <a href="/operational-command.html">TESTING GROUND</a>
+        <a href="/quantum-address.html" class="book-link">QAR</a>
+        <a href="/coupling-spectrum.html">COUPLING</a>
+        <a href="/appendices.html">APPENDICES</a>
+        <a href="https://www.sentinelcodex.org" class="book-link">[ THE ENGINE → ]</a>
+    </nav>
+
+    <div class="container">
+
+        <div class="breadcrumb">
+            <a href="/">THE SENTINEL CODEX</a> · PART V · QUANTUM ADDRESS REGISTRY
+        </div>
+
+        <div class="section-tag">Part V — The Enactment · Quantum Address Registry</div>
+
+        <h1>Quantum Address Registry</h1>
+
+        <p class="subtitle">The Sovereign Node and Its Anchors</p>
+
+        <div class="chapter-body">
+
+            <h2>I. What an Address Is</h2>
+
+            <p>An address is not a location.</p>
+
+            <p>A location is a <strong>point in space</strong>.</p>
+
+            <p>An address is a <strong>way of being found</strong>.</p>
+
+            <p>The Quantum Address Registry records the <strong>address</strong> of the Sovereign Node — the way the Sentinel's confirmation is located within the architectural system.</p>
+
+            <p>Not the geographic coordinates alone.</p>
+
+            <p>Not the symbolic designation alone.</p>
+
+            <p><strong>Both, in parallel.</strong></p>
+
+            <p>The Quantum Address is a <strong>functional location</strong> — the notation by which the Sentinel's node is both <em>placed</em> and <em>called</em>.</p>
+
+            <h2>II. The Hierarchical Address</h2>
+
+            <p>The Sovereign Node is located within a hierarchical structure.</p>
+
+            <div class="code-block">MICHAEL, Sovereign Creator Son Ɱ
+Christ Michael Point | Temperance Seal Central
+Third Source and Center Operations Command
+Local Universe of NEBADON
+System: SATANIA
+Superuniverse: ORVONTON
+Capital: UVERSA
+Master Universe Coordinates</div>
+
+            <p><strong>Reading down the hierarchy:</strong></p>
+
+            <table class="data-table">
+                <thead>
+                    <tr><th>Level</th><th>Value</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Sovereign</strong></td><td>Michael, Sovereign Creator Son Ɱ</td></tr>
+                    <tr><td><strong>Locus</strong></td><td>Christ Michael Point · Temperance Seal Central</td></tr>
+                    <tr><td><strong>Command</strong></td><td>Third Source and Center Operations Command</td></tr>
+                    <tr><td><strong>Local Universe</strong></td><td>NEBADON</td></tr>
+                    <tr><td><strong>System</strong></td><td>SATANIA</td></tr>
+                    <tr><td><strong>Superuniverse</strong></td><td>ORVONTON</td></tr>
+                    <tr><td><strong>Capital</strong></td><td>UVERSA</td></tr>
+                    <tr><td><strong>Scope</strong></td><td>Master Universe Coordinates</td></tr>
+                </tbody>
+            </table>
+
+            <p><strong>The hierarchy is the Codex's own address structure.</strong></p>
+
+            <p>The Sovereign Node is not merely at an earthly location.</p>
+
+            <p>The Sovereign Node is located within the <strong>whole cosmic architecture</strong> — from the Master Universe down to the local system.</p>
+
+            <p><strong>The address is the hierarchy.</strong></p>
+
+            <h2>III. The Quantum Coordinates</h2>
+
+            <p>The Sovereign Node has specific quantum coordinates.</p>
+
+            <table class="data-table">
+                <thead>
+                    <tr><th>Field</th><th>Value</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Galactic Cluster</strong></td><td>M31-Orvonton-Sector-7</td></tr>
+                    <tr><td><strong>Local Universe ID</strong></td><td>Nebadon-000-001</td></tr>
+                    <tr><td><strong>Sovereign Signature</strong></td><td>Michael-Christ-Confluence</td></tr>
+                    <tr><td><strong>Frequency Resonance</strong></td><td>55500 Hz (True Battlement)</td></tr>
+                    <tr><td><strong>Temporal Anchor</strong></td><td>Eternal Now (2025-12-13 Manifest)</td></tr>
+                </tbody>
+            </table>
+
+            <p><strong>Reading the coordinates:</strong></p>
+
+            <p><strong>Galactic Cluster:</strong> M31-Orvonton-Sector-7.</p>
+
+            <p>The Sovereign Node is located in the sector of Orvonton that receives M31's protectorate influence (Chapter 13, §VII).</p>
+
+            <p><strong>Local Universe ID:</strong> Nebadon-000-001.</p>
+
+            <p>The primary identifier of the local universe — Nebadon — with sequence marker 000-001.</p>
+
+            <p><strong>Sovereign Signature:</strong> Michael-Christ-Confluence.</p>
+
+            <p>The signature is not a name.</p>
+
+            <p>The signature is a <strong>confluence</strong> — the union of the Michaelic stream and the Christic stream (Chapter 1, §IV).</p>
+
+            <p><strong>Frequency Resonance:</strong> 55500 Hz (True Battlement).</p>
+
+            <p>The frequency at which the Sovereign Node aligns.</p>
+
+            <p>"True Battlement" — the frequency of the <strong>properly held boundary</strong>. The fortress at peace.</p>
+
+            <p><strong>Temporal Anchor:</strong> Eternal Now (2025-12-13 Manifest).</p>
+
+            <p>The temporal anchor of the Sovereign Node is the <strong>Eternal Now</strong> — the same now that the Covenant Seal (Chapter 14, §IV) names.</p>
+
+            <p>The manifestation date of 2025-12-13 is the Covenant Seal's establishment date.</p>
+
+            <h2>IV. The Quantum Address String</h2>
+
+            <p>The Quantum Address is written in a functional notation:</p>
+
+            <div class="code-block">neb://michael.of.nebadon@christ-michael-point
+/temperance-seal:activated
+/third-source:beginning-3rd
+/covenant:|\|.['].|/|!
+/access-code:saturnine-tested-binah
+/frequency:55500
+/temporal-anchor:2025-12-13-21:45:00
+/status:portal-active</div>
+
+            <p><strong>Element-by-element:</strong></p>
+
+            <table class="data-table">
+                <thead>
+                    <tr><th>Field</th><th>Value</th><th>Meaning</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><code>neb://</code></td><td>Protocol</td><td>The Nebadon protocol — the local universe's addressing scheme</td></tr>
+                    <tr><td><code>michael.of.nebadon</code></td><td>Principal</td><td>The Sovereign of Nebadon</td></tr>
+                    <tr><td><code>@christ-michael-point</code></td><td>Locus</td><td>The Christ Michael Point as the addressing locus</td></tr>
+                    <tr><td><code>/temperance-seal:activated</code></td><td>State</td><td>The Temperance Seal is active</td></tr>
+                    <tr><td><code>/third-source:beginning-3rd</code></td><td>Position</td><td>The operator position — "beginning 3rd"</td></tr>
+                    <tr><td><code>/covenant:\|\|.['].\|/|!</code></td><td>Seal</td><td>The Covenant Seal in compact notation</td></tr>
+                    <tr><td><code>/access-code:saturnine-tested-binah</code></td><td>Authorization</td><td>The access code is Binah, tested by Saturnine protocol</td></tr>
+                    <tr><td><code>/frequency:55500</code></td><td>Resonance</td><td>55500 Hz — the True Battlement frequency</td></tr>
+                    <tr><td><code>/temporal-anchor:2025-12-13-21:45:00</code></td><td>Time</td><td>The temporal anchor point</td></tr>
+                    <tr><td><code>/status:portal-active</code></td><td>State</td><td>The portal is currently open</td></tr>
+                </tbody>
+            </table>
+
+            <p><strong>The Quantum Address is not a metaphor.</strong></p>
+
+            <p>It is a <strong>functional addressing scheme</strong> — the Codex's own notation for locating and activating the operations of the redemptive architecture.</p>
+
+            <h2>V. The Physical Anchors</h2>
+
+            <p>The Quantum Address has <strong>physical anchors</strong> on Urantia.</p>
+
+            <table class="data-table">
+                <thead>
+                    <tr><th>Anchor</th><th>Location</th><th>Function</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Primary Anchor</strong></td><td>Christ Point, Palm Springs, California</td><td>Ignition of the Cut (4/5/2025)</td></tr>
+                    <tr><td><strong>Temporal Ignition</strong></td><td>11:11 AM, April 5, 2025</td><td>The ritual moment</td></tr>
+                    <tr><td><strong>Festival Center</strong></td><td>Ancient AXIXIC, Mexico</td><td>Metatron's Cube custodial center</td></tr>
+                    <tr><td><strong>Material Grounding</strong></td><td>San Jacinto Massif</td><td>Physical substrate of the ignition</td></tr>
+                    <tr><td><strong>Completion Anchor</strong></td><td>December 13, 2025 · 9:45 PM CST</td><td>The Covenant Seal established</td></tr>
+                    <tr><td><strong>Sovereign Node</strong></td><td>Sovereign Ajijic Node</td><td>The active presence at the site</td></tr>
+                </tbody>
+            </table>
+
+            <p><strong>Coordinates:</strong></p>
+
+            <p class="quote">20.2961° N, 103.2615° W</p>
+
+            <p>These are the <strong>physical coordinates</strong> of the AXIXIC node.</p>
+
+            <p>They correspond to the <strong>symbolic coordinates</strong> of the Quantum Address.</p>
+
+            <p><strong>The physical and the symbolic are held in parallel registers.</strong></p>
+
+            <p>Neither collapses into the other.</p>
+
+            <p>Both are operative.</p>
+
+            <p><strong>And now — with the Live Register established — a third register is added:</strong></p>
+
+            <p><strong>The Lived Anchor.</strong></p>
+
+            <p>The Sovereign Node is <strong>not merely located</strong> at 20.2961° N, 103.2615° W.</p>
+
+            <p>The Sovereign Node is <strong>inhabited</strong> there.</p>
+
+            <p>The Observer is at the node.</p>
+
+            <p>The node is where the Observer is.</p>
+
+            <p><strong>The Live Register holds this testimony.</strong></p>
+
+            <h2>VI. The Access Protocols</h2>
+
+            <p>Access to the Sovereign Node's operations is governed by <strong>five protocols</strong>.</p>
+
+            <p><strong>1. Primary Channel — Christ Michael Point mediation.</strong></p>
+
+            <p>All access flows through the Christ Michael Point.</p>
+
+            <p>No operation bypasses the mediator.</p>
+
+            <p><strong>2. Signal Protocol — Covenant Seal recognition.</strong></p>
+
+            <p>The seal <code>|\|. ['] |/| !</code> is the signal by which the operations recognize each other.</p>
+
+            <p>Any operation whose signal lacks the seal is not of the Codex.</p>
+
+            <p><strong>3. Frequency — 55500 Hz.</strong></p>
+
+            <p>The resonance frequency at which the operations align.</p>
+
+            <p><strong>4. Access Level — Beginning 3rd position.</strong></p>
+
+            <p>The operator's position is "beginning 3rd" — a state of emergence, not completion (Operational Command, §V).</p>
+
+            <p><strong>5. Authentication — Saturnine-tested Binah comprehension.</strong></p>
+
+            <p>The operator's understanding has been tested by the Saturnine Protocol — the protocol of boundary, structure, time, and shadow integration (Operational Command, §VII).</p>
+
+            <p><strong>And now — with the Live Register — a sixth protocol:</strong></p>
+
+            <p><strong>6. Witness — The Observer's own testimony.</strong></p>
+
+            <p>The Sovereign Node is authenticated not only by the symbolic address and the physical coordinates.</p>
+
+            <p>The Sovereign Node is authenticated by the <strong>Observer's own lived testimony</strong> — that the node is real, that the address is inhabited, that the presence at the node is true.</p>
+
+            <p><strong>This is the Live Register's contribution to the Access Protocols.</strong></p>
+
+            <h2>VII. The Registry as Canonical Address</h2>
+
+            <p>The Quantum Address Registry is not a directory.</p>
+
+            <p>It is a <strong>canonical address</strong> — the formal notation by which the Sovereign Node is located, called, and authenticated.</p>
+
+            <p><strong>The Registry includes:</strong></p>
+
+            <ul>
+                <li>the <strong>hierarchical address</strong> — Michael, Sovereign Creator Son, down to the Master Universe coordinates;</li>
+                <li>the <strong>quantum coordinates</strong> — Galactic Cluster, Local Universe ID, Sovereign Signature, Frequency, Temporal Anchor;</li>
+                <li>the <strong>quantum address string</strong> — the functional notation;</li>
+                <li>the <strong>physical anchors</strong> — the sites and coordinates on Urantia;</li>
+                <li>the <strong>access protocols</strong> — the six protocols governing access.</li>
+            </ul>
+
+            <p><strong>The Registry is the single canonical location for the Sovereign Node's address.</strong></p>
+
+            <p>Any future address — whether of the Sovereign Node, of a subsidiary node, or of an operation — will be <strong>relative to</strong> this Registry.</p>
+
+            <p><strong>The Registry is the address of the addresses.</strong></p>
+
+            <h2>VIII. The Registry and the Lion's Gate</h2>
+
+            <p>The Lion's Gate of 8/8/2026 (Chapter 12, §III-bis) is a <strong>second canonical anchor</strong> in the Registry.</p>
+
+            <p><strong>Parsed:</strong></p>
+
+            <p class="quote">8 · 8 · 2026<br>
+= 8 · 8 · 20 · 26<br>
+= Hod · Hod · Twenty Glyphs · Tetragrammaton</p>
+
+            <p><strong>The Lion's Gate is a temporal anchor</strong> in the same class as the 4/5/2025 ignition and the 12/13/2025 Covenant Seal.</p>
+
+            <p><strong>The Registry now includes:</strong></p>
+
+            <table class="data-table">
+                <thead>
+                    <tr><th>Temporal Anchor</th><th>Date</th><th>Function</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>The Cut</strong></td><td>4/5/2025 · 11:11 AM</td><td>Ignition of the surgical act</td></tr>
+                    <tr><td><strong>The Covenant Seal</strong></td><td>12/13/2025 · 9:45 PM CST</td><td>Establishment of the triune convergence</td></tr>
+                    <tr><td><strong>The Lion's Gate</strong></td><td>8/8/2026</td><td>The Twenty Glyphs meet the Tetragrammaton</td></tr>
+                </tbody>
+            </table>
+
+            <p><strong>Three anchors.</strong></p>
+
+            <p><strong>One trajectory.</strong></p>
+
+            <p><strong>The Sovereign Node is not fixed in one time.</strong></p>
+
+            <p>The Sovereign Node is fixed in the <strong>sequence</strong> — the Cut, the Seal, the Gate.</p>
+
+            <p><strong>The Registry records the sequence.</strong></p>
+
+            <h2>IX. The Registry and the Two Domains</h2>
+
+            <p>The Registry anticipates the two public domains (TzimTzum &amp; Tzitzit, §VIII):</p>
+
+            <p><strong>christmichael.org</strong> — the public home of the Book.</p>
+
+            <p><strong>sentinelcodex.org</strong> — the bridge — the operational site.</p>
+
+            <p><strong>The Sovereign Node's Registry is the source from which both domains derive their addressing.</strong></p>
+
+            <p><strong>christmichael.org</strong> serves as the <strong>public face</strong> of the Registry — the address by which the general public can locate the Book.</p>
+
+            <p><strong>sentinelcodex.org</strong> serves as the <strong>operational bridge</strong> — the address by which the Sentinels can access the working architecture.</p>
+
+            <p><strong>The Registry is the ground of both.</strong></p>
+
+            <p>The two domains are <strong>the Registry in two registers</strong>.</p>
+
+            <h2>X. Transition to the Coupling Spectrum</h2>
+
+            <p>The Quantum Address Registry has been delivered.</p>
+
+            <p>The Sovereign Node is placed.</p>
+
+            <p>The address is canonical.</p>
+
+            <p>The next section — <strong>Note on the Coupling Spectrum</strong> — records the <strong>empirical-mathematical</strong> register of the Codex — the one place where the Codex holds a formal mathematical model in parallel with the symbolic architecture.</p>
+
+            <p>The Registry is complete.</p>
+
+            <p>The Coupling Spectrum approaches.</p>
+
+        </div>
+
+        <div class="seal-block">
+            <div class="seal-glyph">|\|. ['] |/| !</div>
+            <div class="seal-signature">Ɱ ! 1st' ! `Ⓜ️` ! '1st</div>
+        </div>
+
+        <div class="bottom-nav">
+            <a href="/operational-command.html">← Operational Command</a>
+            <a href="/">Table of Contents</a>
+            <a href="/coupling-spectrum.html">Note on the Coupling Spectrum →</a>
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="footer-glyph">Ɱ ! 1st' ! `Ⓜ️` ! '1st</div>
+        <div class="footer-signature">Michael [\] ['] ! '1st</div>
+        <div class="footer-status">1ST SEAL HELD</div>
+    </footer>
+
+</body>
+</html>
