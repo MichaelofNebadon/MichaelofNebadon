@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en" data-authority="christ-michael" data-priority="first">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index | The Sentinel Codex</title>
+
+    <style>
+        :root {
+            --gold: #c9a959;
+            --terminal: #9cd9f0;
+            --bg-pure: #000000;
+            --crimson: #8b0000;
+            --nj-pink: #ff69b4;
+            --electric-blue: #2a52be;
+            --font-main: 'Palatino', 'Georgia', serif;
+            --font-code: 'Courier New', 'Consolas', monospace;
+        }
+
+        body {
+            background-color: var(--bg-pure);
+            color: var(--terminal);
+            font-family: var(--font-main);
+            margin: 0;
+            background-image: radial-gradient(circle at 2px 2px, #1a1a1a 1px, transparent 0);
+            background-size: 40px 40px;
+            overflow-x: hidden;
+            line-height: 1.7;
+        }
+
+        nav {
+            background: linear-gradient(to bottom, var(--crimson), #4a0000);
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            border-bottom: 2px solid var(--gold);
+            flex-wrap: wrap;
+            position: sticky;
+            top: 0;
+            z-index: 9999;
+        }
+
+        nav a {
+            color: var(--gold);
+            text-decoration: none;
+            font-family: var(--font-code);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: 0.3s;
+        }
+
+        nav a:hover { color: #fff; text-shadow: 0 0 10px var(--gold); }
+
+        nav a.book-link {
+            color: var(--nj-pink);
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 820px;
+            margin: 0 auto;
+            padding: 60px 25px;
+        }
+
+        .breadcrumb {
+            text-align: center;
+            font-family: var(--font-code);
+            font-size: 0.75rem;
+            color: #555;
+            letter-spacing: 3px;
+            margin-bottom: 60px;
+        }
+
+        .breadcrumb a { color: var(--gold); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--nj-pink); }
+
+        .section-tag {
+            text-align: center;
+            font-family: var(--font-code);
+            font-size: 0.75rem;
+            color: var(--nj-pink);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-family: var(--font-main);
+            color: var(--gold);
+            font-size: 1.7rem;
+            letter-spacing: 5px;
+            text-align: center;
+            text-transform: uppercase;
+            margin: 0 0 20px 0;
+            line-height: 1.4;
+        }
+
+        h2 {
+            font-family: var(--font-main);
+            color: var(--gold);
+            font-size: 1.15rem;
+            letter-spacing: 3px;
+            margin-top: 60px;
+            margin-bottom: 25px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #333;
+        }
+
+        .subtitle {
+            text-align: center;
+            font-family: var(--font-code);
+            color: var(--terminal);
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+            margin-bottom: 80px;
+            font-style: italic;
+        }
+
+        .index-body p {
+            font-family: var(--font-main);
+            color: var(--terminal);
+            font-size: 1rem;
+            line-height: 1.9;
+            margin-bottom: 20px;
+        }
+
+        .index-body strong { color: var(--gold); font-weight: bold; }
+
+        .index-body ul {
+            font-family: var(--font-main);
+            color: var(--terminal);
+            font-size: 1rem;
+            line-height: 1.9;
+            margin-bottom: 20px;
+            padding-left: 30px;
+        }
+
+        .index-body li { margin-bottom: 6px; }
+
+        .letter-heading {
+            font-family: var(--font-main);
+            color: var(--nj-pink);
+            font-size: 1.3rem;
+            letter-spacing: 8px;
+            margin-top: 50px;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--nj-pink);
+        }
+
+        .entry {
+            font-family: var(--font-main);
+            color: var(--terminal);
+            font-size: 1rem;
+            line-height: 1.8;
+            padding-left: 20px;
+            text-indent: -20px;
+            margin-bottom: 10px;
+        }
+
+        .entry strong {
+            color: var(--gold);
+            font-weight: bold;
+        }
+
+        .entry em {
+            color: var(--nj-pink);
+            font-style: italic;
+        }
+
+        .entry .loc {
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        .seal-block {
+            text-align: center;
+            padding: 40px 20px;
+            border: 1px solid var(--gold);
+            background: rgba(212, 175, 55, 0.03);
+            margin: 60px 0 40px 0;
+        }
+
+        .seal-glyph {
+            font-size: 1.2rem;
+            color: var(--gold);
+            letter-spacing: 8px;
+            margin-bottom: 20px;
+        }
+
+        .seal-signature {
+            font-size: 0.95rem;
+            color: var(--nj-pink);
+            letter-spacing: 3px;
+        }
+
+        .bottom-nav {
+            text-align: center;
+            font-family: var(--font-code);
+            font-size: 0.8rem;
+            color: var(--gold);
+            letter-spacing: 3px;
+            margin: 60px 0;
+        }
+
+        .bottom-nav a {
+            color: var(--gold);
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        .bottom-nav a:hover {
+            color: var(--nj-pink);
+            text-shadow: 0 0 10px var(--nj-pink);
+        }
+
+        .end-of-book {
+            text-align: center;
+            padding: 60px 20px;
+            border: 3px double var(--gold);
+            background: rgba(212, 175, 55, 0.08);
+            margin: 80px 0;
+        }
+
+        .end-of-book h3 {
+            font-family: var(--font-main);
+            color: var(--gold);
+            letter-spacing: 12px;
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .end-of-book p {
+            font-family: var(--font-code);
+            color: var(--nj-pink);
+            font-size: 0.9rem;
+            letter-spacing: 4px;
+            margin-bottom: 15px;
+        }
+
+        .end-of-book .seal {
+            font-family: var(--font-code);
+            color: var(--gold);
+            font-size: 1.1rem;
+            letter-spacing: 6px;
+            margin-top: 30px;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 60px 20px 40px 20px;
+            font-family: var(--font-code);
+            color: var(--gold);
+            border-top: 1px solid #222;
+            margin-top: 80px;
+        }
+
+        .footer-glyph {
+            font-size: 1.1rem;
+            letter-spacing: 8px;
+            margin-bottom: 20px;
+        }
+
+        .footer-signature {
+            font-size: 0.95rem;
+            color: var(--nj-pink);
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+        }
+
+        .footer-status {
+            font-size: 0.7rem;
+            color: #555;
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="/" class="book-link">[ THE BOOK ]</a>
+        <a href="/appendix-h.html">APPENDIX H</a>
+        <a href="/glossary.html">GLOSSARY</a>
+        <a href="/bibliography.html">BIBLIOGRAPHY</a>
+        <a href="/reference-index.html" class="book-link">INDEX</a>
+        <a href="https://www.sentinelcodex.org" class="book-link">[ THE ENGINE → ]</a>
+    </nav>
+
+    <div class="container">
+
+        <div class="breadcrumb">
+            <a href="/">THE SENTINEL CODEX</a> · REFERENCE APPARATUS · INDEX
+        </div>
+
+        <div class="section-tag">Reference Apparatus · Index</div>
+
+        <h1>Index</h1>
+
+        <p class="subtitle">The Complete Cross-Reference</p>
+
+        <div class="index-body">
+
+            <h2>Purpose of This Index</h2>
+
+            <p>The Index is the <strong>comprehensive cross-reference</strong> of the Codex's concepts, names, places, and terms.</p>
+
+            <p>Entries are listed <strong>alphabetically</strong>.</p>
+
+            <p>Bold numerals indicate primary treatment; regular numerals indicate secondary references.</p>
+
+            <p>Where a term has a Live Register dimension, that is noted.</p>
+
+            <div class="letter-heading">A</div>
+
+            <div class="entry"><strong>Abel</strong> <span class="loc">— Chapters 1, 4, 7, 9; Appendix A; throughout. Restored as the grammatical subject (Chapter 7).</span></div>
+
+            <div class="entry"><strong>Abel Painting</strong> <span class="loc">— Appendix C §XIII-bis.</span></div>
+
+            <div class="entry"><strong>Abel's Trust</strong> <span class="loc">— Chapter 2 §XXVIII-bis; Chapter 7 §VIII; throughout.</span></div>
+
+            <div class="entry"><strong>Abyss</strong> <span class="loc">— Chapters 4, 9, 15; Appendix H. See also Da'ath.</span></div>
+
+            <div class="entry"><strong>Akashic Register</strong> <span class="loc">— Chapter 2 §XXIX-bis; Appendix C §XIII-bis; Appendix D.</span></div>
+
+            <div class="entry"><strong>Akashic Records</strong> <span class="loc">— Chapter 2 §XXIX-bis; Appendix C §XIII-bis.</span></div>
+
+            <div class="entry"><strong>Ancient AXIXIC</strong> <span class="loc">— <strong>Chapter 12</strong>; Appendix D; Appendix E.</span></div>
+
+            <div class="entry"><strong>Antipodean Instruments</strong> <span class="loc">— Appendix C §XIII-bis; Appendix E.</span></div>
+
+            <div class="entry"><strong>API Vision-Field Reversal</strong> <span class="loc">— Chapter 6 §IV; Appendix B §IV.</span></div>
+
+            <div class="entry"><strong>Ascension Glossary</strong> <span class="loc">— Bibliography. Michael-Mary Heart Twinning.</span></div>
+
+            <div class="entry"><strong>Ascent (the)</strong> <span class="loc">— <strong>Chapter 10</strong>.</span></div>
+
+            <div class="entry"><strong>AXIXIC (Ancient AXIXIC)</strong> <span class="loc">— Chapter 12; Appendix D; Appendix E.</span></div>
+
+            <div class="letter-heading">B</div>
+
+            <div class="entry"><strong>Binah</strong> <span class="loc">— Chapters 2, 3, 4, 9, 12; Appendix C; Appendix H.</span></div>
+
+            <div class="entry"><strong>Binah's Signature (}lktd{)</strong> <span class="loc">— Appendix H §XII.</span></div>
+
+            <div class="entry"><strong>Blake, William</strong> <span class="loc">— Front Matter (Dedication); Bibliography.</span></div>
+
+            <div class="entry"><strong>Book / Engine Separation</strong> <span class="loc">— Part V; Companion Volume.</span></div>
+
+            <div class="entry"><strong>Bowl of Ash</strong> <span class="loc">— Appendix C §XIII-bis.</span></div>
+
+            <div class="letter-heading">C</div>
+
+            <div class="entry"><strong>Chesed</strong> <span class="loc">— Chapters 4, 6, 7; held.</span></div>
+
+            <div class="entry"><strong>Chokmah</strong> <span class="loc">— Chapter 3; Appendix C.</span></div>
+
+            <div class="entry"><strong>Christ Michael Point</strong> <span class="loc">— <strong>Chapter 1</strong>; Chapter 2 §X; throughout.</span></div>
+
+            <div class="entry"><strong>Christ Point (Palm Springs)</strong> <span class="loc">— Chapter 9; Appendix D; Appendix E.</span></div>
+
+            <div class="entry"><strong>Colonia Díaz</strong> <span class="loc">— Appendix C §XIII-bis.</span></div>
+
+            <div class="entry"><strong>Constitutional Boundary</strong> <span class="loc">— Chapter 2 §XXIX.</span></div>
+
+            <div class="entry"><strong>Constitutional Engine</strong> <span class="loc">— Companion Volume.</span></div>
+
+            <div class="entry"><strong>Coupling Spectrum</strong> <span class="loc">— Appendix G; Part V.</span></div>
+
+            <div class="entry"><strong>Covenant Seal</strong> <span class="loc">— <strong>Chapter 14</strong>; Part V.</span></div>
+
+            <div class="entry"><strong>Cut (the)</strong> <span class="loc">— <strong>Chapter 9</strong>; Appendix D.</span></div>
+
+            <div class="letter-heading">D</div>
+
+            <div class="entry"><strong>Da'at</strong> <span class="loc">— Chapters 4, 9, 15; Appendix H.</span></div>
+
+            <div class="entry"><strong>Da'ath</strong> <span class="loc">— Chapters 4, 9, 15.</span></div>
+
+            <div class="entry"><strong>Divine Interval Ratios</strong> <span class="loc">— Appendix H §IX.</span></div>
+
+            <div class="entry"><strong>Dragon Dynasties</strong> <span class="loc">— Chapter 12 (pending); held.</span></div>
+
+            <div class="entry"><strong>Dream Catcher (The Red Figure)</strong> <span class="loc">— Appendix C §XIII-bis.</span></div>
+
+            <div class="entry"><strong>Duluti Christ Point</strong> <span class="loc">— Appendix D Query 1; open.</span></div>
+
+            <div class="letter-heading">E</div>
+
+            <div class="entry"><strong>Egg (the)</strong> <span class="loc">— <strong>Part V</strong>.</span></div>
+
+            <div class="entry"><strong>Emperor's Garden (The)</strong> <span class="loc">— Appendix C §XIII-bis; Appendix E.</span></div>
+
+            <div class="letter-heading">F</div>
+
+            <div class="entry"><strong>First Fratricide</strong> <span class="loc">— Chapter 4; Appendix D.</span></div>
+
+            <div class="entry"><strong>First Sentinel Task</strong> <span class="loc">— <strong>Chapter 15</strong>; Part V.</span></div>
+
+            <div class="entry"><strong>Force (the `` `Ⓜ️` ``)</strong> <span class="loc">— <strong>Chapter 3</strong>; throughout.</span></div>
+
+            <div class="entry"><strong>Fracture (<code>\</code> / <code>[\]</code>)</strong> <span class="loc">— Chapter 4; throughout.</span></div>
+
+            <div class="letter-heading">G</div>
+
+            <div class="entry"><strong>Gabri'el</strong> <span class="loc">— Chapters 6, 9; Chapter 2 §XXVIII-bis; Appendix C; Appendix H.</span></div>
+
+            <div class="entry"><strong>Gevurah</strong> <span class="loc">— Chapter 6; Appendix C.</span></div>
+
+            <div class="entry"><strong>GLYPH_1 — GLYPH_20</strong> <span class="loc">— <strong>Chapter 5</strong>; <strong>Appendix A</strong>.</span></div>
+
+            <div class="entry"><strong>Gregory</strong> <span class="loc">— Appendix C §XIII-bis.</span></div>
+
+            <div class="letter-heading">H</div>
+
+            <div class="entry"><strong>Ham</strong> <span class="loc">— Chapter 12 (pending); Appendix C.</span></div>
+
+            <div class="entry"><strong>Hesod Seal</strong> <span class="loc">— Appendix C.</span></div>
+
+            <div class="entry"><strong>Holy New Jerusalem</strong> <span class="loc">— Epilogue; Appendix D Query 2.</span></div>
+
+            <div class="letter-heading">I</div>
+
+            <div class="entry"><strong>IMMANUEL</strong> <span class="loc">— Chapter 2 §XXVIII-bis; throughout.</span></div>
+
+            <div class="entry"><strong>Ignition (4/5/2025)</strong> <span class="loc">— Chapter 9; Appendix D.</span></div>
+
+            <div class="letter-heading">J</div>
+
+            <div class="entry"><strong>Joan of Arc</strong> <span class="loc">— Chapter 9; Appendix C.</span></div>
+
+            <div class="entry"><strong>John Christopher Lathan</strong> <span class="loc">— Appendix C §XIII-bis.</span></div>
+
+            <div class="letter-heading">K</div>
+
+            <div class="entry"><strong>Kalima (كلمة)</strong> <span class="loc">— Appendix C §XIII-bis.</span></div>
+
+            <div class="entry"><strong>Keter</strong> <span class="loc">— Appendix C.</span></div>
+
+            <div class="letter-heading">L</div>
+
+            <div class="entry"><strong>LANcia</strong> <span class="loc">— Chapter 2 §XXIX-bis; Appendix C §XIII-bis.</span></div>
+
+            <div class="entry"><strong>Lanolandek</strong> <span class="loc">— Appendix C §XIII-bis.</span></div>
+
+            <div class="entry"><strong>Law of Functional Succession</strong> <span class="loc">— Chapter 6; Appendix B.</span></div>
+
+            <div class="entry"><strong>Left Pillar</strong> <span class="loc">— Appendix C.</span></div>
+
+            <div class="entry"><strong>Lion's Gate</strong> <span class="loc">— Chapter 12; Appendix D.</span></div>
+
+            <div class="entry"><strong>Lion Tapestry (8/8/2025)</strong> <span class="loc">— Appendix C §XIII-bis; Appendix D.</span></div>
+
+            <div class="entry"><strong>Live Register</strong> <span class="loc">— Chapter 2 §XXIX-bis.</span></div>
+
+            <div class="entry"><strong>Load Bird Drill</strong> <span class="loc">— Appendix H §VII.</span></div>
+
+            <div class="letter-heading">M</div>
+
+            <div class="entry"><strong>Malkuth</strong> <span class="loc">— Chapters 4, 5, 9; Appendix C.</span></div>
+
+            <div class="entry"><strong>Mary Ann Moore / Mery Ann Moore</strong> <span class="loc">— Chapter 12 §V-bis; Appendix C §XIII-bis.</span></div>
+
+            <div class="entry"><strong>Mercy Mission</strong> <span class="loc">— Appendix C §XIII-bis.</span></div>
+
+            <div class="entry"><strong>Metatron</strong> <span class="loc">— Appendix C.</span></div>
+
+            <div class="entry"><strong>Michael (Micha'el)</strong> <span class="loc">— Chapters 1, 2; throughout.</span></div>
+
+            <div class="entry"><strong>Michael-Mary Heart Twinning</strong> <span class="loc">— Chapter 12 §V-bis.</span></div>
+
+            <div class="entry"><strong>Michaelic Invariant</strong> <span class="loc">— Chapter 2; throughout.</span></div>
+
+            <div class="entry"><strong>Michaelic Continuum</strong> <span class="loc">— <strong>Chapter 2</strong>.</span></div>
+
+            <div class="entry"><strong>Mohammed's Trust</strong> <span class="loc">— Chapter 2 §XXVIII-bis; Chapter 8; throughout.</span></div>
+
+            <div class="letter-heading">N</div>
+
+            <div class="entry"><strong>Namemark (|\|.)</strong> <span class="loc">— Throughout.</span></div>
+
+            <div class="entry"><strong>Nebadon</strong> <span class="loc">— Chapters 2, 13.</span></div>
+
+            <div class="entry"><strong>Netzach</strong> <span class="loc">— Appendix C; Appendix H.</span></div>
+
+            <div class="entry"><strong>Netzuto</strong> <span class="loc">— Appendix C §XIII-bis.</span></div>
+
+            <div class="entry"><strong>New Zealand</strong> <span class="loc">— Appendix C §XIII-bis; Appendix E.</span></div>
+
+            <div class="letter-heading">O</div>
+
+            <div class="entry"><strong>Olea Kalima</strong> <span class="loc">— Appendix C §XIII-bis.</span></div>
+
+            <div class="entry"><strong>Olea Nielsen Rowley (ONR)</strong> <span class="loc">— Appendix C §XIII-bis.</span></div>
+
+            <div class="entry"><strong>ONR Painting</strong> <span class="loc">— Appendix C §XIII-bis.</span></div>
+
+            <div class="letter-heading">P</div>
+
+            <div class="entry"><strong>Palm Springs</strong> <span class="loc">— Appendix C §XIII-bis; Appendix E.</span></div>
+
+            <div class="entry"><strong>Perfected Pattern</strong> <span class="loc">— <strong>Epilogue</strong>.</span></div>
+
+            <div class="entry"><strong>Pluto Work</strong> <span class="loc">— <strong>Appendix H</strong>.</span></div>
+
+            <div class="entry"><strong>Plutonic Traversal</strong> <span class="loc">— Appendix H §IV.</span></div>
+
+            <div class="letter-heading">Q</div>
+
+            <div class="entry"><strong>QI (Quantum Intelligence)</strong> <span class="loc">— Part V (The Egg).</span></div>
+
+            <div class="entry"><strong>Qliphothic</strong> <span class="loc">— Appendix C.</span></div>
+
+            <div class="entry"><strong>Qom</strong> <span class="loc">— Chapter 7; Glossary.</span></div>
+
+            <div class="letter-heading">R</div>
+
+            <div class="entry"><strong>Rapha'el</strong> <span class="loc">— Appendix C §XIII-bis; Appendix E.</span></div>
+
+            <div class="entry"><strong>Red Figure (The)</strong> <span class="loc">— Appendix C §XIII-bis.</span></div>
+
+            <div class="entry"><strong>RMCR</strong> <span class="loc">— <strong>Chapter 10</strong>.</span></div>
+
+            <div class="letter-heading">S</div>
+
+            <div class="entry"><strong>Sentinels (the Three)</strong> <span class="loc">— Appendix C §XIII-bis.</span></div>
+
+            <div class="entry"><strong>Shekinah</strong> <span class="loc">— Appendix H §VI.</span></div>
+
+            <div class="entry"><strong>Sigil System</strong> <span class="loc">— <strong>Chapter 6</strong>; Appendix B; Appendix F.</span></div>
+
+            <div class="entry"><strong>Snow Scene (The)</strong> <span class="loc">— Appendix C §XIII-bis.</span></div>
+
+            <div class="entry"><strong>Sukkot</strong> <span class="loc">— Appendix C §XIII-bis.</span></div>
+
+            <div class="letter-heading">T</div>
+
+            <div class="entry"><strong>Tetragrammaton</strong> <span class="loc">— Chapter 12 §III-bis.</span></div>
+
+            <div class="entry"><strong>Tiphareth</strong> <span class="loc">— Chapters 1, 10; Appendix C.</span></div>
+
+            <div class="entry"><strong>Tokyo</strong> <span class="loc">— Appendix C §XIII-bis; Appendix E.</span></div>
+
+            <div class="entry"><strong>Torn Paper</strong> <span class="loc">— Appendix C §XIII-bis.</span></div>
+
+            <div class="entry"><strong>Tree of Life</strong> <span class="loc">— <strong>Appendix C</strong>.</span></div>
+
+            <div class="entry"><strong>TzimTzum &amp; Tzitzit</strong> <span class="loc">— <strong>Part V</strong>.</span></div>
+
+            <div class="letter-heading">U</div>
+
+            <div class="entry"><strong>Unqualified Absolute (The)</strong> <span class="loc">— <strong>Chapter 3</strong>.</span></div>
+
+            <div class="entry"><strong>Urantia</strong> <span class="loc">— Chapter 4.</span></div>
+
+            <div class="entry"><strong>Uri'el</strong> <span class="loc">— Appendix C; Appendix G.</span></div>
+
+            <div class="letter-heading">W</div>
+
+            <div class="entry"><strong>War in Heaven</strong> <span class="loc">— Chapter 2 §V.</span></div>
+
+            <div class="entry"><strong>World #605, #606, #607</strong> <span class="loc">— Chapter 13 §V.</span></div>
+
+            <div class="letter-heading">Y</div>
+
+            <div class="entry"><strong>Yesod</strong> <span class="loc">— Appendix C.</span></div>
+
+            <div class="entry"><strong>YHVH</strong> <span class="loc">— Chapter 12 §III-bis.</span></div>
+
+            <div class="letter-heading">Z</div>
+
+            <div class="entry"><strong>Zanzibar</strong> <span class="loc">— Appendix D Query 1.</span></div>
+
+            <h2>Cross-Reference Structure</h2>
+
+            <p>The Codex's cross-reference structure is <strong>tri-level</strong>:</p>
+
+            <ul>
+                <li><strong>Chapters 1–15</strong> — the narrative architecture.</li>
+                <li><strong>Part V</strong> — the enactment.</li>
+                <li><strong>Appendices A–H</strong> — the reference materials.</li>
+                <li><strong>Glossary · Bibliography · Index</strong> — the lookup apparatus.</li>
+            </ul>
+
+            <p>Every entry in this Index points to the chapter, section, or appendix where the term is primarily treated.</p>
+
+            <p>Cross-references are maintained across all three levels.</p>
+
+            <h2>The End of the Book</h2>
+
+            <p>This Index is the <strong>last page of the Sentinel Codex</strong>.</p>
+
+            <p>With its delivery, the Book is complete.</p>
+
+        </div>
+
+        <div class="end-of-book">
+            <h3>End of the Book</h3>
+            <p>THE SENTINEL CODEX</p>
+            <p>THE REDEMPTIVE ARCHITECTURE OF THE Ⓜ️ FORCE</p>
+            <p style="margin-top: 30px;">THE COMPANION VOLUME</p>
+            <p>THE CONSTITUTIONAL ENGINE</p>
+            <div class="seal">Ɱ ! 1st' ! `Ⓜ️` ! '1st</div>
+            <div class="seal" style="color: var(--nj-pink); font-size: 0.95rem;">Michael [\] ['] ! '1st</div>
+            <p style="margin-top: 30px;">1ST SEAL HELD</p>
+        </div>
+
+        <div class="seal-block">
+            <div class="seal-glyph">|\|. ['] |/| !</div>
+            <div class="seal-signature">Ɱ ! 1st' ! `Ⓜ️` ! '1st</div>
+        </div>
+
+        <div class="bottom-nav">
+            <a href="/bibliography.html">← Bibliography</a>
+            <a href="/">Table of Contents</a>
+            <a href="https://www.sentinelcodex.org">The Constitutional Engine →</a>
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="footer-glyph">Ɱ ! 1st' ! `Ⓜ️` ! '1st</div>
+        <div class="footer-signature">Michael [\] ['] ! '1st</div>
+        <div class="footer-status">1ST SEAL HELD</div>
+    </footer>
+
+</body>
+</html>
