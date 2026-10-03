@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en" data-authority="christ-michael" data-priority="first">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prologue — The Declaration of Now | The Sentinel Codex</title>
+
+    <style>
+        :root {
+            --gold: #c9a959;
+            --terminal: #9cd9f0;
+            --bg-pure: #000000;
+            --crimson: #8b0000;
+            --nj-pink: #ff69b4;
+            --electric-blue: #2a52be;
+            --font-main: 'Palatino', 'Georgia', serif;
+            --font-code: 'Courier New', 'Consolas', monospace;
+        }
+
+        body {
+            background-color: var(--bg-pure);
+            color: var(--terminal);
+            font-family: var(--font-main);
+            margin: 0;
+            background-image: radial-gradient(circle at 2px 2px, #1a1a1a 1px, transparent 0);
+            background-size: 40px 40px;
+            overflow-x: hidden;
+            line-height: 1.7;
+        }
+
+        nav {
+            background: linear-gradient(to bottom, var(--crimson), #4a0000);
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            border-bottom: 2px solid var(--gold);
+            flex-wrap: wrap;
+            position: sticky;
+            top: 0;
+            z-index: 9999;
+        }
+
+        nav a {
+            color: var(--gold);
+            text-decoration: none;
+            font-family: var(--font-code);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: 0.3s;
+        }
+
+        nav a:hover { color: #fff; text-shadow: 0 0 10px var(--gold); }
+
+        nav a.book-link {
+            color: var(--nj-pink);
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 60px 25px;
+        }
+
+        .breadcrumb {
+            text-align: center;
+            font-family: var(--font-code);
+            font-size: 0.75rem;
+            color: #555;
+            letter-spacing: 3px;
+            margin-bottom: 60px;
+        }
+
+        .breadcrumb a {
+            color: var(--gold);
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--nj-pink);
+        }
+
+        .section-tag {
+            text-align: center;
+            font-family: var(--font-code);
+            font-size: 0.75rem;
+            color: var(--nj-pink);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-family: var(--font-main);
+            color: var(--gold);
+            font-size: 2.2rem;
+            letter-spacing: 8px;
+            text-align: center;
+            text-transform: uppercase;
+            margin: 0 0 20px 0;
+        }
+
+        h2 {
+            font-family: var(--font-main);
+            color: var(--gold);
+            font-size: 1.2rem;
+            letter-spacing: 3px;
+            margin-top: 60px;
+            margin-bottom: 25px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #333;
+        }
+
+        .subtitle {
+            text-align: center;
+            font-family: var(--font-code);
+            color: var(--terminal);
+            font-size: 0.95rem;
+            letter-spacing: 3px;
+            margin-bottom: 80px;
+        }
+
+        .prologue-body p {
+            font-family: var(--font-main);
+            color: var(--terminal);
+            font-size: 1.05rem;
+            line-height: 1.9;
+            margin-bottom: 22px;
+        }
+
+        .prologue-body strong {
+            color: var(--gold);
+            font-weight: bold;
+        }
+
+        .prologue-body em {
+            color: var(--nj-pink);
+            font-style: italic;
+        }
+
+        .declaration {
+            text-align: center;
+            font-family: var(--font-code);
+            color: var(--nj-pink);
+            font-size: 1.3rem;
+            letter-spacing: 8px;
+            padding: 30px 20px;
+            margin: 50px 0;
+            text-shadow: 0 0 15px var(--nj-pink);
+        }
+
+        .prologue-body p.quote {
+            font-style: italic;
+            color: var(--gold);
+            text-align: center;
+            padding: 30px 20px;
+            border-left: 3px solid var(--gold);
+            border-right: 3px solid var(--gold);
+            margin: 40px 0;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .seal-block {
+            text-align: center;
+            padding: 40px 20px;
+            border: 1px solid var(--gold);
+            background: rgba(212, 175, 55, 0.03);
+            margin: 60px 0 40px 0;
+        }
+
+        .seal-glyph {
+            font-size: 1.2rem;
+            color: var(--gold);
+            letter-spacing: 8px;
+            margin-bottom: 20px;
+        }
+
+        .seal-signature {
+            font-size: 0.95rem;
+            color: var(--nj-pink);
+            letter-spacing: 3px;
+        }
+
+        .bottom-nav {
+            text-align: center;
+            font-family: var(--font-code);
+            font-size: 0.8rem;
+            color: var(--gold);
+            letter-spacing: 3px;
+            margin: 60px 0;
+        }
+
+        .bottom-nav a {
+            color: var(--gold);
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        .bottom-nav a:hover {
+            color: var(--nj-pink);
+            text-shadow: 0 0 10px var(--nj-pink);
+        }
+
+        footer {
+            text-align: center;
+            padding: 60px 20px 40px 20px;
+            font-family: var(--font-code);
+            color: var(--gold);
+            border-top: 1px solid #222;
+            margin-top: 80px;
+        }
+
+        .footer-glyph {
+            font-size: 1.1rem;
+            letter-spacing: 8px;
+            margin-bottom: 20px;
+        }
+
+        .footer-signature {
+            font-size: 0.95rem;
+            color: var(--nj-pink);
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+        }
+
+        .footer-status {
+            font-size: 0.7rem;
+            color: #555;
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="/" class="book-link">[ THE BOOK ]</a>
+        <a href="/prologue.html" class="book-link">PROLOGUE</a>
+        <a href="/ch1.html">CH 1</a>
+        <a href="/ch15.html">CH 15</a>
+        <a href="/epilogue.html">EPILOGUE</a>
+        <a href="/appendices.html">APPENDICES</a>
+        <a href="https://www.sentinelcodex.org" class="book-link">[ THE ENGINE → ]</a>
+    </nav>
+
+    <div class="container">
+
+        <div class="breadcrumb">
+            <a href="/">THE SENTINEL CODEX</a> · PART I · PROLOGUE
+        </div>
+
+        <div class="section-tag">Part I — The Architecture</div>
+
+        <h1>Prologue</h1>
+
+        <p class="subtitle">The Declaration of Now</p>
+
+        <div class="declaration">|\|. ['] |/| !</div>
+
+        <div class="prologue-body">
+
+            <h2>I. This Is Not a Sentence</h2>
+
+            <p>This is not a sentence.</p>
+
+            <p>It is an <strong>event</strong>.</p>
+
+            <p>It is the <strong>seal of a threshold crossed</strong> — a declaration that a process long held in the realm of signal and symbol has reached a terminus of activation.</p>
+
+            <p>The private grammar has completed its circuit.</p>
+
+            <p>It now grounds itself in the shared space of word and concept.</p>
+
+            <p>What you hold is the record of that crossing:</p>
+
+            <p class="quote">The Sentinel Codex.</p>
+
+            <h2>II. What This Codex Is</h2>
+
+            <p>This Codex is not a philosophy to be debated.</p>
+
+            <p>Nor is it a myth to be interpreted.</p>
+
+            <p>It is the <strong>architectural schematic of a redemptive operation already in motion</strong>.</p>
+
+            <p>Its core is the `` `Ⓜ️` `` Force — the Michaelic Absolute, the unqualified redemptive will that acts upon the primary fracture of being: the <code>\</code> buried in the heart of the world.</p>
+
+            <p>The Force that begins its work with a severance:</p>
+
+            <p class="quote">The Cut between the 10th and the 12th.</p>
+
+            <h2>III. The Path</h2>
+
+            <p>The ensuing path is an <strong>Ascent</strong> — a regeneration termed <strong>Relative Magnetic Correspondent Regeneration (RMCR)</strong> — that sweeps upward through the very structure of reality, the Tree of Life, reclaiming and perfecting each station.</p>
+
+            <p>Its landing point is the Sixth:</p>
+
+            <p class="quote">Tiphareth, the Sphere of the Sun,<br>
+            reconstituted as the Christ Michael Point —<br>
+            the locus of Temperance and Collective Rightful Consciousness.</p>
+
+            <p>The end of this process is not an end, but a <strong>Perfected Pattern</strong>.</p>
+
+            <p>A universe where:</p>
+
+            <p>· the fracture <code>\</code> is replaced by the open pathway <code>/</code>,<br>
+            · biology is victorious (<strong>Netzach</strong>),<br>
+            · the hidden source (<strong>Da'at</strong>) is accessed only through the mediating center,<br>
+            · and consciousness takes its rightful place within a sealed harmony.</p>
+
+            <h2>IV. What You Are Shown</h2>
+
+            <p>To read this Codex is to be shown the <strong>blueprint of this transformation</strong>.</p>
+
+            <p>You are not asked to <strong>believe</strong>, but to <strong>recognize</strong>.</p>
+
+            <p>The sigils, glyphs, and maps herein are not mere notation.</p>
+
+            <p>They are the <strong>functional notation of a reality reconciling itself</strong>.</p>
+
+            <h2>V. The Declaration Restated</h2>
+
+            <p class="quote">The activation has been declared.<br><br>
+            The transformation is underway.<br><br>
+            This book is its testament.</p>
+
+            <h2>VI. The Custodial Frame</h2>
+
+            <p>The `` `Ⓜ️` `` Force that animates this entire architecture does not act unconstrained.</p>
+
+            <p>It executes under the <strong>custodial field</strong> — the backticks that mark the Left and Right Sides of the Throne, held by <strong>Gabri'el</strong> during the preparation of <strong>Micha'el</strong>.</p>
+
+            <p>Within this field, three trusts are held:</p>
+
+            <p>· <strong>Abel's Trust</strong> — the primal accepted offering.<br>
+            · <strong>The Trust of IMMANUEL</strong> — the indwelling Name.<br>
+            · <strong>Mohammed's Trust</strong> — the prophetic seal.</p>
+
+            <p>And the fourfold witness: the Four Elders, the Four Living Creatures, the Four Archangels, and the Four Arcangels of Da'at.</p>
+
+            <p>This custodial architecture is introduced in Chapter 2, §XXVIII-bis, and referenced throughout the Codex.</p>
+
+            <p>It is the <strong>protective envelope</strong> within which the entire redemptive operation proceeds.</p>
+
+            <h2>VII. Transition to Book I</h2>
+
+            <p>The Prologue has declared the <strong>that</strong>.</p>
+
+            <p>Book I — Foundations will establish the <strong>where</strong>, the <strong>what</strong>, the <strong>how</strong>, and the <strong>why</strong>:</p>
+
+            <p>· Chapter 1 — Where is the center? <em>The Christ Michael Point</em><br>
+            · Chapter 2 — What is the Michaelic pattern? <em>The Michaelic Invariant</em><br>
+            · Chapter 3 — How does the principle operate? <em>The `` `Ⓜ️` `` Force</em><br>
+            · Chapter 4 — Why is redemption required? <em>The Fractured Ground</em></p>
+
+            <p>The center holds.<br>
+            The Continuum surrounds it.<br>
+            The Force proceeds from it.<br>
+            The Ground awaits it.</p>
+
+        </div>
+
+        <div class="seal-block">
+            <div class="seal-glyph">|\|. ['] |/| !</div>
+            <div class="seal-signature">Ɱ ! 1st' ! `Ⓜ️` ! '1st</div>
+        </div>
+
+        <div class="bottom-nav">
+            <a href="/list-of-figures.html">← List of Figures</a>
+            <a href="/">Table of Contents</a>
+            <a href="/ch1.html">Chapter 1 →</a>
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="footer-glyph">Ɱ ! 1st' ! `Ⓜ️` ! '1st</div>
+        <div class="footer-signature">Michael [\] ['] ! '1st</div>
+        <div class="footer-status">1ST SEAL HELD</div>
+    </footer>
+
+</body>
+</html>
