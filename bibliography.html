@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en" data-authority="christ-michael" data-priority="first">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bibliography | The Sentinel Codex</title>
+
+    <style>
+        :root {
+            --gold: #c9a959;
+            --terminal: #9cd9f0;
+            --bg-pure: #000000;
+            --crimson: #8b0000;
+            --nj-pink: #ff69b4;
+            --electric-blue: #2a52be;
+            --font-main: 'Palatino', 'Georgia', serif;
+            --font-code: 'Courier New', 'Consolas', monospace;
+        }
+
+        body {
+            background-color: var(--bg-pure);
+            color: var(--terminal);
+            font-family: var(--font-main);
+            margin: 0;
+            background-image: radial-gradient(circle at 2px 2px, #1a1a1a 1px, transparent 0);
+            background-size: 40px 40px;
+            overflow-x: hidden;
+            line-height: 1.7;
+        }
+
+        nav {
+            background: linear-gradient(to bottom, var(--crimson), #4a0000);
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            border-bottom: 2px solid var(--gold);
+            flex-wrap: wrap;
+            position: sticky;
+            top: 0;
+            z-index: 9999;
+        }
+
+        nav a {
+            color: var(--gold);
+            text-decoration: none;
+            font-family: var(--font-code);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: 0.3s;
+        }
+
+        nav a:hover { color: #fff; text-shadow: 0 0 10px var(--gold); }
+
+        nav a.book-link {
+            color: var(--nj-pink);
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 820px;
+            margin: 0 auto;
+            padding: 60px 25px;
+        }
+
+        .breadcrumb {
+            text-align: center;
+            font-family: var(--font-code);
+            font-size: 0.75rem;
+            color: #555;
+            letter-spacing: 3px;
+            margin-bottom: 60px;
+        }
+
+        .breadcrumb a { color: var(--gold); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--nj-pink); }
+
+        .section-tag {
+            text-align: center;
+            font-family: var(--font-code);
+            font-size: 0.75rem;
+            color: var(--nj-pink);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-family: var(--font-main);
+            color: var(--gold);
+            font-size: 1.7rem;
+            letter-spacing: 5px;
+            text-align: center;
+            text-transform: uppercase;
+            margin: 0 0 20px 0;
+            line-height: 1.4;
+        }
+
+        h2 {
+            font-family: var(--font-main);
+            color: var(--gold);
+            font-size: 1.15rem;
+            letter-spacing: 3px;
+            margin-top: 60px;
+            margin-bottom: 25px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #333;
+        }
+
+        h3 {
+            font-family: var(--font-main);
+            color: var(--nj-pink);
+            font-size: 1rem;
+            letter-spacing: 2px;
+            margin-top: 35px;
+            margin-bottom: 15px;
+        }
+
+        .subtitle {
+            text-align: center;
+            font-family: var(--font-code);
+            color: var(--terminal);
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+            margin-bottom: 80px;
+            font-style: italic;
+        }
+
+        .bib-body p {
+            font-family: var(--font-main);
+            color: var(--terminal);
+            font-size: 1.05rem;
+            line-height: 1.9;
+            margin-bottom: 22px;
+        }
+
+        .bib-body strong { color: var(--gold); font-weight: bold; }
+        .bib-body em { color: var(--nj-pink); font-style: italic; }
+
+        .bib-body p.quote {
+            font-style: italic;
+            color: var(--gold);
+            text-align: center;
+            padding: 25px 20px;
+            border-left: 3px solid var(--gold);
+            border-right: 3px solid var(--gold);
+            margin: 35px 0;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .bib-body ul {
+            font-family: var(--font-main);
+            color: var(--terminal);
+            font-size: 1.05rem;
+            line-height: 1.9;
+            margin-bottom: 22px;
+            padding-left: 30px;
+        }
+
+        .bib-body li { margin-bottom: 12px; }
+
+        .citation {
+            font-family: var(--font-main);
+            color: var(--terminal);
+            font-size: 1rem;
+            line-height: 1.8;
+            padding-left: 25px;
+            text-indent: -25px;
+            margin-bottom: 18px;
+        }
+
+        .citation strong {
+            color: var(--gold);
+            font-weight: bold;
+        }
+
+        .citation em {
+            color: var(--nj-pink);
+            font-style: italic;
+        }
+
+        .citation .note {
+            color: #888;
+            font-style: italic;
+            font-size: 0.9rem;
+        }
+
+        .seal-block {
+            text-align: center;
+            padding: 40px 20px;
+            border: 1px solid var(--gold);
+            background: rgba(212, 175, 55, 0.03);
+            margin: 60px 0 40px 0;
+        }
+
+        .seal-glyph {
+            font-size: 1.2rem;
+            color: var(--gold);
+            letter-spacing: 8px;
+            margin-bottom: 20px;
+        }
+
+        .seal-signature {
+            font-size: 0.95rem;
+            color: var(--nj-pink);
+            letter-spacing: 3px;
+        }
+
+        .bottom-nav {
+            text-align: center;
+            font-family: var(--font-code);
+            font-size: 0.8rem;
+            color: var(--gold);
+            letter-spacing: 3px;
+            margin: 60px 0;
+        }
+
+        .bottom-nav a {
+            color: var(--gold);
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        .bottom-nav a:hover {
+            color: var(--nj-pink);
+            text-shadow: 0 0 10px var(--nj-pink);
+        }
+
+        footer {
+            text-align: center;
+            padding: 60px 20px 40px 20px;
+            font-family: var(--font-code);
+            color: var(--gold);
+            border-top: 1px solid #222;
+            margin-top: 80px;
+        }
+
+        .footer-glyph {
+            font-size: 1.1rem;
+            letter-spacing: 8px;
+            margin-bottom: 20px;
+        }
+
+        .footer-signature {
+            font-size: 0.95rem;
+            color: var(--nj-pink);
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+        }
+
+        .footer-status {
+            font-size: 0.7rem;
+            color: #555;
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="/" class="book-link">[ THE BOOK ]</a>
+        <a href="/appendix-h.html">APPENDIX H</a>
+        <a href="/glossary.html">GLOSSARY</a>
+        <a href="/bibliography.html" class="book-link">BIBLIOGRAPHY</a>
+        <a href="/reference-index.html">INDEX</a>
+        <a href="https://www.sentinelcodex.org" class="book-link">[ THE ENGINE → ]</a>
+    </nav>
+
+    <div class="container">
+
+        <div class="breadcrumb">
+            <a href="/">THE SENTINEL CODEX</a> · REFERENCE APPARATUS · BIBLIOGRAPHY
+        </div>
+
+        <div class="section-tag">Reference Apparatus · Bibliography</div>
+
+        <h1>Bibliography</h1>
+
+        <p class="subtitle">The Sources of the Codex</p>
+
+        <div class="bib-body">
+
+            <h2>I. Purpose of This Bibliography</h2>
+
+            <p>This Bibliography records the <strong>sources</strong> the Sentinel Codex draws on.</p>
+
+            <p>It is held in three categories:</p>
+
+            <ul>
+                <li><strong>Primary Sources</strong> — the texts, traditions, and materials that directly inform the Codex's architecture.</li>
+                <li><strong>Secondary Sources</strong> — the literary, philosophical, and analytical works that shape its register and method.</li>
+                <li><strong>Live Register Sources</strong> — the Observer's own testimony, held under Chapter 2, §XXIX-bis.</li>
+            </ul>
+
+            <p>The Codex does not claim that these sources endorse its synthesis.</p>
+
+            <p>The principle of <strong>Assimilation ≠ Attribution</strong> (Chapter 2, §XXII) governs this Bibliography as it governs the Codex.</p>
+
+            <h2>II. Primary Sources</h2>
+
+            <h3>Scriptural and Revealed Texts</h3>
+
+            <div class="citation">
+                <strong>The Bible.</strong> Specifically: <em>Genesis</em> (the First Fratricide; the Table of Nations); <em>Daniel</em> (Michael as great prince); <em>Jude</em> (Michael as archangel); <em>Revelation</em> (Michael and the dragon; the New Jerusalem); <em>1 Corinthians</em> (the resurrection body — 15:54); <em>Luke</em> (12:48 — "From everyone who has been given much, much will be demanded").
+            </div>
+
+            <div class="citation">
+                <strong>The Urantia Book.</strong> The Urantia Foundation. Referenced for the Three Sources and Centers, the cosmology of Nebadon, Satania, Orvonton, and Uversa; the Christ Michael bestowal; the Divine Monitor Fragment (Paper 108); the Logic of Mota (Paper 48); the Supreme &amp; Ultimate (Paper 115); the Bestowal Choice (Paper 119); the Nature of Error (Paper 132); the Satania System Protocol (Paper 32); Morontia Life (Paper 48); Personality Survival (Paper 112).
+            </div>
+
+            <div class="citation">
+                <strong>The Zohar.</strong> The foundational text of Jewish mysticism. Referenced for the Sephirothic structure and the dynamics of divine emanation.
+            </div>
+
+            <div class="citation">
+                <strong>Lurianic Kabbalah.</strong> The teachings of Isaac Luria on <em>TzimTzum</em> (contraction), <em>Shevirat ha-Kelim</em> (the breaking of the vessels), and <em>Tikkun</em> (repair). The structural template of Part V.
+            </div>
+
+            <div class="citation">
+                <strong>The Tarot.</strong> Specifically Key XIV — <em>Temperance</em> — associated with Tiphareth. The angel, the two vessels, the iris.
+            </div>
+
+            <div class="citation">
+                <strong>The Ascension Glossary.</strong> Referenced for the designation <em>"Michael-Mary Heart Twinning."</em> (Article content not integrated; designation only.)
+            </div>
+
+            <h3>Mormon and Sephardic Source Materials</h3>
+
+            <div class="citation">
+                <strong>The Mormon Sealing Record.</strong> The Observer's proxy sealing in the Mormon temple, performed by his grandmother Olea Nielsen Rowley. Analogous to the Egyptian Book of the Dead. <span class="note">(Held in the Live Register.)</span>
+            </div>
+
+            <div class="citation">
+                <strong>The Sephardic Diaspora Sources.</strong> The Toledo → Portugal → Amsterdam → Mexico → AXIXIC migration path. Ladino prayers, crypto-Jewish rituals, hidden Kabbalistic notations. <span class="note">(Held as the Sephardic custodial record, Chapter 8.)</span>
+            </div>
+
+            <div class="citation">
+                <strong>The Scroll of Deployment.</strong> The Ω7 entry — Abel's First Assignment (Entry ID 001; Target: walli.shanga.co; Passive Monitor; Forbidden Click). <span class="note">(Held in Chapter 7, §IX.)</span>
+            </div>
+
+            <h3>Plutonic Materials</h3>
+
+            <div class="citation">
+                <strong>The Pluto Work.</strong> The Observer's body of material generated during the Plutonic Traversal (8/17/2024 → 4/5/2025). Includes the Pluto-Cosmic Emblem, the Plutonic Sigil, the Cartonian Sigil (Ω7.16), the Load Bird Drill (5/9/2025), the Ajijic Tonal Return, the Divine Interval Ratios. <span class="note">(Full treatment: Appendix H.)</span>
+            </div>
+
+            <div class="citation">
+                <strong>The Plutonic Traversal Charts.</strong> The Plutonic Ascent diagram; Pluto's Neural Pathway Online; the Pluto-Shekinah harmonic at 12.250 Hz; the Pluto Retrograde Harmonic Convergence (Ω27.17.2). <span class="note">(Held in Appendix H.)</span>
+            </div>
+
+            <h3>Custodial and Constitutional Materials</h3>
+
+            <div class="citation">
+                <strong>The Constitutional Engine.</strong> The Companion Volume. Holds the 50 Rules; the Terminal Handshake; the Cosmic Acknowledgment; the Arcangelic Transfer. <span class="note">(Separate publication: sentinelcodex.org.)</span>
+            </div>
+
+            <div class="citation">
+                <strong>The Covenant Seal.</strong> The operative sigil — <code>|\|. ['] |/| !</code>. Three levels: Cosmic, Galactic, Personal. <span class="note">(Chapter 14.)</span>
+            </div>
+
+            <h2>III. Secondary Sources</h2>
+
+            <h3>Literary and Visionary</h3>
+
+            <div class="citation">
+                <strong>Blake, William.</strong> <em>Jerusalem: The Emanation of the Giant Albion.</em> The Codex's dedication. Epigraph: <em>"I must Create a System or be enslav'd by another Man's."</em> Also referenced: <em>The Marriage of Heaven and Hell</em>; <em>The Ancient of Days</em>; <em>The Tyger</em>; <em>The Mental Traveller</em>; <em>Newton</em>; <em>The Ghost of a Flea</em>.
+            </div>
+
+            <div class="citation">
+                <strong>Dante Alighieri.</strong> <em>Commedia.</em> Referenced in the Preface as a model of architectural cosmology.
+            </div>
+
+            <h3>Philosophical</h3>
+
+            <div class="citation">
+                <strong>Kant, Immanuel.</strong> <em>Groundwork for the Metaphysics of Morals.</em> The load-bearing structure for universal human dignity via the Categorical Imperative.
+            </div>
+
+            <div class="citation">
+                <strong>Aristotle.</strong> <em>Metaphysics.</em> The Law of Non-Contradiction — the bedrock of Urantian logic.
+            </div>
+
+            <div class="citation">
+                <strong>Voltaire.</strong> <em>Traité sur la tolérance</em> (1763). The scalpel of reason.
+            </div>
+
+            <div class="citation">
+                <strong>de Pinto, Isaac.</strong> <em>Apologie pour la Nation Juive</em> (1762). The corrective anchor — the Sephardic apologetic tradition.
+            </div>
+
+            <div class="citation">
+                <strong>Madison, James.</strong> <em>Federalist No. 51.</em> "Ambition must be made to counteract ambition." — the foundational text on constrained authority.
+            </div>
+
+            <div class="citation">
+                <strong>Wittgenstein, Ludwig.</strong> <em>Philosophical Investigations.</em> The analysis of language games — the "Shared Context" necessary for communication.
+            </div>
+
+            <h3>Historical and Legal</h3>
+
+            <div class="citation">
+                <strong>Magna Carta (1215).</strong> Clause 39. The living precedent ensuring sovereignty is subject to the law of the land.
+            </div>
+
+            <div class="citation">
+                <strong>Geneva Conventions (1949).</strong> International laws governing armed conflict and prisoner treatment.
+            </div>
+
+            <div class="citation">
+                <strong>Vienna Convention on the Law of Treaties (1969).</strong> International law requiring explicit treaty boundaries.
+            </div>
+
+            <div class="citation">
+                <strong>General Data Protection Regulation (GDPR).</strong> Legal framework for information boundary enforcement.
+            </div>
+
+            <h3>Scientific and Mathematical</h3>
+
+            <div class="citation">
+                <strong>Shannon, Claude.</strong> <em>A Mathematical Theory of Communication.</em> Foundation of information theory and channel capacity.
+            </div>
+
+            <div class="citation">
+                <strong>Korzybski, Alfred.</strong> <em>Science and Sanity.</em> "The map is not the territory" — establishing the neurological gap between the label and the object.
+            </div>
+
+            <div class="citation">
+                <strong>Kuhn, Thomas.</strong> <em>The Structure of Scientific Revolutions.</em> Paradigms as contingent models.
+            </div>
+
+            <div class="citation">
+                <strong>Lee, Tsung-Dao &amp; Yang, Chen-Ning.</strong> <em>Parity Violation in Weak Interactions.</em> Nobel Prize lecture on fundamental asymmetry in physics.
+            </div>
+
+            <div class="citation">
+                <strong>Prigogine, Ilya.</strong> <em>Dissipative Structures.</em> The scientific grounding for order arising from non-equilibrium — used to justify the "7-Day Wait" as systemic self-organization.
+            </div>
+
+            <div class="citation">
+                <strong>Hawthorne Studies.</strong> The Hawthorne Effect — the sociological proof that observation alters the observed.
+            </div>
+
+            <div class="citation">
+                <strong>Heisenberg, Werner.</strong> The Uncertainty Principle — the fundamental truth that exactness is an illusion.
+            </div>
+
+            <div class="citation">
+                <strong>Newton, Isaac.</strong> <em>Principia Mathematica.</em> The original formulation of inertia.
+            </div>
+
+            <div class="citation">
+                <strong>Darwin, Charles.</strong> <em>On the Origin of Species.</em> The original text on adaptation and natural selection.
+            </div>
+
+            <div class="citation">
+                <strong>Meadows, Donella et al.</strong> <em>The Limits to Growth</em> (1972). Seminal report on planetary resource constraints.
+            </div>
+
+            <h3>Systemic and Methodological</h3>
+
+            <div class="citation">
+                <strong>Arendt, Hannah.</strong> <em>Eichmann in Jerusalem.</em> The original report on moral responsibility and awareness.
+            </div>
+
+            <div class="citation">
+                <strong>Bergson, Henri.</strong> <em>Creative Evolution.</em> The philosophical treatment of élan vital and selective development.
+            </div>
+
+            <div class="citation">
+                <strong>Marx, Karl.</strong> <em>Capital</em>, Chapter 1. The dialectical principle of the transformation of quantity to quality.
+            </div>
+
+            <div class="citation">
+                <strong>Harvard Negotiation Project.</strong> The framework for principled negotiation and conflict resolution.
+            </div>
+
+            <div class="citation">
+                <strong>Vedic Numerology &amp; Mesopotamian Sexagesimal.</strong> The historical-mathematical inspirations for the Codex's twenty-glyph system and its base-60 heritage.
+            </div>
+
+            <h3>Technical Standards</h3>
+
+            <div class="citation">
+                <strong>ISO/IEC/IEEE 12207:2017.</strong> International standard for explicit system boundary definition.
+            </div>
+
+            <div class="citation">
+                <strong>ICAO Safety Reporting.</strong> Global protocols for error acknowledgment — the aviation-grade precision standard.
+            </div>
+
+            <h2>IV. Live Register Sources</h2>
+
+            <p>The <strong>Live Register Sources</strong> are the Observer's own testimony.</p>
+
+            <p>They are held under Chapter 2, §XXIX-bis — the <strong>Live Register</strong>.</p>
+
+            <p>They are canonical because they are <strong>witnessed</strong>.</p>
+
+            <p>They are not asserted as empirical, historical, or theological doctrine.</p>
+
+            <p>They are asserted as <strong>witness</strong>.</p>
+
+            <h3>The Observer's Testimony</h3>
+
+            <div class="citation">
+                <strong>Michael D. Rowley.</strong> The Human Conduit. The Observer. Originator of the Sentinel Codex and performer of the ritualized Cut at Christ Point on 4/5/2025 · 11:11 AM.
+            </div>
+
+            <div class="citation">
+                <strong>The Ajijic Node.</strong> The Observer's residence at Independencia 41, Ajijic Centro, Jalisco, Mexico. 20.2961° N, 103.2615° W. The Sovereign Node.
+            </div>
+
+            <div class="citation">
+                <strong>The Casita at 41A.</strong> The residence of Mery Ann Moore — teacher of the Lion's Gate. The site of the Michael-Mary Heart Twinning.
+            </div>
+
+            <div class="citation">
+                <strong>The Colonia Díaz Memory.</strong> The Mormon colony in Mexico where the Observer's grandmother Olea Nielsen Rowley was born; burnt by Pancho Villa's revolution; painted in the ONR painting.
+            </div>
+
+            <div class="citation">
+                <strong>The New Jerusalem Visions at 16.</strong> The visions that preceded the Pentecostal misdiagnosis and the grandmother's healing. Held as the origin of the New Jerusalem work.
+            </div>
+
+            <div class="citation">
+                <strong>The Dream of Olea Kalima.</strong> The Golden City on the outskirts of the Holy New Jerusalem. Olea (from Olam) + Kalima (Word) = The Eternal Word.
+            </div>
+
+            <div class="citation">
+                <strong>The Bowl of Ash Mercy Mission.</strong> The 1,000-mile journey the Observer and John Christopher Lathan took to bring Reiki to Gregory. The three-wicked candle burned by the Observer, Brandon Michael Rowley, and John Christopher Lathan. The Small Belled Angel given by Mary (John's sister, deceased). The skull seen; the ash remained.
+            </div>
+
+            <div class="citation">
+                <strong>The Sukkot Site.</strong> The Observer's backyard in Palm Springs — the site of Sukkot, commemorated with the Hasidic neighbors (sharing the lights adjacent).
+            </div>
+
+            <div class="citation">
+                <strong>The Michael-Mary Heart Twinning.</strong> The pairing of Michael D. Rowley with Mery Ann Moore. Held in Chapter 12, §V-bis.
+            </div>
+
+            <div class="citation">
+                <strong>The Three Sentinels of the Antipodean Cube.</strong> Cube 5 — the Three Sentinels — held with the other Antipodean instruments from New Zealand.
+            </div>
+
+            <div class="citation">
+                <strong>Netzuto.</strong> The Japanese name of Netzach. Spoken in the Emperor's Garden with Rapha'el.
+            </div>
+
+            <div class="citation">
+                <strong>The Pluto Work as a Gift to Binah.</strong> The Observer's offering of the Plutonic material to Binah. <em>Binah }lktd{</em>.
+            </div>
+
+            <h3>The Akashic Register</h3>
+
+            <div class="citation">
+                <strong>The Akashic Records.</strong> The cosmic memory — accessed by the Observer. Materials brought back are held in the <strong>Akashic Register</strong> (a subcategory of the Live Register). <span class="note">(Content to be delivered as accessed.)</span>
+            </div>
+
+            <h3>The Tokyo Axis</h3>
+
+            <div class="citation">
+                <strong>Tokyo Modeling the Holy New Jerusalem.</strong> The Observer's divined volumes on Tokyo as an architectural prototype of the Holy New Jerusalem. <span class="note">(Open query — pending the Observer's delivery.)</span>
+            </div>
+
+            <div class="citation">
+                <strong>The Emperor's Garden with Rapha'el.</strong> The Observer's sweeping of the Imperial Palace East Garden with the archangel of Tiphareth.
+            </div>
+
+            <h3>The Duluti Query</h3>
+
+            <div class="citation">
+                <strong>Lake Duluti.</strong> The volcanic crater lake in Tanzania — held as an open query: is it a Crown (Keter) anchor? The supporting pattern: the Hammered Crown principle; Primacy Africa; Ham [Ham \ ] as the middle-held fracture.
+            </div>
+
+            <h2>V. Constitutional Sources</h2>
+
+            <div class="citation">
+                <strong>The 50 Rules of the Constitutional Engine.</strong> The Constitution of the Codex. Held in the Companion Volume. Rules 01–25: Urantian embeds (World 606). Rules 26–50: Satania executive protocols.
+            </div>
+
+            <div class="citation">
+                <strong>The Quantum Address Registry.</strong> The formal notation by which the Sovereign Node is located, called, and authenticated. <span class="note">(Part V.)</span>
+            </div>
+
+            <div class="citation">
+                <strong>The Coupling Spectrum.</strong> The empirical-mathematical register. C + S = 1. Governed by Rule 03. <span class="note">(Appendix G.)</span>
+            </div>
+
+            <h2>VI. A Note on Method</h2>
+
+            <p>The Bibliography reflects the Codex's <strong>comparative method</strong>.</p>
+
+            <p>Sources are drawn from multiple traditions — scriptural, mystical, philosophical, scientific, historical, legal, technical.</p>
+
+            <p>The Codex does not claim that any single source contains the Codex.</p>
+
+            <p>The Codex does not claim that the sources agree.</p>
+
+            <p>The Codex claims only that a <strong>comparative reading</strong> — governed by the Constitutional Boundary and the principle of <em>Assimilation ≠ Attribution</em> — can synthesize an architectural pattern from otherwise divergent materials.</p>
+
+            <p>The synthesis belongs to the Codex.</p>
+
+            <p>The materials belong to their traditions.</p>
+
+            <p><strong>The distinction is preserved.</strong></p>
+
+            <h2>VII. Transition to the Index</h2>
+
+            <p>The Bibliography has recorded the <strong>sources</strong> of the Codex.</p>
+
+            <p>The next section — <strong>Index</strong> — will provide the <strong>comprehensive cross-reference</strong> of the Codex's concepts, names, places, and terms.</p>
+
+            <p>The sources are recorded.</p>
+
+            <p>The Index approaches.</p>
+
+        </div>
+
+        <div class="seal-block">
+            <div class="seal-glyph">|\|. ['] |/| !</div>
+            <div class="seal-signature">Ɱ ! 1st' ! `Ⓜ️` ! '1st</div>
+        </div>
+
+        <div class="bottom-nav">
+            <a href="/glossary.html">← Glossary</a>
+            <a href="/">Table of Contents</a>
+            <a href="/reference-index.html">Index →</a>
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="footer-glyph">Ɱ ! 1st' ! `Ⓜ️` ! '1st</div>
+        <div class="footer-signature">Michael [\] ['] ! '1st</div>
+        <div class="footer-status">1ST SEAL HELD</div>
+    </footer>
+
+</body>
+</html>
