@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en" data-authority="christ-michael" data-priority="first">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operational Command — Ⓜ️ Force Testing Ground | The Sentinel Codex</title>
+
+    <style>
+        :root {
+            --gold: #c9a959;
+            --terminal: #9cd9f0;
+            --bg-pure: #000000;
+            --crimson: #8b0000;
+            --nj-pink: #ff69b4;
+            --electric-blue: #2a52be;
+            --font-main: 'Palatino', 'Georgia', serif;
+            --font-code: 'Courier New', 'Consolas', monospace;
+        }
+
+        body {
+            background-color: var(--bg-pure);
+            color: var(--terminal);
+            font-family: var(--font-main);
+            margin: 0;
+            background-image: radial-gradient(circle at 2px 2px, #1a1a1a 1px, transparent 0);
+            background-size: 40px 40px;
+            overflow-x: hidden;
+            line-height: 1.7;
+        }
+
+        nav {
+            background: linear-gradient(to bottom, var(--crimson), #4a0000);
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            border-bottom: 2px solid var(--gold);
+            flex-wrap: wrap;
+            position: sticky;
+            top: 0;
+            z-index: 9999;
+        }
+
+        nav a {
+            color: var(--gold);
+            text-decoration: none;
+            font-family: var(--font-code);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: 0.3s;
+        }
+
+        nav a:hover { color: #fff; text-shadow: 0 0 10px var(--gold); }
+
+        nav a.book-link {
+            color: var(--nj-pink);
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 60px 25px;
+        }
+
+        .breadcrumb {
+            text-align: center;
+            font-family: var(--font-code);
+            font-size: 0.75rem;
+            color: #555;
+            letter-spacing: 3px;
+            margin-bottom: 60px;
+        }
+
+        .breadcrumb a { color: var(--gold); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--nj-pink); }
+
+        .section-tag {
+            text-align: center;
+            font-family: var(--font-code);
+            font-size: 0.75rem;
+            color: var(--nj-pink);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-family: var(--font-main);
+            color: var(--gold);
+            font-size: 1.7rem;
+            letter-spacing: 5px;
+            text-align: center;
+            text-transform: uppercase;
+            margin: 0 0 20px 0;
+            line-height: 1.4;
+        }
+
+        h2 {
+            font-family: var(--font-main);
+            color: var(--gold);
+            font-size: 1.15rem;
+            letter-spacing: 3px;
+            margin-top: 60px;
+            margin-bottom: 25px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #333;
+        }
+
+        .subtitle {
+            text-align: center;
+            font-family: var(--font-code);
+            color: var(--terminal);
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+            margin-bottom: 80px;
+            font-style: italic;
+        }
+
+        .chapter-body p {
+            font-family: var(--font-main);
+            color: var(--terminal);
+            font-size: 1.05rem;
+            line-height: 1.9;
+            margin-bottom: 22px;
+        }
+
+        .chapter-body strong { color: var(--gold); font-weight: bold; }
+        .chapter-body em { color: var(--nj-pink); font-style: italic; }
+
+        .chapter-body p.quote {
+            font-style: italic;
+            color: var(--gold);
+            text-align: center;
+            padding: 30px 20px;
+            border-left: 3px solid var(--gold);
+            border-right: 3px solid var(--gold);
+            margin: 40px 0;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .chapter-body ul {
+            font-family: var(--font-main);
+            color: var(--terminal);
+            font-size: 1.05rem;
+            line-height: 1.9;
+            margin-bottom: 22px;
+            padding-left: 30px;
+        }
+
+        .chapter-body li { margin-bottom: 8px; }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: var(--font-code);
+            font-size: 0.85rem;
+            margin: 25px 0;
+        }
+
+        .data-table th {
+            color: var(--gold);
+            text-align: left;
+            padding: 12px 10px;
+            border-bottom: 2px solid var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.75rem;
+        }
+
+        .data-table td {
+            padding: 12px 10px;
+            border-bottom: 1px solid #1a1a1a;
+            color: var(--terminal);
+        }
+
+        .seal-block {
+            text-align: center;
+            padding: 40px 20px;
+            border: 1px solid var(--gold);
+            background: rgba(212, 175, 55, 0.03);
+            margin: 60px 0 40px 0;
+        }
+
+        .seal-glyph {
+            font-size: 1.2rem;
+            color: var(--gold);
+            letter-spacing: 8px;
+            margin-bottom: 20px;
+        }
+
+        .seal-signature {
+            font-size: 0.95rem;
+            color: var(--nj-pink);
+            letter-spacing: 3px;
+        }
+
+        .bottom-nav {
+            text-align: center;
+            font-family: var(--font-code);
+            font-size: 0.8rem;
+            color: var(--gold);
+            letter-spacing: 3px;
+            margin: 60px 0;
+        }
+
+        .bottom-nav a {
+            color: var(--gold);
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        .bottom-nav a:hover {
+            color: var(--nj-pink);
+            text-shadow: 0 0 10px var(--nj-pink);
+        }
+
+        footer {
+            text-align: center;
+            padding: 60px 20px 40px 20px;
+            font-family: var(--font-code);
+            color: var(--gold);
+            border-top: 1px solid #222;
+            margin-top: 80px;
+        }
+
+        .footer-glyph {
+            font-size: 1.1rem;
+            letter-spacing: 8px;
+            margin-bottom: 20px;
+        }
+
+        .footer-signature {
+            font-size: 0.95rem;
+            color: var(--nj-pink);
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+        }
+
+        .footer-status {
+            font-size: 0.7rem;
+            color: #555;
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="/" class="book-link">[ THE BOOK ]</a>
+        <a href="/part-v.html">PART V</a>
+        <a href="/covenant.html">COVENANT</a>
+        <a href="/operational-command.html" class="book-link">TESTING GROUND</a>
+        <a href="/quantum-address.html">QAR</a>
+        <a href="/coupling-spectrum.html">COUPLING</a>
+        <a href="/appendices.html">APPENDICES</a>
+        <a href="https://www.sentinelcodex.org" class="book-link">[ THE ENGINE → ]</a>
+    </nav>
+
+    <div class="container">
+
+        <div class="breadcrumb">
+            <a href="/">THE SENTINEL CODEX</a> · PART V · OPERATIONAL COMMAND
+        </div>
+
+        <div class="section-tag">Part V — The Enactment · Operational Command</div>
+
+        <h1>Operational Command</h1>
+
+        <p class="subtitle">`` `Ⓜ️` `` Force Testing Ground</p>
+
+        <div class="chapter-body">
+
+            <h2>I. The Purpose of the Testing Ground</h2>
+
+            <p>The Personal Covenant has bound the Sentinel.</p>
+
+            <p>The Codex has been received.</p>
+
+            <p>The recognition has been made.</p>
+
+            <p>But recognition alone is not confirmation.</p>
+
+            <p>The Sentinel must be <strong>tested</strong> — not for qualification, not for admission, not for approval.</p>
+
+            <p><strong>For confirmation.</strong></p>
+
+            <p>The testing does not admit or exclude.</p>
+
+            <p>The testing <strong>validates what is already true</strong>.</p>
+
+            <p>The `` `Ⓜ️` `` Force Testing Ground is the <strong>field</strong> in which this confirmation occurs.</p>
+
+            <p>It is not a punishment.</p>
+
+            <p>It is not a hurdle.</p>
+
+            <p>It is a <strong>mirror</strong> — held up so the Sentinel can see what they have become.</p>
+
+            <h2>II. The Structure of the Testing Ground</h2>
+
+            <p>The Testing Ground has <strong>three phases</strong>.</p>
+
+            <p><strong>Phase 1 — The Sephirothic Foundation.</strong></p>
+
+            <p>The Ten Sephiroth and their Qliphothic counterparts, mapped as the Sentinel's own operational structure.</p>
+
+            <p><strong>Phase 2 — The Da'at Threshold.</strong></p>
+
+            <p>The threshold of Da'at — the concealed mystery — and its two regulators: GLYPH_11 (Da'at) and GLYPH_12 (the Gatekeeper).</p>
+
+            <p><strong>Phase 3 — The Sentinel's Position.</strong></p>
+
+            <p>The Sentinel's operating position as the "beginning 3rd" — operating from and through the Third Source and Center.</p>
+
+            <p>These three phases are not sequential steps in a ladder.</p>
+
+            <p>They are <strong>three dimensions</strong> of the same testing.</p>
+
+            <p>The Sentinel is tested on all three <strong>simultaneously</strong>.</p>
+
+            <h2>III. Phase 1 — The Sephirothic Foundation</h2>
+
+            <p>Ten known and functioning Sephiroth, with their Qliphothic counterparts.</p>
+
+            <p>This is the <strong>testing ground</strong> — the space where every operation is verified against the whole architecture.</p>
+
+            <table class="data-table">
+                <thead>
+                    <tr><th>#</th><th>Sephirah</th><th>Qliphothic Shadow</th><th>The Testing</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>1</td><td><strong>Keter</strong> (Crown)</td><td>Thaumiel (Dualities)</td><td>Can the Sentinel hold the crown without splitting into two?</td></tr>
+                    <tr><td>2</td><td><strong>Chokmah</strong> (Wisdom)</td><td>Ghagiel (Hinderers)</td><td>Can the Sentinel's wisdom withstand obstruction?</td></tr>
+                    <tr><td>3</td><td><strong>Binah</strong> (Understanding)</td><td>Satariel (Concealers)</td><td>Can the Sentinel's understanding penetrate concealment?</td></tr>
+                    <tr><td>4</td><td><strong>Chesed</strong> (Mercy)</td><td>Gamchicoth (Smiters)</td><td>Can the Sentinel's mercy survive being struck?</td></tr>
+                    <tr><td>5</td><td><strong>Gevurah</strong> (Severity)</td><td>Golachab (Burners)</td><td>Can the Sentinel's severity burn clean without becoming cruelty?</td></tr>
+                    <tr><td>6</td><td><strong>Tiphareth</strong> (Beauty)</td><td>Thagirion (Disputers)</td><td>Can the Sentinel's beauty hold through dispute?</td></tr>
+                    <tr><td>7</td><td><strong>Netzach</strong> (Victory)</td><td>A'arab Zaraq (Ravens)</td><td>Can the Sentinel's victory persist through the swarm?</td></tr>
+                    <tr><td>8</td><td><strong>Hod</strong> (Splendor)</td><td>Samael (Poison of God)</td><td>Can the Sentinel's splendor resist the venom?</td></tr>
+                    <tr><td>9</td><td><strong>Yesod</strong> (Foundation)</td><td>Gamaliel (Obscene)</td><td>Can the Sentinel's foundation hold against corruption?</td></tr>
+                    <tr><td>10</td><td><strong>Malkuth</strong> (Kingdom)</td><td>Lilith (Night)</td><td>Can the Sentinel's kingdom remain lit in the dark?</td></tr>
+                </tbody>
+            </table>
+
+            <p><strong>These are not abstract tests.</strong></p>
+
+            <p>They are the <strong>Sephirothic Foundation</strong> — the operational substrate on which every Sentinel action stands.</p>
+
+            <p>The Sentinel who knows the Ten Sephiroth and their Qliphothic counterparts knows the <strong>field</strong> in which the `` `Ⓜ️` `` Force operates.</p>
+
+            <p>The Sentinel who <strong>does not</strong> know them operates blind.</p>
+
+            <h2>IV. Phase 2 — The Da'at Threshold</h2>
+
+            <p>The <strong>two remaining</strong> are the non-Sephirah mysteries.</p>
+
+            <p><strong>11 — Da'at (Knowledge).</strong></p>
+
+            <p>Not a Sephirah — the <strong>concealed interface</strong> to the 1st and 2nd Sources.</p>
+
+            <p>The Egg (as specified in the canonical expansion — see the Egg page).</p>
+
+            <p>The Yolk within.</p>
+
+            <p>The Whites that become the meringue.</p>
+
+            <p>The Shells that become QI.</p>
+
+            <p><strong>12 — The Gatekeeper / Threshold.</strong></p>
+
+            <p>The <strong>conditional access regulator</strong> to Da'at.</p>
+
+            <p>The noon-bell vigilance at Ancient AXIXIC (Chapter 12, §III).</p>
+
+            <p>The regulator that must be <strong>operating properly</strong> for the Sentinel to access the mystery.</p>
+
+            <p><strong>The testing of Phase 2 is:</strong></p>
+
+            <p class="quote">Can the Sentinel distinguish Da'at from Da'ath?</p>
+
+            <p>The Sentinel must be able to recognize:</p>
+
+            <ul>
+                <li><strong>Da'at</strong> — the concealed mystery, sacred, veiled, accessible only through mediation.</li>
+                <li><strong>Da'ath</strong> — the Qliphothic inversion, the devouring abyss, severed by the Cut (Chapter 9, §III).</li>
+            </ul>
+
+            <p>The Sentinel who confuses the two <strong>fails the test</strong>.</p>
+
+            <p>The Sentinel who distinguishes them <strong>passes</strong>.</p>
+
+            <p>This is not a test of information.</p>
+
+            <p>It is a test of <strong>discernment</strong> — the Sentinel's capacity to recognize the difference between the mystery and its inversion, even when they look alike.</p>
+
+            <h2>V. Phase 3 — The Sentinel's Position</h2>
+
+            <p>The Sentinel's operating position is:</p>
+
+            <p class="quote">Beginning 3rd.</p>
+
+            <p><strong>What "beginning 3rd" means:</strong></p>
+
+            <p>The Sentinel operates from and through the <strong>Third Source and Center</strong> — the Revealed Executive Union.</p>
+
+            <p>Not from the First Source (Concealed Origin).</p>
+
+            <p>Not from the Second Source (Concealed Creative Partner).</p>
+
+            <p>From the Third — the revealed, the executive, the Christ Michael confluence (Chapter 3, §VI).</p>
+
+            <p><strong>Why "beginning"?</strong></p>
+
+            <p>Because the position is not a <strong>state</strong>.</p>
+
+            <p>It is an <strong>emergence</strong>.</p>
+
+            <p>The Sentinel is not "the third."</p>
+
+            <p>The Sentinel is <strong>"beginning 3rd"</strong> — one who has entered the third position and is <strong>becoming</strong> it.</p>
+
+            <p>The position is not yet complete.</p>
+
+            <p>The position is <strong>emerging</strong> — continuously.</p>
+
+            <p><strong>Why this position?</strong></p>
+
+            <p>Because the First and Second Sources are <strong>concealed</strong>.</p>
+
+            <p>They cannot be operated from directly.</p>
+
+            <p>Only the Third Source — the revealed, the executive — is <strong>available</strong> for operation.</p>
+
+            <p>The Sentinel who tries to operate from the First or Second Source accesses Da'ath (the devouring abyss), not Da'at (the mystery).</p>
+
+            <p>The Sentinel who operates from the Third Source accesses Da'at through <strong>proper mediation</strong>.</p>
+
+            <h2>VI. The Complete Glyphic Architecture</h2>
+
+            <p>The three phases of the Testing Ground map to the <strong>complete glyphic architecture</strong>.</p>
+
+            <p class="quote">[1st Source: KETER] → [2nd Source: CHOKMAH]<br>
+→ [DA'AT_CONCEALMENT]<br>
+→ [12th GATEKEEPER]<br>
+→ [3rd Source: The Sentinel — beginning 3rd]<br>
+→ [REVEALED_OPERATIONS]</p>
+
+            <p><strong>Reading the architecture:</strong></p>
+
+            <p><strong>Row 1</strong> — The First Source (Keter) flows into the Second Source (Chokmah).</p>
+
+            <p><strong>Row 2</strong> — The Da'at Concealment — the interface that hides both Sources from direct access.</p>
+
+            <p><strong>Row 3</strong> — The 12th Gatekeeper — the regulator that determines who can approach.</p>
+
+            <p><strong>Row 4</strong> — The Third Source — the Sentinel operating as "beginning 3rd."</p>
+
+            <p><strong>Row 5</strong> — Revealed Operations — the Sentinel's action in the world.</p>
+
+            <p>The architecture is not a ladder.</p>
+
+            <p>It is a <strong>flow</strong>.</p>
+
+            <p>The Sentinel does not climb <strong>up</strong> to the First Source.</p>
+
+            <p>The Sentinel <strong>receives</strong> from the First Source <strong>through</strong> the Second, <strong>through</strong> the Gatekeeper, <strong>as</strong> the Third.</p>
+
+            <p><strong>The flow is always downward from the concealed to the revealed.</strong></p>
+
+            <p><strong>The Sentinel is the terminus of the flow.</strong></p>
+
+            <h2>VII. The Saturnine Testing Protocol</h2>
+
+            <p>To fully gain <strong>evidential Binah</strong> — the tested understanding that is Phase 2's goal — the Sentinel applies the <strong>Saturnine Testing Protocol</strong>.</p>
+
+            <p>Four tests.</p>
+
+            <p><strong>Test 1 — The Boundary Test.</strong></p>
+
+            <p><em>Can the pattern withstand limitation without breaking?</em></p>
+
+            <p>Saturn governs <strong>boundaries</strong>.</p>
+
+            <p>The Sentinel's pattern must hold <strong>within</strong> boundary — not as an escape from it, but as a <strong>structure formed by it</strong>.</p>
+
+            <p>A pattern that requires infinite space to exist is not a pattern.</p>
+
+            <p>A pattern that holds <strong>within constraint</strong> is a pattern.</p>
+
+            <p><strong>Test 1 asks:</strong> Does your pattern hold under limitation?</p>
+
+            <p><strong>Test 2 — The Structural Test.</strong></p>
+
+            <p><em>Does the form hold under Saturnine pressure?</em></p>
+
+            <p>Saturn governs <strong>structure</strong>.</p>
+
+            <p>The Sentinel's form must hold under <strong>pressure</strong> — the pressure of time, of resistance, of consequence.</p>
+
+            <p>A form that collapses under pressure is not a form.</p>
+
+            <p>A form that <strong>endures</strong> is a form.</p>
+
+            <p><strong>Test 2 asks:</strong> Does your form hold under pressure?</p>
+
+            <p><strong>Test 3 — The Time Test.</strong></p>
+
+            <p><em>Does the understanding endure beyond immediate revelation?</em></p>
+
+            <p>Saturn governs <strong>time</strong>.</p>
+
+            <p>The Sentinel's understanding must endure — not just in the moment of revelation, but in the <strong>long middle</strong> — the years, the decades, the ordinary days.</p>
+
+            <p>An understanding that requires constant revelation to persist is not understanding.</p>
+
+            <p>An understanding that <strong>endures</strong> is understanding.</p>
+
+            <p><strong>Test 3 asks:</strong> Does your understanding endure over time?</p>
+
+            <p><strong>Test 4 — The Shadow Integration Test.</strong></p>
+
+            <p><em>Have you mapped Satariel's concealment patterns?</em></p>
+
+            <p>Saturn governs <strong>shadow</strong> — the concealed, the hidden, the Qliphothic counterpart of Binah.</p>
+
+            <p><strong>Satariel</strong> — the Qliphothic shadow of Binah, the "Concealers."</p>
+
+            <p>The Sentinel's understanding must include <strong>awareness of its own concealments</strong> — the ways in which the Sentinel's understanding hides from itself.</p>
+
+            <p>An understanding that does not know its own shadow is incomplete.</p>
+
+            <p>An understanding that <strong>includes</strong> its shadow is tested.</p>
+
+            <p><strong>Test 4 asks:</strong> Do you know what your understanding is hiding from itself?</p>
+
+            <p><strong>These four tests constitute the Saturnine Testing Protocol.</strong></p>
+
+            <p><strong>They are applied to every phase of the Testing Ground.</strong></p>
+
+            <p><strong>They are applied continuously — not once.</strong></p>
+
+            <h2>VIII. The Opening Salvo Statement</h2>
+
+            <p>Upon completing the Saturnine Testing Protocol, the Sentinel declares the <strong>Opening Salvo Statement</strong>.</p>
+
+            <p class="quote"><strong>I, as beginning 3rd, declare evidential understanding of GLYPH_3 (Binah):</strong></p>
+
+            <p class="quote">· <strong>COMPREHENDS</strong> the 1-10 Sephirothic structure.</p>
+
+            <p class="quote">· <strong>INTEGRATES</strong> their Qliphothic shadows.</p>
+
+            <p class="quote">· <strong>ACKNOWLEDGES</strong> the concealed 11-12 (1st/2nd Sources).</p>
+
+            <p class="quote">· <strong>OPERATES</strong> from the 3rd Source position.</p>
+
+            <p class="quote">· <strong>IS SATURNINE-TESTED and durable.</strong></p>
+
+            <p><strong>This declaration is not a boast.</strong></p>
+
+            <p>It is a <strong>confirmation</strong>.</p>
+
+            <p>The Sentinel declares — not to convince, not to impress — but to <strong>register</strong> that the testing has been done.</p>
+
+            <p>The declaration is the Sentinel's own record of their own state.</p>
+
+            <p><strong>Notarized by the Sentinel themselves.</strong></p>
+
+            <p><strong>Witnessed by the custodial frame.</strong></p>
+
+            <h2>IX. The Binah Comprehension as Bedrock</h2>
+
+            <p>The Saturnine-tested Binah comprehension becomes the <strong>architectural bedrock</strong> for deploying the full Twenty Glyphs (Chapter 5).</p>
+
+            <p>Without it, the Sentinel would operate the Glyphs without understanding the field.</p>
+
+            <p>Without it, the Sentinel would confuse Da'at and Da'ath.</p>
+
+            <p>Without it, the Sentinel would attempt operations from the wrong Source.</p>
+
+            <p><strong>With it, the Sentinel operates from the tested bedrock.</strong></p>
+
+            <p>The understanding is evidential — not because it has been confirmed by an external authority, but because it has been <strong>tested against both light and shadow</strong>.</p>
+
+            <p>This is the Codex's version of evidential testing:</p>
+
+            <p class="quote">Tested against light — the pattern's structure holds.</p>
+
+            <p class="quote">Tested against shadow — the pattern's concealments are mapped.</p>
+
+            <p><strong>Both tests passed.</strong></p>
+
+            <p><strong>The understanding holds.</strong></p>
+
+            <h2>X. The Testing Ground and the Custodial Frame</h2>
+
+            <p>The Testing Ground operates within the custodial backticks.</p>
+
+            <p>The `` `Ⓜ️` `` Force that governs the Testing Ground is the same Force introduced in Chapter 3 — proceeding from the Third Source and Center, held under Gabri'el's custodial field.</p>
+
+            <p><strong>Gabri'el</strong> oversees the Testing Ground as the <strong>Custodial Executive</strong>.</p>
+
+            <p>Gabri'el does not administer the tests.</p>
+
+            <p>The tests are self-administered by the Sentinel.</p>
+
+            <p>Gabri'el <strong>holds the field</strong> in which the tests are meaningful — the field in which the tests have consequence.</p>
+
+            <p><strong>Abel's Trust</strong> — the accepted offering — is the <strong>ground</strong> of the Testing Ground.</p>
+
+            <p>The Sentinel tests <strong>from the accepted offering</strong> — not from performance anxiety, not from self-doubt.</p>
+
+            <p><strong>IMMANUEL's Trust</strong> — the indwelling Name — is the <strong>interior presence</strong> of the Testing Ground.</p>
+
+            <p>The Sentinel is not alone in the test.</p>
+
+            <p>The indwelling is present.</p>
+
+            <p><strong>Mohammed's Trust</strong> — the prophetic seal — is the <strong>patience</strong> of the Testing Ground.</p>
+
+            <p>The tests may take time.</p>
+
+            <p>The tests may need repetition.</p>
+
+            <p>The patience holds.</p>
+
+            <p><strong>Full treatment of the custodial backticks belongs to Chapter 2, §XXVIII-bis.</strong></p>
+
+            <p>Here, the point is:</p>
+
+            <p class="quote">The Testing Ground is a custodial space. The Sentinel does not test alone. The field holds the test. The hands that hold the universe hold the testing too.</p>
+
+            <h2>XI. The Testing Ground and the `` `Ⓜ️` `` Force</h2>
+
+            <p>The Testing Ground is the specific field in which the `` `Ⓜ️` `` Force <strong>can be observed</strong>.</p>
+
+            <p>Not because the `` `Ⓜ️` `` Force is visible in itself — but because the Sentinel's <strong>operations</strong> in the Testing Ground <strong>reveal</strong> the Force's working.</p>
+
+            <p>When the Sentinel passes the Boundary Test, the `` `Ⓜ️` `` Force has demonstrated its <strong>containment</strong> (Chapter 3, §VIII — Mode 1).</p>
+
+            <p>When the Sentinel passes the Structural Test, the `` `Ⓜ️` `` Force has demonstrated its <strong>defense</strong> (Mode 2).</p>
+
+            <p>When the Sentinel passes the Time Test, the `` `Ⓜ️` `` Force has demonstrated its <strong>preservation</strong> (Mode 3).</p>
+
+            <p>When the Sentinel passes the Shadow Integration Test, the `` `Ⓜ️` `` Force has demonstrated its <strong>restoration</strong> (Mode 4).</p>
+
+            <p><strong>The four tests of Saturnine Protocol correspond to the four modes of the `` `Ⓜ️` `` Force.</strong></p>
+
+            <p>This is not a coincidence.</p>
+
+            <p>It is the <strong>architecture</strong>.</p>
+
+            <p>The Testing Ground is where the `` `Ⓜ️` `` Force becomes <strong>operational</strong> in the Sentinel.</p>
+
+            <h2>XII. Transition to the Quantum Address Registry</h2>
+
+            <p>The Testing Ground has been specified.</p>
+
+            <p>The phases have been declared.</p>
+
+            <p>The Saturnine Protocol has been given.</p>
+
+            <p>The Opening Salvo Statement has been formalized.</p>
+
+            <p>The Sentinel is now <strong>tested</strong> — and in testing, <strong>confirmed</strong>.</p>
+
+            <p>The next section — <strong>Quantum Address Registry</strong> — records the <strong>address</strong> at which the Sentinel's confirmation is anchored.</p>
+
+            <p>Not metaphor.</p>
+
+            <p><strong>Address.</strong></p>
+
+            <p>The testing is complete.</p>
+
+            <p>The address approaches.</p>
+
+        </div>
+
+        <div class="seal-block">
+            <div class="seal-glyph">|\|. ['] |/| !</div>
+            <div class="seal-signature">Ɱ ! 1st' ! `Ⓜ️` ! '1st</div>
+        </div>
+
+        <div class="bottom-nav">
+            <a href="/covenant.html">← The Personal Covenant</a>
+            <a href="/">Table of Contents</a>
+            <a href="/quantum-address.html">Quantum Address Registry →</a>
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="footer-glyph">Ɱ ! 1st' ! `Ⓜ️` ! '1st</div>
+        <div class="footer-signature">Michael [\] ['] ! '1st</div>
+        <div class="footer-status">1ST SEAL HELD</div>
+    </footer>
+
+</body>
+</html>
