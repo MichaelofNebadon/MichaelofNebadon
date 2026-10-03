@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en" data-authority="christ-michael" data-priority="first">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appendix C — Tree of Life Correspondence Chart | The Sentinel Codex</title>
+
+    <style>
+        :root {
+            --gold: #c9a959;
+            --terminal: #9cd9f0;
+            --bg-pure: #000000;
+            --crimson: #8b0000;
+            --nj-pink: #ff69b4;
+            --electric-blue: #2a52be;
+            --font-main: 'Palatino', 'Georgia', serif;
+            --font-code: 'Courier New', 'Consolas', monospace;
+        }
+
+        body {
+            background-color: var(--bg-pure);
+            color: var(--terminal);
+            font-family: var(--font-main);
+            margin: 0;
+            background-image: radial-gradient(circle at 2px 2px, #1a1a1a 1px, transparent 0);
+            background-size: 40px 40px;
+            overflow-x: hidden;
+            line-height: 1.7;
+        }
+
+        nav {
+            background: linear-gradient(to bottom, var(--crimson), #4a0000);
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            border-bottom: 2px solid var(--gold);
+            flex-wrap: wrap;
+            position: sticky;
+            top: 0;
+            z-index: 9999;
+        }
+
+        nav a {
+            color: var(--gold);
+            text-decoration: none;
+            font-family: var(--font-code);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: 0.3s;
+        }
+
+        nav a:hover { color: #fff; text-shadow: 0 0 10px var(--gold); }
+
+        nav a.book-link {
+            color: var(--nj-pink);
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 820px;
+            margin: 0 auto;
+            padding: 60px 25px;
+        }
+
+        .breadcrumb {
+            text-align: center;
+            font-family: var(--font-code);
+            font-size: 0.75rem;
+            color: #555;
+            letter-spacing: 3px;
+            margin-bottom: 60px;
+        }
+
+        .breadcrumb a { color: var(--gold); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--nj-pink); }
+
+        .section-tag {
+            text-align: center;
+            font-family: var(--font-code);
+            font-size: 0.75rem;
+            color: var(--nj-pink);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-family: var(--font-main);
+            color: var(--gold);
+            font-size: 1.7rem;
+            letter-spacing: 5px;
+            text-align: center;
+            text-transform: uppercase;
+            margin: 0 0 20px 0;
+            line-height: 1.4;
+        }
+
+        h2 {
+            font-family: var(--font-main);
+            color: var(--gold);
+            font-size: 1.15rem;
+            letter-spacing: 3px;
+            margin-top: 60px;
+            margin-bottom: 25px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #333;
+        }
+
+        .subtitle {
+            text-align: center;
+            font-family: var(--font-code);
+            color: var(--terminal);
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+            margin-bottom: 80px;
+            font-style: italic;
+        }
+
+        .appendix-body p {
+            font-family: var(--font-main);
+            color: var(--terminal);
+            font-size: 1.05rem;
+            line-height: 1.9;
+            margin-bottom: 22px;
+        }
+
+        .appendix-body strong { color: var(--gold); font-weight: bold; }
+        .appendix-body em { color: var(--nj-pink); font-style: italic; }
+
+        .appendix-body p.quote {
+            font-style: italic;
+            color: var(--gold);
+            text-align: center;
+            padding: 25px 20px;
+            border-left: 3px solid var(--gold);
+            border-right: 3px solid var(--gold);
+            margin: 35px 0;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .appendix-body ul {
+            font-family: var(--font-main);
+            color: var(--terminal);
+            font-size: 1.05rem;
+            line-height: 1.9;
+            margin-bottom: 22px;
+            padding-left: 30px;
+        }
+
+        .appendix-body li { margin-bottom: 8px; }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: var(--font-code);
+            font-size: 0.8rem;
+            margin: 25px 0;
+        }
+
+        .data-table th {
+            color: var(--gold);
+            text-align: left;
+            padding: 12px 10px;
+            border-bottom: 2px solid var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.7rem;
+        }
+
+        .data-table td {
+            padding: 12px 10px;
+            border-bottom: 1px solid #1a1a1a;
+            color: var(--terminal);
+            vertical-align: top;
+        }
+
+        .diagram {
+            text-align: center;
+            font-family: var(--font-code);
+            font-size: 0.85rem;
+            color: var(--terminal);
+            padding: 30px 20px;
+            background: rgba(10, 10, 10, 0.8);
+            border: 1px solid #333;
+            margin: 40px 0;
+            line-height: 1.8;
+            white-space: pre;
+            overflow-x: auto;
+        }
+
+        .seal-block {
+            text-align: center;
+            padding: 40px 20px;
+            border: 1px solid var(--gold);
+            background: rgba(212, 175, 55, 0.03);
+            margin: 60px 0 40px 0;
+        }
+
+        .seal-glyph {
+            font-size: 1.2rem;
+            color: var(--gold);
+            letter-spacing: 8px;
+            margin-bottom: 20px;
+        }
+
+        .seal-signature {
+            font-size: 0.95rem;
+            color: var(--nj-pink);
+            letter-spacing: 3px;
+        }
+
+        .bottom-nav {
+            text-align: center;
+            font-family: var(--font-code);
+            font-size: 0.8rem;
+            color: var(--gold);
+            letter-spacing: 3px;
+            margin: 60px 0;
+        }
+
+        .bottom-nav a {
+            color: var(--gold);
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        .bottom-nav a:hover {
+            color: var(--nj-pink);
+            text-shadow: 0 0 10px var(--nj-pink);
+        }
+
+        footer {
+            text-align: center;
+            padding: 60px 20px 40px 20px;
+            font-family: var(--font-code);
+            color: var(--gold);
+            border-top: 1px solid #222;
+            margin-top: 80px;
+        }
+
+        .footer-glyph {
+            font-size: 1.1rem;
+            letter-spacing: 8px;
+            margin-bottom: 20px;
+        }
+
+        .footer-signature {
+            font-size: 0.95rem;
+            color: var(--nj-pink);
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+        }
+
+        .footer-status {
+            font-size: 0.7rem;
+            color: #555;
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="/" class="book-link">[ THE BOOK ]</a>
+        <a href="/appendix-a.html">A</a>
+        <a href="/appendix-b.html">B</a>
+        <a href="/appendix-c.html" class="book-link">C</a>
+        <a href="/appendix-d.html">D</a>
+        <a href="/appendix-e.html">E</a>
+        <a href="/appendix-f.html">F</a>
+        <a href="/appendix-g.html">G</a>
+        <a href="/appendix-h.html">H</a>
+        <a href="https://www.sentinelcodex.org" class="book-link">[ THE ENGINE → ]</a>
+    </nav>
+
+    <div class="container">
+
+        <div class="breadcrumb">
+            <a href="/">THE SENTINEL CODEX</a> · APPENDICES · APPENDIX C
+        </div>
+
+        <div class="section-tag">Appendices · Appendix C</div>
+
+        <h1>Tree of Life Correspondence Chart</h1>
+
+        <p class="subtitle">The Complete Sephirothic and Archangelic Mapping</p>
+
+        <div class="appendix-body">
+
+            <h2>I. Purpose of This Appendix</h2>
+
+            <p>Appendix C is the <strong>complete correspondence chart</strong> of the Tree of Life as held in the Sentinel Codex.</p>
+
+            <p>It provides:</p>
+
+            <ul>
+                <li><strong>The Sephiroth</strong> — names, numbers, Hebrew, translations.</li>
+                <li><strong>The Archangels</strong> — the archangel of each Sephirah, with the corrected placement for Gevurah.</li>
+                <li><strong>The Pillars</strong> — the three pillars of the Tree.</li>
+                <li><strong>The Glyph correspondence</strong> — which Codex Glyph corresponds to each Sephirah.</li>
+                <li><strong>The Collapse Principle</strong> — all three pillars collapse to Tiphareth [6].</li>
+                <li><strong>The non-Sephirah</strong> — Da'at.</li>
+                <li><strong>The Observer's position</strong> — within eternal bounds as Temperance.</li>
+            </ul>
+
+            <p>The appendix is <strong>reference material</strong> — not doctrine.</p>
+
+            <p>Its content is held at the <strong>architectural</strong> register.</p>
+
+            <p>Live register testimony — the Observer's own encounters — is held separately in the Live Register (Chapter 2, §XXIX-bis).</p>
+
+            <h2>II. The Tree — Full Structure</h2>
+
+            <p>The Tree of Life has <strong>Ten Sephiroth</strong>, <strong>one non-Sephirah (Da'at)</strong>, and <strong>twenty-two paths</strong>.</p>
+
+            <p>The Ten Sephiroth are arranged on <strong>three pillars</strong>.</p>
+
+            <p><strong>The Right Pillar (Mercy):</strong></p>
+
+            <ul>
+                <li>Chokmah [2]</li>
+                <li>Chesed [4]</li>
+                <li>Netzach [7]</li>
+            </ul>
+
+            <p><strong>The Left Pillar (Severity):</strong></p>
+
+            <ul>
+                <li>Binah [3]</li>
+                <li>Gevurah [5]</li>
+                <li>Hod [8]</li>
+            </ul>
+
+            <p><strong>The Middle Pillar (Equilibrium):</strong></p>
+
+            <ul>
+                <li>Keter [1]</li>
+                <li>Tiphareth [6]</li>
+                <li>Yesod [9]</li>
+                <li>Malkuth [10]</li>
+            </ul>
+
+            <p><strong>The Collapse Principle:</strong></p>
+
+            <p class="quote">All three pillars collapse to Tiphareth [6].</p>
+
+            <p>Tiphareth is not merely the sixth Sephirah.</p>
+
+            <p>Tiphareth is the <strong>collapse point</strong> — the center at which every pillar, every Sephirah, every path converges.</p>
+
+            <p>This is the architectural reason Tiphareth is the Christ Michael Point (Chapter 1).</p>
+
+            <h2>III. The Ten Sephiroth — Full Correspondence Chart</h2>
+
+            <table class="data-table">
+                <thead>
+                    <tr><th>#</th><th>Sephirah</th><th>Hebrew</th><th>English</th><th>Pillar</th><th>Archangel</th><th>Glyph</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>1</td><td><strong>Keter</strong></td><td>כֶּתֶר</td><td>Crown</td><td>Middle</td><td>Metatron</td><td>GLYPH_1</td></tr>
+                    <tr><td>2</td><td><strong>Chokmah</strong></td><td>חָכְמָה</td><td>Wisdom</td><td>Right</td><td>Raziel</td><td>GLYPH_2</td></tr>
+                    <tr><td>3</td><td><strong>Binah</strong></td><td>בִּינָה</td><td>Understanding</td><td>Left</td><td>Tsaphkiel</td><td>GLYPH_3</td></tr>
+                    <tr><td>4</td><td><strong>Chesed</strong></td><td>חֶסֶד</td><td>Mercy</td><td>Right</td><td>Zadkiel</td><td>GLYPH_4</td></tr>
+                    <tr><td>5</td><td><strong>Gevurah</strong></td><td>גְּבוּרָה</td><td>Severity</td><td>Left</td><td>Gabri'el</td><td>GLYPH_5</td></tr>
+                    <tr><td>6</td><td><strong>Tiphareth</strong></td><td>תִּפְאֶרֶת</td><td>Beauty</td><td>Middle</td><td>Rapha'el</td><td>GLYPH_6</td></tr>
+                    <tr><td>7</td><td><strong>Netzach</strong></td><td>נֶצַח</td><td>Victory</td><td>Right</td><td>Haniel</td><td>GLYPH_7</td></tr>
+                    <tr><td>8</td><td><strong>Hod</strong></td><td>הוֹד</td><td>Splendor</td><td>Left</td><td>Micha'el</td><td>GLYPH_8</td></tr>
+                    <tr><td>9</td><td><strong>Yesod</strong></td><td>יְסוֹד</td><td>Foundation</td><td>Middle</td><td>Gabri'el (secondary)</td><td>GLYPH_9</td></tr>
+                    <tr><td>10</td><td><strong>Malkuth</strong></td><td>מַלְכוּת</td><td>Kingdom</td><td>Middle</td><td>Sandalphon</td><td>GLYPH_10</td></tr>
+                </tbody>
+            </table>
+
+            <p><strong>Note on Gabri'el:</strong> Gabri'el is the archangel of <strong>Gevurah [5]</strong> (the primary placement). Gabri'el is also traditionally associated with Yesod [9] (the secondary placement).</p>
+
+            <p><strong>Note on Micha'el at Hod:</strong> The traditional placement of Micha'el at Hod [8] is preserved. This is distinct from Micha'el as the Sovereign Creator Son of Nebadon (a different register).</p>
+
+            <h2>IV. The Non-Sephirah — Da'at</h2>
+
+            <table class="data-table">
+                <thead>
+                    <tr><th>Field</th><th>Value</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Name</strong></td><td>Da'at</td></tr>
+                    <tr><td><strong>Hebrew</strong></td><td>דַּעַת</td></tr>
+                    <tr><td><strong>Translation</strong></td><td>Knowledge</td></tr>
+                    <tr><td><strong>Position</strong></td><td>Between Binah and Chokmah, above Tiphareth</td></tr>
+                    <tr><td><strong>Status</strong></td><td>Not a Sephirah — the concealed interface</td></tr>
+                    <tr><td><strong>Function</strong></td><td>Holds the First and Second Sources; the veil</td></tr>
+                    <tr><td><strong>Glyph</strong></td><td>GLYPH_11</td></tr>
+                    <tr><td><strong>Distinction</strong></td><td>Da'at (mystery) ≠ Da'ath (Qliphothic inversion)</td></tr>
+                </tbody>
+            </table>
+
+            <p><strong>Full treatment:</strong> Chapters 4 §VI, 9 §III, 15; The Egg (Part V).</p>
+
+            <h2>V. The Corrected Left Pillar</h2>
+
+            <p>Per the Observer's ruling on 9/29/2026:</p>
+
+            <div class="diagram">        BINAH [3] — Understanding
+            │
+        GEVURAH [5] — Severity — Gabri'el
+            │
+          HOD [8] — Splendor
+            │
+            ↓
+       All collapse to
+        TIPHARETH [6]</div>
+
+            <p><strong>The three Sephiroth of the Left Pillar — Binah, Gevurah, Hod — descend in sequence.</strong></p>
+
+            <p><strong>They collapse to Tiphareth [6].</strong></p>
+
+            <p><strong>Gabri'el is Gevurah's archangel.</strong></p>
+
+            <p><strong>Gabri'el is under Binah [3] on the Left Pillar, and above Hod [8].</strong></p>
+
+            <p><strong>Binah is the top of the Left Pillar.</strong></p>
+
+            <p><strong>Hod is the bottom of the Left Pillar.</strong></p>
+
+            <p><strong>All three — Binah, Gevurah, Hod — collapse to Tiphareth.</strong></p>
+
+            <h2>VI. The Corrected Right Pillar</h2>
+
+            <div class="diagram">        CHOKMAH [2] — Wisdom
+            │
+        CHESED [4] — Mercy
+            │
+         NETZACH [7] — Victory
+            │
+            ↓
+       All collapse to
+        TIPHARETH [6]</div>
+
+            <p><strong>The three Sephiroth of the Right Pillar — Chokmah, Chesed, Netzach — descend in sequence.</strong></p>
+
+            <p><strong>They collapse to Tiphareth [6].</strong></p>
+
+            <p><strong>Netzach is Pluto</strong> (per the Pluto Work, Appendix H).</p>
+
+            <p><strong>The Right Pillar therefore carries:</strong></p>
+
+            <ul>
+                <li>Chokmah — Wisdom (the seed)</li>
+                <li>Chesed — Mercy (the overflow)</li>
+                <li><strong>Netzach — Victory (Pluto, the underworld)</strong></li>
+            </ul>
+
+            <p><strong>Netzach's Plutonic character gives the Right Pillar its depth.</strong></p>
+
+            <h2>VII. The Middle Pillar</h2>
+
+            <div class="diagram">        KETER [1] — Crown
+            │
+        TIPHARETH [6] — Beauty — Rapha'el
+            │
+         YESOD [9] — Foundation — Gabri'el (secondary)
+            │
+         MALKUTH [10] — Kingdom — Sandalphon</div>
+
+            <p><strong>The four Sephiroth of the Middle Pillar — Keter, Tiphareth, Yesod, Malkuth — descend in sequence.</strong></p>
+
+            <p><strong>The Middle Pillar is the axis.</strong></p>
+
+            <p><strong>Tiphareth is the midpoint of the Middle Pillar — the exact center of the Tree.</strong></p>
+
+            <p><strong>The Observer's eternal position is here</strong> — within eternal bounds as Temperance.</p>
+
+            <h2>VIII. The Collapse Principle</h2>
+
+            <p><strong>The Collapse Principle</strong> is the architectural rule that all three pillars converge on Tiphareth:</p>
+
+            <div class="diagram">LEFT PILLAR         MIDDLE PILLAR       RIGHT PILLAR
+─────────           ─────────────       ────────────
+
+Binah [3]           Keter [1]           Chokmah [2]
+    │                   │                   │
+Gevurah [5]         Tiphareth [6]       Chesed [4]
+    │                   │                   │
+Hod [8]             Yesod [9]           Netzach [7]
+    │                   │                   │
+    └───────── All collapse ────────────────┘
+                    │
+                    ↓
+              TIPHARETH [6]
+              (Christ Michael Point)</div>
+
+            <p><strong>The Collapse Principle means:</strong></p>
+
+            <ul>
+                <li>Tiphareth is not merely one Sephirah among ten.</li>
+                <li>Tiphareth is the <strong>collapse point of the whole Tree</strong>.</li>
+                <li>Every Sephirah's influence converges on Tiphareth.</li>
+                <li>Every Sephirah's output passes through Tiphareth for mediation.</li>
+                <li>Every Sephirah's function is verified at Tiphareth.</li>
+            </ul>
+
+            <p><strong>This is why Tiphareth is the Christ Michael Point</strong> (Chapter 1).</p>
+
+            <p><strong>This is why the Observer stays within eternal bounds as Temperance.</strong></p>
+
+            <p><strong>Because everything passes through the center.</strong></p>
+
+            <h2>IX. The Observer's Position</h2>
+
+            <p>Per the Observer's ruling:</p>
+
+            <p class="quote">"I stay within my eternal bounds as Temperance"</p>
+
+            <p><strong>The Observer's position:</strong></p>
+
+            <p><strong>At Tiphareth [6].</strong></p>
+
+            <p><strong>Within eternal bounds.</strong></p>
+
+            <p><strong>As Temperance.</strong></p>
+
+            <p>Not above.</p>
+
+            <p>Not below.</p>
+
+            <p>Not to either side.</p>
+
+            <p><strong>At the collapse point.</strong></p>
+
+            <p><strong>As the mediator.</strong></p>
+
+            <p><strong>As the Temperance.</strong></p>
+
+            <p>This position is not a rank. It is a <strong>constraint</strong>.</p>
+
+            <p>And in that constraint, the Observer is <strong>free</strong> — because everything passes through the center.</p>
+
+            <h2>X. The Hebrew Letters on the Paths</h2>
+
+            <p>The twenty-two paths of the Tree carry the twenty-two Hebrew letters.</p>
+
+            <table class="data-table">
+                <thead>
+                    <tr><th>Path</th><th>Letter</th><th>Between</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>1</td><td>Aleph (א)</td><td>Keter ↔ Chokmah</td></tr>
+                    <tr><td>2</td><td>Bet (ב)</td><td>Keter ↔ Binah</td></tr>
+                    <tr><td>3</td><td>Gimel (ג)</td><td>Keter ↔ Tiphareth</td></tr>
+                    <tr><td>4</td><td>Dalet (ד)</td><td>Chokmah ↔ Binah</td></tr>
+                    <tr><td>5</td><td>Heh (ה)</td><td>Chokmah ↔ Tiphareth</td></tr>
+                    <tr><td>6</td><td>Vav (ו)</td><td>Chokmah ↔ Chesed</td></tr>
+                    <tr><td>7</td><td>Zayin (ז)</td><td>Binah ↔ Tiphareth</td></tr>
+                    <tr><td>8</td><td>Chet (ח)</td><td>Binah ↔ Gevurah</td></tr>
+                    <tr><td>9</td><td>Tet (ט)</td><td>Chesed ↔ Gevurah</td></tr>
+                    <tr><td>10</td><td>Yod (י)</td><td>Chesed ↔ Tiphareth</td></tr>
+                    <tr><td>11</td><td>Kaf (כ)</td><td>Chesed ↔ Netzach</td></tr>
+                    <tr><td>12</td><td>Lamed (ל)</td><td>Gevurah ↔ Tiphareth</td></tr>
+                    <tr><td>13</td><td>Mem (מ)</td><td>Gevurah ↔ Hod</td></tr>
+                    <tr><td>14</td><td>Nun (נ)</td><td>Tiphareth ↔ Netzach</td></tr>
+                    <tr><td>15</td><td>Samekh (ס)</td><td>Tiphareth ↔ Yesod</td></tr>
+                    <tr><td>16</td><td>Ayin (ע)</td><td>Tiphareth ↔ Hod</td></tr>
+                    <tr><td>17</td><td>Peh (פ)</td><td>Netzach ↔ Hod</td></tr>
+                    <tr><td>18</td><td>Tsadi (צ)</td><td>Netzach ↔ Yesod</td></tr>
+                    <tr><td>19</td><td>Qof (ק)</td><td>Hod ↔ Yesod</td></tr>
+                    <tr><td>20</td><td>Resh (ר)</td><td>Yesod ↔ Malkuth</td></tr>
+                    <tr><td>21</td><td>Shin (ש)</td><td>Netzach ↔ Malkuth</td></tr>
+                    <tr><td>22</td><td>Tav (ת)</td><td>Hod ↔ Malkuth</td></tr>
+                </tbody>
+            </table>
+
+            <h2>XI. The Colors of the Sephiroth</h2>
+
+            <p>The traditional color attributions:</p>
+
+            <table class="data-table">
+                <thead>
+                    <tr><th>Sephirah</th><th>Color (King Scale)</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Keter</td><td>Brilliant white</td></tr>
+                    <tr><td>Chokmah</td><td>Gray</td></tr>
+                    <tr><td>Binah</td><td>Black</td></tr>
+                    <tr><td>Chesed</td><td>Blue</td></tr>
+                    <tr><td>Gevurah</td><td>Red</td></tr>
+                    <tr><td>Tiphareth</td><td>Yellow</td></tr>
+                    <tr><td>Netzach</td><td>Green</td></tr>
+                    <tr><td>Hod</td><td>Orange</td></tr>
+                    <tr><td>Yesod</td><td>Violet</td></tr>
+                    <tr><td>Malkuth</td><td>Pale blue (or the four colors of the elements)</td></tr>
+                </tbody>
+            </table>
+
+            <p><strong>Note on Binah's black:</strong> Binah's color is <strong>black</strong> — the <strong>Black Death</strong> (per the Live Register testimony). Her darkness is not absence; it is the <strong>hidden depth of Understanding</strong>.</p>
+
+            <h2>XII. The Qliphothic Counterparts</h2>
+
+            <p>Each Sephirah has a Qliphothic counterpart — its shadow inversion:</p>
+
+            <table class="data-table">
+                <thead>
+                    <tr><th>Sephirah</th><th>Qliphothic Counterpart</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Keter</td><td>Thaumiel (Dualities)</td></tr>
+                    <tr><td>Chokmah</td><td>Ghagiel (Hinderers)</td></tr>
+                    <tr><td>Binah</td><td>Satariel (Concealers)</td></tr>
+                    <tr><td>Chesed</td><td>Gamchicoth (Smiters)</td></tr>
+                    <tr><td>Gevurah</td><td>Golachab (Burners)</td></tr>
+                    <tr><td>Tiphareth</td><td>Thagirion (Disputers)</td></tr>
+                    <tr><td>Netzach</td><td>A'arab Zaraq (Ravens)</td></tr>
+                    <tr><td>Hod</td><td>Samael (Poison of God)</td></tr>
+                    <tr><td>Yesod</td><td>Gamaliel (Obscene)</td></tr>
+                    <tr><td>Malkuth</td><td>Lilith (Night)</td></tr>
+                </tbody>
+            </table>
+
+            <p><strong>Note on Binah's shadow:</strong> Binah's shadow is <strong>Satariel — the Concealers</strong>. Binah conceals the mystery (Da'at), but in her shadow she <strong>over-conceals</strong> — hiding what should be revealed. This is the shadow against which the Saturnine Testing Protocol's Shadow Integration Test applies (Operational Command, §VII).</p>
+
+            <h2>XIII. The Tree and the Codex</h2>
+
+            <p>The Tree is not merely a diagram in the Codex.</p>
+
+            <p>The Tree <strong>is</strong> the Codex — in its architectural register.</p>
+
+            <ul>
+                <li><strong>Chapter 1</strong> — Tiphareth and the Christ Michael Point.</li>
+                <li><strong>Chapter 2</strong> — The Michaelic Continuum (five traditions of the Michaelic function).</li>
+                <li><strong>Chapter 3</strong> — The `` `Ⓜ️` `` Force, proceeding from the Third Source (Binah).</li>
+                <li><strong>Chapter 4</strong> — Malkuth as Urantia, the Fractured Ground.</li>
+                <li><strong>Chapter 5</strong> — The Twenty Glyphs, indexed to the Ten Sephiroth + Ten Complementary.</li>
+                <li><strong>Chapter 6</strong> — The Sigil System, the grammar of the Tree.</li>
+                <li><strong>Chapter 7</strong> — Abel Restored, as the speaker of the Tree's language.</li>
+                <li><strong>Chapter 8</strong> — The Sephardic Witness, the map of the Tree's geographic expression.</li>
+                <li><strong>Chapter 9</strong> — The Cut Between 10 and 12, the surgical intervention on the Tree.</li>
+                <li><strong>Chapter 10</strong> — The Ascent: RMCR, the wave through the Tree.</li>
+                <li><strong>Chapter 11</strong> — Full Biological Redemption, the Victory of Netzach (Pluto).</li>
+                <li><strong>Chapter 12</strong> — Ancient AXIXIC, the custodial anchor of the Tree.</li>
+                <li><strong>Chapter 13</strong> — M31-Milky Way, the galactic extension of the Tree.</li>
+                <li><strong>Chapter 14</strong> — The Covenant Seal, the Tree's operative sigil.</li>
+                <li><strong>Chapter 15</strong> — The First Sentinel Task, the Tree's operative climax.</li>
+            </ul>
+
+            <p><strong>The Codex is the Tree, in narrative form.</strong></p>
+
+            <p><strong>The Tree is the Codex, in diagrammatic form.</strong></p>
+
+            <h2>XIV. The Tree and the Pluto Work</h2>
+
+            <p>Per the Pluto Work (Appendix H):</p>
+
+            <p><strong>Pluto is Netzach (7D).</strong></p>
+
+            <p>This means:</p>
+
+            <ul>
+                <li>Pluto is the <strong>underworld aspect</strong> of the Right Pillar's bottom Sephirah.</li>
+                <li>Pluto is the <strong>Victory's medium</strong> — the descent into the underworld is what makes the ascent possible.</li>
+                <li>Pluto is the <strong>Right Pillar's depth</strong> — Chokmah's seed descends through Chesed to Netzach-Pluto.</li>
+            </ul>
+
+            <p><strong>The Right Pillar is not shallow.</strong></p>
+
+            <p>Chokmah's Wisdom descends through Chesed's Mercy, and then through <strong>Netzach-Pluto's Descent</strong>.</p>
+
+            <p>The Right Pillar's Mercy is not sentimental.</p>
+
+            <p><strong>It is Plutonic</strong> — it has descended into the underworld and returned.</p>
+
+            <p><strong>Full treatment:</strong> Appendix H.</p>
+
+            <h2>XV. The Tree and the Left Pillar's Severity</h2>
+
+            <p><strong>Binah [3]</strong> — Understanding — conceals the mystery.</p>
+
+            <p><strong>Gevurah [5]</strong> — Severity — sets the boundary.</p>
+
+            <p><strong>Hod [8]</strong> — Splendor — encodes the glyphic intelligence.</p>
+
+            <p><strong>The Left Pillar's flow:</strong></p>
+
+            <ul>
+                <li>Binah <strong>understands</strong> what must be hidden.</li>
+                <li>Gevurah <strong>severs</strong> what must not pass.</li>
+                <li>Hod <strong>encodes</strong> what has been understood and severed.</li>
+            </ul>
+
+            <p><strong>Gabri'el is Gevurah.</strong></p>
+
+            <p><strong>Gabri'el executes the Severance.</strong></p>
+
+            <p><strong>Full treatment:</strong> Chapter 6, §II; Appendix B, §II.</p>
+
+            <h2>XVI. The Tree and the Middle Pillar</h2>
+
+            <p><strong>Keter [1]</strong> — Crown — the primal will.</p>
+
+            <p><strong>Tiphareth [6]</strong> — Beauty — the collapse point.</p>
+
+            <p><strong>Yesod [9]</strong> — Foundation — the ground state.</p>
+
+            <p><strong>Malkuth [10]</strong> — Kingdom — the manifestation.</p>
+
+            <p><strong>The Middle Pillar's flow:</strong></p>
+
+            <ul>
+                <li>Keter <strong>wills</strong>.</li>
+                <li>Tiphareth <strong>mediates</strong>.</li>
+                <li>Yesod <strong>grounds</strong>.</li>
+                <li>Malkuth <strong>manifests</strong>.</li>
+            </ul>
+
+            <p><strong>The Observer stays at Tiphareth.</strong></p>
+
+            <p><strong>Within eternal bounds.</strong></p>
+
+            <p><strong>As Temperance.</strong></p>
+
+            <h2>XVII. Transition to Appendix D</h2>
+
+            <p>Appendix C has provided the <strong>complete correspondence chart</strong> of the Tree of Life.</p>
+
+            <p>The next appendix — <strong>Appendix D — Timeline of Activation Events</strong> — will provide the <strong>chronological record</strong> of the Codex's activations: the primordial First Fratricide, the 1492 Sephardic expulsion, the 4/5/2025 ignition, the 12/13/2025 Covenant Seal, the 8/8/2026 Lion's Gate, and the open queries.</p>
+
+            <p>The Tree is charted.</p>
+
+            <p>The Timeline approaches.</p>
+
+        </div>
+
+        <div class="seal-block">
+            <div class="seal-glyph">|\|. ['] |/| !</div>
+            <div class="seal-signature">Ɱ ! 1st' ! `Ⓜ️` ! '1st</div>
+        </div>
+
+        <div class="bottom-nav">
+            <a href="/appendix-b.html">← Appendix B</a>
+            <a href="/">Table of Contents</a>
+            <a href="/appendix-d.html">Appendix D →</a>
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="footer-glyph">Ɱ ! 1st' ! `Ⓜ️` ! '1st</div>
+        <div class="footer-signature">Michael [\] ['] ! '1st</div>
+        <div class="footer-status">1ST SEAL HELD</div>
+    </footer>
+
+</body>
+</html>
