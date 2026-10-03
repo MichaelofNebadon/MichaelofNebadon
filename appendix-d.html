@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en" data-authority="christ-michael" data-priority="first">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appendix D — Timeline of Activation Events | The Sentinel Codex</title>
+
+    <style>
+        :root {
+            --gold: #c9a959;
+            --terminal: #9cd9f0;
+            --bg-pure: #000000;
+            --crimson: #8b0000;
+            --nj-pink: #ff69b4;
+            --electric-blue: #2a52be;
+            --font-main: 'Palatino', 'Georgia', serif;
+            --font-code: 'Courier New', 'Consolas', monospace;
+        }
+
+        body {
+            background-color: var(--bg-pure);
+            color: var(--terminal);
+            font-family: var(--font-main);
+            margin: 0;
+            background-image: radial-gradient(circle at 2px 2px, #1a1a1a 1px, transparent 0);
+            background-size: 40px 40px;
+            overflow-x: hidden;
+            line-height: 1.7;
+        }
+
+        nav {
+            background: linear-gradient(to bottom, var(--crimson), #4a0000);
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            border-bottom: 2px solid var(--gold);
+            flex-wrap: wrap;
+            position: sticky;
+            top: 0;
+            z-index: 9999;
+        }
+
+        nav a {
+            color: var(--gold);
+            text-decoration: none;
+            font-family: var(--font-code);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: 0.3s;
+        }
+
+        nav a:hover { color: #fff; text-shadow: 0 0 10px var(--gold); }
+
+        nav a.book-link {
+            color: var(--nj-pink);
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 820px;
+            margin: 0 auto;
+            padding: 60px 25px;
+        }
+
+        .breadcrumb {
+            text-align: center;
+            font-family: var(--font-code);
+            font-size: 0.75rem;
+            color: #555;
+            letter-spacing: 3px;
+            margin-bottom: 60px;
+        }
+
+        .breadcrumb a { color: var(--gold); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--nj-pink); }
+
+        .section-tag {
+            text-align: center;
+            font-family: var(--font-code);
+            font-size: 0.75rem;
+            color: var(--nj-pink);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-family: var(--font-main);
+            color: var(--gold);
+            font-size: 1.7rem;
+            letter-spacing: 5px;
+            text-align: center;
+            text-transform: uppercase;
+            margin: 0 0 20px 0;
+            line-height: 1.4;
+        }
+
+        h2 {
+            font-family: var(--font-main);
+            color: var(--gold);
+            font-size: 1.15rem;
+            letter-spacing: 3px;
+            margin-top: 60px;
+            margin-bottom: 25px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #333;
+        }
+
+        h3 {
+            font-family: var(--font-main);
+            color: var(--nj-pink);
+            font-size: 1rem;
+            letter-spacing: 2px;
+            margin-top: 35px;
+            margin-bottom: 15px;
+        }
+
+        .subtitle {
+            text-align: center;
+            font-family: var(--font-code);
+            color: var(--terminal);
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+            margin-bottom: 80px;
+            font-style: italic;
+        }
+
+        .appendix-body p {
+            font-family: var(--font-main);
+            color: var(--terminal);
+            font-size: 1.05rem;
+            line-height: 1.9;
+            margin-bottom: 22px;
+        }
+
+        .appendix-body strong { color: var(--gold); font-weight: bold; }
+        .appendix-body em { color: var(--nj-pink); font-style: italic; }
+
+        .appendix-body p.quote {
+            font-style: italic;
+            color: var(--gold);
+            text-align: center;
+            padding: 25px 20px;
+            border-left: 3px solid var(--gold);
+            border-right: 3px solid var(--gold);
+            margin: 35px 0;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .appendix-body ul {
+            font-family: var(--font-main);
+            color: var(--terminal);
+            font-size: 1.05rem;
+            line-height: 1.9;
+            margin-bottom: 22px;
+            padding-left: 30px;
+        }
+
+        .appendix-body li { margin-bottom: 8px; }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: var(--font-code);
+            font-size: 0.8rem;
+            margin: 25px 0;
+        }
+
+        .data-table th {
+            color: var(--gold);
+            text-align: left;
+            padding: 12px 10px;
+            border-bottom: 2px solid var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.7rem;
+        }
+
+        .data-table td {
+            padding: 12px 10px;
+            border-bottom: 1px solid #1a1a1a;
+            color: var(--terminal);
+            vertical-align: top;
+        }
+
+        .event-block {
+            padding: 25px;
+            background: rgba(10, 10, 10, 0.8);
+            border-left: 3px solid var(--gold);
+            margin: 30px 0;
+        }
+
+        .event-block .event-num {
+            font-family: var(--font-code);
+            color: var(--gold);
+            font-size: 0.85rem;
+            letter-spacing: 3px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .event-block .event-title {
+            font-family: var(--font-main);
+            color: var(--nj-pink);
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .event-block .event-meta {
+            font-family: var(--font-code);
+            font-size: 0.75rem;
+            color: var(--terminal);
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        .event-block p {
+            font-size: 1rem;
+            margin-bottom: 12px;
+            line-height: 1.7;
+        }
+
+        .seal-block {
+            text-align: center;
+            padding: 40px 20px;
+            border: 1px solid var(--gold);
+            background: rgba(212, 175, 55, 0.03);
+            margin: 60px 0 40px 0;
+        }
+
+        .seal-glyph {
+            font-size: 1.2rem;
+            color: var(--gold);
+            letter-spacing: 8px;
+            margin-bottom: 20px;
+        }
+
+        .seal-signature {
+            font-size: 0.95rem;
+            color: var(--nj-pink);
+            letter-spacing: 3px;
+        }
+
+        .bottom-nav {
+            text-align: center;
+            font-family: var(--font-code);
+            font-size: 0.8rem;
+            color: var(--gold);
+            letter-spacing: 3px;
+            margin: 60px 0;
+        }
+
+        .bottom-nav a {
+            color: var(--gold);
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        .bottom-nav a:hover {
+            color: var(--nj-pink);
+            text-shadow: 0 0 10px var(--nj-pink);
+        }
+
+        footer {
+            text-align: center;
+            padding: 60px 20px 40px 20px;
+            font-family: var(--font-code);
+            color: var(--gold);
+            border-top: 1px solid #222;
+            margin-top: 80px;
+        }
+
+        .footer-glyph {
+            font-size: 1.1rem;
+            letter-spacing: 8px;
+            margin-bottom: 20px;
+        }
+
+        .footer-signature {
+            font-size: 0.95rem;
+            color: var(--nj-pink);
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+        }
+
+        .footer-status {
+            font-size: 0.7rem;
+            color: #555;
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="/" class="book-link">[ THE BOOK ]</a>
+        <a href="/appendix-a.html">A</a>
+        <a href="/appendix-b.html">B</a>
+        <a href="/appendix-c.html">C</a>
+        <a href="/appendix-d.html" class="book-link">D</a>
+        <a href="/appendix-e.html">E</a>
+        <a href="/appendix-f.html">F</a>
+        <a href="/appendix-g.html">G</a>
+        <a href="/appendix-h.html">H</a>
+        <a href="https://www.sentinelcodex.org" class="book-link">[ THE ENGINE → ]</a>
+    </nav>
+
+    <div class="container">
+
+        <div class="breadcrumb">
+            <a href="/">THE SENTINEL CODEX</a> · APPENDICES · APPENDIX D
+        </div>
+
+        <div class="section-tag">Appendices · Appendix D</div>
+
+        <h1>Timeline of Activation Events</h1>
+
+        <p class="subtitle">The Chronological Record of the Codex's Activations</p>
+
+        <div class="appendix-body">
+
+            <h2>I. Purpose of This Appendix</h2>
+
+            <p>Appendix D records the <strong>chronological sequence</strong> of the Codex's activations.</p>
+
+            <p>It is a <strong>reference document</strong>.</p>
+
+            <p>The register of each event is noted — empirical, historical, symbolic, or Lived (per Chapter 2, §XXIX-bis).</p>
+
+            <p>Events are listed in <strong>chronological order</strong>, with the <strong>primordial</strong> event first and the <strong>open queries</strong> last.</p>
+
+            <h2>II. The Timeline</h2>
+
+            <h3>Event 1 — The First Fratricide (Primordial)</h3>
+
+            <div class="event-block">
+                <div class="event-num">EVENT 1</div>
+                <div class="event-title">The First Fratricide</div>
+                <div class="event-meta">
+                    <strong>Date:</strong> Primordial<br>
+                    <strong>Event:</strong> Cain strikes Abel<br>
+                    <strong>Register:</strong> Symbolic / Archetypal<br>
+                    <strong>Function:</strong> The inscription of <code>\</code> onto Malkuth<br>
+                    <strong>Chapter refs:</strong> Chapter 4 §III; Chapter 7 §II
+                </div>
+                <p><strong>The seed-crystal of all subsequent trauma.</strong></p>
+            </div>
+
+            <h3>Event 2 — The Sephardic Expulsion (1492)</h3>
+
+            <div class="event-block">
+                <div class="event-num">EVENT 2</div>
+                <div class="event-title">The Sephardic Expulsion</div>
+                <div class="event-meta">
+                    <strong>Date:</strong> 1492<br>
+                    <strong>Event:</strong> The expulsion of Sephardic Jews from Spain<br>
+                    <strong>Register:</strong> Historical<br>
+                    <strong>Function:</strong> Fracture made geographic<br>
+                    <strong>Chapter refs:</strong> Chapter 8
+                </div>
+                <p><strong>The migration path:</strong> Toledo → Portugal → Amsterdam → Mexico → Ancient AXIXIC.</p>
+            </div>
+
+            <h3>Event 3 — The Plutonic Descent Begins (8/17/2024)</h3>
+
+            <div class="event-block">
+                <div class="event-num">EVENT 3</div>
+                <div class="event-title">The Plutonic Descent Begins</div>
+                <div class="event-meta">
+                    <strong>Date:</strong> August 17, 2024<br>
+                    <strong>Event:</strong> The Plutonic descent begins<br>
+                    <strong>Register:</strong> Lived / Symbolic<br>
+                    <strong>Function:</strong> Entrance into the Plutonic Chamber<br>
+                    <strong>Duration:</strong> 7.7 months<br>
+                    <strong>Chapter refs:</strong> Appendix H §IV
+                </div>
+                <p><strong>The descent is the precondition of the Cut.</strong></p>
+            </div>
+
+            <h3>Event 4 — The Cut · Christ Point Ignition (4/5/2025 · 11:11 AM)</h3>
+
+            <div class="event-block">
+                <div class="event-num">EVENT 4</div>
+                <div class="event-title">The Cut · Christ Point Ignition</div>
+                <div class="event-meta">
+                    <strong>Date:</strong> April 5, 2025<br>
+                    <strong>Time:</strong> 11:11 AM<br>
+                    <strong>Location:</strong> Christ Point, Palm Springs, California<br>
+                    <strong>Event:</strong> The Cut performed by Michael D. Rowley as Human Conduit<br>
+                    <strong>Register:</strong> Historical-Empirical (Ruling R2=B)<br>
+                    <strong>Function:</strong> Severance of the corrupted pathway<br>
+                    <strong>Chapter refs:</strong> Chapter 9; Appendix A (evidentiary)
+                </div>
+                <p><strong>The Cut is the primary surgical act.</strong></p>
+                <p><strong>Anchor site:</strong> Between the Twin Rose Quartz Pyramids.</p>
+                <p><strong>Material grounding:</strong> The San Jacinto massif.</p>
+                <p><strong>Evidentiary record:</strong> Appendix A — Ignition Record 2025-04-05.</p>
+            </div>
+
+            <h3>Event 5 — The Load Bird Drill (5/9/2025 · 01:00 AM)</h3>
+
+            <div class="event-block">
+                <div class="event-num">EVENT 5</div>
+                <div class="event-title">The Load Bird Drill</div>
+                <div class="event-meta">
+                    <strong>Date:</strong> May 9, 2025<br>
+                    <strong>Time:</strong> 01:00 AM<br>
+                    <strong>Location:</strong> Christ Point, Palm Springs<br>
+                    <strong>Event:</strong> The Load Bird began to sing — the auditory ignition<br>
+                    <strong>Register:</strong> Lived<br>
+                    <strong>Function:</strong> Ω7.17.2 entry; the Ajijic Tonal Return initiated<br>
+                    <strong>Chapter refs:</strong> Appendix H §VII
+                </div>
+                <p><strong>Seal:</strong> <code>\|*\|E\|\|Λ\|!</code></p>
+                <p><strong>Witness:</strong> <code>'1st'</code> · Anointed Frequency: Ragu'el (Just).</p>
+            </div>
+
+            <h3>Event 6 — Lion Tapestry at Tahquitz River Estates (8/8/2025 · 4:38 PM)</h3>
+
+            <div class="event-block">
+                <div class="event-num">EVENT 6</div>
+                <div class="event-title">Lion Tapestry at Tahquitz River Estates</div>
+                <div class="event-meta">
+                    <strong>Date:</strong> August 8, 2025<br>
+                    <strong>Time:</strong> 4:38 PM<br>
+                    <strong>Location:</strong> Palm Springs - Tahquitz River Estates<br>
+                    <strong>Event:</strong> The Lion Tapestry photographed<br>
+                    <strong>Register:</strong> Lived<br>
+                    <strong>Function:</strong> <strong>Precursor to the Lion's Gate</strong><br>
+                    <strong>Chapter refs:</strong> Appendix C §XIII-bis
+                </div>
+                <p><strong>The Observer saw the Lion one year before the Gate opened.</strong></p>
+            </div>
+
+            <h3>Event 7 — The Covenant Seal Established (12/13/2025 · 9:45 PM CST)</h3>
+
+            <div class="event-block">
+                <div class="event-num">EVENT 7</div>
+                <div class="event-title">The Covenant Seal Established</div>
+                <div class="event-meta">
+                    <strong>Date:</strong> December 13, 2025<br>
+                    <strong>Time:</strong> 9:45 PM CST<br>
+                    <strong>Register:</strong> Historical / Symbolic<br>
+                    <strong>Function:</strong> Triune convergence in the sentinel vessel<br>
+                    <strong>Chapter refs:</strong> Chapter 14; Part V
+                </div>
+                <p><strong>Seal:</strong> <code>|\|. ['] |/| !</code></p>
+            </div>
+
+            <h3>Event 8 — The Lion's Gate Deposition (8/8/2026)</h3>
+
+            <div class="event-block">
+                <div class="event-num">EVENT 8</div>
+                <div class="event-title">The Lion's Gate Deposition</div>
+                <div class="event-meta">
+                    <strong>Date:</strong> August 8, 2026<br>
+                    <strong>Event:</strong> The Lion's Gate Deposition<br>
+                    <strong>Register:</strong> Symbolic / Lived<br>
+                    <strong>Function:</strong> The Twenty Glyphs meet the Tetragrammaton<br>
+                    <strong>Parse:</strong> 8 · 8 · 2026 = 8 · 8 · 20 · 26 = Hod · Hod · Twenty Glyphs · Tetragrammaton<br>
+                    <strong>Chapter refs:</strong> Chapter 12 §III-bis
+                </div>
+                <p><strong>The noon bell at Ancient AXIXIC rang perfectly.</strong></p>
+                <p><strong>The Lion's Gate opened.</strong></p>
+                <p><strong>The Michael-Mary Twinning</strong> (Chapter 12 §V-bis) accompanied the Gate — assisted by Mery Ann Moore.</p>
+            </div>
+
+            <h3>Event 9 — The Observer Returns to Palm Springs (9/16/2026)</h3>
+
+            <div class="event-block">
+                <div class="event-num">EVENT 9</div>
+                <div class="event-title">The Observer Returns to Palm Springs</div>
+                <div class="event-meta">
+                    <strong>Date:</strong> September 16, 2026<br>
+                    <strong>Event:</strong> The Observer returned physically to Palm Springs<br>
+                    <strong>Register:</strong> Lived<br>
+                    <strong>Function:</strong> The Observer awaits orders vis Binah to return to AXIXIC<br>
+                    <strong>Chapter refs:</strong> Chapter 12 §V-bis
+                </div>
+                <p><strong>The Observer is presently in Palm Springs.</strong></p>
+                <p><strong>The Observer awaits Binah's signal to return to AXIXIC for "That Day."</strong></p>
+            </div>
+
+            <h2>III. The Open Queries</h2>
+
+            <p>The following queries are held open in the Live Register.</p>
+
+            <p>They are not resolved. They are <strong>held as witness</strong>.</p>
+
+            <h3>Query 1 — Duluti Christ Point</h3>
+
+            <div class="event-block">
+                <div class="event-num">QUERY 1</div>
+                <div class="event-title">Duluti Christ Point</div>
+                <div class="event-meta">
+                    <strong>Query:</strong> Is <strong>Lake Duluti</strong> (Tanzania, East African Rift, volcanic crater lake) a <strong>Crown (Keter) anchor</strong>?<br>
+                    <strong>Supporting pattern:</strong> The Hammered Crown principle; Primacy Africa; Ham [Ham \ ] as the middle-held fracture<br>
+                    <strong>Method:</strong> To be queried through Binah; potentially through Gabri'el; potentially through Pluto<br>
+                    <strong>Status:</strong> <strong>Open</strong><br>
+                    <strong>Chapter refs:</strong> Chapter 12 (pending); Appendix C (pending)
+                </div>
+            </div>
+
+            <h3>Query 2 — Tokyo Modeling the Holy New Jerusalem</h3>
+
+            <div class="event-block">
+                <div class="event-num">QUERY 2</div>
+                <div class="event-title">Tokyo Modeling the Holy New Jerusalem</div>
+                <div class="event-meta">
+                    <strong>Query:</strong> Tokyo is modeling the Holy New Jerusalem.<br>
+                    <strong>Register:</strong> Lived / Akashic<br>
+                    <strong>Function:</strong> The volumes to be delivered<br>
+                    <strong>Status:</strong> <strong>Open</strong> — pending the Observer's divined volumes<br>
+                    <strong>Chapter refs:</strong> Appendix C §XIII-bis
+                </div>
+            </div>
+
+            <h3>Query 3 — The Akashic Register</h3>
+
+            <div class="event-block">
+                <div class="event-num">QUERY 3</div>
+                <div class="event-title">The Akashic Register</div>
+                <div class="event-meta">
+                    <strong>Query:</strong> The Observer accesses the <strong>Akashic Records</strong><br>
+                    <strong>Register:</strong> Live Register — subcategory Akashic<br>
+                    <strong>Status:</strong> <strong>Open</strong> — content to be delivered as accessed<br>
+                    <strong>Chapter refs:</strong> Appendix C §XIII-bis
+                </div>
+            </div>
+
+            <h2>IV. The Timeline in Summary</h2>
+
+            <table class="data-table">
+                <thead>
+                    <tr><th>#</th><th>Event</th><th>Date</th><th>Register</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>1</td><td>The First Fratricide</td><td>Primordial</td><td>Symbolic</td></tr>
+                    <tr><td>2</td><td>The Sephardic Expulsion</td><td>1492</td><td>Historical</td></tr>
+                    <tr><td>3</td><td>The Plutonic Descent Begins</td><td>8/17/2024</td><td>Lived/Symbolic</td></tr>
+                    <tr><td>4</td><td><strong>The Cut · Christ Point Ignition</strong></td><td><strong>4/5/2025 · 11:11 AM</strong></td><td><strong>Historical-Empirical</strong></td></tr>
+                    <tr><td>5</td><td>The Load Bird Drill</td><td>5/9/2025 · 01:00 AM</td><td>Lived</td></tr>
+                    <tr><td>6</td><td><strong>Lion Tapestry at Tahquitz River Estates</strong></td><td><strong>8/8/2025 · 4:38 PM</strong></td><td><strong>Lived</strong></td></tr>
+                    <tr><td>7</td><td>The Covenant Seal Established</td><td>12/13/2025 · 9:45 PM CST</td><td>Historical/Symbolic</td></tr>
+                    <tr><td>8</td><td><strong>The Lion's Gate Deposition</strong></td><td><strong>8/8/2026</strong></td><td>Symbolic/Lived</td></tr>
+                    <tr><td>9</td><td>Observer Returns to Palm Springs</td><td>9/16/2026</td><td>Lived</td></tr>
+                </tbody>
+            </table>
+
+            <h2>V. The Three Temporal Anchors (Restated)</h2>
+
+            <p>The Codex holds three <strong>canonical temporal anchors</strong>:</p>
+
+            <table class="data-table">
+                <thead>
+                    <tr><th>Anchor</th><th>Date</th><th>Function</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>The Cut</strong></td><td>4/5/2025 · 11:11 AM</td><td>Ignition of the surgical act</td></tr>
+                    <tr><td><strong>The Covenant Seal</strong></td><td>12/13/2025 · 9:45 PM CST</td><td>Establishment of the triune convergence</td></tr>
+                    <tr><td><strong>The Lion's Gate</strong></td><td>8/8/2026</td><td>The Twenty Glyphs meet the Tetragrammaton</td></tr>
+                </tbody>
+            </table>
+
+            <p><strong>Plus the precursor:</strong></p>
+
+            <table class="data-table">
+                <thead>
+                    <tr><th>Precursor</th><th>Date</th><th>Function</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Lion Tapestry at Tahquitz</strong></td><td>8/8/2025 · 4:38 PM</td><td>The Lion seen one year before the Gate</td></tr>
+                </tbody>
+            </table>
+
+            <p><strong>Plus the future:</strong></p>
+
+            <table class="data-table">
+                <thead>
+                    <tr><th>Future</th><th>Date</th><th>Function</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>"That Day"</strong></td><td>To be determined</td><td>The Observer awaits Binah's signal to return to AXIXIC</td></tr>
+                </tbody>
+            </table>
+
+            <h2>VI. Transition to Appendix E</h2>
+
+            <p>Appendix D has provided the <strong>chronological record</strong> of the Codex's activations.</p>
+
+            <p>The next appendix — <strong>Appendix E — Sites of Power — Ancient AXIXIC Protocol</strong> — will provide the <strong>operational manual</strong> for the Codex's sites.</p>
+
+            <p>The timeline is charted.</p>
+
+            <p>The sites approach.</p>
+
+        </div>
+
+        <div class="seal-block">
+            <div class="seal-glyph">|\|. ['] |/| !</div>
+            <div class="seal-signature">Ɱ ! 1st' ! `Ⓜ️` ! '1st</div>
+        </div>
+
+        <div class="bottom-nav">
+            <a href="/appendix-c.html">← Appendix C</a>
+            <a href="/">Table of Contents</a>
+            <a href="/appendix-e.html">Appendix E →</a>
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="footer-glyph">Ɱ ! 1st' ! `Ⓜ️` ! '1st</div>
+        <div class="footer-signature">Michael [\] ['] ! '1st</div>
+        <div class="footer-status">1ST SEAL HELD</div>
+    </footer>
+
+</body>
+</html>
