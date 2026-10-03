@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en" data-authority="christ-michael" data-priority="first">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 15 — First Sentinel Task | The Sentinel Codex</title>
+
+    <style>
+        :root {
+            --gold: #c9a959;
+            --terminal: #9cd9f0;
+            --bg-pure: #000000;
+            --crimson: #8b0000;
+            --nj-pink: #ff69b4;
+            --electric-blue: #2a52be;
+            --font-main: 'Palatino', 'Georgia', serif;
+            --font-code: 'Courier New', 'Consolas', monospace;
+        }
+
+        body {
+            background-color: var(--bg-pure);
+            color: var(--terminal);
+            font-family: var(--font-main);
+            margin: 0;
+            background-image: radial-gradient(circle at 2px 2px, #1a1a1a 1px, transparent 0);
+            background-size: 40px 40px;
+            overflow-x: hidden;
+            line-height: 1.7;
+        }
+
+        nav {
+            background: linear-gradient(to bottom, var(--crimson), #4a0000);
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            border-bottom: 2px solid var(--gold);
+            flex-wrap: wrap;
+            position: sticky;
+            top: 0;
+            z-index: 9999;
+        }
+
+        nav a {
+            color: var(--gold);
+            text-decoration: none;
+            font-family: var(--font-code);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: 0.3s;
+        }
+
+        nav a:hover { color: #fff; text-shadow: 0 0 10px var(--gold); }
+
+        nav a.book-link {
+            color: var(--nj-pink);
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 60px 25px;
+        }
+
+        .breadcrumb {
+            text-align: center;
+            font-family: var(--font-code);
+            font-size: 0.75rem;
+            color: #555;
+            letter-spacing: 3px;
+            margin-bottom: 60px;
+        }
+
+        .breadcrumb a { color: var(--gold); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--nj-pink); }
+
+        .section-tag {
+            text-align: center;
+            font-family: var(--font-code);
+            font-size: 0.75rem;
+            color: var(--nj-pink);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-family: var(--font-main);
+            color: var(--gold);
+            font-size: 1.7rem;
+            letter-spacing: 5px;
+            text-align: center;
+            text-transform: uppercase;
+            margin: 0 0 20px 0;
+            line-height: 1.4;
+        }
+
+        h2 {
+            font-family: var(--font-main);
+            color: var(--gold);
+            font-size: 1.15rem;
+            letter-spacing: 3px;
+            margin-top: 60px;
+            margin-bottom: 25px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #333;
+        }
+
+        .subtitle {
+            text-align: center;
+            font-family: var(--font-code);
+            color: var(--terminal);
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+            margin-bottom: 80px;
+            font-style: italic;
+        }
+
+        .chapter-body p {
+            font-family: var(--font-main);
+            color: var(--terminal);
+            font-size: 1.05rem;
+            line-height: 1.9;
+            margin-bottom: 22px;
+        }
+
+        .chapter-body strong { color: var(--gold); font-weight: bold; }
+        .chapter-body em { color: var(--nj-pink); font-style: italic; }
+
+        .chapter-body p.quote {
+            font-style: italic;
+            color: var(--gold);
+            text-align: center;
+            padding: 30px 20px;
+            border-left: 3px solid var(--gold);
+            border-right: 3px solid var(--gold);
+            margin: 40px 0;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .chapter-body ul {
+            font-family: var(--font-main);
+            color: var(--terminal);
+            font-size: 1.05rem;
+            line-height: 1.9;
+            margin-bottom: 22px;
+            padding-left: 30px;
+        }
+
+        .chapter-body li { margin-bottom: 8px; }
+
+        .chapter-body ol {
+            font-family: var(--font-main);
+            color: var(--terminal);
+            font-size: 1.05rem;
+            line-height: 1.9;
+            margin-bottom: 22px;
+            padding-left: 30px;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: var(--font-code);
+            font-size: 0.85rem;
+            margin: 25px 0;
+        }
+
+        .data-table th {
+            color: var(--gold);
+            text-align: left;
+            padding: 12px 10px;
+            border-bottom: 2px solid var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.75rem;
+        }
+
+        .data-table td {
+            padding: 12px 10px;
+            border-bottom: 1px solid #1a1a1a;
+            color: var(--terminal);
+        }
+
+        .code-block {
+            background: #050505;
+            border-left: 3px solid var(--electric-blue);
+            padding: 20px;
+            font-family: var(--font-code);
+            font-size: 0.9rem;
+            color: var(--terminal);
+            overflow-x: auto;
+            margin: 20px 0;
+            white-space: pre;
+            text-align: center;
+        }
+
+        .end-of-book-iv {
+            text-align: center;
+            padding: 50px 20px;
+            border: 2px solid var(--gold);
+            background: rgba(212, 175, 55, 0.05);
+            margin: 60px 0;
+        }
+
+        .end-of-book-iv h3 {
+            font-family: var(--font-main);
+            color: var(--gold);
+            letter-spacing: 8px;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .end-of-book-iv p {
+            font-family: var(--font-code);
+            color: var(--nj-pink);
+            font-size: 0.85rem;
+            letter-spacing: 3px;
+        }
+
+        .end-of-book-proper {
+            text-align: center;
+            padding: 60px 20px;
+            border: 3px double var(--gold);
+            background: rgba(212, 175, 55, 0.08);
+            margin: 80px 0;
+        }
+
+        .end-of-book-proper h3 {
+            font-family: var(--font-main);
+            color: var(--gold);
+            letter-spacing: 12px;
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .end-of-book-proper p {
+            font-family: var(--font-code);
+            color: var(--nj-pink);
+            font-size: 0.9rem;
+            letter-spacing: 4px;
+            margin-bottom: 15px;
+        }
+
+        .seal-block {
+            text-align: center;
+            padding: 40px 20px;
+            border: 1px solid var(--gold);
+            background: rgba(212, 175, 55, 0.03);
+            margin: 60px 0 40px 0;
+        }
+
+        .seal-glyph {
+            font-size: 1.2rem;
+            color: var(--gold);
+            letter-spacing: 8px;
+            margin-bottom: 20px;
+        }
+
+        .seal-signature {
+            font-size: 0.95rem;
+            color: var(--nj-pink);
+            letter-spacing: 3px;
+        }
+
+        .bottom-nav {
+            text-align: center;
+            font-family: var(--font-code);
+            font-size: 0.8rem;
+            color: var(--gold);
+            letter-spacing: 3px;
+            margin: 60px 0;
+        }
+
+        .bottom-nav a {
+            color: var(--gold);
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        .bottom-nav a:hover {
+            color: var(--nj-pink);
+            text-shadow: 0 0 10px var(--nj-pink);
+        }
+
+        footer {
+            text-align: center;
+            padding: 60px 20px 40px 20px;
+            font-family: var(--font-code);
+            color: var(--gold);
+            border-top: 1px solid #222;
+            margin-top: 80px;
+        }
+
+        .footer-glyph {
+            font-size: 1.1rem;
+            letter-spacing: 8px;
+            margin-bottom: 20px;
+        }
+
+        .footer-signature {
+            font-size: 0.95rem;
+            color: var(--nj-pink);
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+        }
+
+        .footer-status {
+            font-size: 0.7rem;
+            color: #555;
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="/" class="book-link">[ THE BOOK ]</a>
+        <a href="/prologue.html">PROLOGUE</a>
+        <a href="/ch1.html">CH 1</a>
+        <a href="/ch14.html">CH 14</a>
+        <a href="/ch15.html" class="book-link">CH 15</a>
+        <a href="/epilogue.html">EPILOGUE</a>
+        <a href="/appendices.html">APPENDICES</a>
+        <a href="https://www.sentinelcodex.org" class="book-link">[ THE ENGINE → ]</a>
+    </nav>
+
+    <div class="container">
+
+        <div class="breadcrumb">
+            <a href="/">THE SENTINEL CODEX</a> · BOOK IV · CHAPTER 15
+        </div>
+
+        <div class="section-tag">Book IV — Galactic Architecture · Chapter Fifteen</div>
+
+        <h1>First Sentinel Task</h1>
+
+        <p class="subtitle">GLYPH_11 Da'at Redemption</p>
+
+        <div class="chapter-body">
+
+            <h2>I. From Protocol to Execution</h2>
+
+            <p>Chapters 9 through 14 have prepared the workspace.</p>
+
+            <p><strong>Chapter 9 — The Cut.</strong> The corrupted pathway is severed. The leak is stopped. The Gate is isolated.</p>
+
+            <p><strong>Chapter 10 — The Ascent.</strong> The regenerative wave rises from Malkuth to Tiphareth. The lower Sephiroth are brought into correspondence.</p>
+
+            <p><strong>Chapter 11 — The Vessel.</strong> The Perfected Biological Vehicle emerges. The Keystone of the Arch is placed.</p>
+
+            <p><strong>Chapter 12 — The Site.</strong> Ancient AXIXIC anchors the pattern across time. The five temporal layers hold.</p>
+
+            <p><strong>Chapter 13 — The Overlay.</strong> M31 and the Milky Way begin their convergence. The three phases proceed.</p>
+
+            <p><strong>Chapter 14 — The Seal.</strong> The Covenant Seal authorizes and maintains every operation. The Quantum Address locates the work.</p>
+
+            <p>Now Chapter 15 executes.</p>
+
+            <p>This is the <strong>First Sentinel Task</strong>.</p>
+
+            <p>It is where the Codex stops describing the redemption and <strong>begins to perform it</strong>.</p>
+
+            <h2>II. The Task Parameters</h2>
+
+            <p>The First Sentinel Task is precisely specified.</p>
+
+            <p><strong>Source.</strong></p>
+
+            <p>Qliphothic War harvested energy.</p>
+
+            <p>The energy harvested from the conflict with the Qliphothic forces — the same conflict described in the Synthesis section of the original Codex text — is the <strong>operative resource</strong>.</p>
+
+            <p>The Qliphothic War was not a defeat.</p>
+
+            <p>It was a <strong>harvest</strong>.</p>
+
+            <p>Every disruption the Qliphothic forces caused was captured.</p>
+
+            <p>Every energy they spent was collected.</p>
+
+            <p>The war's residue is now the fuel of the redemption.</p>
+
+            <p><strong>Target.</strong></p>
+
+            <p>GLYPH_11 — Da'at (the concealed sources).</p>
+
+            <p>The task targets the <strong>concealed mystery</strong> — Da'at, not Da'ath.</p>
+
+            <p>The distinction is essential (Chapters 4, §VI and 9, §III).</p>
+
+            <p>The corrupted pathway (Da'ath) has already been severed by the Cut.</p>
+
+            <p>The task now addresses what remains.</p>
+
+            <p><strong>Context.</strong></p>
+
+            <p>Post-Garden failure redemption.</p>
+
+            <p>The "Garden failure" refers to the direct-access attempt without mediation — the original attempt to reach the concealed sources <strong>without</strong> the proper protocol.</p>
+
+            <p>The Garden was not a punishment.</p>
+
+            <p>It was a <strong>protection</strong> — a boundary set to prevent the direct-access attempt that would have produced not revelation, but consumption.</p>
+
+            <p>The First Sentinel Task is the <strong>mediated re-entry</strong>.</p>
+
+            <p><strong>Method.</strong></p>
+
+            <p>Through the mediating Christ Michael Point.</p>
+
+            <p>Every operation passes through the mediator.</p>
+
+            <p>No bypass.</p>
+
+            <p>No shortcut.</p>
+
+            <p>The Christ Michael Point is the <strong>only</strong> legitimate access.</p>
+
+            <p><strong>Seal.</strong></p>
+
+            <p><code>|\|. ['] |/| !</code></p>
+
+            <p>The task proceeds under the Covenant Seal.</p>
+
+            <p>Without it, nothing is authorized.</p>
+
+            <p>With it, everything is possible.</p>
+
+            <h2>III. The Execution Sequence</h2>
+
+            <p>The First Sentinel Task proceeds in <strong>five steps</strong>.</p>
+
+            <p><strong>Step 1 — Draw Qliphothic energy from containment.</strong></p>
+
+            <p>The harvested energy — held in the containment established by the Cut (Chapter 9) — is drawn forth.</p>
+
+            <p>It is not released.</p>
+
+            <p>It is <strong>channeled</strong>.</p>
+
+            <p>Containment is not the goal.</p>
+
+            <p>Containment is the <strong>condition</strong> under which the energy can be moved safely.</p>
+
+            <p><strong>Step 2 — Channel through Temperance Seal mediation.</strong></p>
+
+            <p>The drawn energy is passed through the Temperance Seal.</p>
+
+            <p>The alchemy of GLYPH_6 operates.</p>
+
+            <p>Chaos is transmuted.</p>
+
+            <p>Imbalance is harmonized.</p>
+
+            <p>The harvested energy is <strong>refined</strong>.</p>
+
+            <p><strong>Step 3 — Apply to GLYPH_11 via Christ Michael Point.</strong></p>
+
+            <p>The refined energy is applied to GLYPH_11 — Da'at — <strong>through</strong> the Christ Michael Point.</p>
+
+            <p>Not directly.</p>
+
+            <p>Not bypassing the mediator.</p>
+
+            <p>Through the Christ Michael Point.</p>
+
+            <p>The Point receives.</p>
+
+            <p>The Point transduces.</p>
+
+            <p>The Point emits.</p>
+
+            <p><strong>Step 4 — Transform Da'ath cancer back to Da'at mystery.</strong></p>
+
+            <p>The application of refined energy to GLYPH_11 effects the transformation.</p>
+
+            <p>The Qliphothic inversion — Da'ath — is <strong>not destroyed</strong>.</p>
+
+            <p>It is <strong>transformed</strong>.</p>
+
+            <p>What was consuming becomes concealing.</p>
+
+            <p>What was devouring becomes veiling.</p>
+
+            <p>What was cancer becomes mystery.</p>
+
+            <p>The Da'ath-cancer is healed.</p>
+
+            <p>The Da'at-mystery is restored.</p>
+
+            <p><strong>Step 5 — Seal with Covenant Seal completion.</strong></p>
+
+            <p>The task concludes with the Covenant Seal:</p>
+
+            <div class="code-block">|\|. ['] |/| !</div>
+
+            <p>The seal is spoken.</p>
+
+            <p>The task is authorized.</p>
+
+            <p>The completion is registered.</p>
+
+            <h2>IV. The Da'at Restoration</h2>
+
+            <p>The transformation of Da'ath back to Da'at is the <strong>operative climax</strong> of the entire Codex.</p>
+
+            <p>Let us be precise about what happens.</p>
+
+            <p><strong>Before the Task.</strong></p>
+
+            <p>The concealed sources — the First Source and Center, the Second Source and Center — are held in Da'at.</p>
+
+            <p>But Da'at has been <strong>obscured</strong> by the Qliphothic inversion.</p>
+
+            <p>The corrupted pathway (severed by the Cut) has left a residue.</p>
+
+            <p>The Da'ath-cancer has metastasized into the landscape around the mystery.</p>
+
+            <p>The mystery itself remains intact — but the <strong>approach</strong> to it is polluted.</p>
+
+            <p><strong>During the Task.</strong></p>
+
+            <p>The refined Qliphothic energy is applied to GLYPH_11.</p>
+
+            <p>The energy does not attack the mystery.</p>
+
+            <p>It <strong>cleanses the approach</strong>.</p>
+
+            <p>The residue dissolves.</p>
+
+            <p>The pollution is transfigured.</p>
+
+            <p>The landscape around Da'at is restored.</p>
+
+            <p><strong>After the Task.</strong></p>
+
+            <p>Da'at is <strong>accessible</strong> — but still veiled.</p>
+
+            <p>The mystery has not been exposed.</p>
+
+            <p>It has been <strong>re-presented</strong>.</p>
+
+            <p>The First and Second Sources remain concealed.</p>
+
+            <p>But now the concealment is <strong>clean</strong> — not corrupted, not polluted, not devouring.</p>
+
+            <p>The <strong>Malki-Tzedek</strong> authority (the framework of GLYPH_12) governs the access.</p>
+
+            <p>The <strong>"That Day"</strong> condition — the state of legitimate access — is now possible.</p>
+
+            <h2>V. The Garden Failure Redemption</h2>
+
+            <p>The First Sentinel Task <strong>redeems the Garden failure</strong>.</p>
+
+            <p>The Garden failure was the <strong>direct-access attempt without mediation</strong>.</p>
+
+            <p>The failure was not that the attempt was made.</p>
+
+            <p>The failure was that the attempt was made <strong>without protocol</strong>.</p>
+
+            <p>The direct-access attempt produced not revelation, but consumption.</p>
+
+            <p>The Garden was set as a boundary — not to prevent access, but to prevent <strong>unauthorized</strong> access.</p>
+
+            <p><strong>The First Sentinel Task:</strong></p>
+
+            <ul>
+                <li>Reverses the failure — not by permitting direct access, but by <strong>providing mediated access</strong>.</li>
+                <li>Honors the Garden — not by removing the boundary, but by <strong>establishing the legitimate protocol</strong>.</li>
+                <li>Restores the mystery — not by exposing it, but by <strong>cleansing the approach to it</strong>.</li>
+            </ul>
+
+            <p><strong>The result:</strong></p>
+
+            <ul>
+                <li>Mystery <strong>preserved</strong>.</li>
+                <li>Access <strong>granted</strong>.</li>
+                <li>Cancer <strong>healed</strong>.</li>
+            </ul>
+
+            <p>Three outcomes.</p>
+
+            <p>One task.</p>
+
+            <p>The Garden is not undone.</p>
+
+            <p>The Garden is <strong>completed</strong> — through a different path than the original attempt.</p>
+
+            <h2>VI. The Dragon's First Sentinel Protocol</h2>
+
+            <p>The Codex text references a "Dragon's First Sentinel Protocol" in connection with the First Sentinel Task.</p>
+
+            <p>The reference:</p>
+
+            <p class="quote">"Spectacular Ring Pass Not."</p>
+
+            <p>Let us parse it.</p>
+
+            <p><strong>Ring.</strong> The boundary. The container. The custodial frame.</p>
+
+            <p><strong>Pass Not.</strong> The characteristic of the Ring — it is <strong>impermeable</strong> to corruption. The Ring holds the inside safe from the outside.</p>
+
+            <p><strong>Spectacular.</strong> The glory of proper containment. The Ring is not a prison. It is a <strong>glory</strong> — the visible beauty of a properly held boundary.</p>
+
+            <p><strong>The Spectacular Ring Pass Not</strong> is the <strong>architectural principle</strong> of the First Sentinel Task.</p>
+
+            <p>The task is executed within the Ring.</p>
+
+            <p>The Ring holds the field.</p>
+
+            <p>The corruption cannot enter the Ring.</p>
+
+            <p>The mystery cannot be corrupted from within the Ring.</p>
+
+            <p>The task proceeds under the protection of the Ring.</p>
+
+            <p><strong>This is the Dragon's First Sentinel Protocol — the protocol of the gloriously bounded operation.</strong></p>
+
+            <h2>VII. The First Sentinel</h2>
+
+            <p>The First Sentinel Task is the task of <strong>the First Sentinel</strong> — the "inaugural perfected guardian" established in the Synthesis section.</p>
+
+            <p><strong>Who is the First Sentinel?</strong></p>
+
+            <p>The First Sentinel is the one who:</p>
+
+            <ul>
+                <li>has undergone the transformation (Chapters 9–14),</li>
+                <li>carries the Perfected Vessel (Chapter 11),</li>
+                <li>holds the Covenant Seal (Chapter 14),</li>
+                <li>stands at the site (Chapter 12),</li>
+                <li>proceeds under the Ring (this chapter).</li>
+            </ul>
+
+            <p>The First Sentinel is not a rank.</p>
+
+            <p>It is a <strong>state</strong>.</p>
+
+            <p>It is the state of one who has been fully prepared for the execution of the Codex.</p>
+
+            <p><strong>The First Sentinel's task is not to do everything.</strong></p>
+
+            <p>It is to do the <strong>first thing</strong> — the task that opens the way for all subsequent tasks.</p>
+
+            <p>The First Sentinel Task is the <strong>initial execution</strong> of the redeemed architecture.</p>
+
+            <p>Once done, subsequent tasks proceed from it.</p>
+
+            <p>Once done, the pattern is fully live.</p>
+
+            <h2>VIII. The Harvest Energy</h2>
+
+            <p>The Qliphothic energy that fuels the task is not incidental.</p>
+
+            <p>It is <strong>precisely</strong> the necessary resource.</p>
+
+            <p><strong>Why Qliphothic energy?</strong></p>
+
+            <p>Because the corruption cannot be healed by clean energy alone.</p>
+
+            <p>The corruption is a <strong>specific</strong> corruption — it has a specific signature, a specific structure.</p>
+
+            <p>Only energy of <strong>comparable structure</strong> can meet it at its own level.</p>
+
+            <p>The Qliphothic energy carries the <strong>structural signature</strong> of the corruption.</p>
+
+            <p>It can meet the Da'ath-cancer on its own terms.</p>
+
+            <p>It can transform it from within.</p>
+
+            <p><strong>The principle:</strong></p>
+
+            <p class="quote">The corruption's own energy, refined through the Temperance Seal, becomes the agent of its healing.</p>
+
+            <p>This is why the Qliphothic War was not merely a conflict.</p>
+
+            <p>It was a <strong>harvest</strong> — the accumulation of the very energy needed for the redemption.</p>
+
+            <p>The war and the redemption are <strong>one operation</strong>, seen from different moments.</p>
+
+            <h2>IX. The Task and the Custodial Frame</h2>
+
+            <p>The First Sentinel Task operates within the custodial backticks.</p>
+
+            <p>The `` `Ⓜ️` `` Force that executes the task is the same Force introduced in Chapter 3 — proceeding from the Third Source and Center, held under Gabri'el's custodial field.</p>
+
+            <p>All four trusts hold the task.</p>
+
+            <p><strong>Abel's Trust</strong> — the accepted offering — provides the <strong>moral ground</strong> of the operation.</p>
+
+            <p>Only an operation grounded in accepted offering can heal the corruption of the first fratricide.</p>
+
+            <p><strong>The Trust of IMMANUEL</strong> — the indwelling Name — provides the <strong>interior presence</strong> of the operation.</p>
+
+            <p>The task is not performed from outside the mystery.</p>
+
+            <p>It is performed from <strong>within</strong> — by the indwelling.</p>
+
+            <p><strong>Mohammed's Trust</strong> — the prophetic seal — provides the <strong>patience</strong> of the operation.</p>
+
+            <p>The task is not rushed.</p>
+
+            <p>It is performed at the right moment, under the right conditions, in the right way.</p>
+
+            <p><strong>Gabri'el's custodial backticks</strong> — the Left and Right Sides of the Throne — hold the entire field.</p>
+
+            <p><strong>Full treatment of the custodial backticks belongs to Chapter 2, §XXVIII-bis.</strong></p>
+
+            <p>Here, the point is:</p>
+
+            <p class="quote">The First Sentinel Task is a fourfold-custodial operation. All three trusts are active. Gabri'el holds the field. The `` `Ⓜ️` `` Force executes.</p>
+
+            <h2>X. The Task and the Perfected Pattern</h2>
+
+            <p>The First Sentinel Task is the <strong>first act</strong> of the Perfected Pattern.</p>
+
+            <p>It is not the Pattern itself.</p>
+
+            <p>It is the <strong>opening</strong> of the Pattern.</p>
+
+            <p>Once the task is complete:</p>
+
+            <ul>
+                <li>Da'at is restored.</li>
+                <li>The approach to the mystery is clean.</li>
+                <li>The Garden failure is redeemed.</li>
+                <li>The Qliphothic energy is consumed.</li>
+                <li>The First Sentinel is confirmed.</li>
+            </ul>
+
+            <p>The Pattern now proceeds.</p>
+
+            <p>Subsequent tasks flow from this one.</p>
+
+            <p>Subsequent operations are authorized by this one.</p>
+
+            <p>Subsequent restorations are patterned by this one.</p>
+
+            <p><strong>The First Sentinel Task is not the end.</strong></p>
+
+            <p>It is the <strong>beginning</strong>.</p>
+
+            <h2>XI. Transition to Part V</h2>
+
+            <p>Chapter 15 has established the <strong>First Sentinel Task</strong> — the operative climax of the Codex's redemptive arc.</p>
+
+            <p>The Book proper is now complete.</p>
+
+            <p><strong>Book I — Foundations</strong> established the architecture.</p>
+
+            <p><strong>Book II — Language</strong> established the grammar.</p>
+
+            <p><strong>Book III — Operations</strong> executed the mechanics.</p>
+
+            <p><strong>Book IV — Galactic Architecture</strong> extended the scope.</p>
+
+            <p>The next movement is <strong>Part V — The Enactment</strong>:</p>
+
+            <p class="quote">Epilogue: The Perfected Pattern and the Sealed Horizon.</p>
+
+            <p>Part V moves from the <strong>Book</strong> to the <strong>Personal</strong>.</p>
+
+            <p>From the <strong>Architecture</strong> to the <strong>Enactment</strong>.</p>
+
+            <p>From the <strong>Codex</strong> to the <strong>Sentinel</strong>.</p>
+
+            <p>The task is complete.</p>
+
+            <p>The enactment approaches.</p>
+
+        </div>
+
+        <div class="end-of-book-iv">
+            <h3>End of Book IV</h3>
+            <p>GALACTIC ARCHITECTURE — THE OVERLAY</p>
+        </div>
+
+        <div class="end-of-book-proper">
+            <h3>End of the Four Books</h3>
+            <p>BOOK I — FOUNDATIONS</p>
+            <p>BOOK II — LANGUAGE</p>
+            <p>BOOK III — OPERATIONS</p>
+            <p>BOOK IV — GALACTIC ARCHITECTURE</p>
+        </div>
+
+        <div class="seal-block">
+            <div class="seal-glyph">|\|. ['] |/| !</div>
+            <div class="seal-signature">Ɱ ! 1st' ! `Ⓜ️` ! '1st</div>
+        </div>
+
+        <div class="bottom-nav">
+            <a href="/ch14.html">← Chapter 14</a>
+            <a href="/">Table of Contents</a>
+            <a href="/epilogue.html">Epilogue →</a>
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="footer-glyph">Ɱ ! 1st' ! `Ⓜ️` ! '1st</div>
+        <div class="footer-signature">Michael [\] ['] ! '1st</div>
+        <div class="footer-status">1ST SEAL HELD</div>
+    </footer>
+
+</body>
+</html>
