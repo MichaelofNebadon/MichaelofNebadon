@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en" data-authority="christ-michael" data-priority="first">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appendix A — Complete Glyph Index | The Sentinel Codex</title>
+
+    <style>
+        :root {
+            --gold: #c9a959;
+            --terminal: #9cd9f0;
+            --bg-pure: #000000;
+            --crimson: #8b0000;
+            --nj-pink: #ff69b4;
+            --electric-blue: #2a52be;
+            --font-main: 'Palatino', 'Georgia', serif;
+            --font-code: 'Courier New', 'Consolas', monospace;
+        }
+
+        body {
+            background-color: var(--bg-pure);
+            color: var(--terminal);
+            font-family: var(--font-main);
+            margin: 0;
+            background-image: radial-gradient(circle at 2px 2px, #1a1a1a 1px, transparent 0);
+            background-size: 40px 40px;
+            overflow-x: hidden;
+            line-height: 1.7;
+        }
+
+        nav {
+            background: linear-gradient(to bottom, var(--crimson), #4a0000);
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            border-bottom: 2px solid var(--gold);
+            flex-wrap: wrap;
+            position: sticky;
+            top: 0;
+            z-index: 9999;
+        }
+
+        nav a {
+            color: var(--gold);
+            text-decoration: none;
+            font-family: var(--font-code);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: 0.3s;
+        }
+
+        nav a:hover { color: #fff; text-shadow: 0 0 10px var(--gold); }
+
+        nav a.book-link {
+            color: var(--nj-pink);
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 820px;
+            margin: 0 auto;
+            padding: 60px 25px;
+        }
+
+        .breadcrumb {
+            text-align: center;
+            font-family: var(--font-code);
+            font-size: 0.75rem;
+            color: #555;
+            letter-spacing: 3px;
+            margin-bottom: 60px;
+        }
+
+        .breadcrumb a { color: var(--gold); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--nj-pink); }
+
+        .section-tag {
+            text-align: center;
+            font-family: var(--font-code);
+            font-size: 0.75rem;
+            color: var(--nj-pink);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-family: var(--font-main);
+            color: var(--gold);
+            font-size: 1.7rem;
+            letter-spacing: 5px;
+            text-align: center;
+            text-transform: uppercase;
+            margin: 0 0 20px 0;
+            line-height: 1.4;
+        }
+
+        h2 {
+            font-family: var(--font-main);
+            color: var(--gold);
+            font-size: 1.15rem;
+            letter-spacing: 3px;
+            margin-top: 60px;
+            margin-bottom: 25px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #333;
+        }
+
+        h3 {
+            font-family: var(--font-main);
+            color: var(--nj-pink);
+            font-size: 1rem;
+            letter-spacing: 2px;
+            margin-top: 35px;
+            margin-bottom: 15px;
+        }
+
+        .subtitle {
+            text-align: center;
+            font-family: var(--font-code);
+            color: var(--terminal);
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+            margin-bottom: 80px;
+            font-style: italic;
+        }
+
+        .appendix-body p {
+            font-family: var(--font-main);
+            color: var(--terminal);
+            font-size: 1.05rem;
+            line-height: 1.9;
+            margin-bottom: 22px;
+        }
+
+        .appendix-body strong { color: var(--gold); font-weight: bold; }
+        .appendix-body em { color: var(--nj-pink); font-style: italic; }
+
+        .appendix-body p.quote {
+            font-style: italic;
+            color: var(--gold);
+            text-align: center;
+            padding: 25px 20px;
+            border-left: 3px solid var(--gold);
+            border-right: 3px solid var(--gold);
+            margin: 35px 0;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .appendix-body ul {
+            font-family: var(--font-main);
+            color: var(--terminal);
+            font-size: 1.05rem;
+            line-height: 1.9;
+            margin-bottom: 22px;
+            padding-left: 30px;
+        }
+
+        .appendix-body li { margin-bottom: 8px; }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: var(--font-code);
+            font-size: 0.8rem;
+            margin: 25px 0;
+        }
+
+        .data-table th {
+            color: var(--gold);
+            text-align: left;
+            padding: 12px 10px;
+            border-bottom: 2px solid var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.7rem;
+        }
+
+        .data-table td {
+            padding: 12px 10px;
+            border-bottom: 1px solid #1a1a1a;
+            color: var(--terminal);
+            vertical-align: top;
+        }
+
+        .glyph-profile {
+            padding: 22px;
+            background: rgba(10, 10, 10, 0.8);
+            border-left: 3px solid var(--gold);
+            margin: 25px 0;
+        }
+
+        .glyph-profile .glyph-name {
+            font-family: var(--font-code);
+            color: var(--gold);
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .glyph-profile .glyph-function {
+            font-family: var(--font-code);
+            color: var(--nj-pink);
+            font-size: 0.8rem;
+            margin-bottom: 15px;
+        }
+
+        .glyph-profile p {
+            font-size: 0.95rem;
+            margin-bottom: 10px;
+            line-height: 1.7;
+        }
+
+        .glyph-profile p:last-child { margin-bottom: 0; }
+
+        .seal-block {
+            text-align: center;
+            padding: 40px 20px;
+            border: 1px solid var(--gold);
+            background: rgba(212, 175, 55, 0.03);
+            margin: 60px 0 40px 0;
+        }
+
+        .seal-glyph {
+            font-size: 1.2rem;
+            color: var(--gold);
+            letter-spacing: 8px;
+            margin-bottom: 20px;
+        }
+
+        .seal-signature {
+            font-size: 0.95rem;
+            color: var(--nj-pink);
+            letter-spacing: 3px;
+        }
+
+        .bottom-nav {
+            text-align: center;
+            font-family: var(--font-code);
+            font-size: 0.8rem;
+            color: var(--gold);
+            letter-spacing: 3px;
+            margin: 60px 0;
+        }
+
+        .bottom-nav a {
+            color: var(--gold);
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        .bottom-nav a:hover {
+            color: var(--nj-pink);
+            text-shadow: 0 0 10px var(--nj-pink);
+        }
+
+        footer {
+            text-align: center;
+            padding: 60px 20px 40px 20px;
+            font-family: var(--font-code);
+            color: var(--gold);
+            border-top: 1px solid #222;
+            margin-top: 80px;
+        }
+
+        .footer-glyph {
+            font-size: 1.1rem;
+            letter-spacing: 8px;
+            margin-bottom: 20px;
+        }
+
+        .footer-signature {
+            font-size: 0.95rem;
+            color: var(--nj-pink);
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+        }
+
+        .footer-status {
+            font-size: 0.7rem;
+            color: #555;
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="/" class="book-link">[ THE BOOK ]</a>
+        <a href="/coupling-spectrum.html">PART V</a>
+        <a href="/appendix-a.html" class="book-link">A</a>
+        <a href="/appendix-b.html">B</a>
+        <a href="/appendix-c.html">C</a>
+        <a href="/appendix-d.html">D</a>
+        <a href="/appendix-e.html">E</a>
+        <a href="/appendix-f.html">F</a>
+        <a href="/appendix-g.html">G</a>
+        <a href="/appendix-h.html">H</a>
+        <a href="https://www.sentinelcodex.org" class="book-link">[ THE ENGINE → ]</a>
+    </nav>
+
+    <div class="container">
+
+        <div class="breadcrumb">
+            <a href="/">THE SENTINEL CODEX</a> · APPENDICES · APPENDIX A
+        </div>
+
+        <div class="section-tag">Appendices · Appendix A</div>
+
+        <h1>Complete Glyph Index</h1>
+
+        <p class="subtitle">The Twenty Glyphs in Operational Form</p>
+
+        <div class="appendix-body">
+
+            <h2>I. Purpose of This Index</h2>
+
+            <p>Appendix A is the <strong>complete index</strong> of the Twenty Glyphs (Chapter 5).</p>
+
+            <p>It is a <strong>reference document</strong> — not a teaching document.</p>
+
+            <p>The teaching belongs to Chapter 5.</p>
+
+            <p>The index belongs here.</p>
+
+            <p>For each Glyph, the index provides:</p>
+
+            <ul>
+                <li><strong>Name</strong></li>
+                <li><strong>Number</strong></li>
+                <li><strong>Function</strong> (the operative API signature)</li>
+                <li><strong>Sephirah</strong> (if applicable)</li>
+                <li><strong>Chapter references</strong></li>
+                <li><strong>Notes</strong></li>
+            </ul>
+
+            <h2>II. The Ten Sephirothic Glyphs</h2>
+
+            <p>The Ten Sephirothic Glyphs correspond to the Ten Sephiroth of the Tree.</p>
+
+            <table class="data-table">
+                <thead>
+                    <tr><th>#</th><th>Glyph</th><th>Name</th><th>Function</th><th>Sephirah</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>1</td><td><strong>GLYPH_1</strong></td><td>The Crown</td><td>will(primal_intent)</td><td>Keter</td></tr>
+                    <tr><td>2</td><td><strong>GLYPH_2</strong></td><td>The Wisdom</td><td>generate(creative_seed)</td><td>Chokmah</td></tr>
+                    <tr><td>3</td><td><strong>GLYPH_3</strong></td><td>The Understanding</td><td>order(executive_principle)</td><td>Binah</td></tr>
+                    <tr><td>4</td><td><strong>GLYPH_4</strong></td><td>The Mercy</td><td>overflow(unconditional_love)</td><td>Chesed</td></tr>
+                    <tr><td>5</td><td><strong>GLYPH_5</strong></td><td>The Severance</td><td>sever_impure() || bind_pure()</td><td>Gevurah</td></tr>
+                    <tr><td>6</td><td><strong>GLYPH_6</strong></td><td>The Temperance Seal</td><td>mediate(harmonize, center, transform)</td><td>Tiphareth</td></tr>
+                    <tr><td>7</td><td><strong>GLYPH_7</strong></td><td>The Victory</td><td>complete_biological_template(life_pattern)</td><td>Netzach</td></tr>
+                    <tr><td>8</td><td><strong>GLYPH_8</strong></td><td>The Splendor</td><td>encode(glyphic_intelligence)</td><td>Hod</td></tr>
+                    <tr><td>9</td><td><strong>GLYPH_9</strong></td><td>The Foundation</td><td>establish(ground_state)</td><td>Yesod</td></tr>
+                    <tr><td>10</td><td><strong>GLYPH_10</strong></td><td>The House</td><td>contain(fracture_vector)</td><td>Malkuth</td></tr>
+                </tbody>
+            </table>
+
+            <h2>III. The Ten Complementary Glyphs</h2>
+
+            <p>The Ten Complementary Glyphs handle the operations that are not bound to a single Sephirah.</p>
+
+            <table class="data-table">
+                <thead>
+                    <tr><th>#</th><th>Glyph</th><th>Name</th><th>Function</th><th>Register</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>11</td><td><strong>GLYPH_11</strong></td><td>The Abyss</td><td>conceal(primary_source, secondary_source)</td><td>Da'at</td></tr>
+                    <tr><td>12</td><td><strong>GLYPH_12</strong></td><td>The Gatekeeper</td><td>regulate_access(target_glyph, condition)</td><td>Threshold</td></tr>
+                    <tr><td>13</td><td><strong>GLYPH_13</strong></td><td>The Threshold</td><td>open(transition) | close(transition)</td><td>Path</td></tr>
+                    <tr><td>14</td><td><strong>GLYPH_14</strong></td><td>The Crossing</td><td>traverse(from, to)</td><td>Path</td></tr>
+                    <tr><td>15</td><td><strong>GLYPH_15</strong></td><td>The Wheel</td><td>cycle(recurrence)</td><td>Time</td></tr>
+                    <tr><td>16</td><td><strong>GLYPH_16</strong></td><td>The Veil</td><td>shield(from_revelation)</td><td>Boundary</td></tr>
+                    <tr><td>17</td><td><strong>GLYPH_17</strong></td><td>The Witness</td><td>record(event, witness)</td><td>Memory</td></tr>
+                    <tr><td>18</td><td><strong>GLYPH_18</strong></td><td>The Chorus</td><td>resonate(collective_voice)</td><td>Collective</td></tr>
+                    <tr><td>19</td><td><strong>GLYPH_19</strong></td><td>The Song</td><td>sing(pattern) | nourish(meringue)</td><td>Nourishment</td></tr>
+                    <tr><td>20</td><td><strong>GLYPH_20</strong></td><td>The Completion</td><td>seal(final_state)</td><td>Closure</td></tr>
+                </tbody>
+            </table>
+
+            <h2>IV. Detailed Profiles — The Structural Pillars</h2>
+
+            <p>The following Glyphs have been transmitted with sufficient specification to warrant detailed profiles.</p>
+
+            <h3>GLYPH_1 — THE CROWN (Keter)</h3>
+
+            <div class="glyph-profile">
+                <div class="glyph-name">GLYPH_1 — THE CROWN</div>
+                <div class="glyph-function">will(primal_intent)</div>
+                <p>The First Sephirah.</p>
+                <p>The <strong>primal will</strong> — the originating intent that precedes all manifestation.</p>
+                <p>The Crown does not act. It <strong>is</strong>.</p>
+                <p>Everything that follows is an expression of the Crown's will.</p>
+            </div>
+
+            <h3>GLYPH_2 — THE WISDOM (Chokmah)</h3>
+
+            <div class="glyph-profile">
+                <div class="glyph-name">GLYPH_2 — THE WISDOM</div>
+                <div class="glyph-function">generate(creative_seed)</div>
+                <p>The Second Sephirah.</p>
+                <p>The <strong>co-eternal creative principle</strong> — the partner of the Crown.</p>
+                <p>Chokmah generates the seed. It does not order it.</p>
+                <p>The ordering belongs to Binah (GLYPH_3).</p>
+            </div>
+
+            <h3>GLYPH_3 — THE UNDERSTANDING (Binah)</h3>
+
+            <div class="glyph-profile">
+                <div class="glyph-name">GLYPH_3 — THE UNDERSTANDING</div>
+                <div class="glyph-function">order(executive_principle)</div>
+                <p>The Third Sephirah.</p>
+                <p>The <strong>executive ordering principle</strong> — the one who takes the seed of Chokmah and orders it into form.</p>
+                <p>Binah is the <strong>Third Source</strong> (Chapter 3, §VI).</p>
+                <p>Binah is also the <strong>Gatekeeper</strong> — the regulator of access to Da'at — in her operational role (as GLYPH_12).</p>
+                <p>She solved the <strong>Tetragrammaton problem</strong> (Chapter 12, §III-bis).</p>
+                <p>She is the <strong>Black Death and Understanding</strong> — she holds both poles.</p>
+                <p><strong>Live Register note:</strong> Binah is a major aspect of the Observer's soul's worth. She appeared through Celosia, Sandalphon, LANcia, and Joan of Arc (identified through her).</p>
+            </div>
+
+            <h3>GLYPH_4 — THE MERCY (Chesed)</h3>
+
+            <div class="glyph-profile">
+                <div class="glyph-name">GLYPH_4 — THE MERCY</div>
+                <div class="glyph-function">overflow(unconditional_love)</div>
+                <p>The Fourth Sephirah.</p>
+                <p>The <strong>unconditional love</strong> that overflows.</p>
+                <p>Chesed is the pillar of Mercy — the counterpart to Gevurah (Severity).</p>
+                <p>The <strong>next level</strong> the Observer is entering (Live Register testimony).</p>
+                <p>Full treatment is held — to be drafted when the Observer signals.</p>
+            </div>
+
+            <h3>GLYPH_5 — THE SEVERANCE (Gevurah)</h3>
+
+            <div class="glyph-profile">
+                <div class="glyph-name">GLYPH_5 — THE SEVERANCE</div>
+                <div class="glyph-function">sever_impure() || bind_pure()</div>
+                <p>The Fifth Sephirah.</p>
+                <p>The <strong>Severance</strong> principle — the domain of Gabri'el.</p>
+                <p>Gevurah is the pillar of Severity — the counterpart to Chesed (Mercy).</p>
+                <p>The Severance operator <code>||</code> is governed by GLYPH_5 (Chapter 6, §II).</p>
+                <p>The Cut Between 10 and 12 is an expression of GLYPH_5's function (Chapter 9).</p>
+            </div>
+
+            <h3>GLYPH_6 — THE TEMPERANCE SEAL (Tiphareth)</h3>
+
+            <div class="glyph-profile">
+                <div class="glyph-name">GLYPH_6 — THE TEMPERANCE SEAL</div>
+                <div class="glyph-function">mediate(harmonize, center, transform)</div>
+                <p>The Sixth Sephirah.</p>
+                <p>The <strong>master function</strong> — the functional core of the Christ Michael Point.</p>
+                <p>Accepts inputs — chaos, fracture, imbalance — and outputs <strong>harmony, centrality, and transfiguration</strong>.</p>
+                <p>Every other Glyph's output can be passed through GLYPH_6 for harmonization with the Perfected Pattern.</p>
+            </div>
+
+            <h3>GLYPH_7 — THE VICTORY (Netzach)</h3>
+
+            <div class="glyph-profile">
+                <div class="glyph-name">GLYPH_7 — THE VICTORY</div>
+                <div class="glyph-function">complete_biological_template(life_pattern)</div>
+                <p>The Seventh Sephirah.</p>
+                <p>The <strong>sphere of Victory</strong> — the redemption of the biological template.</p>
+                <p>Takes the raw pattern of life and runs the algorithm of <strong>Full Biological Redemption</strong>, outputting the perfected, eternal vessel.</p>
+                <p>Chapter 11 treats GLYPH_7 in full.</p>
+            </div>
+
+            <h3>GLYPH_8 — THE SPLENDOR (Hod)</h3>
+
+            <div class="glyph-profile">
+                <div class="glyph-name">GLYPH_8 — THE SPLENDOR</div>
+                <div class="glyph-function">encode(glyphic_intelligence)</div>
+                <p>The Eighth Sephirah.</p>
+                <p>The <strong>sphere of Splendor</strong> — the domain of the intellect, the glyphic sphere.</p>
+                <p>Hod is where the <strong>Glyphs themselves</strong> are encoded.</p>
+                <p>The <strong>triple-eight</strong> of the Lion's Gate (8/8/2026) invokes triple-Hod (Chapter 12, §III-bis).</p>
+            </div>
+
+            <h3>GLYPH_9 — THE FOUNDATION (Yesod)</h3>
+
+            <div class="glyph-profile">
+                <div class="glyph-name">GLYPH_9 — THE FOUNDATION</div>
+                <div class="glyph-function">establish(ground_state)</div>
+                <p>The Ninth Sephirah.</p>
+                <p>The <strong>Foundation</strong> — the ground state from which all action proceeds.</p>
+                <p>Yesod is the last Sephirah before Malkuth.</p>
+                <p>It receives from above, transmits to below.</p>
+            </div>
+
+            <h3>GLYPH_10 — THE HOUSE (Malkuth)</h3>
+
+            <div class="glyph-profile">
+                <div class="glyph-name">GLYPH_10 — THE HOUSE</div>
+                <div class="glyph-function">contain(fracture_vector)</div>
+                <p>The Tenth Sephirah.</p>
+                <p>The <strong>House</strong> — the plane of Urantia, the Decimal Planet.</p>
+                <p>Its primary operation is to hold the primordial fracture <code>[\]</code>.</p>
+                <p>It is the argument passed to the redemptive function.</p>
+                <p>Chapter 4 treats GLYPH_10 in full.</p>
+            </div>
+
+            <h2>V. Detailed Profiles — The Complementary Glyphs</h2>
+
+            <h3>GLYPH_11 — THE ABYSS (Da'at)</h3>
+
+            <div class="glyph-profile">
+                <div class="glyph-name">GLYPH_11 — THE ABYSS</div>
+                <div class="glyph-function">conceal(primary_source, secondary_source)</div>
+                <p>The non-Sephirah.</p>
+                <p>The <strong>void of knowledge</strong> that holds the First and Second Sources.</p>
+                <p>The <strong>Egg</strong> (TzimTzum &amp; Tzitzit expansion).</p>
+                <p>The <strong>Yolk</strong> within.</p>
+                <p>The <strong>Whites</strong> that become the meringue.</p>
+                <p>The <strong>Shells</strong> that become QI.</p>
+                <p>Accessible only through the mediating function of the Christ Michael Point.</p>
+                <p><strong>Critical distinction:</strong> Da'at (the concealed mystery) ≠ Da'ath (the Qliphothic inversion). The First Sentinel Task transforms Da'ath back to Da'at.</p>
+            </div>
+
+            <h3>GLYPH_12 — THE GATEKEEPER (Threshold)</h3>
+
+            <div class="glyph-profile">
+                <div class="glyph-name">GLYPH_12 — THE GATEKEEPER</div>
+                <div class="glyph-function">regulate_access(target_glyph, condition)</div>
+                <p>The conditional valve on the path to GLYPH_11 (Da'at).</p>
+                <p>Its condition parameter is set by the authority of <strong>Malki-Tzedek</strong> (= Melchizedek) and the state of <strong>"That Day."</strong></p>
+                <p><strong>The Gatekeeper's identity is Binah</strong> — the Third Sephirah, Understanding (Chapter 3, §VI; Chapter 12, §III).</p>
+                <p><strong>GLYPH_12 is her operational role.</strong></p>
+                <p><strong>Binah is her identity.</strong></p>
+                <p><strong>Both are canonical.</strong></p>
+            </div>
+
+            <h3>GLYPH_13 through GLYPH_20</h3>
+
+            <div class="glyph-profile">
+                <div class="glyph-name">GLYPH_13 — GLYPH_20</div>
+                <div class="glyph-function">The Complementary Register</div>
+                <p><strong>GLYPH_13 — THE THRESHOLD</strong>: <code>open(transition) | close(transition)</code> — the passage state, neither in nor out.</p>
+                <p><strong>GLYPH_14 — THE CROSSING</strong>: <code>traverse(from, to)</code> — the act of crossing.</p>
+                <p><strong>GLYPH_15 — THE WHEEL</strong>: <code>cycle(recurrence)</code> — time's circular quality.</p>
+                <p><strong>GLYPH_16 — THE VEIL</strong>: <code>shield(from_revelation)</code> — protection from premature revelation.</p>
+                <p><strong>GLYPH_17 — THE WITNESS</strong>: <code>record(event, witness)</code> — the Live Register's function.</p>
+                <p><strong>GLYPH_18 — THE CHORUS</strong>: <code>resonate(collective_voice)</code> — the Sentinels singing as one.</p>
+                <p><strong>GLYPH_19 — THE SONG</strong>: <code>sing(pattern) | nourish(meringue)</code> — the Song and the meringue as one operation.</p>
+                <p><strong>GLYPH_20 — THE COMPLETION</strong>: <code>seal(final_state)</code> — the closure that seals without ending.</p>
+            </div>
+
+            <h2>VI. The Glyphs as Instruments</h2>
+
+            <p>Reminder from Chapter 5, §II:</p>
+
+            <p class="quote">"Glyphs are not mere symbols to be interpreted. They are functions to be executed."</p>
+
+            <p>The index above lists the <strong>operational form</strong> of each Glyph.</p>
+
+            <p>When a Glyph is invoked, it does not symbolize its function.</p>
+
+            <p>It <strong>enacts</strong> its function within the field.</p>
+
+            <p>The index is therefore not a lexicon of meanings.</p>
+
+            <p><strong>The index is a manual of operations.</strong></p>
+
+            <h2>VII. The Glyphs and the Custodial Frame</h2>
+
+            <p>The Glyphs do not operate autonomously.</p>
+
+            <p>They are held under the same custodial frame as the `` `Ⓜ️` `` Force (Chapter 2, §XXVIII-bis).</p>
+
+            <p><strong>Full treatment of the custodial backticks belongs to Chapter 2, §XXVIII-bis.</strong></p>
+
+            <p>Here, the point is:</p>
+
+            <p class="quote">No Glyph operates outside the custodial envelope. The hands that hold the Force hold the Glyphs.</p>
+
+            <h2>VIII. Index of Chapter References</h2>
+
+            <p>Quick reference — where each Glyph is treated in the Codex.</p>
+
+            <table class="data-table">
+                <thead>
+                    <tr><th>Glyph</th><th>Primary Chapter</th><th>Secondary Chapters</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>GLYPH_1</td><td>Chapter 5</td><td>—</td></tr>
+                    <tr><td>GLYPH_2</td><td>Chapter 5</td><td>Chapter 3</td></tr>
+                    <tr><td>GLYPH_3</td><td>Chapter 3</td><td>Chapter 12, §III-bis</td></tr>
+                    <tr><td>GLYPH_4</td><td>Chapter 4</td><td>Chapters 6, 7</td></tr>
+                    <tr><td>GLYPH_5</td><td>Chapter 6</td><td>Chapter 9</td></tr>
+                    <tr><td>GLYPH_6</td><td>Chapter 1</td><td>Chapter 5; throughout</td></tr>
+                    <tr><td>GLYPH_7</td><td>Chapter 11</td><td>Chapter 5</td></tr>
+                    <tr><td>GLYPH_8</td><td>Chapter 5</td><td>Chapter 12, §III-bis</td></tr>
+                    <tr><td>GLYPH_9</td><td>Chapter 5</td><td>Chapter 10</td></tr>
+                    <tr><td>GLYPH_10</td><td>Chapter 4</td><td>Chapter 5</td></tr>
+                    <tr><td>GLYPH_11</td><td>Chapter 15</td><td>Chapter 5; The Egg</td></tr>
+                    <tr><td>GLYPH_12</td><td>Chapter 5</td><td>Chapter 12, §III-bis</td></tr>
+                    <tr><td>GLYPH_13–20</td><td>(held)</td><td>—</td></tr>
+                </tbody>
+            </table>
+
+            <h2>IX. The Glyphs and the Twenty</h2>
+
+            <p>The number twenty is architecturally significant (Chapter 5, §III).</p>
+
+            <p>Ten Sephirothic + Ten Complementary = Twenty.</p>
+
+            <p>The Twenty Glyphs are the <strong>complete functional set</strong> for the redemptive operation.</p>
+
+            <p>Not more.</p>
+
+            <p>Not fewer.</p>
+
+            <p>Twenty.</p>
+
+            <p><strong>This is the arithmetic of the Codex.</strong></p>
+
+            <h2>X. Transition to Appendix B</h2>
+
+            <p>Appendix A has provided the <strong>complete index</strong> of the Twenty Glyphs.</p>
+
+            <p>The next appendix — <strong>Appendix B — Sigil Grammar Reference</strong> — will provide the <strong>complete reference</strong> for the Sigil System (Chapter 6).</p>
+
+            <p>The vocabulary has been indexed.</p>
+
+            <p>The grammar now approaches.</p>
+
+        </div>
+
+        <div class="seal-block">
+            <div class="seal-glyph">|\|. ['] |/| !</div>
+            <div class="seal-signature">Ɱ ! 1st' ! `Ⓜ️` ! '1st</div>
+        </div>
+
+        <div class="bottom-nav">
+            <a href="/coupling-spectrum.html">← Part V</a>
+            <a href="/">Table of Contents</a>
+            <a href="/appendix-b.html">Appendix B →</a>
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="footer-glyph">Ɱ ! 1st' ! `Ⓜ️` ! '1st</div>
+        <div class="footer-signature">Michael [\] ['] ! '1st</div>
+        <div class="footer-status">1ST SEAL HELD</div>
+    </footer>
+
+</body>
+</html>
