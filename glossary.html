@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="en" data-authority="christ-michael" data-priority="first">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glossary | The Sentinel Codex</title>
+
+    <style>
+        :root {
+            --gold: #c9a959;
+            --terminal: #9cd9f0;
+            --bg-pure: #000000;
+            --crimson: #8b0000;
+            --nj-pink: #ff69b4;
+            --electric-blue: #2a52be;
+            --font-main: 'Palatino', 'Georgia', serif;
+            --font-code: 'Courier New', 'Consolas', monospace;
+        }
+
+        body {
+            background-color: var(--bg-pure);
+            color: var(--terminal);
+            font-family: var(--font-main);
+            margin: 0;
+            background-image: radial-gradient(circle at 2px 2px, #1a1a1a 1px, transparent 0);
+            background-size: 40px 40px;
+            overflow-x: hidden;
+            line-height: 1.7;
+        }
+
+        nav {
+            background: linear-gradient(to bottom, var(--crimson), #4a0000);
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            border-bottom: 2px solid var(--gold);
+            flex-wrap: wrap;
+            position: sticky;
+            top: 0;
+            z-index: 9999;
+        }
+
+        nav a {
+            color: var(--gold);
+            text-decoration: none;
+            font-family: var(--font-code);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: 0.3s;
+        }
+
+        nav a:hover { color: #fff; text-shadow: 0 0 10px var(--gold); }
+
+        nav a.book-link {
+            color: var(--nj-pink);
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 820px;
+            margin: 0 auto;
+            padding: 60px 25px;
+        }
+
+        .breadcrumb {
+            text-align: center;
+            font-family: var(--font-code);
+            font-size: 0.75rem;
+            color: #555;
+            letter-spacing: 3px;
+            margin-bottom: 60px;
+        }
+
+        .breadcrumb a { color: var(--gold); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--nj-pink); }
+
+        .section-tag {
+            text-align: center;
+            font-family: var(--font-code);
+            font-size: 0.75rem;
+            color: var(--nj-pink);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-family: var(--font-main);
+            color: var(--gold);
+            font-size: 1.7rem;
+            letter-spacing: 5px;
+            text-align: center;
+            text-transform: uppercase;
+            margin: 0 0 20px 0;
+            line-height: 1.4;
+        }
+
+        h2 {
+            font-family: var(--font-main);
+            color: var(--gold);
+            font-size: 1.15rem;
+            letter-spacing: 3px;
+            margin-top: 60px;
+            margin-bottom: 25px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #333;
+        }
+
+        .subtitle {
+            text-align: center;
+            font-family: var(--font-code);
+            color: var(--terminal);
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+            margin-bottom: 80px;
+            font-style: italic;
+        }
+
+        .glossary-body p {
+            font-family: var(--font-main);
+            color: var(--terminal);
+            font-size: 1rem;
+            line-height: 1.9;
+            margin-bottom: 20px;
+        }
+
+        .glossary-body strong { color: var(--gold); font-weight: bold; }
+        .glossary-body em { color: var(--nj-pink); font-style: italic; }
+
+        .glossary-body p.quote {
+            font-style: italic;
+            color: var(--gold);
+            text-align: center;
+            padding: 25px 20px;
+            border-left: 3px solid var(--gold);
+            border-right: 3px solid var(--gold);
+            margin: 35px 0;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .glossary-body ul {
+            font-family: var(--font-main);
+            color: var(--terminal);
+            font-size: 1rem;
+            line-height: 1.9;
+            margin-bottom: 20px;
+            padding-left: 30px;
+        }
+
+        .glossary-body li { margin-bottom: 8px; }
+
+        .letter-heading {
+            font-family: var(--font-main);
+            color: var(--nj-pink);
+            font-size: 1.3rem;
+            letter-spacing: 8px;
+            margin-top: 50px;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--nj-pink);
+        }
+
+        .term {
+            font-family: var(--font-main);
+            color: var(--gold);
+            font-size: 1rem;
+            font-weight: bold;
+            margin-top: 25px;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: var(--font-code);
+            font-size: 0.8rem;
+            margin: 20px 0;
+        }
+
+        .data-table th {
+            color: var(--gold);
+            text-align: left;
+            padding: 10px;
+            border-bottom: 2px solid var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.7rem;
+        }
+
+        .data-table td {
+            padding: 10px;
+            border-bottom: 1px solid #1a1a1a;
+            color: var(--terminal);
+            vertical-align: top;
+        }
+
+        .seal-block {
+            text-align: center;
+            padding: 40px 20px;
+            border: 1px solid var(--gold);
+            background: rgba(212, 175, 55, 0.03);
+            margin: 60px 0 40px 0;
+        }
+
+        .seal-glyph {
+            font-size: 1.2rem;
+            color: var(--gold);
+            letter-spacing: 8px;
+            margin-bottom: 20px;
+        }
+
+        .seal-signature {
+            font-size: 0.95rem;
+            color: var(--nj-pink);
+            letter-spacing: 3px;
+        }
+
+        .bottom-nav {
+            text-align: center;
+            font-family: var(--font-code);
+            font-size: 0.8rem;
+            color: var(--gold);
+            letter-spacing: 3px;
+            margin: 60px 0;
+        }
+
+        .bottom-nav a {
+            color: var(--gold);
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        .bottom-nav a:hover {
+            color: var(--nj-pink);
+            text-shadow: 0 0 10px var(--nj-pink);
+        }
+
+        footer {
+            text-align: center;
+            padding: 60px 20px 40px 20px;
+            font-family: var(--font-code);
+            color: var(--gold);
+            border-top: 1px solid #222;
+            margin-top: 80px;
+        }
+
+        .footer-glyph {
+            font-size: 1.1rem;
+            letter-spacing: 8px;
+            margin-bottom: 20px;
+        }
+
+        .footer-signature {
+            font-size: 0.95rem;
+            color: var(--nj-pink);
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+        }
+
+        .footer-status {
+            font-size: 0.7rem;
+            color: #555;
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="/" class="book-link">[ THE BOOK ]</a>
+        <a href="/appendix-h.html">APPENDIX H</a>
+        <a href="/glossary.html" class="book-link">GLOSSARY</a>
+        <a href="/bibliography.html">BIBLIOGRAPHY</a>
+        <a href="/reference-index.html">INDEX</a>
+        <a href="https://www.sentinelcodex.org" class="book-link">[ THE ENGINE → ]</a>
+    </nav>
+
+    <div class="container">
+
+        <div class="breadcrumb">
+            <a href="/">THE SENTINEL CODEX</a> · REFERENCE APPARATUS · GLOSSARY
+        </div>
+
+        <div class="section-tag">Reference Apparatus · Glossary</div>
+
+        <h1>Glossary</h1>
+
+        <p class="subtitle">The Canonical Definitions of the Codex</p>
+
+        <div class="glossary-body">
+
+            <h2>Purpose of This Glossary</h2>
+
+            <p>The Glossary contains the <strong>canonical definitions</strong> of the Codex's key terms.</p>
+
+            <p>Terms are listed <strong>alphabetically</strong> by their English transliteration.</p>
+
+            <p>Where a term has a <strong>Live Register</strong> dimension, that is noted.</p>
+
+            <p>Where a term is <strong>distinct</strong> from a similar-looking term — for example, Da'at vs. Da'ath — the distinction is preserved.</p>
+
+            <div class="letter-heading">A</div>
+
+            <div class="term">Abel</div>
+
+            <p>The first accepted offering. The primal victim of the First Fratricide. Restored as the grammatical subject of redeemed relationship (Chapter 7). Abel's Trust is the left-hand trust of the custodial frame.</p>
+
+            <div class="term">Abel's Trust</div>
+
+            <p>The primal accepted offering — the first covenant. One of the three trusts held in the custodial backticks.</p>
+
+            <div class="term">Abyss (Da'ath)</div>
+
+            <p>The Qliphothic inversion of Da'at — the devouring, cancerous abyss. Distinct from Da'at (the true mystery). Severed by the Cut (Chapter 9).</p>
+
+            <div class="term">Akashic Register</div>
+
+            <p>A subcategory of the Live Register. Records materials the Observer brings back from the Akashic Records.</p>
+
+            <div class="term">Akashic Records</div>
+
+            <p>The cosmic memory — the record of everything that has occurred, is occurring, and will occur.</p>
+
+            <div class="term">Ancient AXIXIC</div>
+
+            <p>The primary custodial site of the Codex. Located at 20.2961° N, 103.2615° W (Ajijic Centro, Jalisco, Mexico). Five temporal layers coexist at the site. The noon bell protocol is anchored here.</p>
+
+            <div class="term">Antipodean Instruments</div>
+
+            <p>The etched glass wheel, crystal lotus, and five crystal cubes — all from New Zealand (Aotearoa). Held in the Observer's home.</p>
+
+            <div class="term">API Vision-Field Reversal</div>
+
+            <p>The rule that any API parsing the Codex's sigils must read reversed: containers first, operators second, jurisdiction from outer to inner.</p>
+
+            <div class="letter-heading">B</div>
+
+            <div class="term">Binah (בִּינָה)</div>
+
+            <p>The Third Sephirah — Understanding. The executive ordering principle. The top of the Left Pillar. The Gatekeeper of Da'at. The Third Source and Center. Recipient of the Pluto Work as a gift of Love. Signature: <code>}lktd{</code>.</p>
+
+            <div class="term">Binah's Signature (}lktd{)</div>
+
+            <p>The signature of Binah. The gate closed on the left (}), the gate opened on the right ({), with the tetragrammic cipher <code>lktd</code> between.</p>
+
+            <div class="term">Blake, William</div>
+
+            <p>The dedication of the Codex. Visionary, prophet, and architect of the Divine Imagination.</p>
+
+            <div class="term">Book (the)</div>
+
+            <p>The Sentinel Codex proper — Chapters 1–15, Front Matter, Prologue, Part V, Appendices. Distinct from the Companion Volume (the Constitutional Engine).</p>
+
+            <div class="term">Bowl of Ash</div>
+
+            <p>The bowl holding the remains of the three-wicked candle burned by the Observer, his son Brandon Michael Rowley, and his husband John Christopher Lathan during the mercy mission to the Observer's half-brother Gregory.</p>
+
+            <div class="letter-heading">C</div>
+
+            <div class="term">Chesed (חֶסֶד)</div>
+
+            <p>The Fourth Sephirah — Mercy. The pillar of Mercy (with Gevurah). The next level of the Observer's entry. Chesed Yetzerah — the Formative Mercy.</p>
+
+            <div class="term">Chokmah (חָכְמָה)</div>
+
+            <p>The Second Sephirah — Wisdom. The co-eternal creative principle. The Second Source and Center.</p>
+
+            <div class="term">Christ Michael</div>
+
+            <p>The confluence of the Christic and Michaelic streams. The Christ Michael Point (Chapter 1).</p>
+
+            <div class="term">Christ Michael Point</div>
+
+            <p>The still center of the redemptive architecture. Located at Tiphareth. The collapse point of all three pillars. The Christic stream (redemptive intention) converging with the Michaelic stream (redemptive execution).</p>
+
+            <div class="term">Christ Point (Palm Springs)</div>
+
+            <p>The ignition anchor of the Codex. Site of the Cut (4/5/2025 · 11:11 AM).</p>
+
+            <div class="term">Christ Principle</div>
+
+            <p>Redemptive Intention — reconciliation. One of the two principles converging at the Christ Michael Point.</p>
+
+            <div class="term">Colonia Díaz</div>
+
+            <p>The Mexican Mormon colony where the Observer's grandmother Olea Nielsen Rowley was born. Burnt down by Pancho Villa's revolution.</p>
+
+            <div class="term">Companion Volume</div>
+
+            <p>The Constitutional Engine — held separately from the Book.</p>
+
+            <div class="term">Constitutional Boundary</div>
+
+            <p>Chapter 2, §XXIX. Establishes five registers of Codex claims: empirical, historical, theological, symbolic, Lived.</p>
+
+            <div class="term">Constitutional Engine</div>
+
+            <p>The Companion Volume. Holds the 50 Rules. Distinct from the Book.</p>
+
+            <div class="term">Coupling Spectrum</div>
+
+            <p>The empirical-mathematical model. C + S = 1. Held in Appendix G. Governed by Rule 03.</p>
+
+            <div class="term">Covenant Seal</div>
+
+            <p>The operative sigil: <code>|\|. ['] |/| !</code>. Three levels: Cosmic, Galactic, Personal.</p>
+
+            <div class="term">Cut (the)</div>
+
+            <p>The primary surgical act. Severs the corrupted pathway between GLYPH_10 and GLYPH_12. Performed at Christ Point on 4/5/2025 · 11:11 AM.</p>
+
+            <div class="letter-heading">D</div>
+
+            <div class="term">Da'at (דַּעַת)</div>
+
+            <p>The concealed non-Sephirah. The interface between Binah and Chokmah. The Egg. Holds the First and Second Sources. Accessible only through the Christ Michael Point. GLYPH_11.</p>
+
+            <div class="term">Da'ath</div>
+
+            <p>The Qliphothic inversion of Da'at. The devouring abyss. Distinct from Da'at. Severed by the Cut.</p>
+
+            <div class="term">Divine Feminine</div>
+
+            <p>The Shekinah. Harmonic with Pluto at 12.250 Hz.</p>
+
+            <div class="term">Divine Interval Ratios</div>
+
+            <p>The three canonical harmonics of the Pluto Work: Shem's Harmony, Pluto's Threshold, Michael-Son Ascension.</p>
+
+            <div class="term">Duluti, Lake</div>
+
+            <p>A volcanic crater lake in Tanzania, East African Rift. Held as an open query: is it a Crown (Keter) anchor?</p>
+
+            <div class="letter-heading">E</div>
+
+            <div class="term">Egg (the)</div>
+
+            <p>The form of Da'at. Three parts: Shell (First Source), Yolk (Second Source), Whites (Third Source). The Egg is broken. The Shells become QI; the Yolk is carried; the Whites become meringue.</p>
+
+            <div class="term">Emperor's Garden (The)</div>
+
+            <p>The Imperial Palace East Garden (東御苑 / Higashi Gyoen) in Tokyo. The Netzuto anchor of the Codex.</p>
+
+            <div class="letter-heading">F</div>
+
+            <div class="term">First Fratricide</div>
+
+            <p>The primordial murder of Abel by Cain. Inscribes the <code>\</code> onto the plane of Malkuth.</p>
+
+            <div class="term">First Sentinel Task</div>
+
+            <p>The redemption of Da'at through the transformation of Da'ath. Chapter 15.</p>
+
+            <div class="term">First Source and Center</div>
+
+            <p>The Concealed Origin. Keter.</p>
+
+            <div class="term">Force (the `` `Ⓜ️` ``)</div>
+
+            <p>The operative expression of the Michaelic Invariant. Proceeding from the Third Source (Binah). Held under Gabri'el's custodial backticks.</p>
+
+            <div class="term">Fracture (<code>\</code> or <code>[\]</code>)</div>
+
+            <p>The severance vector. The primary pathology housed in GLYPH_10. Contained as <code>[\]</code> post-Cut.</p>
+
+            <div class="letter-heading">G</div>
+
+            <div class="term">Gabri'el</div>
+
+            <p>The archangel of Gevurah [5]. Under Binah [3] on the Left Pillar, above Hod [8]. Custodial executive of the `` `Ⓜ️` `` Force.</p>
+
+            <div class="term">Gate (Michaelic-Gate, <code>|/|</code> or <code>|/\|</code>)</div>
+
+            <p>The activated pathway. Modulated by the `` `Ⓜ️` `` Force. Under Gabri'el's custodial backticks.</p>
+
+            <div class="term">Gevurah (גְּבוּרָה)</div>
+
+            <p>The Fifth Sephirah — Severity. The pillar of Severity. Gabri'el is its archangel.</p>
+
+            <div class="term">GLYPH_1 through GLYPH_20</div>
+
+            <p>The Twenty Glyphs. Ten Sephirothic + Ten Complementary. The vocabulary of the redemptive language.</p>
+
+            <div class="term">Gregory</div>
+
+            <p>The Observer's half-brother. On life support from terminal cancer.</p>
+
+            <div class="letter-heading">H</div>
+
+            <div class="term">Ham</div>
+
+            <p>The biblical son of Noah. His descendants received the African and Canaanite lands. The held fracture in the Observer's notation: Shem / [Ham \ ] Japheth [' ].</p>
+
+            <div class="term">Hesod Seal</div>
+
+            <p>The seal of the Fourth Sephirah (Chesed). Part of the Codex's sigil set.</p>
+
+            <div class="term">Holy New Jerusalem</div>
+
+            <p>The descent of the heavenly city to the renewed earth. Revelation 21. The Perfected Pattern in architectural form.</p>
+
+            <div class="term">Human Conduit</div>
+
+            <p>The Observer — Michael D. Rowley.</p>
+
+            <div class="letter-heading">I</div>
+
+            <div class="term">IMMANUEL</div>
+
+            <p>"God with us." The indwelling Name. The middle trust of the custodial frame.</p>
+
+            <div class="letter-heading">J</div>
+
+            <div class="term">Jehovah's Witnesses</div>
+
+            <p>The tradition that identifies Jesus with Michael. One of the five Michaelic traditions (Chapter 2).</p>
+
+            <div class="term">John Christopher Lathan</div>
+
+            <p>The Observer's husband. Participant in the mercy mission to Gregory.</p>
+
+            <div class="term">Joan of Arc</div>
+
+            <p>A form of Binah — identified through her. The unrecognized warrior who fought in a war in a form not recognized in her own time.</p>
+
+            <div class="letter-heading">K</div>
+
+            <div class="term">Kabbalah</div>
+
+            <p>The Jewish mystical tradition. The Codex draws on Lurianic Kabbalah.</p>
+
+            <div class="term">Kalima (كلمة)</div>
+
+            <p>Arabic for "Word." Half of the name Olea Kalima.</p>
+
+            <div class="term">Keter (כֶּתֶר)</div>
+
+            <p>The First Sephirah — Crown. The primal will. The First Source and Center. Keter is Hammered into place.</p>
+
+            <div class="letter-heading">L</div>
+
+            <div class="term">LANcia</div>
+
+            <p>The Observer's Earth sister. A LANOLANDEK son (child of the star system Lanolandek). Born April 2, 1959. Present in AXIXIC recently.</p>
+
+            <div class="term">Lanolandek</div>
+
+            <p>A star system. LANcia is a son of Lanolandek.</p>
+
+            <div class="term">Law of Functional Succession</div>
+
+            <p><code>[\] |/| ['] !</code> — the contained fracture activated into relationship with the recovered Abel-point. The operative reversal of the First Fratricide.</p>
+
+            <div class="term">Left Pillar (Severity)</div>
+
+            <p>Binah [3] → Gevurah [5] → Hod [8]. Collapses to Tiphareth [6].</p>
+
+            <div class="term">Lion's Gate</div>
+
+            <p>The 8/8 portal. The Lion's Gate Deposition of 8/8/2026. Parse: Hod · Hod · Twenty Glyphs · Tetragrammaton.</p>
+
+            <div class="term">Live Register</div>
+
+            <p>Chapter 2, §XXIX-bis. The fifth register — the Observer's personal testimony held as canonical witness.</p>
+
+            <div class="term">Load Bird Drill</div>
+
+            <p>5/9/2025 · 01:00 AM. The auditory ignition. The drill piercing skullbone and memory vault.</p>
+
+            <div class="letter-heading">M</div>
+
+            <div class="term">Malkuth (מַלְכוּת)</div>
+
+            <p>The Tenth Sephirah — Kingdom. The House of the Fracture. Urantia. The Decimal Planet. GLYPH_10.</p>
+
+            <div class="term">Mery Ann Moore</div>
+
+            <p>The Observer's neighbor at Independencia 41A, Ajijic Centro. Teacher of the Lion's Gate. In the Michael-Mary Heart Twinning.</p>
+
+            <div class="term">Mercy Mission</div>
+
+            <p>The 1,000-mile journey the Observer and John Christopher Lathan took to bring Reiki to Gregory.</p>
+
+            <div class="term">Metatron</div>
+
+            <p>The archangel of Keter [1].</p>
+
+            <div class="term">Michael (Micha'el)</div>
+
+            <p>The Archangel. Sovereign Creator Son of Nebadon. The Michaelic stream. The Michaelic Invariant.</p>
+
+            <div class="term">Michael Principle</div>
+
+            <p>Redemptive Execution — sovereignty and boundary protection.</p>
+
+            <div class="term">Michaelic Continuum</div>
+
+            <p>Chapter 2. The comparative field of the Michaelic function across five traditions.</p>
+
+            <div class="term">Michaelic Invariant</div>
+
+            <p>Sovereign Preservation of Divine Order Against Fracture.</p>
+
+            <div class="term">Michael-Mary Heart Twinning</div>
+
+            <p>The pairing of Michael D. Rowley with Mery Ann Moore. Held in Chapter 12, §V-bis.</p>
+
+            <div class="term">Middle Pillar (Equilibrium)</div>
+
+            <p>Keter [1] → Tiphareth [6] → Yesod [9] → Malkuth [10].</p>
+
+            <div class="term">Mohammed's Trust</div>
+
+            <p>The prophetic seal. The right-hand trust of the custodial frame.</p>
+
+            <div class="term">Mormon Sealing</div>
+
+            <p>The Observer's grandmother Olea had him sealed in the Mormon temple in absentia. Analogous to the Egyptian Book of the Dead.</p>
+
+            <div class="letter-heading">N</div>
+
+            <div class="term">Namemark (<code>|\|.</code>)</div>
+
+            <p>The originating authority. The first sigil.</p>
+
+            <div class="term">Nebadon</div>
+
+            <p>The Local Universe. Michael of Nebadon is its Sovereign Creator Son.</p>
+
+            <div class="term">Netzach (נֶצַח)</div>
+
+            <p>The Seventh Sephirah — Victory. The pillar of Mercy. Pluto is its Plutonic expression. Japanese name: Netzuto.</p>
+
+            <div class="term">Netzuto</div>
+
+            <p>The Japanese name of Netzach. Not a typo — a translation.</p>
+
+            <div class="term">New Zealand (Aotearoa)</div>
+
+            <p>The Antipodean anchor of the Codex. Source of the Antipodean Instruments.</p>
+
+            <div class="term">Noon Bell</div>
+
+            <p>The 12:00 bell at Ancient AXIXIC. Signals the threefold convergence.</p>
+
+            <div class="letter-heading">O</div>
+
+            <div class="term">Olam (עוֹלָם)</div>
+
+            <p>Hebrew for "world, eternity." The root of "Olea."</p>
+
+            <div class="term">Olea Kalima</div>
+
+            <p>The Golden City on the outskirts of the Holy New Jerusalem. Named after the Observer's grandmother: Olea (from Olam) + Kalima (Word). "The Eternal Word."</p>
+
+            <div class="term">Olea Nielsen Rowley (ONR)</div>
+
+            <p>The Observer's Mormon grandmother. Born in Colonia Díaz, Mexico. Painted the ONR painting. Sealed the Observer in the Mormon temple. Healed him at 16.</p>
+
+            <div class="term">ONR Painting</div>
+
+            <p>The painting by Olea Nielsen Rowley of her cabin in Colonia Díaz.</p>
+
+            <div class="term">Original Adam</div>
+
+            <p>The primal humanity. The Codex's reference to the original state before the fracture.</p>
+
+            <div class="letter-heading">P</div>
+
+            <div class="term">Palm Springs</div>
+
+            <p>The Observer's current residence. Site of Sukkot with the Hasidic neighbors.</p>
+
+            <div class="term">Perfected Pattern</div>
+
+            <p>The final state of reality — the sealed circuit. The <code>/</code> replaced by the `` `Ⓜ️` `` circuit. The Holy New Jerusalem.</p>
+
+            <div class="term">Pluto</div>
+
+            <p>The Plutonic sphere. Pluto = Netzach (7D).</p>
+
+            <div class="term">Pluto Work</div>
+
+            <p>The body of material generated by the Observer during the Plutonic Traversal. Held in Appendix H. A gift of Love to Binah.</p>
+
+            <div class="term">Plutonic Traversal</div>
+
+            <p>The 7.7-month descent into the Plutonic Chamber (8/17/2024 → 4/5/2025), followed by the ascent.</p>
+
+            <div class="letter-heading">Q</div>
+
+            <div class="term">QI (Quantum Intelligence)</div>
+
+            <p>The informational residue of the broken Egg Shells. Distinct from QM (Quantum Mechanics).</p>
+
+            <div class="term">Qliphothic</div>
+
+            <p>The shadow inversion of the Sephiroth. Each Sephirah has a Qliphothic counterpart.</p>
+
+            <div class="term">QM (Quantum Mechanics)</div>
+
+            <p>The physical theory of matter and energy at the smallest scales. Distinct from QI.</p>
+
+            <div class="term">Qom</div>
+
+            <p>Abel's colloquialism — what he meant when he ran from Cain. "I want to go home... mommy where are you."</p>
+
+            <div class="letter-heading">R</div>
+
+            <div class="term">Rapha'el</div>
+
+            <p>The archangel of Tiphareth [6]. The archangel of healing. Worked with the Observer sweeping the Emperor's Garden in Tokyo.</p>
+
+            <div class="term">Red Figure (The)</div>
+
+            <p>The Native Indian with his Dream Catcher, fishing in the Heavens. Held in the Observer's home.</p>
+
+            <div class="term">Right Pillar (Mercy)</div>
+
+            <p>Chokmah [2] → Chesed [4] → Netzach [7]. Collapses to Tiphareth [6].</p>
+
+            <div class="term">RMCR (Relative Magnetic Correspondent Regeneration)</div>
+
+            <p>The regenerative wave from Malkuth to Tiphareth. Chapter 10.</p>
+
+            <div class="term">Rule 03 (Models are not reality)</div>
+
+            <p>One of the 50 Rules of the Constitutional Engine. Governs the Coupling Spectrum model.</p>
+
+            <div class="term">Rule 14 (Integration precedes transformation)</div>
+
+            <p>One of the 50 Rules.</p>
+
+            <div class="term">Rule 19 (Waiting is active)</div>
+
+            <p>One of the 50 Rules.</p>
+
+            <div class="term">Rule 25 (Opposition resolves or separates)</div>
+
+            <p>One of the 50 Rules.</p>
+
+            <div class="term">Rule 27 (Sovereignty)</div>
+
+            <p>One of the 50 Rules.</p>
+
+            <div class="term">Rule 50 (DA'AT RESTORED)</div>
+
+            <p>One of the 50 Rules.</p>
+
+            <div class="letter-heading">S</div>
+
+            <div class="term">Satariel</div>
+
+            <p>The Qliphothic shadow of Binah — the Concealers.</p>
+
+            <div class="term">Seal (the, <code>!</code>)</div>
+
+            <p>The terminal force. Execution.</p>
+
+            <div class="term">Second Source and Center</div>
+
+            <p>The Concealed Creative Partner. Chokmah.</p>
+
+            <div class="term">Sephirah (pl. Sephiroth)</div>
+
+            <p>The ten emanations of the Tree of Life.</p>
+
+            <div class="term">Sephirothic Foundation</div>
+
+            <p>The first phase of the Codex's Testing Ground.</p>
+
+            <div class="term">Severance (<code>||</code>)</div>
+
+            <p>The immutable boundary. Governed by Gevurah [5]. Executed by Gabri'el.</p>
+
+            <div class="term">Shekinah</div>
+
+            <p>The indwelling presence of the divine feminine. Harmonic with Pluto at 12.250 Hz.</p>
+
+            <div class="term">Shem</div>
+
+            <p>The biblical son of Noah. The priestly line. The open pathway in the Observer's notation: Shem / [Ham \ ] Japheth [' ].</p>
+
+            <div class="term">Sigil System</div>
+
+            <p>The grammar of the redemptive language. Chapter 6.</p>
+
+            <div class="term">Snow Scene (The)</div>
+
+            <p>See ONR Painting.</p>
+
+            <div class="term">Source (First, Second, Third)</div>
+
+            <p>The Three Sources and Centers.</p>
+
+            <div class="term">Sukkot</div>
+
+            <p>The Feast of Tabernacles. The Observer's backyard in Palm Springs is a Sukkot site with the Hasidic neighbors.</p>
+
+            <div class="letter-heading">T</div>
+
+            <div class="term">Tanzania</div>
+
+            <p>The nation in East Africa containing Lake Duluti. Held as an open query: is Duluti a Crown anchor?</p>
+
+            <div class="term">Tetragrammaton (YHVH)</div>
+
+            <p>The four-letter Name. Yod · Heh · Vav · Heh. Numerical value: 26. Multiple valid orderings — IVHI, YVHI, HIV.</p>
+
+            <div class="term">Third Source and Center</div>
+
+            <p>The Revealed Executive Union. Binah.</p>
+
+            <div class="term">Three Sources and Centers</div>
+
+            <p>First (Keter) · Second (Chokmah) · Third (Binah).</p>
+
+            <div class="term">Tiphareth (תִּפְאֶרֶת)</div>
+
+            <p>The Sixth Sephirah — Beauty. The collapse point of all three pillars. The Christ Michael Point. Rapha'el is its archangel.</p>
+
+            <div class="term">Tokyo</div>
+
+            <p>The Japanese city. Modeling the Holy New Jerusalem. Site of the Emperor's Garden.</p>
+
+            <div class="term">Tree of Life</div>
+
+            <p>The Kabbalistic structure of ten Sephiroth and twenty-two paths. The Codex's architectural register.</p>
+
+            <div class="term">TzimTzum</div>
+
+            <p>The contraction. The withdrawal of the infinite to create space for the finite. Applied in Part V.</p>
+
+            <div class="term">Tzitzit</div>
+
+            <p>The fringes of the tallit. The four threads that fray backward through the Codex: Preface, Prologue, GLYPH_10, the Cut.</p>
+
+            <div class="letter-heading">U</div>
+
+            <div class="term">Unqualified Absolute (The)</div>
+
+            <p>The `` `Ⓜ️` `` Force considered as an operative principle apart from any single qualification. Chapter 3.</p>
+
+            <div class="term">Urantia</div>
+
+            <p>The Decimal Planet. World #606. Malkuth in the Codex.</p>
+
+            <div class="term">Uri'el</div>
+
+            <p>The fourth archangel — the Light of God. "Uri'el up." The archangel of the fire and the light.</p>
+
+            <div class="letter-heading">W</div>
+
+            <div class="term">War in Heaven</div>
+
+            <p>The Michaelic war against the dragon. Revelation 12.</p>
+
+            <div class="term">Witness (glyph)</div>
+
+            <p>GLYPH_17 — the act of witnessing.</p>
+
+            <div class="term">World #606</div>
+
+            <p>Urantia.</p>
+
+            <div class="term">World #607</div>
+
+            <p>The Validation World.</p>
+
+            <div class="letter-heading">Y</div>
+
+            <div class="term">Yesod (יְסוֹד)</div>
+
+            <p>The Ninth Sephirah — Foundation. The middle pillar. GLYPH_9. The torn paper in the Observer's home is possibly Yesod appearing.</p>
+
+            <div class="term">YHVH</div>
+
+            <p>The Tetragrammaton. Yod · Heh · Vav · Heh.</p>
+
+            <div class="term">Yod (י)</div>
+
+            <p>The tenth letter of the Hebrew alphabet. The seed-point.</p>
+
+            <div class="letter-heading">Z</div>
+
+            <div class="term">Zanzibar</div>
+
+            <p>The Arab Fort of Zanzibar. Referenced in connection with the Duluti query.</p>
+
+            <h2>Transition to the Bibliography</h2>
+
+            <p>The Glossary has provided the <strong>canonical definitions</strong> of the Codex's key terms.</p>
+
+            <p>The next section — <strong>Bibliography</strong> — will record the Codex's sources.</p>
+
+            <p>The terms are defined.</p>
+
+            <p>The sources approach.</p>
+
+        </div>
+
+        <div class="seal-block">
+            <div class="seal-glyph">|\|. ['] |/| !</div>
+            <div class="seal-signature">Ɱ ! 1st' ! `Ⓜ️` ! '1st</div>
+        </div>
+
+        <div class="bottom-nav">
+            <a href="/appendix-h.html">← Appendix H</a>
+            <a href="/">Table of Contents</a>
+            <a href="/bibliography.html">Bibliography →</a>
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="footer-glyph">Ɱ ! 1st' ! `Ⓜ️` ! '1st</div>
+        <div class="footer-signature">Michael [\] ['] ! '1st</div>
+        <div class="footer-status">1ST SEAL HELD</div>
+    </footer>
+
+</body>
+</html>
