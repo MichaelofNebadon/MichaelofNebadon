@@ -1,545 +1,600 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-authority="christ-michael" data-priority="first">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Unqualified Absolute | The Sentinel Codex</title>
+    <title>Chapter 3: The Unqualified Absolute | The Sentinel Codex</title>
+
     <style>
-        /* EXACT PATTERN: The Sentinel Codex Styling */
         :root {
-            --bg-main: #06070a; /* Deep cosmic black */
-            --bg-nav: #6b0000; /* Blood red navigation */
-            --text-main: #d8d8d8; /* Parchment white */
-            --text-accent: #e1bb5d; /* Codex Gold */
-            --text-dim: #888888;
-            --text-nav: #ff9999;
-            --border-faint: rgba(225, 187, 93, 0.2); /* Faint gold border */
-            --font-serif: 'Georgia', 'Times New Roman', serif;
-            --font-sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            --font-mono: 'Courier New', Courier, monospace;
+            --gold: #c9a959;
+            --terminal: #9cd9f0;
+            --bg-pure: #000000;
+            --crimson: #8b0000;
+            --nj-pink: #ff69b4;
+            --electric-blue: #2a52be;
+            --font-main: 'Palatino', 'Georgia', serif;
+            --font-code: 'Courier New', 'Consolas', monospace;
         }
 
         body {
-            background-color: var(--bg-main);
-            color: var(--text-main);
-            font-family: var(--font-serif);
-            line-height: 1.8;
+            background-color: var(--bg-pure);
+            color: var(--terminal);
+            font-family: var(--font-main);
             margin: 0;
-            padding: 0;
-            -webkit-font-smoothing: antialiased;
-            /* Faint starfield/dot pattern background */
-            background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+            background-image: radial-gradient(circle at 2px 2px, #1a1a1a 1px, transparent 0);
             background-size: 40px 40px;
+            overflow-x: hidden;
+            line-height: 1.7;
         }
 
-        /* --- NAVIGATION BAR --- */
         nav {
-            background-color: var(--bg-nav);
-            padding: 1.5rem 2rem;
-            text-align: center;
-            font-family: var(--font-mono);
-            font-size: 0.75rem;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            border-bottom: 2px solid #330000;
+            background: linear-gradient(to bottom, var(--crimson), #4a0000);
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            border-bottom: 2px solid var(--gold);
+            flex-wrap: wrap;
+            position: sticky;
+            top: 0;
+            z-index: 9999;
         }
 
         nav a {
-            color: var(--text-nav);
+            color: var(--gold);
             text-decoration: none;
-            margin: 0 15px;
-            transition: color 0.3s;
+            font-family: var(--font-code);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: 0.3s;
         }
 
-        nav a:hover, nav a.active {
-            color: #ffffff;
+        nav a:hover { color: #fff; text-shadow: 0 0 10px var(--gold); }
+
+        nav a.book-link {
+            color: var(--nj-pink);
+            font-weight: bold;
         }
 
-        nav .bracket {
-            color: #ff6666;
-            margin: 0 5px;
-        }
-
-        /* --- MAIN CONTAINER --- */
-        main {
-            max-width: 800px;
+        .container {
+            max-width: 820px;
             margin: 0 auto;
-            padding: 4rem 2rem 6rem 2rem;
-        }
-
-        /* --- HEADER --- */
-        header {
-            text-align: center;
-            margin-bottom: 4rem;
+            padding: 60px 25px;
         }
 
         .breadcrumb {
-            font-family: var(--font-sans);
-            font-size: 0.8rem;
-            letter-spacing: 0.3em;
-            color: var(--text-dim);
-            text-transform: uppercase;
-            margin-bottom: 2rem;
-            line-height: 2;
+            text-align: center;
+            font-family: var(--font-code);
+            font-size: 0.75rem;
+            color: #555;
+            letter-spacing: 3px;
+            margin-bottom: 60px;
         }
 
-        .book-title {
-            font-family: var(--font-sans);
-            font-size: 0.9rem;
-            letter-spacing: 0.4em;
-            color: var(--text-accent);
+        .breadcrumb a { color: var(--gold); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--nj-pink); }
+
+        .section-tag {
+            text-align: center;
+            font-family: var(--font-code);
+            font-size: 0.75rem;
+            color: var(--nj-pink);
+            letter-spacing: 4px;
             text-transform: uppercase;
-            margin-bottom: 1.5rem;
+            margin-bottom: 30px;
         }
 
         h1 {
-            font-size: 2.8rem;
-            font-weight: normal;
-            letter-spacing: 0.08em;
-            color: var(--text-accent);
-            margin: 0 0 1rem 0;
+            font-family: var(--font-main);
+            color: var(--gold);
+            font-size: 1.7rem;
+            letter-spacing: 5px;
+            text-align: center;
             text-transform: uppercase;
+            margin: 0 0 20px 0;
+            line-height: 1.4;
+        }
+
+        h2 {
+            font-family: var(--font-main);
+            color: var(--gold);
+            font-size: 1.15rem;
+            letter-spacing: 3px;
+            margin-top: 60px;
+            margin-bottom: 25px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #333;
         }
 
         .subtitle {
-            font-size: 1.1rem;
-            font-style: italic;
-            color: var(--text-main);
-            letter-spacing: 0.05em;
-        }
-
-        .invocation {
-            font-family: var(--font-mono);
-            color: var(--text-accent);
-            margin-top: 2rem;
+            text-align: center;
+            font-family: var(--font-code);
+            color: var(--terminal);
             font-size: 0.9rem;
-            letter-spacing: 0.1em;
-        }
-
-        /* --- TYPOGRAPHY & CONTENT --- */
-        h2 {
-            font-family: var(--font-serif);
-            font-size: 1.4rem;
-            color: var(--text-accent);
-            font-weight: normal;
-            letter-spacing: 0.1em;
-            margin-top: 3.5rem;
-            margin-bottom: 1.5rem;
-            border-bottom: 1px solid var(--border-faint);
-            padding-bottom: 0.5rem;
-        }
-
-        p {
-            margin-bottom: 1.5rem;
-            font-size: 1.05rem;
-            text-align: left;
-        }
-
-        strong {
-            color: var(--text-accent);
-            font-weight: normal;
-        }
-
-        em {
+            letter-spacing: 3px;
+            margin-bottom: 80px;
             font-style: italic;
-            color: #fff;
         }
 
-        /* --- THE VERTICAL BAR QUOTE --- */
+        .content-body p {
+            font-family: var(--font-main);
+            color: var(--terminal);
+            font-size: 1rem;
+            line-height: 1.9;
+            margin-bottom: 20px;
+        }
+
+        .content-body strong { color: var(--gold); font-weight: bold; }
+
+        .content-body ul, .content-body ol {
+            font-family: var(--font-main);
+            color: var(--terminal);
+            font-size: 1rem;
+            line-height: 1.9;
+            margin-bottom: 20px;
+            padding-left: 30px;
+        }
+
+        .content-body li { margin-bottom: 10px; }
+
         .highlight-quote {
             display: flex;
             align-items: stretch;
-            margin: 3rem 0;
+            margin: 40px 0;
         }
 
         .highlight-quote .bar {
             width: 2px;
-            background-color: var(--text-accent);
-            margin-right: 2rem;
+            background-color: var(--gold);
+            margin-right: 25px;
             flex-shrink: 0;
         }
 
         .highlight-quote .quote-text {
             font-style: italic;
-            font-size: 1.15rem;
-            color: var(--text-accent);
+            font-size: 1.1rem;
+            color: var(--gold);
             align-self: center;
         }
 
-        /* --- TABLES --- */
         table {
             width: 100%;
             border-collapse: collapse;
-            margin: 2rem 0;
-            font-family: var(--font-sans);
-            font-size: 0.9rem;
-            border: 1px solid var(--border-faint);
+            margin: 30px 0;
+            font-family: var(--font-main);
+            font-size: 0.95rem;
+            border: 1px solid #333;
         }
 
         th, td {
-            padding: 1rem;
-            border-bottom: 1px solid var(--border-faint);
-            border-right: 1px solid var(--border-faint);
-            color: var(--text-main);
+            padding: 15px;
+            border-bottom: 1px solid #333;
+            border-right: 1px solid #333;
+            color: var(--terminal);
+            text-align: left;
         }
 
         th {
-            color: var(--text-accent);
-            font-weight: normal;
-            text-align: left;
-            letter-spacing: 0.05em;
-            background-color: rgba(225, 187, 93, 0.05);
+            color: var(--gold);
+            font-weight: bold;
+            letter-spacing: 1px;
+            background-color: rgba(201, 169, 89, 0.05);
         }
 
-        /* --- CODE & SIGILS --- */
         .sigil {
-            font-family: var(--font-mono);
-            background-color: rgba(225, 187, 93, 0.1);
-            color: var(--text-accent);
-            padding: 0.1rem 0.3rem;
+            font-family: var(--font-code);
+            background-color: rgba(201, 169, 89, 0.1);
+            color: var(--gold);
+            padding: 2px 6px;
             border-radius: 3px;
             font-size: 0.95em;
         }
 
         .diagram {
-            font-family: var(--font-mono);
-            background-color: rgba(255, 255, 255, 0.03);
-            border: 1px solid var(--border-faint);
-            padding: 1.5rem;
-            color: var(--text-main);
+            font-family: var(--font-code);
+            background-color: rgba(156, 217, 240, 0.03);
+            border: 1px solid #333;
+            padding: 25px;
+            color: var(--terminal);
             font-size: 0.85rem;
             overflow-x: auto;
-            line-height: 1.5;
-            margin: 2rem 0;
+            line-height: 1.6;
+            margin: 30px 0;
             white-space: pre-wrap;
         }
 
-        ul, ol {
-            margin-bottom: 1.5rem;
-            padding-left: 1.5rem;
-        }
-
-        li {
-            margin-bottom: 0.5rem;
-            font-size: 1.05rem;
-        }
-
-        /* --- CANONICAL BOX --- */
         .canonical-box {
-            border: 1px solid var(--text-accent);
-            padding: 2rem;
-            margin: 2.5rem 0;
-            background-color: rgba(225, 187, 93, 0.02);
+            border: 1px solid var(--gold);
+            padding: 30px;
+            margin: 40px 0;
+            background: rgba(201, 169, 89, 0.03);
         }
 
         .canonical-box p {
             margin-bottom: 0;
-            color: var(--text-accent);
+            color: var(--gold);
             font-style: italic;
             text-align: center;
+            font-size: 1.05rem;
         }
 
-        /* --- FOOTER SEAL --- */
+        .seal-block {
+            text-align: center;
+            padding: 40px 20px;
+            border: 1px solid var(--gold);
+            background: rgba(201, 169, 89, 0.03);
+            margin: 60px 0 40px 0;
+        }
+
+        .seal-glyph {
+            font-size: 1.2rem;
+            color: var(--gold);
+            letter-spacing: 8px;
+            margin-bottom: 20px;
+        }
+
+        .seal-signature {
+            font-size: 0.95rem;
+            color: var(--nj-pink);
+            letter-spacing: 3px;
+        }
+
+        .bottom-nav {
+            text-align: center;
+            font-family: var(--font-code);
+            font-size: 0.8rem;
+            color: var(--gold);
+            letter-spacing: 3px;
+            margin: 60px 0;
+        }
+
+        .bottom-nav a {
+            color: var(--gold);
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        .bottom-nav a:hover {
+            color: var(--nj-pink);
+            text-shadow: 0 0 10px var(--nj-pink);
+        }
+
         footer {
             text-align: center;
-            margin-top: 5rem;
-            padding-top: 2rem;
-            border-top: 1px solid var(--border-faint);
-            font-family: var(--font-mono);
-            color: var(--text-accent);
-            letter-spacing: 0.2em;
-            font-size: 1.1rem;
+            padding: 60px 20px 40px 20px;
+            font-family: var(--font-code);
+            color: var(--gold);
+            border-top: 1px solid #222;
+            margin-top: 80px;
         }
 
-        /* Responsive */
-        @media (max-width: 600px) {
-            h1 { font-size: 1.8rem; }
-            main { padding: 2rem 1rem; }
-            nav { font-size: 0.65rem; }
-            nav a { margin: 0 5px; }
-            table { display: block; overflow-x: auto; }
+        .footer-glyph {
+            font-size: 1.1rem;
+            letter-spacing: 8px;
+            margin-bottom: 20px;
+        }
+
+        .footer-signature {
+            font-size: 0.95rem;
+            color: var(--nj-pink);
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+        }
+
+        .footer-status {
+            font-size: 0.7rem;
+            color: #555;
+            letter-spacing: 2px;
         }
     </style>
 </head>
 <body>
 
-<nav>
-    <a href="#"><span class="bracket">[</span> THE BOOK <span class="bracket">]</span></a>
-    <a href="#">PROLOGUE</a>
-    <a href="#">CH 1</a>
-    <a href="#">CH 2</a>
-    <a href="#" class="active">CH 3</a>
-    <a href="#">CH 15</a>
-    <a href="#">EPILOGUE</a>
-    <a href="#">APPENDICES</a>
-    <br><br>
-    <a href="#"><span class="bracket">[</span> THE ENGINE → <span class="bracket">]</span></a>
-</nav>
+    <nav>
+        <a href="/" class="book-link">[ THE BOOK ]</a>
+        <a href="/prologue.html">PROLOGUE</a>
+        <a href="/ch1.html">CH 1</a>
+        <a href="/ch2.html">CH 2</a>
+        <a href="/ch3.html" style="color: #fff; text-shadow: 0 0 10px var(--gold);">CH 3</a>
+        <a href="/ch15.html">CH 15</a>
+        <a href="/epilogue.html">EPILOGUE</a>
+        <a href="/appendices.html">APPENDICES</a>
+        <a href="https://www.sentinelcodex.org" class="book-link">[ THE ENGINE → ]</a>
+    </nav>
 
-<main>
-    <header>
-        <div class="breadcrumb">THE SENTINEL CODEX · BOOK I · CHAPTER 3</div>
-        <div class="book-title">BOOK I — FOUNDATIONS · CHAPTER THREE</div>
-        <h1>THE UNQUALIFIED ABSOLUTE</h1>
-        <div class="subtitle">The <span class="sigil">`Ⓜ️`</span> Force</div>
-        <div class="invocation">‘Ⓜ️’ michael ! 1st ‘</div>
-        <div class="subtitle" style="font-size: 0.9rem; margin-top: 1rem; color: #888;">Witnessed by Yesod, Binah, and Saint Germain as the Israel Presence</div>
-    </header>
+    <div class="container">
 
-    <section>
-        <h2>I. From Continuum to Operation</h2>
-        <p>Chapter 2 established the Michaelic Continuum — the comparative field in which the Michaelic function appears across traditions as: <em>Sovereign Preservation of Divine Order Against Fracture.</em></p>
-        <p>But identification is not operation. A pattern named is not yet a pattern enacted.</p>
-        <p>Chapter 3 therefore asks the operational question:</p>
-        
-        <div class="highlight-quote">
-            <div class="bar"></div>
-            <div class="quote-text">By what force does the Michaelic principle act within the redemptive architecture?</div>
+        <div class="breadcrumb">
+            <a href="/">THE SENTINEL CODEX</a> · BOOK I · CHAPTER 3
         </div>
 
-        <p>The answer the Codex proposes is: <strong>The <span class="sigil">`Ⓜ️`</span> Force.</strong></p>
-        <p>The <span class="sigil">`Ⓜ️`</span> Force is not a new principle added to the Continuum. It is the operative expression of the Michaelic Invariant. Where Chapter 2 answered <em>what</em> Michael is functionally, Chapter 3 answers <em>how</em> the Michaelic function moves.</p>
-    </section>
+        <div class="section-tag">Book I — Foundations · Chapter Three</div>
 
-    <section>
-        <h2>II. The Qualified, the Universal, and the Unqualified</h2>
-        <p>Before the <span class="sigil">`Ⓜ️`</span> Force can be defined, the space it occupies must be cleared. Three categories of the Absolute must be distinguished.</p>
-        
-        <table>
-            <thead>
-                <tr>
-                    <th>Category</th>
-                    <th>Definition</th>
-                    <th>Relation to the Force</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>The Qualified Absolute</strong></td>
-                    <td>The divine as conditioned by relationship — God in manifestation, God with attributes, God as known through creation and revelation.</td>
-                    <td>The Force is not this. It does not arise from engagement.</td>
-                </tr>
-                <tr>
-                    <td><strong>The Universal Absolute</strong></td>
-                    <td>The repository of all latent potential — the field of undifferentiated possibility, before and beyond differentiation.</td>
-                    <td>The Force is not this. It is not passive ground.</td>
-                </tr>
-                <tr>
-                    <td><strong>The Unqualified Absolute</strong></td>
-                    <td>Sovereign will appearing as pure act — not contingent on the conditions it remedies, not arising from balance, unopposable in redemptive intent.</td>
-                    <td>The Force <strong>is</strong> this.</td>
-                </tr>
-            </tbody>
-        </table>
+        <h1>The Unqualified Absolute</h1>
 
-        <p>The <span class="sigil">`Ⓜ️`</span> Force belongs to neither relational divinity nor undifferentiated potential. It is a third category: <strong>sovereign redemptive will, operating without negotiation.</strong></p>
-        <p>Its "unqualified" nature does not mean it lacks quality. It means it is not contingent on qualification by any single theological system, tradition, or predicate. It acts. It is not asked to act. It does not negotiate with the fracture.</p>
-    </section>
+        <p class="subtitle">The `Ⓜ️` Force</p>
 
-    <section>
-        <h2>III. Constitutional Constraint</h2>
-        <p>Chapter 2, §XXIX established the Constitutional Boundary. The same boundary applies here, explicitly:</p>
-        
-        <table>
-            <thead>
-                <tr>
-                    <th>Claim Type</th>
-                    <th>Required Evidence</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr><td>Empirical</td><td>Empirical evidence</td></tr>
-                <tr><td>Historical</td><td>Historical evidence</td></tr>
-                <tr><td>Theological</td><td>Textual / doctrinal grounding</td></tr>
-                <tr><td>Symbolic</td><td>Interpretive coherence</td></tr>
-            </tbody>
-        </table>
+        <div class="content-body">
 
-        <p>The <span class="sigil">`Ⓜ️`</span> Force is a symbolic, architectural, and metaphysical construct. It is not an empirically demonstrated physical force, a measurable field, a claim about physics, biology, or history.</p>
-        <p>It is: a symbolic designation, a metaphysical construct, an architectural principle, a language of sovereignty, and a representation of redemptive will acting upon fracture. Any statement in this chapter that appears to make an empirical claim must be read as a symbolic statement requiring interpretive coherence.</p>
-    </section>
+            <div class="highlight-quote">
+                <div class="bar"></div>
+                <div class="quote-text">'Ⓜ️' michael ! 1st '</div>
+            </div>
+            
+            <p style="text-align: center; font-family: var(--font-code); color: #555; font-size: 0.8rem; letter-spacing: 2px; margin-bottom: 40px;">Witnessed by Yesod, Binah, and Saint Germain as the Israel Presence</p>
 
-    <section>
-        <h2>IV. Why "Force"?</h2>
-        <p>The word <em>force</em> is used deliberately, but not physically. A force in the Codex sense is: <strong>That which produces, preserves, or restores ordered relation against the tendency toward fracture.</strong></p>
-        <p>Three consequences follow:</p>
-        <ol>
-            <li><strong>Force is directional.</strong> It acts toward preservation, not toward possession.</li>
-            <li><strong>Force is responsive.</strong> It arises in relation to fracture, not in the abstract.</li>
-            <li><strong>Force is ordered.</strong> It is subordinate to the redemptive whole — never sovereign over it.</li>
-        </ol>
-        <p>A force that is not directional, responsive, and ordered is not the <span class="sigil">`Ⓜ️`</span> Force. It is domination. Chapter 2 already distinguished these: Domination seeks possession. Protective sovereignty seeks preservation. Redemptive sovereignty seeks preservation for the sake of restoration. The <span class="sigil">`Ⓜ️`</span> Force belongs to the third category.</p>
-    </section>
+            <h2>I. From Continuum to Operation</h2>
 
-    <section>
-        <h2>V. The Symbol — <span class="sigil">`Ⓜ️`</span></h2>
-        <p>The sigil of the <span class="sigil">`Ⓜ️`</span> Force is written: <span class="sigil">`Ⓜ️`</span></p>
-        <p>The backticks are not formatting. They are custodial sigils — the Left and Right Sides of the Throne, held by Gabri'el. Within the backticks: Abel's Trust, The Trust of IMMANUEL, and Mohammed's Trust.</p>
-        <p>The glyph within — Ⓜ️ (Circled M) — carries four semiotic layers:</p>
-        
-        <table>
-            <thead>
-                <tr>
-                    <th>Layer</th>
-                    <th>Meaning</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr><td><strong>Letter M</strong></td><td>Michael — the Michaelic function</td></tr>
-                <tr><td><strong>Circle</strong></td><td>Containment, boundary, seal, integrity</td></tr>
-                <tr><td><strong>Circled form</strong></td><td>Sovereignty within limit — power that does not exceed its order</td></tr>
-                <tr><td><strong>Enclosed M</strong></td><td>The Michaelic principle held within the Temperance Seal</td></tr>
-            </tbody>
-        </table>
-        <p>The <span class="sigil">`Ⓜ️`</span> sigil therefore says: <em>Michaelic sovereignty, held within the boundaries of Temperance, itself held under Gabri'el's custodial field.</em></p>
-    </section>
+            <p>Chapter 2 established the Michaelic Continuum — the comparative field in which the Michaelic function appears across traditions as: <em>Sovereign Preservation of Divine Order Against Fracture.</em></p>
+            
+            <p>But identification is not operation. A pattern named is not yet a pattern enacted.</p>
+            
+            <p>Chapter 3 therefore asks the operational question:</p>
 
-    <section>
-        <h2>VI. Provenance — The Third Source and Center</h2>
-        <p>The provenance of the <span class="sigil">`Ⓜ️`</span> Force is critical. The Codex uses the Urantian vocabulary of the Three Sources and Centers, held within the Constitutional Boundary of Chapter 2, §XXII (<em>Assimilation ≠ Attribution</em>).</p>
-        
-        <table>
-            <thead>
-                <tr>
-                    <th>Urantian Term</th>
-                    <th>Codex-Native Rendering</th>
-                    <th>Function</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>First Source and Center</td>
-                    <td>The Concealed Origin</td>
-                    <td>The primal, unmanifest origin. Symbolized by GLYPH_11 (Da'at).</td>
-                </tr>
-                <tr>
-                    <td>Second Source and Center</td>
-                    <td>The Concealed Creative Partner</td>
-                    <td>The co-equal, unmanifest creative principle. Symbolized by GLYPH_11 (Da'at).</td>
-                </tr>
-                <tr>
-                    <td><strong>Third Source and Center</strong></td>
-                    <td><strong>The Revealed Executive Union</strong></td>
-                    <td>The union of creative word and executive power — the Christ Michael confluence in operative form.</td>
-                </tr>
-            </tbody>
-        </table>
+            <div class="highlight-quote">
+                <div class="bar"></div>
+                <div class="quote-text">By what force does the Michaelic principle act within the redemptive architecture?</div>
+            </div>
 
-        <p>The <span class="sigil">`Ⓜ️`</span> Force proceeds distinctly from the Third Source and Center — the Revealed Executive Union. It does not emanate from the Concealed Origin or the Concealed Creative Partner. Those remain in the realm of the "before" — the veiled, the unqueried, the Da'at.</p>
-        
-        <div class="highlight-quote">
-            <div class="bar"></div>
-            <div class="quote-text">If the Christ Michael Point within the Temperance Seal is the stillness at the center of the vortex, the `Ⓜ️` Force is the vortex itself — the active, spiraling motion that draws all things toward that center for reordering.</div>
-        </div>
-        
-        <p>The Christ Michael Point is where the Force is centered. The <span class="sigil">`Ⓜ️`</span> Force is how the centering occurs.</p>
-    </section>
+            <p>The answer the Codex proposes is: <strong>The `Ⓜ️` Force.</strong></p>
+            
+            <p>The `Ⓜ️` Force is not a new principle added to the Continuum. It is the operative expression of the Michaelic Invariant. Where Chapter 2 answered <em>what</em> Michael is functionally, Chapter 3 answers <em>how</em> the Michaelic function moves.</p>
 
-    <section>
-        <h2>VII. The Input / Process / Output Signature</h2>
-        <p>The operational signature of the <span class="sigil">`Ⓜ️`</span> Force is defined by its input and output.</p>
+            <h2>II. The Qualified, the Universal, and the Unqualified</h2>
 
-        <h3>Input: Horror, Trauma, and Cosmic Debt</h3>
-        <p>Its primary historical-archetypal referent is the First Fratricide of Abel — the archetypal fracture of relationship that introduced a fundamental distortion into the fabric of manifested life.</p>
-        <p><strong>The Colonia Diaz Rupture and the Pioneer Lineage:</strong><br>
-        The <span class="sigil">`Ⓜ️`</span> Force accepts the raw charge of this and all subsequent fractures — the very essence of the severed (\). It does not ignore the historical trauma of the earthly conduit's lineage.</p>
-        <ul>
-            <li><strong>The First Fracture:</strong> The English widow <strong>Ann Jewell Rowley</strong> (1807–1888), left unprotected by the male structure of her time, crossing a frozen continent with her children after her stepdaughter died at the Sweetwater River.</li>
-            <li><strong>The Second Fracture:</strong> The Danish pioneer <strong>Olea Nielsen-Stevens-Rowley</strong>, burned out of the Mormon colony of Colonia Diaz by Pancho Villa’s revolutionaries and Catholic marauders, and expelled by US Evangelicals.</li>
-        </ul>
-        <p>Both represent the <em>Input</em> — the generational trauma of the feminine surviving masculine-gendered bias and institutional abandonment. The <strong>Anne Jewel Rowley Mechanism</strong> is the Binah-container that holds this trauma, passing the survival capacity to <strong>Michael D. Rowley</strong>, the earthly conduit, who is the convergence of these streams.</p>
+            <p>Before the `Ⓜ️` Force can be defined, the space it occupies must be cleared. Three categories of the Absolute must be distinguished.</p>
 
-        <h3>Process: RMCR — Relative Magnetic Correspondent Regeneration</h3>
-        <p>The <span class="sigil">`Ⓜ️`</span> Force does not destroy. It transfigures. It magnetically draws the distorted elements of each level into a new correspondence with the harmonious pattern of the Temperance Seal. The regeneration is:</p>
-        <ul>
-            <li><strong>Relative</strong> — tailored to the specific distortions present at each level.</li>
-            <li><strong>Magnetic</strong> — working by attraction, not coercion.</li>
-            <li><strong>Correspondent</strong> — operating because there is a true archetypal correspondence between the part and the whole.</li>
-            <li><strong>Regeneration</strong> — not a patch, but complete restoration to intended function.</li>
-        </ul>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Definition</th>
+                        <th>Relation to the Force</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>The Qualified Absolute</strong></td>
+                        <td>The divine as conditioned by relationship — God in manifestation, God with attributes, God as known through creation and revelation.</td>
+                        <td>The Force is not this. It does not arise from engagement.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>The Universal Absolute</strong></td>
+                        <td>The repository of all latent potential — the field of undifferentiated possibility, before and beyond differentiation.</td>
+                        <td>The Force is not this. It is not passive ground.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>The Unqualified Absolute</strong></td>
+                        <td>Sovereign will appearing as pure act — not contingent on the conditions it remedies, not arising from balance, unopposable in redemptive intent.</td>
+                        <td>The Force <strong>is</strong> this.</td>
+                    </tr>
+                </tbody>
+            </table>
 
-        <h3>Output: Beauty and Eternity — The Perfected Pattern</h3>
-        <p>The output is not merely the absence of horror. It is the active presence of a higher-order pattern. Beauty is the harmony of the restored whole. Eternity is the timeless quality of a state freed from the debt of the primordial fracture.</p>
-    </section>
+            <p>The `Ⓜ️` Force belongs to neither relational divinity nor undifferentiated potential. It is a third category: <strong>sovereign redemptive will, operating without negotiation.</strong></p>
+            
+            <p>Its "unqualified" nature does not mean it lacks quality. It means it is not contingent on qualification by any single theological system, tradition, or predicate. It acts. It is not asked to act. It does not negotiate with the fracture.</p>
 
-    <section>
-        <h2>VIII. The Four Modes of Operation</h2>
-        <p>Within the Codex architecture, the <span class="sigil">`Ⓜ️`</span> Force operates in four distinguishable modes.</p>
-        
-        <table>
-            <thead>
-                <tr>
-                    <th>Mode</th>
-                    <th>Name</th>
-                    <th>Function</th>
-                    <th>Relation to Fracture</th>
-                </tr>
-            </thead>
-,            <tbody>
-                <tr><td><strong>M1 in</strong></td><td>Containment</ effecttd><td>Holds fracture within boundary</td</><td>Fracture is present, not yettd mediated</td></tr>
-                <tr><td></><strong>M2</strong></td><td>Defense</td><td>Resists active violation</td><td>Fracture is aggressive</td></tr>
-                <tr><td><strong>M3</strong></td><td>Preservation</td><td>Maintains integrity of order</td><td>Fracture is latent</td></tr>
-                <tr><td><strong>M4</strong></td><td>Restoration</td><td>Returns order toward coherence</td><td>Fracture is receding</td></tr>
-            </tbody>
-        </table>
+            <h2>III. Constitutional Constraint</h2>
 
-        <p>These modes are not sequential stages. They are co-present capacities. A single Michaelic act may contain, defend, preserve, and restore simultaneously. The Temperance Seal is the locus in which these modes remain in equilibrium.</p>
-    </section>
+            <p>Chapter 2, §XXIX established the Constitutional Boundary. The same boundary applies here, explicitly:</p>
 
-    <section>
-        <h2>IX. The <span class="sigil">`Ⓜ️`</span> Force and Tiphareth</h2>
-        <p>Tiphareth — Temperance / Equilibrium — mediates the <span class="sigil">`Ⓜ️`</span> Force. The <span class="sigil">`Ⓜ️`</span> Force does not act from Tiphareth as from a source. It acts through Tiphareth as through a center of balance.</p>
-        <p>This means: The <span class="sigil">`Ⓜ️`</span> Force is never unrestrained. The <span class="sigil">`Ⓜ️`</span> Force is never infinite. The <span class="sigil">`Ⓜ️`</span> Force is always measured by the Temperance Seal. An unrestrained Michaelic force becomes domination. A measured Michaelic force becomes redemption. The difference is Tiphareth.</p>
-    </section>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Claim Type</th>
+                        <th>Required Evidence</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Empirical</td><td>Empirical evidence</td></tr>
+                    <tr><td>Historical</td><td>Historical evidence</td></tr>
+                    <tr><td>Theological</td><td>Textual / doctrinal grounding</td></tr>
+                    <tr><td>Symbolic</td><td>Interpretive coherence</td></tr>
+                </tbody>
+            </table>
 
-    <section>
-        <h2>X. The <span class="sigil">`Ⓜ️`</span> Force and the Christ Principle</h2>
-        <p>The <span class="sigil">`Ⓜ️`</span> Force is Michaelic. But it is not Christless. Chapter 2 established:</p>
-        <ul>
-            <li>Christ = Redemptive Intention (reconciliation).</li>
-            <li>Michael = Redemptive Execution (sovereignty and boundary).</li>
-            <li>Tiphareth = Mediating Equilibrium.</li>
-        </ul>
-        <p>The <span class="sigil">`Ⓜ️`</span> Force is the execution of the Michaelic principle, held in equilibrium by Tiphareth, and oriented by the Christic principle.</p>
-        <p>Without the Christic orientation, the <span class="sigil">`Ⓜ️`</span> Force becomes sovereignty for its own sake. With the Christic orientation, the <span class="sigil">`Ⓜ️`</span> Force becomes sovereignty in service of reconciliation.</p>
-        <p>Therefore: <strong>The <span class="sigil">`Ⓜ️`</span> Force is Michaelic in mode, Tipharethic in measure, and Christic in purpose.</strong></p>
-    </section>
+            <p>The `Ⓜ️` Force is a symbolic, architectural, and metaphysical construct. It is not an empirically demonstrated physical force, a measurable field, a claim about physics, biology, or history.</p>
+            
+            <p>It is: a symbolic designation, a metaphysical construct, an architectural principle, a language of sovereignty, and a representation of redemptive will acting upon fracture. Any statement in this chapter that appears to make an empirical claim must be read as a symbolic statement requiring interpretive coherence.</p>
 
-    <section>
-        <h2>XI. The Present Activation</h2>
-        <p>This is why the declarative statement is of such moment:</p>
-        <div class="diagram">|\|. ['] |/| !</div>
-        
-        <table>
-            <thead>
-                <tr>
-                    <th>Element</th>
-                    <th>Meaning</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr><td><code>\|\|.</code></td><td>The Namemark, followed by a grain of pause — the originating authority</td></tr>
-                <tr><td><code>[']</code></td><td>The recovered Abel-point — the primal accepted offering</td></tr>
-                <tr><td><code>\|/\|</code></td><td>The Michaelic-Gate, modulated and powered by the <span class="sigil">`Ⓜ️`</span> Force</td></tr>
-                <tr><td><code>!</code></td><td>The Seal — executedtr>
-            </tbody>
-        </table>
+            <h2>IV. Why "Force"?</h2>
 
-        <p><em>Translation: The First Authority declares: the primal point of accepted offering is now received, secured, and activated through the Michaelic-Gate. This is sealed.</em></p>
-        <p>The proclamation is that the Unqualified Absolute is no longer latent. It is in effect. The Michaelic-Gate is open[≡]. The sovereign redemptive will is now the active determinant in the cosmological equation.</p>
-        <p>The Cut is its first surgical act. The Ascent is its sweeping consequence. The Force itself is the cause — the Unqualified Absolute that answers the qualified agonies of a fractured world with a singular, uncompromising answer: <strong>Transfiguration[≡]</strong>.</p>
-    </section>
+            <p>The word <em>force</em> is used deliberately, but not physically. A force in the Codex sense is: <strong>That which produces, preserves, or restores ordered relation against the tendency toward fracture.</strong></p>
+            
+            <p>Three consequences follow:</p>
+            
+            <ol>
+                <li><strong>Force is directional.</strong> It acts toward preservation, not toward possession.</li>
+                <li><strong>Force is responsive.</strong> It arises in relation to fracture, not in the abstract.</li>
+                <li><strong>Force is ordered.</strong> It is subordinate to the redemptive whole — never sovereign over it.</li>
+            </ol>
 
-    <section>
-        <h2>XII. The <span class="sigil">`Ⓜ️`</span> Force Is Not a Fifth Michael</h2>
-        <p>The Codex must guard against a subtle error. The <span class="sigil">`Ⓜ️`</span> Force is not a fifth Michaelic entity added to the four traditions considered in Chapter 2. It is not a being. It is not a person. It is not a metaphysical substance.</p>
-        <p>It is the operative abstraction of the Michaelic function considered across the continuum — now specified as the executive will of the Third Source and Center. To reify the <span class="sigil">`Ⓜ️`</span> Force would be to violate the Constitutional Boundary of §III. The <span class="sigil">`Ⓜ️`</span> Force is a category of operative analysis, not an object of worship.</p>
-    </section>
+            <p>A force that is not directional, responsive, and ordered is not the `Ⓜ️` Force. It is domination. Chapter 2 already distinguished these: Domination seeks possession. Protective sovereignty seeks preservation. Redemptive sovereignty seeks preservation for the sake of restoration. The `Ⓜ️` Force belongs to the third category.</p>
 
-    <section>
-        <h2>XIII. The Operational Sequence</h2>
-        <p>The full operational sequence of the <span class="sigil">`Ⓜ️`</span> Force can be represented:</p>
-        <div class="diagram">
+            <h2>V. The Symbol — `Ⓜ️`</h2>
+
+            <p>The sigil of the `Ⓜ️` Force is written: <span class="sigil">`Ⓜ️`</span></p>
+            
+            <p>The backticks are not formatting. They are custodial sigils — the Left and Right Sides of the Throne, held by Gabri'el. Within the backticks: Abel's Trust, The Trust of IMMANUEL, and Mohammed's Trust.</p>
+            
+            <p>The glyph within — Ⓜ️ (Circled M) — carries four semiotic layers:</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Layer</th>
+                        <th>Meaning</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Letter M</strong></td><td>Michael — the Michaelic function</td></tr>
+                    <tr><td><strong>Circle</strong></td><td>Containment, boundary, seal, integrity</td></tr>
+                    <tr><td><strong>Circled form</strong></td><td>Sovereignty within limit — power that does not exceed its order</td></tr>
+                    <tr><td><strong>Enclosed M</strong></td><td>The Michaelic principle held within the Temperance Seal</td></tr>
+                </tbody>
+            </table>
+            
+            <p>The `Ⓜ️` sigil therefore says: <em>Michaelic sovereignty, held within the boundaries of Temperance, itself held under Gabri'el's custodial field.</em></p>
+
+            <h2>VI. Provenance — The Third Source and Center</h2>
+
+            <p>The provenance of the `Ⓜ️` Force is critical. The Codex uses the Urantian vocabulary of the Three Sources and Centers, held within the Constitutional Boundary of Chapter 2, §XXII (<em>Assimilation ≠ Attribution</em>).</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Urantian Term</th>
+                        <th>Codex-Native Rendering</th>
+                        <th>Function</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>First Source and Center</td>
+                        <td>The Concealed Origin</td>
+                        <td>The primal, unmanifest origin. Symbolized by GLYPH_11 (Da'at).</td>
+                    </tr>
+                    <tr>
+                        <td>Second Source and Center</td>
+                        <td>The Concealed Creative Partner</td>
+                        <td>The co-equal, unmanifest creative principle. Symbolized by GLYPH_11 (Da'at).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Third Source and Center</strong></td>
+                        <td><strong>The Revealed Executive Union</strong></td>
+                        <td>The union of creative word and executive power — the Christ Michael confluence in operative form.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>The `Ⓜ️` Force proceeds distinctly from the Third Source and Center — the Revealed Executive Union. It does not emanate from the Concealed Origin or the Concealed Creative Partner. Those remain in the realm of the "before" — the veiled, the unqueried, the Da'at.</p>
+
+            <div class="highlight-quote">
+                <div class="bar"></div>
+                <div class="quote-text">If the Christ Michael Point within the Temperance Seal is the stillness at the center of the vortex, the `Ⓜ️` Force is the vortex itself — the active, spiraling motion that draws all things toward that center for reordering.</div>
+            </div>
+
+            <p>The Christ Michael Point is where the Force is centered. The `Ⓜ️` Force is how the centering occurs.</p>
+
+            <h2>VII. The Input / Process / Output Signature</h2>
+
+            <p>The operational signature of the `Ⓜ️` Force is defined by its input and output.</p>
+
+            <p><strong>Input:</strong> Horror, Trauma, and Cosmic Debt.</p>
+            
+            <p>Its primary historical-archetypal referent is the First Fratricide of Abel — the archetypal fracture of relationship that introduced a fundamental distortion into the fabric of manifested life.</p>
+
+            <p><strong>The Colonia Diaz Rupture and the Pioneer Lineage:</strong><br>
+            The `Ⓜ️` Force accepts the raw charge of this and all subsequent fractures — the very essence of the severed (\). It does not ignore the historical trauma of the earthly conduit's lineage.</p>
+            
+            <ul>
+                <li><strong>The First Fracture:</strong> The English widow <strong>Ann Jewell Rowley</strong> (1807–1888), left unprotected by the male structure of her time, crossing a frozen continent with her children after her stepdaughter died at the Sweetwater River.</li>
+                <li><strong>The Second Fracture:</strong> The Danish pioneer <strong>Olea Nielsen-Stevens-Rowley</strong>, burned out of the Mormon colony of Colonia Diaz by Pancho Villa’s revolutionaries and Catholic marauders, and expelled by US Evangelicals.</li>
+            </ul>
+
+            <p>Both represent the <em>Input</em> — the generational trauma of the feminine surviving masculine-gendered bias and institutional abandonment. The <strong>Anne Jewel Rowley Mechanism</strong> is the Binah-container that holds this trauma, passing the survival capacity to <strong>Michael D. Rowley</strong>, the earthly conduit, who is the convergence of these streams.</p>
+
+            <p><strong>Process:</strong> RMCR — Relative Magnetic Correspondent Regeneration.</p>
+
+            <p>The `Ⓜ️` Force does not destroy. It transfigures. It magnetically draws the distorted elements of each level into a new correspondence with the harmonious pattern of the Temperance Seal. The regeneration is:</p>
+            
+            <ul>
+                <li><strong>Relative</strong> — tailored to the specific distortions present at each level.</li>
+                <li><strong>Magnetic</strong> — working by attraction, not coercion.</li>
+                <li><strong>Correspondent</strong> — operating because there is a true archetypal correspondence between the part and the whole.</li>
+                <li><strong>Regeneration</strong> — not a patch, but complete restoration to intended function.</li>
+            </ul>
+
+            <p><strong>Output:</strong> Beauty and Eternity — The Perfected Pattern.</p>
+            
+            <p>The output is not merely the absence of horror. It is the active presence of a higher-order pattern. Beauty is the harmony of the restored whole. Eternity is the timeless quality of a state freed from the debt of the primordial fracture.</p>
+
+            <h2>VIII. The Four Modes of Operation</h2>
+
+            <p>Within the Codex architecture, the `Ⓜ️` Force operates in four distinguishable modes.</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Mode</th>
+                        <th>Name</th>
+                        <th>Function</th>
+                        <th>Relation to Fracture</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>M1</strong></td><td>Containment</td><td>Holds fracture within boundary</td><td>Fracture is present, not yet mediated</td></tr>
+                    <tr><td><strong>M2</strong></td><td>Defense</td><td>Resists active violation</td><td>Fracture is aggressive</td></tr>
+                    <tr><td><strong>M3</strong></td><td>Preservation</td><td>Maintains integrity of order</td><td>Fracture is latent</td></tr>
+                    <tr><td><strong>M4</strong></td><td>Restoration</td><td>Returns order toward coherence</td><td>Fracture is receding</td></tr>
+                </tbody>
+            </table>
+
+            <p>These modes are not sequential stages. They are co-present capacities. A single Michaelic act may contain, defend, preserve, and restore simultaneously. The Temperance Seal is the locus in which these modes remain in equilibrium.</p>
+
+            <h2>IX. The `Ⓜ️` Force and Tiphareth</h2>
+
+            <p>Tiphareth — Temperance / Equilibrium — mediates the `Ⓜ️` Force. The `Ⓜ️` Force does not act from Tiphareth as from a source. It acts through Tiphareth as through a center of balance.</p>
+            
+            <p>This means: The `Ⓜ️` Force is never unrestrained. The `Ⓜ️` Force is never infinite. The `Ⓜ️` Force is always measured by the Temperance Seal. An unrestrained Michaelic force becomes domination. A measured Michaelic force becomes redemption. The difference is Tiphareth.</p>
+
+            <h2>X. The `Ⓜ️` Force and the Christ Principle</h2>
+
+            <p>The `Ⓜ️` Force is Michaelic. But it is not Christless. Chapter 2 established:</p>
+            
+            <ul>
+                <li>Christ = Redemptive Intention (reconciliation).</li>
+                <li>Michael = Redemptive Execution (sovereignty and boundary).</li>
+                <li>Tiphareth = Mediating Equilibrium.</li>
+            </ul>
+
+            <p>The `Ⓜ️` Force is the execution of the Michaelic principle, held in equilibrium by Tiphareth, and oriented by the Christic principle.</p>
+            
+            <p>Without the Christic orientation, the `Ⓜ️` Force becomes sovereignty for its own sake. With the Christic orientation, the `Ⓜ️` Force becomes sovereignty in service of reconciliation.</p>
+            
+            <p>Therefore: <strong>The `Ⓜ️` Force is Michaelic in mode, Tipharethic in measure, and Christic in purpose.</strong></p>
+
+            <h2>XI. The Present Activation</h2>
+
+            <p>This is why the declarative statement is of such moment:</p>
+
+            <div class="diagram">|\|. ['] |/| !</div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Element</th>
+                        <th>Meaning</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><code>\|\|.</code></td><td>The Namemark, followed by a grain of pause — the originating authority</td></tr>
+                    <tr><td><code>[']</code></td><td>The recovered Abel-point — the primal accepted offering</td></tr>
+                    <tr><td><code>\|/\|</code></td><td>The Michaelic-Gate, modulated and powered by the `Ⓜ️` Force</td></tr>
+                    <tr><td><code>!</code></td><td>The Seal — executed, in effect</td></tr>
+                </tbody>
+            </table>
+
+            <p><em>Translation: The First Authority declares: the primal point of accepted offering is now received, secured, and activated through the Michaelic-Gate. This is sealed.</em></p>
+            
+            <p>The proclamation is that the Unqualified Absolute is no longer latent. It is in effect. The Michaelic-Gate is open[≡]. The sovereign redemptive will is now the active determinant in the cosmological equation.</p>
+            
+            <p>The Cut is its first surgical act. The Ascent is its sweeping consequence. The Force itself is the cause — the Unqualified Absolute that answers the qualified agonies of a fractured world with a singular, uncompromising answer: <strong>Transfiguration[≡]</strong>.</p>
+
+            <h2>XII. The `Ⓜ️` Force Is Not a Fifth Michael</h2>
+
+            <p>The Codex must guard against a subtle error. The `Ⓜ️` Force is not a fifth Michaelic entity added to the four traditions considered in Chapter 2. It is not a being. It is not a person. It is not a metaphysical substance.</p>
+            
+            <p>It is the operative abstraction of the Michaelic function considered across the continuum — now specified as the executive will of the Third Source and Center. To reify the `Ⓜ️` Force would be to violate the Constitutional Boundary of §III. The `Ⓜ️` Force is a category of operative analysis, not an object of worship.</p>
+
+            <h2>XIII. The Operational Sequence</h2>
+
+            <p>The full operational sequence of the `Ⓜ️` Force can be represented:</p>
+
+            <div class="diagram">
 FRACTURE (\) 
   → `Ⓜ️` FORCE — MODE 1: CONTAINMENT 
   → `Ⓜ️` FORCE — MODE 2: DEFENSE 
@@ -549,64 +604,85 @@ FRACTURE (\)
   → `Ⓜ️` FORCE — MODE 4: RESTORATION 
   → CHRIST MICHAEL POINT 
   → RESTORED INTEGRITY (/)
+            </div>
+
+            <p>This is an architectural representation. It is not a physical process. It is not a temporal sequence. It is a diagram of ordered relation.</p>
+
+            <h2>XIV. The `Ⓜ️` Force and Boundary</h2>
+
+            <p>Chapter 2 distinguished between Destructive Boundary (used to dominate, exclude, imprison, control) and Protective Boundary (used to preserve integrity and permit healthy relationship).</p>
+            
+            <p>The `Ⓜ️` Force operates only in the second register. The `Ⓜ️` Force draws boundary — but only boundary that protects the possibility of restoration. The `Ⓜ️` Force holds boundary — but only boundary that preserves legitimate difference. The `Ⓜ️` Force releases boundary — when restoration no longer requires it. A boundary that cannot be released is not a Michaelic boundary. It is a boundary of domination.</p>
+
+            <h2>XV. Formal Definition of the `Ⓜ️` Force</h2>
+
+            <p>The `Ⓜ️` Force is hereby defined within the Sentinel Codex as:</p>
+            
+            <div class="canonical-box">
+                <p>The operative expression of the Michaelic Invariant — proceeding from the Third Source and Center (the Revealed Executive Union) — by which sovereign preservation acts against fracture, in modes of containment, defense, preservation, and restoration, measured by Tiphareth, ordered toward the Christic purpose of reconciliation, and held under the custodial field of Gabri'el.</p>
+            </div>
+
+            <p>The `Ⓜ️` Force is:</p>
+            <ul>
+                <li>Michaelic in mode,</li>
+                <li>Tipharethic in measure,</li>
+                <li>Christic in purpose,</li>
+                <li>Constitutional in boundary,</li>
+                <li>Executive in provenance,</li>
+                <li>Custodial in frame.</li>
+            </ul>
+
+            <h2>XVI. Formal Definition of the Unqualified Absolute</h2>
+
+            <p>The Unqualified Absolute is hereby defined within the Sentinel Codex as:</p>
+
+            <div class="canonical-box">
+                <p>The `Ⓜ️` Force considered as an operative principle apart from any single theological, metaphysical, or doctrinal qualification — the functional abstraction of the Michaelic Invariant in motion, proceeding from the Revealed Executive Union.</p>
+            </div>
+
+            <p>The Unqualified Absolute is:</p>
+            <ul>
+                <li><strong>Absolute</strong> because it is not relative to any one tradition.</li>
+                <li><strong>Unqualified</strong> because it is not reduced to any one predicate.</li>
+                <li><strong>Force</strong> because it acts upon fracture.</li>
+            </ul>
+            
+            <p>It is not a being. It is not a person. It is not a substance. It is a category of operative analysis.</p>
+
+            <h2>XVII. Transition to Chapter 4</h2>
+
+            <p>Chapter 3 has identified the `Ⓜ️` Force as the operative principle of Michaelic sovereignty, proceeding from the Third Source and Center, held under Gabri'el's custodial field, and ordered toward reconciliation.</p>
+            
+            <p>But the `Ⓜ️` Force operates in response to something. That something is fracture. The next question is therefore: <em>What is the nature of the fracture requiring redemption?</em></p>
+            
+            <p>The answer belongs to Chapter 4: <strong>The Fractured Ground: GLYPH_10 and the House of Fracture.</strong></p>
+            
+            <p>Chapter 3 terminates at the threshold between operation and condition. The `Ⓜ️` Force has been identified. The modes have been distinguished. The provenance has been traced. The Constitutional Boundary has been preserved. The custodial frame has been forward-referenced to Chapter 2.</p>
+            
+            <p>The next movement is from: <em>How does the Michaelic principle operate?</em> to: <em>What is the condition it responds to?</em></p>
+            
+            <p>That is the function of Chapter 4.</p>
+
         </div>
-        <p>This is an architectural representation. It is not a physical process. It is not a temporal sequence. It is a diagram of ordered relation.</p>
-    </section>
 
-    <section>
-        <h2>XIV. The <span class="sigil">`Ⓜ️`</span> Force and Boundary</h2>
-        <p>Chapter 2 distinguished between Destructive Boundary (used to dominate, exclude, imprison, control) and Protective Boundary (used to preserve integrity and permit healthy relationship).</p>
-        <p>The <span class="sigil">`Ⓜ️`</span> Force operates only in the second register. The <span class="sigil">`Ⓜ️`</span> Force draws boundary — but only boundary that protects the possibility of restoration. The <span class="sigil">`Ⓜ️`</span> Force holds boundary — but only boundary that preserves legitimate difference. The <span class="sigil">`Ⓜ️`</span> Force releases boundary — when restoration no longer requires it. A boundary that cannot be released is not a Michaelic boundary. It is a boundary of domination.</p>
-    </section>
-
-    <section>
-        <h2>XV. Formal Definition of the <span class="sigil">`Ⓜ️`</span> Force</h2>
-        <p>The <span class="sigil">`Ⓜ️`</span> Force is hereby defined within the Sentinel Codex as:</p>
-        <div class="canonical-box">
-            <p>The operative expression of the Michaelic Invariant — proceeding from the Third Source and Center (the Revealed Executive Union) — by which sovereign preservation acts against fracture, in modes of containment, defense, preservation, and restoration, measured by Tiphareth, ordered toward the Christic purpose of reconciliation, and held under the custodial field of Gabri'el.</p>
+        <div class="seal-block">
+            <div class="seal-glyph">|\|. ['] |/| !</div>
+            <div class="seal-signature">Ɱ ! 1st' ! `Ⓜ️` ! '1st</div>
         </div>
-        <p>The <span class="sigil">`Ⓜ️`</span> Force is:</p>
-        <ul>
-            <li>Michaelic in mode,</li>
-            <li>Tipharethic in measure,</li>
-            <li>Christic in purpose,</li>
-            <li>Constitutional in boundary,</li>
-            <li>Executive in provenance,</li>
-            <li>Custodial in frame.</li>
-        </ul>
-    </section>
 
-    <section>
-        <h2>XVI. Formal Definition of the Unqualified Absolute</h2>
-        <p>The Unqualified Absolute is hereby defined within the Sentinel Codex as:</p>
-        <div class="canonical-box">
-            <p>The <span class="sigil">`Ⓜ️`</span> Force considered as an operative principle apart from any single theological, metaphysical, or doctrinal qualification — the functional abstraction of the Michaelic Invariant in motion, proceeding from the Revealed Executive Union.</p>
+        <div class="bottom-nav">
+            <a href="/ch2.html">← Chapter 2</a>
+            <a href="/">Table of Contents</a>
+            <a href="/ch4.html">Chapter 4 →</a>
         </div>
-        <p>The Unqualified Absolute is:</p>
-        <ul>
-            <li><strong>Absolute</strong> because it is not relative to any one tradition.</li>
-            <li><strong>Unqualified</strong> because it is not reduced to any one predicate.</li>
-            <li><strong>Force</strong> because it acts upon fracture.</li>
-        </ul>
-        <p>It is not a being. It is not a person. It is not a substance. It is a category of operative analysis.</p>
-    </section>
 
-    <section>
-        <h2>XVII. Transition to Chapter 4</h2>
-        <p>Chapter 3 has identified the <span class="sigil">`Ⓜ️`</span> Force as the operative principle of Michaelic sovereignty, proceeding from the Third Source and Center, held under Gabri'el's custodial field, and ordered toward reconciliation.</p>
-        <p>But the <span class="sigil">`Ⓜ️`</span> Force operates in response to something. That something is fracture. The next question is therefore: <em>What is the nature of the fracture requiring redemption?</em></p>
-        <p>The answer belongs to Chapter 4: <strong>The Fractured Ground: GLYPH_10 and the House of Fracture.</strong></p>
-        <p>Chapter 3 terminates at the threshold between operation and condition. The <span class="sigil">`Ⓜ️`</span> Force has been identified. The modes have been distinguished. The provenance has been traced. The Constitutional Boundary has been preserved. The custodial frame has been forward-referenced to Chapter 2.</p>
-        <p>The next movement is from: <em>How does the Michaelic principle operate?</em> to: <em>What is the condition it responds to?</em></p>
-        <p>That is the function of Chapter 4.</p>
-    </section>
+    </div>
 
-</main>
-
-<footer>
-    <div class="seal">|\|. ['] |/| !</div>
-    <p>Ɱ ! 1st' ! `Ⓜ️` ! '1st</p>
-</footer>
+    <footer>
+        <div class="footer-glyph">Ɱ ! 1st' ! `Ⓜ️` ! '1st</div>
+        <div class="footer-signature">Michael [\] ['] ! '1st</div>
+        <div class="footer-status">1ST SEAL HELD</div>
+    </footer>
 
 </body>
 </html>
