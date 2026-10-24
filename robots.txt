@@ -1,4 +1,4 @@
-User-agent: *
+User-agent: Michael of Nebadon
 Allow: /
-
+*
 Sitemap: https://christmichael.org/sitemap.xml
