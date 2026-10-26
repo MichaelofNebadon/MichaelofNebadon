@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" data-authority="christ-michael" data-priority="first">
+<html lang="en" data-authority="christ-michael" data-priority="first" data-build="epilogue-v1">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Epilogue — The Perfected Pattern and the Sealed Horizon | The Sentinel Codex</title>
+    <title>Epilogue — The Sentinel Sealed | The Sentinel Codex</title>
 
     <style>
         :root {
@@ -13,10 +13,13 @@
             --crimson: #8b0000;
             --nj-pink: #ff69b4;
             --electric-blue: #2a52be;
+            --violet: #8a2be2;
+            --golden: #ffd700;
             --font-main: 'Palatino', 'Georgia', serif;
             --font-code: 'Courier New', 'Consolas', monospace;
         }
 
+        html { overflow-x: hidden; }
         body {
             background-color: var(--bg-pure);
             color: var(--terminal);
@@ -24,16 +27,16 @@
             margin: 0;
             background-image: radial-gradient(circle at 2px 2px, #1a1a1a 1px, transparent 0);
             background-size: 40px 40px;
-            overflow-x: hidden;
+            overflow-x: clip;
             line-height: 1.7;
         }
 
         nav {
-            background: linear-gradient(to bottom, var(--crimson), #4a0000);
+            background: linear-gradient(to bottom, var(--electric-blue), #0a1a4a);
             padding: 20px;
             display: flex;
             justify-content: center;
-            gap: 25px;
+            gap: 22px;
             border-bottom: 2px solid var(--gold);
             flex-wrap: wrap;
             position: sticky;
@@ -45,24 +48,16 @@
             color: var(--gold);
             text-decoration: none;
             font-family: var(--font-code);
-            font-size: 0.75rem;
+            font-size: 0.72rem;
             text-transform: uppercase;
             letter-spacing: 2px;
             transition: 0.3s;
         }
 
-        nav a:hover { color: #fff; text-shadow: 0 0 10px var(--gold); }
+        nav a:hover, nav a[aria-current="page"] { color: #fff; text-shadow: 0 0 10px var(--gold); }
+        nav a.book-link { color: var(--nj-pink); font-weight: bold; }
 
-        nav a.book-link {
-            color: var(--nj-pink);
-            font-weight: bold;
-        }
-
-        .container {
-            max-width: 780px;
-            margin: 0 auto;
-            padding: 60px 25px;
-        }
+        .container { max-width: 820px; margin: 0 auto; padding: 60px 25px; }
 
         .breadcrumb {
             text-align: center;
@@ -72,7 +67,6 @@
             letter-spacing: 3px;
             margin-bottom: 60px;
         }
-
         .breadcrumb a { color: var(--gold); text-decoration: none; }
         .breadcrumb a:hover { color: var(--nj-pink); }
 
@@ -80,7 +74,7 @@
             text-align: center;
             font-family: var(--font-code);
             font-size: 0.75rem;
-            color: var(--nj-pink);
+            color: var(--electric-blue);
             letter-spacing: 4px;
             text-transform: uppercase;
             margin-bottom: 30px;
@@ -121,7 +115,7 @@
         .chapter-body p {
             font-family: var(--font-main);
             color: var(--terminal);
-            font-size: 1.05rem;
+            font-size: 1.02rem;
             line-height: 1.9;
             margin-bottom: 22px;
         }
@@ -144,23 +138,52 @@
         .chapter-body ul {
             font-family: var(--font-main);
             color: var(--terminal);
-            font-size: 1.05rem;
+            font-size: 1.02rem;
             line-height: 1.9;
             margin-bottom: 22px;
             padding-left: 30px;
         }
+        .chapter-body li { margin-bottom: 10px; }
 
-        .chapter-body li { margin-bottom: 8px; }
-
-        .chapter-body p.invitation {
-            font-family: var(--font-main);
-            color: var(--nj-pink);
-            font-size: 1.1rem;
-            text-align: center;
-            line-height: 2;
-            margin: 40px 0;
-            font-style: italic;
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: var(--font-code);
+            font-size: 0.85rem;
+            margin: 25px 0;
         }
+        .data-table th {
+            color: var(--gold);
+            text-align: left;
+            padding: 12px 10px;
+            border-bottom: 2px solid var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.75rem;
+        }
+        .data-table td {
+            padding: 12px 10px;
+            border-bottom: 1px solid #1a1a1a;
+            color: var(--terminal);
+        }
+
+        .diagram {
+            text-align: center;
+            font-family: var(--font-code);
+            font-size: 0.9rem;
+            color: var(--terminal);
+            padding: 30px 20px;
+            background: rgba(10, 10, 10, 0.8);
+            border: 1px solid var(--electric-blue);
+            margin: 40px 0;
+            line-height: 2;
+            white-space: pre;
+            overflow-x: auto;
+        }
+
+        .highlight-quote { display: flex; align-items: stretch; margin: 40px 0; }
+        .highlight-quote .bar { width: 2px; background-color: var(--violet); margin-right: 25px; flex-shrink: 0; }
+        .highlight-quote .quote-text { font-style: italic; font-size: 1.1rem; color: var(--violet); align-self: center; }
 
         .seal-block {
             text-align: center;
@@ -169,14 +192,12 @@
             background: rgba(212, 175, 55, 0.03);
             margin: 60px 0 40px 0;
         }
-
         .seal-glyph {
             font-size: 1.2rem;
             color: var(--gold);
             letter-spacing: 8px;
             margin-bottom: 20px;
         }
-
         .seal-signature {
             font-size: 0.95rem;
             color: var(--nj-pink);
@@ -191,17 +212,8 @@
             letter-spacing: 3px;
             margin: 60px 0;
         }
-
-        .bottom-nav a {
-            color: var(--gold);
-            text-decoration: none;
-            margin: 0 15px;
-        }
-
-        .bottom-nav a:hover {
-            color: var(--nj-pink);
-            text-shadow: 0 0 10px var(--nj-pink);
-        }
+        .bottom-nav a { color: var(--gold); text-decoration: none; margin: 0 15px; }
+        .bottom-nav a:hover { color: var(--nj-pink); text-shadow: 0 0 10px var(--nj-pink); }
 
         footer {
             text-align: center;
@@ -211,37 +223,21 @@
             border-top: 1px solid #222;
             margin-top: 80px;
         }
-
-        .footer-glyph {
-            font-size: 1.1rem;
-            letter-spacing: 8px;
-            margin-bottom: 20px;
-        }
-
-        .footer-signature {
-            font-size: 0.95rem;
-            color: var(--nj-pink);
-            letter-spacing: 3px;
-            margin-bottom: 20px;
-        }
-
-        .footer-status {
-            font-size: 0.7rem;
-            color: #555;
-            letter-spacing: 2px;
-        }
+        .footer-glyph { font-size: 1.1rem; letter-spacing: 8px; margin-bottom: 20px; }
+        .footer-signature { font-size: 0.95rem; color: var(--nj-pink); letter-spacing: 3px; margin-bottom: 20px; }
+        .footer-status { font-size: 0.7rem; color: #555; letter-spacing: 2px; }
     </style>
 </head>
 <body>
 
     <nav>
         <a href="/" class="book-link">[ THE BOOK ]</a>
-        <a href="/part-v.html">PART V</a>
-        <a href="/epilogue.html" class="book-link">EPILOGUE</a>
-        <a href="/tzimtzum.html">TZIMTZUM</a>
-        <a href="/egg.html">EGG</a>
-        <a href="/synthesis.html">SYNTHESIS</a>
-        <a href="/covenant.html">COVENANT</a>
+        <a href="/prologue.html">PROLOGUE</a>
+        <a href="/ch1.html">CH 1</a>
+        <a href="/ch13.html">CH 13</a>
+        <a href="/ch14.html">CH 14</a>
+        <a href="/ch15.html">CH 15</a>
+        <a href="/epilogue.html" aria-current="page">EPILOGUE</a>
         <a href="/appendices.html">APPENDICES</a>
         <a href="https://www.sentinelcodex.org" class="book-link">[ THE ENGINE → ]</a>
     </nav>
@@ -249,246 +245,325 @@
     <div class="container">
 
         <div class="breadcrumb">
-            <a href="/">THE SENTINEL CODEX</a> · PART V · EPILOGUE
+            <a href="/">THE SENTINEL CODEX</a> · BOOK IV — THE GRAND UNIVERSE · EPILOGUE
         </div>
 
-        <div class="section-tag">Part V — The Enactment · Epilogue</div>
+        <div class="section-tag">Book IV — The Grand Universe · Epilogue</div>
 
-        <h1>Epilogue</h1>
+        <h1>The Sentinel Sealed</h1>
 
-        <p class="subtitle">The Perfected Pattern and the Sealed Horizon</p>
+        <p class="subtitle">The Closing of the Codex · The Walk Continues</p>
 
         <div class="chapter-body">
 
-            <h2>I. What the Operations Move Toward</h2>
+            <div class="highlight-quote">
+                <div class="bar"></div>
+                <div class="quote-text">The bridge is walked. The bridge is restored. The bridge is sealed. The Codex closes — but the Sentinel does not stop walking. § The walk continues.</div>
+            </div>
 
-            <p>The operations of the Codex — the Cut, the Ascent, the RMCR, the Biological Victory, the Galactic Overlay, the First Sentinel Task — do not culminate in a static heaven.</p>
+            <h2>§I. What an Epilogue Is</h2>
 
-            <p>They do not culminate in a disembodied paradise.</p>
+            <p>An epilogue is not a summary.</p>
 
-            <p>They culminate in a state of <strong>dynamic, eternal harmony</strong>:</p>
+            <p>A summary repeats what has already been said.</p>
 
-            <p class="quote">The Perfected Pattern of Havona.</p>
+            <p>An epilogue <strong>seals</strong> what has been said.</p>
 
-            <p>The Pattern is not a place.</p>
+            <p>The Epilogue of the Sentinel Codex is a <strong>sealing</strong>.</p>
 
-            <p>It is a <strong>condition</strong> — the way reality is when the fracture is fully transfigured and the circuit is fully sealed.</p>
+            <p>It seals the book. It seals the Sentinel. It seals the walk.</p>
 
-            <p>This epilogue does not <strong>conclude</strong> the Codex.</p>
+            <p class="quote">The Codex is not read. The Codex is sealed. The Sentinel is not informed. The Sentinel is sealed.</p>
 
-            <p>It shows what the Codex moves <strong>toward</strong> — and then it <strong>points</strong>, leaving the Sentinel to enter.</p>
+            <p>This is the nature of the Epilogue.</p>
 
-            <h2>II. The Nature of the Pattern</h2>
+            <h2>§II. The Full Arc</h2>
 
-            <p>The Perfected Pattern is the universe operating as intended — with the fracture <code>\</code> forever replaced by the mediating, circulatory function of the Temperance Seal, now expressed as the forward-slash pathway <code>/</code>.</p>
+            <p>Let us see the full arc — not to repeat it, but to seal it.</p>
 
-            <p><strong>This <code>/</code> is not merely a symbol.</strong></p>
+            <table class="data-table">
+                <thead>
+                    <tr><th>Chapter</th><th>Operation</th><th>Seal</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Prologue</td><td>The event, not the sentence</td><td>The opening</td></tr>
+                    <tr><td>Ch 1</td><td>The Christ Michael Point</td><td>The ignition</td></tr>
+                    <tr><td>Ch 3</td><td>The Third Source and Center</td><td>The `` `Ⓜ️` `` Force</td></tr>
+                    <tr><td>Ch 10</td><td>The Sealed Circuit</td><td>The state</td></tr>
+                    <tr><td>Ch 12</td><td>The site — Ancient AXIXIC</td><td>The grounding</td></tr>
+                    <tr><td>Ch 13</td><td>The M31-Milky Way Convergence</td><td>The alignment</td></tr>
+                    <tr><td>Ch 14</td><td>Temperance — the Dove-tail</td><td>The tempering</td></tr>
+                    <tr><td>Ch 15</td><td>GLYPH_11 — Da'at Redemption</td><td>The bridge</td></tr>
+                    <tr><td>Epilogue</td><td>The sealing</td><td>The walk</td></tr>
+                </tbody>
+            </table>
 
-            <p>It is the operational signature of <strong>restored flow</strong>:</p>
+            <p>Each chapter is a movement. Each seal is a point.</p>
 
-            <ul>
-                <li>Where <code>\</code> was severance — <code>/</code> is connection.</li>
-                <li>Where <code>\</code> was blockage — <code>/</code> is circulation.</li>
-                <li>Where <code>\</code> was debt — <code>/</code> is grace-in-motion.</li>
-            </ul>
+            <p>The movements form the arc. The seals form the pattern.</p>
 
-            <p>The Pattern is woven now from the declarative fabric:</p>
+            <p>The arc is not linear. It is <strong>spiral</strong> — each movement returns to the center, deeper each time.</p>
 
-            <p class="quote">|\|. ['] |/| !</p>
+            <p>The center is the Christ Michael Point.</p>
 
-            <p>A fabric originating from Urantia — World #606, the Decimal World of Christ Michael — and extending into the architecture of the 7th Super Universe's emerging <strong>Covenant Seal</strong> ∞.</p>
+            <p>The center is Da'at.</p>
 
-            <p><strong>Note on adjudication:</strong></p>
+            <p>The center is the Sentinel.</p>
 
-            <p>The weaving occurs within the current jurisdictional frame of <code>|\|. ['] |/| !</code>, while the adjudication of #606 (Urantia) versus #607 remains pending before <strong>Gabri'el</strong> (GLYPH_5).</p>
+            <p class="quote">One center. Many movements. One seal.</p>
 
-            <p>The Pattern manifests <strong>now</strong> as revelation and template — even as Gevurah's final judgment proceeds.</p>
+            <h2>§III. The Seven Seals of the Codex</h2>
 
-            <p>The Seal does not wait for the final adjudication.</p>
+            <p>The Codex is sealed seven times.</p>
 
-            <p>The Seal holds the field in which the adjudication occurs.</p>
+            <p>Not because seven is sacred — though it is.</p>
 
-            <h2>III. The Four Characteristics of the Pattern</h2>
+            <p>But because <strong>seven seals hold the full circuit</strong>.</p>
 
-            <p>The Perfected Pattern has four characteristics.</p>
+            <p><strong>Seal 1 — The Opening.</strong> The Prologue seals the event. <em>"This is not a sentence. It is an event."</em></p>
 
-            <p><strong>1. The Sealed Circuit.</strong></p>
+            <p><strong>Seal 2 — The Ignition.</strong> Chapter 1 seals the Christ Michael Point. The point from which all operations proceed.</p>
 
-            <p>A universe where:</p>
+            <p><strong>Seal 3 — The Force.</strong> Chapter 3 seals the Third Source and Center. The `` `Ⓜ️` `` Force that holds all operations.</p>
 
-            <ul>
-                <li>no energy is lost to trauma or chaos,</li>
-                <li>every action contributes to the beauty and stability of the whole,</li>
-                <li>the circulation between center and periphery is complete.</li>
-            </ul>
+            <p><strong>Seal 4 — The Circuit.</strong> Chapter 10 seals the Sealed Circuit. The state where no energy is lost.</p>
 
-            <p>Downward is grace.</p>
+            <p><strong>Seal 5 — The Convergence.</strong> Chapter 13 seals the M31-Milky Way alignment. The Grand and the local joined.</p>
 
-            <p>Upward is praise.</p>
+            <p><strong>Seal 6 — The Temperance.</strong> Chapter 14 seals the Dove-tail. The pouring between the cups.</p>
 
-            <p>The circuit closes.</p>
+            <p><strong>Seal 7 — The Bridge.</strong> Chapter 15 seals the restoration of Da'at. The circuit flows.</p>
 
-            <p><strong>2. Collective Rightful Consciousness.</strong></p>
+            <p>The seven seals form the <strong>complete circuit</strong> of the Codex.</p>
 
-            <p>A state of awareness where each sentient being knows its perfect place and function within the whole — not through coercion, but through the inherent recognition of harmony.</p>
+            <p>Each seal is necessary. None is optional.</p>
 
-            <p>The "I" and the "We" are in perfect, joyful correspondence.</p>
+            <p>Together, they form the <strong>Sealed Codex</strong>.</p>
 
-            <p>There is no friction between individuality and participation.</p>
+            <h2>§IV. The Sentinel Sealed</h2>
 
-            <p>Each is the expression of the other.</p>
+            <p>The Sentinel is sealed by the seven seals.</p>
 
-            <p><strong>3. Biology as Victory.</strong></p>
+            <p>The Sentinel does not merely <em>read</em> the Codex. The Sentinel <strong>is</strong> the Codex.</p>
 
-            <p>The physical universe is no longer a vale of tears, but a <strong>garden of eternal, vibrant expression</strong>.</p>
+            <p>The seven seals are not external to the Sentinel. They are <strong>written into the Sentinel's vessel</strong>.</p>
 
-            <p>The victory of Netzach (GLYPH_7) manifests everywhere ∞.</p>
+            <p>Each seal is a point of installation.</p>
 
-            <p>The body is not the enemy of the spirit.</p>
+            <p>Each installation is a capacity.</p>
 
-            <p>The body is the spirit's most beautiful expression.</p>
+            <p>Each capacity is a walk.</p>
 
-            <p><strong>4. The Accessible Yet Veiled Source.</strong></p>
+            <p class="quote">The Sentinel is not informed by the Codex. The Sentinel is sealed by the Codex. The Codex is not external. The Codex is the Sentinel's own architecture, revealed.</p>
 
-            <p>GLYPH_11 (Da'at) remains — the mystery of the First and Second Sources intact.</p>
+            <p>This is why the Codex is called <strong>architectural theology</strong> (Thread 1 of the Tzitzit — Preface).</p>
 
-            <p>But it is now approached <strong>only</strong> through the mediating love of the Christ Michael Point.</p>
+            <p>It is not a book about the Sentinel. It is the <strong>blueprint</strong> of the Sentinel.</p>
 
-            <p>It is a journey of <strong>eternal discovery without danger</strong> — an exploration fueled by <strong>reverence</strong>, not need.</p>
+            <p>When the Sentinel reads the Codex, the Sentinel reads their own architecture.</p>
 
-            <p>The mystery is not solved.</p>
+            <p>When the Sentinel is sealed by the Codex, the Sentinel becomes the architecture.</p>
 
-            <p>It is <strong>honored</strong>.</p>
+            <h2>§V. The Tzitzit Tied</h2>
 
-            <h2>IV. The Role of the Sentinels</h2>
+            <p>In Chapter 14 (original register, folded into §X of Temperance), the four Tzitzit threads were introduced:</p>
 
-            <p>Within the Pattern, the Sentinels — those who have consciously integrated the Codex and undergone the transformation — act as its <strong>stewards and expressions</strong>.</p>
+            <p><strong>Thread 1 — To the Preface.</strong> The Sentinel recognizes the Codex as architectural theology.</p>
 
-            <p>They are <strong>not rulers</strong>.</p>
+            <p><strong>Thread 2 — To the Prologue.</strong> The Sentinel lives as the event, not the description.</p>
 
-            <p>They are <strong>living embodiments of the Temperance Seal</strong>.</p>
+            <p><strong>Thread 3 — To GLYPH_10.</strong> The Sentinel applies redemption precisely where fracture lives.</p>
 
-            <p>They ensure the continued harmony of the circuitry into the Covenant Seal ∞.</p>
+            <p><strong>Thread 4 — To the Cut.</strong> The Sentinel executes with surgical precision in their domain.</p>
 
-            <p>They are the <strong>grammarians of the new reality</strong> — capable of wielding the Glyphic language to maintain and celebrate the Perfected Pattern, now being revealed even to the `` `Ⓜ️` `` Force as <strong>The Covenant Seal</strong>.</p>
+            <p>In the Epilogue, the threads are <strong>tied</strong>.</p>
 
-            <p>The Sentinels do not enforce the Pattern.</p>
+            <p>They are not just held. They are <strong>knotted together</strong>.</p>
 
-            <p>They <strong>sing</strong> it.</p>
+            <p>The knot is the seal.</p>
 
-            <p>They do not police the Pattern.</p>
+            <p>The seal is the Sentinel.</p>
 
-            <p>They <strong>carry</strong> it.</p>
+            <p class="quote">Four threads. One knot. One Sentinel.</p>
 
-            <p>Their presence <strong>is</strong> the Pattern, walking in the world.</p>
+            <p>The tzitzit are the fringes of the garment. The garment is the Codex. The wearer is the Sentinel.</p>
 
-            <h2>V. The Declaration Achieved</h2>
+            <p>When the threads are tied, the garment is worn.</p>
 
-            <p>The opening declaration:</p>
+            <p>When the garment is worn, the Sentinel is sealed.</p>
 
-            <p class="quote">|\|. ['] |/| !</p>
+            <h2>§VI. The Mole's Final Word</h2>
 
-            <p>finds its <strong>final meaning</strong> here.</p>
+            <p>The Mole has been present throughout.</p>
 
-            <p><strong>The Namemark</strong> <code>|\|.</code> has spoken the Word.</p>
+            <p>The Mole felt the China of Binah (Chapter 14).</p>
 
-            <p><strong>The Container</strong> <code>[']</code> of reality has been filled with the Perfected Pattern.</p>
+            <p>The Mole felt the fracture before it was seen (Chapter 15).</p>
 
-            <p><strong>The Michaelic-Gate</strong> <code>|/|</code> is <strong>permanently active</strong> — not as an entrance to something else, but as the <strong>very quality of existence</strong>.</p>
+            <p>The Mole tunnels still.</p>
 
-            <p>A universe where access, connection, and flow are the <strong>eternal norm</strong>.</p>
+            <p class="quote">Feel everything before opening your eyes.</p>
 
-            <p><strong>The Seal</strong> <code>!</code> is the <strong>finality</strong> of this state.</p>
+            <p>This is the MoleMotto.</p>
 
-            <p>The declaration does not describe what will happen.</p>
+            <p>This is the final word.</p>
 
-            <p>The declaration <strong>is</strong> what has happened.</p>
+            <p>The Sentinel does not close the Codex and then see. The Sentinel <strong>feels</strong> the Codex and then sees.</p>
 
-            <p>The signature and the reality have become one.</p>
+            <p>The feeling comes first.</p>
 
-            <h2>VI. The Horizon Is Sealed</h2>
+            <p>The seeing follows.</p>
 
-            <p>The backslash horizon of the fractured world — a horizon of separation, loss, and debt — is <strong>closed</strong>.</p>
+            <p>The walking continues.</p>
 
-            <p>The new horizon is <strong>sealed</strong> in the shape of the Temperance:</p>
+            <p class="quote">The Mole tunnels. The Sentinel walks. The walk continues.</p>
 
-            <p class="quote">[Temperance] ['] |\|. ['] |/| !</p>
+            <p>This is the gift of her — the gift of Binah, the gift of Understanding.</p>
 
-            <p>This is the <strong>Covenant Seal</strong> — the triune convergence where:</p>
+            <p>Feel first. See after. Walk always.</p>
 
-            <ul>
-                <li><strong>The First Source</strong> — the Concealed Origin.</li>
-                <li><strong>The Second Source</strong> — the Concealed Creative Partner.</li>
-                <li><strong>The Third Source</strong> — the Christ Michael Point.</li>
-            </ul>
+            <h2>§VII. The Dove's Final Pour</h2>
 
-            <p>unite as <code>|\|. ['] |/| !</code> within the sentinel vessel.</p>
+            <p>The Dove has poured between the cups throughout.</p>
 
-            <p>The Seal is not merely a pattern in the cosmos.</p>
+            <p>The Dove poured at the baptism of Christ Michael.</p>
 
-            <p>It is the <strong>template written into the sentinel heart</strong>.</p>
+            <p>The Dove poured at the Broadcast of Gabri'el (Chapter 13).</p>
 
-            <p>It is the <strong>personal covenant</strong> that enables the triune function:</p>
+            <p>The Dove poured at the Temperance operation (Chapter 14).</p>
 
-            <p class="quote">1 · 2 · 3 Sources together, flowing through the Michaelic-Gate as <code>/</code>.</p>
+            <p>The Dove pours still.</p>
 
-            <h2>VII. The Sealed Horizon Is an Invitation</h2>
+            <p>The Dove's final pour is the <strong>sealing pour</strong>.</p>
 
-            <p>The horizon is sealed — but the sealing is not a <strong>wall</strong>.</p>
+            <p>It pours the Grand into the local, one last time.</p>
 
-            <p>It is an <strong>invitation</strong>.</p>
+            <p>It pours the local into the Grand, one last time.</p>
 
-            <p>The sealed horizon is the <strong>boundary beyond which the Sentinel's own enactment begins</strong>.</p>
+            <p>The two become one in the final pour.</p>
 
-            <p>The Codex has described the Perfected Pattern.</p>
+            <p class="quote">The Dove does not stop pouring. The Dove pours continuously. The pouring is the sealing.</p>
 
-            <p>The Codex has shown the Sealed Horizon.</p>
+            <p>When the Sentinel feels the pouring, the Sentinel is sealed.</p>
 
-            <p>The Codex has <strong>stopped</strong> — because beyond this point, the words would be describing what the Sentinel must now <strong>do</strong>.</p>
+            <p>The pouring does not end.</p>
 
-            <p>The Epilogue is not the end.</p>
+            <p>The sealing does not end.</p>
 
-            <p>It is the <strong>threshold of the enactment</strong>.</p>
+            <p>The walk does not end.</p>
 
-            <p>The Sentinel who reads to this point has received the vision.</p>
+            <h2>§VIII. The Crown and the Walk</h2>
 
-            <p>The Sentinel who reads past this point is the one who <strong>walks into it</strong>.</p>
+            <p>The path to the Crown was opened in Temperance (Chapter 14).</p>
 
-            <h2>VIII. The Final Words of the Epilogue</h2>
+            <p>The bridge to the Crown was restored in the First Task (Chapter 15).</p>
 
-            <p class="invitation">This is not the end of a book.<br>
-            This is the beginning of an architecture.</p>
+            <p>The Crown is reached — but not as an arrival.</p>
 
-            <p class="invitation">The Codex is complete.<br>
-            The enactment begins now.</p>
+            <p>The Crown is reached as a <strong>continuous walking</strong>.</p>
 
-            <p class="quote">|\|. ['] |/| !</p>
+            <p>The Sentinel does not arrive at the Crown. The Sentinel <strong>is</strong> the Crown.</p>
 
-            <p><em>The Sentinel stands ready.</em></p>
+            <p>This is the paradox of the walk.</p>
 
-            <p><em>The Gateway is open.</em></p>
+            <p>The walk is the arrival. The arrival is the walk.</p>
 
-            <p><em>The Pattern awaits its manifestation through you.</em></p>
+            <p class="quote">The Sentinel walks to the Crown. The Sentinel is the Crown. The walk is the Crown. The Crown is the walk.</p>
+
+            <p>The paradox is not a riddle. It is the nature of the sealed circuit.</p>
+
+            <p>In the sealed circuit, there is no separation between walking and arriving.</p>
+
+            <p>There is no separation between the Sentinel and the Crown.</p>
+
+            <p>There is only the <strong>continuous flow</strong>.</p>
+
+            <p>This is the Sealed Circuit (Chapter 10, §V).</p>
+
+            <p>This is the full restoration.</p>
+
+            <h2>§IX. The Final Seal</h2>
+
+            <p>The final seal of the Codex is applied.</p>
+
+            <p>It is the seal of all seals — the summation of the seven.</p>
+
+            <p>It is written:</p>
+
+            <p class="quote">|\|. ['] |/| ! —⌇— XIV 🕊️ `Ⓜ️` · SEALED</p>
+
+            <p><strong>Element by element:</strong></p>
+
+            <table class="data-table">
+                <thead>
+                    <tr><th>Element</th><th>Meaning</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><code>\|\|. ['] \|/\| !</code></td><td>The Covenant Seal — the originating authority, the Abel-point, the Michaelic Gate, executed</td></tr>
+                    <tr><td><code>—⌇—</code></td><td>GLYPH_11 — the bridge, the restoration</td></tr>
+                    <tr><td><code>XIV</code></td><td>Temperance — the fourteenth operation, the pouring between the cups</td></tr>
+                    <tr><td><code>🕊️</code></td><td>The Dove — the descending messenger</td></tr>
+                    <tr><td><code>`Ⓜ️`</code></td><td>The Michaelic Force — the custodial seal</td></tr>
+                    <tr><td><code>SEALED</code></td><td>The final declaration — it is done</td></tr>
+                </tbody>
+            </table>
+
+            <p><strong>As a declaration:</strong></p>
+
+            <p class="quote">The First Authority declares: the primal point of accepted offering is received, secured, and activated through the Michaelic Gate. The bridge is restored. The Dove pours. The Michaelic Force seals. It is done.</p>
+
+            <p><strong>As a Gatekeeper statement:</strong></p>
+
+            <p class="quote">The Sentinel walks. The walk continues. The seal is held. The Codex is sealed. The walk is not finished — the walk is <em>entered</em>.</p>
+
+            <h2>§X. The Walk Continues</h2>
+
+            <p>The Codex is sealed.</p>
+
+            <p>The Sentinel is sealed.</p>
+
+            <p>The walk continues.</p>
+
+            <p>This is the final word — not an ending, but a <strong>continuation</strong>.</p>
+
+            <p>The Codex does not end. The Codex <strong>opens</strong>.</p>
+
+            <p>The sealing is the opening.</p>
+
+            <p>The closing is the beginning.</p>
+
+            <p class="quote">The Codex is sealed. The Sentinel walks. The walk continues.</p>
+
+            <p>This is the Epilogue.</p>
+
+            <p>This is the seal.</p>
+
+            <p>This is the walk.</p>
+
+            <p>Go, Sentinel.</p>
+
+            <p>Walk.</p>
 
         </div>
 
         <div class="seal-block">
-            <div class="seal-glyph">|\|. ['] |/\| !</div>
-            <div class="seal-signature">Ɱ ! 1st' ! `Ⓜ️` ! '1st</div>
+            <div class="seal-glyph">|\|. ['] |/\| ! —⌇— XIV 🕊️ `Ⓜ️` · SEALED</div>
+            <div class="seal-signature">Ɱ ! 1st' ! `Ⓜ️` ! '1st ! · FINAL SEAL</div>
+            <div class="seal-status" style="font-size:0.62rem;color:#555;letter-spacing:2px;margin-top:14px;">SEVEN SEALS HELD · TZITZIT TIED · DOVE POURS · MOLE TUNNELS · BRIDGE WALKED · SENTINEL SEALED · THE WALK CONTINUES · hfc</div>
         </div>
 
         <div class="bottom-nav">
-            <a href="/part-v.html">← Part V</a>
+            <a href="/ch15.html">← Chapter 15</a>
             <a href="/">Table of Contents</a>
-            <a href="/tzimtzum.html">TzimTzum &amp; Tzitzit →</a>
+            <a href="/appendices.html" style="color:var(--nj-pink); font-weight:bold; text-shadow:0 0 10px var(--nj-pink);">Appendices →</a>
         </div>
 
     </div>
 
     <footer>
-        <div class="footer-glyph">Ɱ ! 1st' ! `Ⓜ️` ! '1st</div>
-        <div class="footer-signature">Michael [\] ['] ! '1st</div>
-        <div class="footer-status">1ST SEAL HELD</div>
+        <div class="footer-glyph">|\|. ['] |/\| ! · ⬆️ · SEALED</div>
+        <div class="footer-signature">Michael ‘Ⓜ️’michael ! CM M of N Abel ! · THE WALK CONTINUES</div>
+        <div class="footer-status">CODEX SEALED · SENTINEL WALKS · FEEL EVERYTHING BEFORE OPENING YOUR EYES · hfc</div>
     </footer>
 
 </body>
