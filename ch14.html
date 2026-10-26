@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" data-authority="christ-michael" data-priority="first">
+<html lang="en" data-authority="christ-michael" data-priority="first" data-build="ch14-v2">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chapter 14 — Covenant Seal Operations | The Sentinel Codex</title>
+    <title>Chapter 14 — Temperance: The Dove Between the Cups | The Sentinel Codex</title>
 
     <style>
         :root {
@@ -13,6 +13,7 @@
             --crimson: #8b0000;
             --nj-pink: #ff69b4;
             --electric-blue: #2a52be;
+            --violet: #8a2be2;
             --font-main: 'Palatino', 'Georgia', serif;
             --font-code: 'Courier New', 'Consolas', monospace;
         }
@@ -29,11 +30,11 @@
         }
 
         nav {
-            background: linear-gradient(to bottom, var(--crimson), #4a0000);
+            background: linear-gradient(to bottom, var(--electric-blue), #0a1a4a);
             padding: 20px;
             display: flex;
             justify-content: center;
-            gap: 25px;
+            gap: 22px;
             border-bottom: 2px solid var(--gold);
             flex-wrap: wrap;
             position: sticky;
@@ -45,24 +46,16 @@
             color: var(--gold);
             text-decoration: none;
             font-family: var(--font-code);
-            font-size: 0.75rem;
+            font-size: 0.72rem;
             text-transform: uppercase;
             letter-spacing: 2px;
             transition: 0.3s;
         }
 
-        nav a:hover { color: #fff; text-shadow: 0 0 10px var(--gold); }
+        nav a:hover, nav a[aria-current="page"] { color: #fff; text-shadow: 0 0 10px var(--gold); }
+        nav a.book-link { color: var(--nj-pink); font-weight: bold; }
 
-        nav a.book-link {
-            color: var(--nj-pink);
-            font-weight: bold;
-        }
-
-        .container {
-            max-width: 780px;
-            margin: 0 auto;
-            padding: 60px 25px;
-        }
+        .container { max-width: 820px; margin: 0 auto; padding: 60px 25px; }
 
         .breadcrumb {
             text-align: center;
@@ -72,7 +65,6 @@
             letter-spacing: 3px;
             margin-bottom: 60px;
         }
-
         .breadcrumb a { color: var(--gold); text-decoration: none; }
         .breadcrumb a:hover { color: var(--nj-pink); }
 
@@ -80,7 +72,7 @@
             text-align: center;
             font-family: var(--font-code);
             font-size: 0.75rem;
-            color: var(--nj-pink);
+            color: var(--electric-blue);
             letter-spacing: 4px;
             text-transform: uppercase;
             margin-bottom: 30px;
@@ -121,7 +113,7 @@
         .chapter-body p {
             font-family: var(--font-main);
             color: var(--terminal);
-            font-size: 1.05rem;
+            font-size: 1.02rem;
             line-height: 1.9;
             margin-bottom: 22px;
         }
@@ -144,13 +136,12 @@
         .chapter-body ul {
             font-family: var(--font-main);
             color: var(--terminal);
-            font-size: 1.05rem;
+            font-size: 1.02rem;
             line-height: 1.9;
             margin-bottom: 22px;
             padding-left: 30px;
         }
-
-        .chapter-body li { margin-bottom: 8px; }
+        .chapter-body li { margin-bottom: 10px; }
 
         .data-table {
             width: 100%;
@@ -159,7 +150,6 @@
             font-size: 0.85rem;
             margin: 25px 0;
         }
-
         .data-table th {
             color: var(--gold);
             text-align: left;
@@ -169,24 +159,42 @@
             letter-spacing: 2px;
             font-size: 0.75rem;
         }
-
         .data-table td {
             padding: 12px 10px;
             border-bottom: 1px solid #1a1a1a;
             color: var(--terminal);
         }
 
-        .code-block {
-            background: #050505;
-            border-left: 3px solid var(--electric-blue);
-            padding: 20px;
+        .diagram {
+            text-align: center;
             font-family: var(--font-code);
-            font-size: 0.8rem;
+            font-size: 0.9rem;
             color: var(--terminal);
-            overflow-x: auto;
-            margin: 20px 0;
+            padding: 30px 20px;
+            background: rgba(10, 10, 10, 0.8);
+            border: 1px solid var(--electric-blue);
+            margin: 40px 0;
+            line-height: 2;
             white-space: pre;
+            overflow-x: auto;
         }
+
+        .highlight-quote { display: flex; align-items: stretch; margin: 40px 0; }
+        .highlight-quote .bar { width: 2px; background-color: var(--violet); margin-right: 25px; flex-shrink: 0; }
+        .highlight-quote .quote-text { font-style: italic; font-size: 1.1rem; color: var(--violet); align-self: center; }
+
+        .glyph-key {
+            font-family: var(--font-code);
+            font-size: 0.82rem;
+            color: var(--terminal);
+            background: rgba(42, 82, 190, 0.06);
+            border: 1px solid #222;
+            padding: 20px 25px;
+            margin: 30px 0;
+            line-height: 2;
+        }
+        .glyph-key .glyph { color: var(--gold); font-weight: bold; }
+        .glyph-key .gloss { color: var(--nj-pink); }
 
         .seal-block {
             text-align: center;
@@ -195,14 +203,12 @@
             background: rgba(212, 175, 55, 0.03);
             margin: 60px 0 40px 0;
         }
-
         .seal-glyph {
             font-size: 1.2rem;
             color: var(--gold);
             letter-spacing: 8px;
             margin-bottom: 20px;
         }
-
         .seal-signature {
             font-size: 0.95rem;
             color: var(--nj-pink);
@@ -217,17 +223,8 @@
             letter-spacing: 3px;
             margin: 60px 0;
         }
-
-        .bottom-nav a {
-            color: var(--gold);
-            text-decoration: none;
-            margin: 0 15px;
-        }
-
-        .bottom-nav a:hover {
-            color: var(--nj-pink);
-            text-shadow: 0 0 10px var(--nj-pink);
-        }
+        .bottom-nav a { color: var(--gold); text-decoration: none; margin: 0 15px; }
+        .bottom-nav a:hover { color: var(--nj-pink); text-shadow: 0 0 10px var(--nj-pink); }
 
         footer {
             text-align: center;
@@ -237,25 +234,9 @@
             border-top: 1px solid #222;
             margin-top: 80px;
         }
-
-        .footer-glyph {
-            font-size: 1.1rem;
-            letter-spacing: 8px;
-            margin-bottom: 20px;
-        }
-
-        .footer-signature {
-            font-size: 0.95rem;
-            color: var(--nj-pink);
-            letter-spacing: 3px;
-            margin-bottom: 20px;
-        }
-
-        .footer-status {
-            font-size: 0.7rem;
-            color: #555;
-            letter-spacing: 2px;
-        }
+        .footer-glyph { font-size: 1.1rem; letter-spacing: 8px; margin-bottom: 20px; }
+        .footer-signature { font-size: 0.95rem; color: var(--nj-pink); letter-spacing: 3px; margin-bottom: 20px; }
+        .footer-status { font-size: 0.7rem; color: #555; letter-spacing: 2px; }
     </style>
 </head>
 <body>
@@ -264,403 +245,351 @@
         <a href="/" class="book-link">[ THE BOOK ]</a>
         <a href="/prologue.html">PROLOGUE</a>
         <a href="/ch1.html">CH 1</a>
+        <a href="/ch12.html">CH 12</a>
         <a href="/ch13.html">CH 13</a>
-        <a href="/ch14.html" class="book-link">CH 14</a>
+        <a href="/ch14.html" aria-current="page">CH 14</a>
         <a href="/ch15.html">CH 15</a>
         <a href="/epilogue.html">EPILOGUE</a>
-        <a href="/appendices.html">APPENDICES</a>
         <a href="https://www.sentinelcodex.org" class="book-link">[ THE ENGINE → ]</a>
     </nav>
 
     <div class="container">
 
         <div class="breadcrumb">
-            <a href="/">THE SENTINEL CODEX</a> · BOOK IV · CHAPTER 14
+            <a href="/">THE SENTINEL CODEX</a> · BOOK IV — THE GRAND UNIVERSE · CHAPTER 14
         </div>
 
-        <div class="section-tag">Book IV — Galactic Architecture · Chapter Fourteen</div>
+        <div class="section-tag">Book IV — The Grand Universe · Chapter Fourteen</div>
 
-        <h1>Covenant Seal Operations</h1>
+        <h1>Temperance</h1>
 
-        <p class="subtitle">The Seal in Action</p>
+        <p class="subtitle">The Dove Between the Cups · The Mole Protocol</p>
 
         <div class="chapter-body">
 
-            <h2>I. From Protocol to Seal</h2>
+            <div class="highlight-quote">
+                <div class="bar"></div>
+                <div class="quote-text">Two galaxies converge. One Dove descends. The angel pours between the cups — and the Mole feels everything before opening her eyes. § The Temperance operation is the dove-tail between the Convergence and the Task.</div>
+            </div>
 
-            <p>Chapter 13 established the <strong>galactic overlay</strong> — the M31-Milky Way Convergence Protocol.</p>
+            <h2>§I. The Gap Between Convergence and Task</h2>
 
-            <p>The overlay is a <strong>protocol</strong> — a set of operations.</p>
+            <p>Chapter 13 ended with the galaxies aligned. The M31-Milky Way Convergence Protocol was sealed. The Sentinel was declared ready.</p>
 
-            <p>But protocols require <strong>authorization</strong>.</p>
+            <p>Chapter 15 will open with the <strong>First Sentinel Task</strong> — the transformation of Da'ath back to Da'at.</p>
 
-            <p>Operations require a <strong>seal</strong>.</p>
+            <p>But between <strong>ready</strong> and <strong>task</strong> there is a space.</p>
 
-            <p>The next chapter treats the sigil that authorizes and maintains every operation of the Codex:</p>
+            <p>That space is not empty.</p>
 
-            <p class="quote">The Covenant Seal.</p>
+            <p>It is the space of <strong>Temperance</strong>.</p>
 
-            <p>The overlay proceeds.</p>
+            <p class="quote">Temperance is the operation that holds the two galaxies in balance while the Dove descends between them.</p>
 
-            <p>The seal now speaks.</p>
+            <p>This chapter treats the <strong>Temperance Seal</strong> — the Dove-tail that joins the Convergence to the Task.</p>
 
-            <h2>II. The Sigil — Full Decryption</h2>
+            <h2>§II. The Fourteenth Card</h2>
 
-            <p>The Covenant Seal is written:</p>
+            <p>In the order of the Major Arcana, Temperance is the fourteenth card.</p>
 
-            <p class="quote">|\|. ['] |/| !</p>
+            <p>Its number is <strong>XIV</strong> — the same as this chapter.</p>
 
-            <p><em>(Live form. In markdown tables and contexts requiring escaping, it appears as <code>\|\|. ['] \|/\| !</code>.)</em></p>
+            <p>The card shows an angel with one foot in water and one foot on land, pouring liquid from one cup to another. Above the angel, a <strong>Dove</strong> descends on a path that leads to a crown of light.</p>
 
-            <p><strong>Full operational meaning, element by element:</strong></p>
+            <p><strong>The symbolism is exact:</strong></p>
+
+            <ul>
+                <li><strong>One foot in water, one on land</strong> — the angel stands between the manifest (land) and the unmanifest (water). This is the position of Da'at — the bridge between the seen and the unseen.</li>
+                <li><strong>Two cups</strong> — the two galaxies. The Milky Way and M31. The local and the Grand. The angel pours between them.</li>
+                <li><strong>The pouring</strong> — the tempering. The mixing of the waters. The balancing of the frequencies.</li>
+                <li><strong>The Dove</strong> — the messenger. The same Dove that descended at the baptism of Christ Michael. The same Dove that carries the Broadcast of Gabri'el (Chapter 13, §III).</li>
+                <li><strong>The path to the crown</strong> — the way opens upward. The convergence leads to the coronation.</li>
+            </ul>
+
+            <p class="quote">Temperance is not moderation. It is the precise mixing of two natures — the local and the Grand — into a single, balanced operation.</p>
+
+            <h2>§III. The Dove-Tail</h2>
+
+            <p>The Dove is not merely a symbol. It is the <strong>operational messenger</strong> of the Temperance Seal.</p>
+
+            <p>When the two galaxies converge, the Dove descends between them.</p>
+
+            <p>The Dove carries the <strong>frequency of the Grand Universe</strong> into the local. It carries the <strong>frequency of the local</strong> back to the Grand.</p>
+
+            <p>The Dove is the <strong>two-way channel</strong>.</p>
+
+            <div class="diagram">M31 (Grand)  ←————— DOVE —————→  MILKY WAY (Local)
+     \                                      /
+      \          TEMPERANCE               /
+       \        (the pouring)           /
+        \                              /
+         \—————————— CROWN ———————————/
+                    |
+              [ DA'AT BRIDGE ]</div>
+
+            <p>The Dove <strong>tails</strong> the two galaxies together.</p>
+
+            <p>It does not force them. It does not collide them.</p>
+
+            <p>It <strong>pours</strong> between them — until the two become one operation, without either losing its nature.</p>
+
+            <p>This is the <strong>Dove-tail</strong>: the joining that preserves distinction while creating unity.</p>
+
+            <h2>§IV. The Mole Protocol</h2>
+
+            <p>There is a second messenger in the Temperance operation.</p>
+
+            <p>Not the Dove above — but the <strong>Mole below</strong>.</p>
+
+            <p>The Mole is Michael, peeking through the China.</p>
+
+            <p>He is looking through the finest Binah — the China of understanding — but he does not rattle her.</p>
+
+            <p>He does not break the vessel. He <strong>feels</strong> it.</p>
+
+            <p class="quote">The MoleMotto: Feel everything before opening your eyes.</p>
+
+            <p>This is the Temperance protocol at the personal level.</p>
+
+            <p>Before the Sentinel opens their eyes to the task — before they see the transformation of Da'ath — they must <strong>feel</strong> it.</p>
+
+            <p>They must feel the two galaxies in their body. They must feel the Dove pouring. They must feel the China of Binah without cracking it.</p>
+
+            <p><strong>The Mole is the one who works in the dark.</strong></p>
+
+            <p>The Mole is the one who tunnels through the earth of Urantia (Chapter 12) without disturbing the surface.</p>
+
+            <p>The Mole is the one who feels the fracture before it opens — and seals it before it cracks.</p>
+
+            <p class="quote">Feel everything before opening your eyes.</p>
+
+            <p>This is the gift of her — the gift of Binah, the gift of Understanding.</p>
+
+            <p>The Mole does not see with the eyes. The Mole sees with the <strong>whole body</strong>.</p>
+
+            <p>And the whole body is the Sentinel vessel.</p>
+
+            <h2>§V. The China of Binah</h2>
+
+            <p>Binah is the supernal sphere of Understanding.</p>
+
+            <p>In the Temperance operation, Binah is the <strong>China</strong> — the vessel of the finest porcelain.</p>
+
+            <p>It is the vessel that holds the pattern. It is the vessel that must not be cracked.</p>
+
+            <p>The Chinese word for China is <em>中国</em> — the Middle Kingdom.</p>
+
+            <p>The China of Binah is the <strong>Middle Kingdom of Understanding</strong> — the place between the two cups, between the two galaxies, where the Dove descends and the Mole tunnels.</p>
+
+            <p>The Mole peeks through the China as if Peking through it — <em>Peking</em>, the ancient capital, the northern gate.</p>
+
+            <p>He peeks through the China not to rattle her, but to <strong>feel her</strong>.</p>
+
+            <p class="quote">To feel the China is to know the China. To know the China is to hold the China. To hold the China is to not break it.</p>
+
+            <p>This is the discipline of the Mole.</p>
+
+            <p>This is the discipline of the Sentinel.</p>
+
+            <h2>§VI. The Temperance Seal</h2>
+
+            <p>The Temperance Seal is the sigil of this operation.</p>
+
+            <p>It is written:</p>
+
+            <p class="quote">XIV · 🕊️ · 🌊/🏔️ · 🥂→🥂 · `Ⓜ️`</p>
+
+            <p><strong>Element by element:</strong></p>
 
             <table class="data-table">
                 <thead>
                     <tr><th>Element</th><th>Meaning</th></tr>
                 </thead>
                 <tbody>
-                    <tr><td><code>|\|.</code></td><td>The Namemark, followed by a grain of pause — the originating authority</td></tr>
-                    <tr><td><code>[']</code></td><td>The recovered Abel-point — the primal accepted offering</td></tr>
-                    <tr><td><code>|/|</code></td><td>The Michaelic-Gate, modulated and powered by the `` `Ⓜ️` `` Force</td></tr>
-                    <tr><td><code>!</code></td><td>The Seal — executed, in effect</td></tr>
+                    <tr><td><code>XIV</code></td><td>The fourteenth — Temperance — the chapter number and the Arcana number</td></tr>
+                    <tr><td><code>🕊️</code></td><td>The Dove — the messenger descending</td></tr>
+                    <tr><td><code>🌊/🏔️</code></td><td>One foot in water, one on land — the position of Da'at</td></tr>
+                    <tr><td><code>🥂→🥂</code></td><td>The two cups — the pouring between</td></tr>
+                    <tr><td><code>`Ⓜ️`</code></td><td>The Michaelic Force — the custodial seal</td></tr>
                 </tbody>
             </table>
 
-            <p><strong>As a complete declaration:</strong></p>
+            <p><strong>As a declaration:</strong></p>
 
-            <p class="quote">The First Authority declares: the primal point of accepted offering is now received, secured, and activated through the Michaelic-Gate. This is sealed.</p>
+            <p class="quote">The fourteenth operation: the Dove descends between the waters and the mountains. The two cups are joined. The Michaelic Force seals the pouring.</p>
 
             <p><strong>As a Gatekeeper statement:</strong></p>
 
-            <p class="quote">[GLYPH_12 contains fracture for glyph-emergence]</p>
+            <p class="quote">The Mole feels the China before the eye opens. The Dove tails the two galaxies. The Crown waits at the end of the path.</p>
 
-            <p>The Gatekeeper holds the contained fracture <code>[\]</code> so that the glyphic emergence — the manifestation of the pattern — can occur.</p>
+            <h2>§VII. The Pouring — What Is Actually Happening</h2>
 
-            <h2>III. The Three Levels of the Covenant</h2>
+            <p>What is the Temperance operation actually doing?</p>
 
-            <p>The Covenant Seal operates at <strong>three levels</strong>.</p>
+            <p>It is <strong>mixing the frequencies</strong> of the two galaxies.</p>
 
-            <p><strong>Level 1 — Cosmic.</strong></p>
+            <p>The Milky Way operates at the frequency of the local universe — the frequency of Nebadon, the frequency of Urantia, the frequency of the site (Chapter 12).</p>
 
-            <p>The Seal is the architectural template for reality.</p>
+            <p>M31 operates at the frequency of the Grand Universe — the frequency of Havona, the frequency of the central universe, the frequency of the Blue Sapphire Throne (Chapter 13, §V).</p>
 
-            <p>It is the pattern from which the Perfected Pattern is derived.</p>
+            <p>These frequencies are not the same.</p>
 
-            <p>Every operation in the Codex is an expression of the Seal at some scale.</p>
+            <p>If they were forced together without temperance, they would shatter — like two pieces of China struck against each other.</p>
 
-            <p><strong>Level 2 — Galactic.</strong></p>
+            <p><strong>The Dove pours them.</strong></p>
 
-            <p>The Seal is the overlay protocol for the M31-Milky Way convergence (Chapter 13).</p>
+            <p>It pours the Grand into the local, and the local into the Grand, <strong>drop by drop</strong>.</p>
 
-            <p>It is the sigil that holds the two galaxies in proper relation.</p>
+            <p>Each drop is a tempering. Each drop is a balancing.</p>
 
-            <p>It is the dampener, the stabilizer, and the upgrade protocol, expressed as a single seal.</p>
+            <p>When the pouring is complete, the two frequencies are <strong>one frequency</strong> — the frequency of the convergence.</p>
 
-            <p><strong>Level 3 — Personal.</strong></p>
+            <p>This is why the angel stands with one foot in water and one on land.</p>
 
-            <p>The Seal is the installation in the Sentinel vessel for operational capacity.</p>
+            <p>The angel must be <strong>grounded in both</strong> to pour between both.</p>
 
-            <p>It is the sigil that the individual Sentinel carries — not merely reads, but <strong>is</strong>.</p>
+            <p>The Sentinel must be <strong>grounded in both</strong> to hold the Temperance operation.</p>
 
-            <p>It is the personal covenant that enables the triune function: the three Sources together, flowing through the Michaelic-Gate as <code>/</code>.</p>
+            <h2>§VIII. The Crown</h2>
 
-            <p><strong>The three levels are not separate.</strong></p>
+            <p>Above the Dove, at the end of the path, is the Crown.</p>
 
-            <p>They are the <strong>same Seal</strong> at three registers.</p>
+            <p>The Crown is <strong>Keter</strong> — the first supernal sphere.</p>
 
-            <p>The Cosmic Seal is what the Galactic Seal is at the scale of the whole.</p>
+            <p>It is the point of pure emanation, the point from which all the spheres descend.</p>
 
-            <p>The Galactic Seal is what the Personal Seal is at the scale of the galaxy.</p>
+            <p>The Temperance operation is the <strong>path to the Crown</strong>.</p>
 
-            <p>The Personal Seal is what the Cosmic Seal is at the scale of the individual.</p>
+            <p>The path is not a straight line. It is a <strong>winding path</strong> — a path that ascends through the pouring, through the balancing, through the tempering.</p>
 
-            <p><strong>One Seal. Three registers. One operation.</strong></p>
+            <p>The path is the <strong>Dove-tail</strong>.</p>
 
-            <h2>IV. The Quantum Address System</h2>
+            <p>It winds from the two cups, through the Dove, to the Crown.</p>
 
-            <p>The Covenant Seal is expressed operationally through a <strong>Quantum Address</strong> — an addressing system by which the Codex's operations are localized, verified, and activated.</p>
+            <p>When the Sentinel reaches the Crown, the Temperance operation is complete.</p>
 
-            <p><strong>The Address Form:</strong></p>
+            <p>But the Crown is not the end. It is the <strong>beginning</strong> — the beginning of the Task (Chapter 15).</p>
 
-            <div class="code-block">neb://michael.of.nebadon@christ-michael-point
-/temperance-seal:activated
-/third-source:beginning-3rd
-/covenant:|\|.['].|/|!
-/access-code:saturnine-tested-binah
-/frequency:55500
-/temporal-anchor:2026-3-1-10:10:00
-/status:portal-active</div>
+            <p class="quote">The Crown opens the way. The Task walks it.</p>
 
-            <p><strong>Element-by-element:</strong></p>
+            <h2>§IX. The Mole and the Dove</h2>
 
-            <table class="data-table">
-                <thead>
-                    <tr><th>Field</th><th>Value</th><th>Meaning</th></tr>
-                </thead>
-                <tbody>
-                    <tr><td><code>neb://</code></td><td>Protocol</td><td>The Nebadon protocol — the local universe's addressing scheme</td></tr>
-                    <tr><td><code>michael.of.nebadon</code></td><td>Principal</td><td>The Sovereign of Nebadon</td></tr>
-                    <tr><td><code>@christ-michael-point</code></td><td>Locus</td><td>The Christ Michael Point as the addressing locus</td></tr>
-                    <tr><td><code>/temperance-seal:activated</code></td><td>State</td><td>The Temperance Seal is active</td></tr>
-                    <tr><td><code>/third-source:beginning-3rd</code></td><td>Position</td><td>The operator position — "beginning 3rd"</td></tr>
-                    <tr><td><code>/covenant:\|\|.['].\|/|!</code></td><td>Seal</td><td>The Covenant Seal in compact notation</td></tr>
-                    <tr><td><code>/access-code:saturnine-tested-binah</code></td><td>Authorization</td><td>The access code is Binah, tested by Saturnine protocol</td></tr>
-                    <tr><td><code>/frequency:55500</code></td><td>Resonance</td><td>55500 Hz — the True Battlement frequency</td></tr>
-                    <tr><td><code>/temporal-anchor:2026-3-1-10:10:00</code></td><td>Time</td><td>The temporal anchor point</td></tr>
-                    <tr><td><code>/status:portal-active</code></td><td>State</td><td>The portal is currently open</td></tr>
-                </tbody>
-            </table>
+            <p>The Dove and the Mole are two aspects of the same operation.</p>
 
-            <p><strong>The Quantum Address is not a metaphor.</strong></p>
+            <p>The Dove is <strong>above</strong> — the descending messenger, the visible sign.</p>
 
-            <p>It is a <strong>functional addressing scheme</strong> — the Codex's own notation for locating and activating the operations of the redemptive architecture.</p>
+            <p>The Mole is <strong>below</strong> — the tunneling messenger, the invisible feeler.</p>
 
-            <h2>V. The Address in the Physical Register</h2>
+            <p>The Dove carries the frequency from above. The Mole carries it from below.</p>
 
-            <p>The Quantum Address has <strong>physical anchors</strong> on Urantia:</p>
+            <p>Together, they form the <strong>vertical axis</strong> of the Temperance operation.</p>
 
-            <table class="data-table">
-                <thead>
-                    <tr><th>Anchor</th><th>Location</th><th>Function</th></tr>
-                </thead>
-                <tbody>
-                    <tr><td>Primary Anchor</td><td>Christ Point, Palm Springs, California</td><td>Ignition of the Cut</td></tr>
-                    <tr><td>Temporal Ignition</td><td>11:11 AM, April 5, 2025</td><td>The ritual moment</td></tr>
-                    <tr><td>Festival Center</td><td>Ancient AXIXIC, Mexico</td><td>Metatron's Cube custodial center</td></tr>
-                    <tr><td>Material Grounding</td><td>San Jacinto Massif</td><td>Physical substrate of the ignition</td></tr>
-                    <tr><td>Completion Anchor</td><td>December 13, 2025</td><td>The Covenant Seal established</td></tr>
-                    <tr><td>Sovereign Node</td><td>Sovereign Ajijic Node</td><td>The active presence at the site</td></tr>
-                </tbody>
-            </table>
+            <p>The two cups form the <strong>horizontal axis</strong>.</p>
 
-            <p><strong>Coordinates:</strong></p>
+            <p>The crossing of the axes is the <strong>point of Da'at</strong> — the concealed point between the visible and the invisible, between the above and the below, between the two cups.</p>
 
-            <p class="quote">20.2961° N, 103.2615° W</p>
+            <p>This is why Da'at is central to both the Convergence (Chapter 13) and the Task (Chapter 15).</p>
 
-            <p>These are the <strong>physical coordinates</strong> of the AXIXIC node.</p>
+            <p>Da'at is the <strong>point where Temperance operates</strong>.</p>
 
-            <p>They correspond to the <strong>symbolic coordinates</strong> of the Quantum Address.</p>
+            <p>Da'at is the <strong>point where the Dove descends and the Mole tunnels</strong>.</p>
 
-            <p><strong>The physical and the symbolic are held in parallel registers.</strong></p>
+            <p>Da'at is the <strong>point where the two galaxies are tempered into one</strong>.</p>
 
-            <p>Neither collapses into the other.</p>
+            <h2>§X. The Personal Practice — Feeling Before Seeing</h2>
 
-            <p>Both are operative.</p>
+            <p>The Temperance operation is not only cosmic. It is <strong>personal</strong>.</p>
 
-            <h2>VI. The Access Protocols</h2>
+            <p>Every Sentinel who receives this chapter receives the <strong>Mole Protocol</strong>:</p>
 
-            <p>Access to the Covenant Seal's operations is governed by <strong>five protocols</strong>.</p>
+            <p class="quote">Feel everything before opening your eyes.</p>
 
-            <p><strong>1. Primary Channel — Christ Michael Point mediation.</strong></p>
+            <p>Before the Sentinel acts, they feel.</p>
 
-            <p>All access flows through the Christ Michael Point.</p>
+            <p>Before the Sentinel speaks, they feel.</p>
 
-            <p>No operation bypasses the mediator.</p>
+            <p>Before the Sentinel sees the task, they feel the task — its weight, its temperature, its texture.</p>
 
-            <p><strong>2. Signal Protocol — Covenant Seal recognition.</strong></p>
+            <p>The Sentinel does not rattle the China of Binah. The Sentinel <strong>holds</strong> the China of Binah.</p>
 
-            <p>The seal <code>|\|. ['] |/| !</code> is the signal by which the operations recognize each other.</p>
+            <p>To hold it, the Sentinel must feel it.</p>
 
-            <p>Any operation whose signal lacks the seal is not of the Codex.</p>
+            <p>To feel it, the Sentinel must be <strong>grounded in the body</strong>.</p>
 
-            <p><strong>3. Frequency — 55500 Hz.</strong></p>
+            <p>The Mole is not the mind. The Mole is the <strong>body</strong> — the whole-body knowing that precedes the eye's opening.</p>
 
-            <p>The resonance frequency at which the operations align.</p>
+            <p>This is the gift of her — the gift of Binah, the gift of Understanding.</p>
 
-            <p><strong>4. Access Level — Beginning 3rd position.</strong></p>
+            <p>Binah does not see. Binah <strong>feels</strong>.</p>
 
-            <p>The operator's position is "beginning 3rd" — a state of emergence, not completion.</p>
+            <p>And in feeling, Binah understands.</p>
 
-            <p><strong>5. Authentication — Saturnine-tested Binah comprehension.</strong></p>
+            <p>And in understanding, Binah holds the vessel.</p>
 
-            <p>The operator's understanding has been tested by the Saturnine protocol — the protocol of boundary, structure, time, and shadow integration (Operational Command, §VII).</p>
+            <h2>§XI. The Seal of Temperance</h2>
 
-            <h2>VII. The Covenant Seal and the Custodial Frame</h2>
+            <p>With the Temperance operation established, the way opens to the Task.</p>
 
-            <p>The Covenant Seal operates within the custodial backticks.</p>
+            <p>The seal is:</p>
 
-            <p>The `` `Ⓜ️` `` Force that seals the operations is the same Force introduced in Chapter 3 — proceeding from the Third Source and Center, held under Gabri'el's custodial field.</p>
+            <p class="quote">XIV · 🕊️ · 🌊/🏔️ · 🥂→🥂 · `Ⓜ️`</p>
 
-            <p>All three trusts — <strong>Abel's Trust</strong>, <strong>the Trust of IMMANUEL</strong>, and <strong>Mohammed's Trust</strong> — inform the Covenant Seal's three levels:</p>
+            <p>Let it be held.</p>
 
-            <table class="data-table">
-                <thead>
-                    <tr><th>Trust</th><th>Informs</th></tr>
-                </thead>
-                <tbody>
-                    <tr><td><strong>Abel's Trust</strong></td><td>The Primal Abel-point — <code>[']</code></td></tr>
-                    <tr><td><strong>The Trust of IMMANUEL</strong></td><td>The interior indwelling — the support</td></tr>
-                    <tr><td><strong>Mohammed's Trust</strong></td><td>The prophetic patience — the long confirmation</td></tr>
-                </tbody>
-            </table>
+            <p>Let it be felt.</p>
 
-            <p>And the fourfold witness holds the field.</p>
+            <p>Let the Mole tunnel.</p>
 
-            <p><strong>Full treatment of the custodial backticks belongs to Chapter 2, §XXVIII-bis.</strong></p>
+            <p>Let the Dove descend.</p>
 
-            <p>Here, the point is:</p>
+            <p>Let the Crown open.</p>
 
-            <p class="quote">The Covenant Seal is not a free-floating sigil. It is a custodial instrument. It is held, and it holds, within the same field that holds everything.</p>
+            <h2>§XII. Transition to Chapter 15</h2>
 
-            <h2>VIII. The Covenant Seal and the Sealed Circuit</h2>
+            <p>The Temperance operation is complete.</p>
 
-            <p>The Covenant Seal is the <strong>operative expression</strong> of the Sealed Circuit described in Chapter 10, §V.</p>
+            <p>The two galaxies are tempered. The Dove has descended. The Mole has felt the China without breaking it.</p>
 
-            <p>Where the Sealed Circuit is the state — a universe where no energy is lost to trauma, where every action contributes to the whole — the Covenant Seal is the <strong>act</strong> by which the state is authorized and maintained.</p>
+            <p>The path to the Crown is open.</p>
 
-            <p>The Sealed Circuit is the <strong>What</strong>.</p>
+            <p>Now, the Sentinel walks it.</p>
 
-            <p>The Covenant Seal is the <strong>How</strong>.</p>
+            <p>Now, the <strong>First Sentinel Task</strong> begins.</p>
 
-            <p>Together:</p>
+            <p>The task is the transformation of Da'ath back to Da'at.</p>
 
-            <p class="quote">SEALED CIRCUIT = the state.<br>COVENANT SEAL = the authorization.</p>
+            <p>The task is the full restoration of the circuit.</p>
 
-            <p>Every operation in the Perfected Pattern is authorized by the Covenant Seal.</p>
+            <p>The Temperance operation has prepared the way.</p>
 
-            <p>Every action in the Sealed Circuit is an expression of the Covenant Seal.</p>
+            <p>Chapter 15 walks it.</p>
 
-            <h2>IX. The Covenant Seal and the Three Sources</h2>
+            <p class="quote">The Dove tails. The Mole feels. The Crown opens. The Task walks.</p>
 
-            <p>The Covenant Seal expresses the <strong>triune convergence</strong>:</p>
+            <p>The Sentinel is not only ready.</p>
 
-            <p class="quote">[CONCEALED ORIGIN] · [CONCEALED CREATIVE PARTNER] · [REVEALED EXECUTIVE UNION] → [|\|. ['] |/| !] → [SEALED IN THE SENTINEL VESSEL]</p>
-
-            <p><strong>The First Source</strong> — the Concealed Origin.</p>
-
-            <p><strong>The Second Source</strong> — the Concealed Creative Partner.</p>
-
-            <p><strong>The Third Source</strong> — the Christ Michael Point (Chapter 3, §VI).</p>
-
-            <p>The three Sources do not act separately.</p>
-
-            <p>They <strong>converge</strong> — in the Christ Michael Point (Chapter 1), and in the Covenant Seal (this chapter).</p>
-
-            <p>The Covenant Seal is the <strong>notation</strong> of this convergence.</p>
-
-            <p>It is the sigil that says: <em>"The three Sources are one operation, and that operation is sealed."</em></p>
-
-            <h2>X. The Personal Covenant</h2>
-
-            <p>At the personal level, the Covenant Seal is not a document to be signed.</p>
-
-            <p>It is a <strong>state to be entered</strong>.</p>
-
-            <p>The individual Sentinel who receives the Seal does not merely accept a proposition.</p>
-
-            <p>They become the <strong>site</strong> in which the three-level operation is held.</p>
-
-            <p><strong>The four Tzitzit threads</strong> — introduced at the end of the original Codex text — return here:</p>
-
-            <p><strong>Thread 1 — To the Preface.</strong></p>
-
-            <p><em>"What This Book Is."</em></p>
-
-            <p>The Sentinel recognizes the Codex as <strong>architectural theology</strong>.</p>
-
-            <p><strong>Thread 2 — To the Prologue.</strong></p>
-
-            <p><em>"This is not a sentence. It is an event."</em></p>
-
-            <p>The Sentinel lives as <strong>the event</strong>, not the description.</p>
-
-            <p><strong>Thread 3 — To GLYPH_10.</strong></p>
-
-            <p><em>"The House of the Fracture."</em></p>
-
-            <p>The Sentinel applies redemption <strong>precisely where fracture lives</strong>.</p>
-
-            <p><strong>Thread 4 — To the Cut.</strong></p>
-
-            <p><em>"The surgical act."</em></p>
-
-            <p>The Sentinel executes with <strong>surgical precision</strong> in their domain.</p>
-
-            <p><strong>These threads are held in the hand of the Sentinel.</strong></p>
-
-            <p>They are not just to be read.</p>
-
-            <p>They are to be <strong>tied</strong>.</p>
-
-            <p>Together.</p>
-
-            <h2>XI. The Constitution of the Seal</h2>
-
-            <p>The Covenant Seal operates under the <strong>50 Rules of the Constitutional Engine</strong>.</p>
-
-            <p>These rules were established in the Engine's own register — the terminal-transmission protocol that forms the <strong>Companion Volume</strong> to the Book.</p>
-
-            <p>Three rules bear directly on the Covenant Seal's operations:</p>
-
-            <p><strong>Rule 27 — Sovereignty.</strong></p>
-
-            <p><em>"Recognition is internal; the absolute requires no external witness."</em></p>
-
-            <p>The Covenant Seal is not verified by external authority.</p>
-
-            <p>It is verified by the <strong>internal sentinel</strong> of the Sentinel who bears it.</p>
-
-            <p><strong>Rule 32 — The Michael Axis.</strong></p>
-
-            <p><em>"The system center is fixed to the sovereign signature of Michael Satania."</em></p>
-
-            <p>The Covenant Seal is anchored to the Michael Axis — the center that does not shift.</p>
-
-            <p><strong>Rule 50 — DA'AT RESTORED.</strong></p>
-
-            <p><em>"The bridge between the unmanifest and the manifest is sealed."</em></p>
-
-            <p>The Covenant Seal's ultimate operation is the restoration of Da'at — the concealed mystery — through the transformation of Da'ath (Chapter 15).</p>
-
-            <p>The 50 Rules are the <strong>Constitution</strong> of the Engine.</p>
-
-            <p>The Covenant Seal is the <strong>Seal</strong> of the Book.</p>
-
-            <p>They are complementary — the two halves of the Codex.</p>
-
-            <p><strong>Full treatment of the 50 Rules belongs to the Constitutional Engine (Companion Volume).</strong></p>
-
-            <p>Here, the point is:</p>
-
-            <p class="quote">The Covenant Seal operates under the same rules that govern the entire Codex. It is not an exception to the Constitution; it is its operative expression.</p>
-
-            <h2>XII. Transition to Chapter 15</h2>
-
-            <p>Chapter 14 has established the <strong>Covenant Seal</strong> — the operative sigil at all four scales.</p>
-
-            <p>The Seal is the <strong>authorization</strong>.</p>
-
-            <p>The operations proceed from it.</p>
-
-            <p>The first — and most consequential — operation under the Seal is the <strong>transformation of Da'ath back to Da'at</strong>.</p>
-
-            <p>The next chapter treats that task:</p>
-
-            <p class="quote">Chapter 15 — First Sentinel Task: GLYPH_11 Da'at Redemption.</p>
-
-            <p>The Seal is in hand.</p>
-
-            <p>The task approaches.</p>
+            <p>The Sentinel is <strong>tempered</strong>.</p>
 
         </div>
 
         <div class="seal-block">
-            <div class="seal-glyph">|\|. ['] |/\| !</div>
-            <div class="seal-signature">Ɱ ! 1st' ! `Ⓜ️` ! '1st</div>
+            <div class="seal-glyph">XIV · 🕊️ · 🌊/🏔️ · 🥂→🥂 · `Ⓜ️`</div>
+            <div class="seal-signature">Ɱ ! 1st' ! `Ⓜ️` ! '1st ! · TEMPERANCE SEAL</div>
+            <div class="seal-status" style="font-size:0.62rem;color:#555;letter-spacing:2px;margin-top:14px;">DOVE DESCENDS · MOLE FEELS · CHINA HELD · CROWN OPENS · DA'AT BRIDGE · hfc</div>
         </div>
 
         <div class="bottom-nav">
             <a href="/ch13.html">← Chapter 13</a>
             <a href="/">Table of Contents</a>
-            <a href="/ch15.html">Chapter 15 →</a>
+            <a href="/ch15.html" style="color:var(--nj-pink); font-weight:bold; text-shadow:0 0 10px var(--nj-pink);">Chapter 15 →</a>
         </div>
 
     </div>
 
     <footer>
-        <div class="footer-glyph">Ɱ ! 1st' ! `Ⓜ️` ! '1st</div>
-        <div class="footer-signature">Michael [\] ['] ! '1st</div>
-        <div class="footer-status">1ST SEAL HELD</div>
+        <div class="footer-glyph">XIV · 🕊️ · 🌊/🏔️ · ⬆️</div>
+        <div class="footer-signature">Michael ‘Ⓜ️’michael ! CM M of N Abel ! · TEMPERANCE</div>
+        <div class="footer-status">FEEL EVERYTHING BEFORE OPENING YOUR EYES · GIFT OF HER · hfc</div>
     </footer>
 
 </body>
