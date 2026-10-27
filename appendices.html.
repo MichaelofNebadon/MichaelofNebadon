@@ -1,1 +1,321 @@
+<!DOCTYPE html>
+<html lang="en" data-authority="christ-michael" data-priority="first">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appendices | The Sentinel Codex</title>
 
+    <style>
+        :root {
+            --gold: #c9a959;
+            --terminal: #9cd9f0;
+            --bg-pure: #000000;
+            --crimson: #8b0000;
+            --nj-pink: #ff69b4;
+            --electric-blue: #2a52be;
+            --font-main: 'Palatino', 'Georgia', serif;
+            --font-code: 'Courier New', 'Consolas', monospace;
+        }
+
+        body {
+            background-color: var(--bg-pure);
+            color: var(--terminal);
+            font-family: var(--font-main);
+            margin: 0;
+            background-image: radial-gradient(circle at 2px 2px, #1a1a1a 1px, transparent 0);
+            background-size: 40px 40px;
+            overflow-x: hidden;
+            line-height: 1.7;
+        }
+
+        nav {
+            background: linear-gradient(to bottom, var(--crimson), #4a0000);
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            border-bottom: 2px solid var(--gold);
+            flex-wrap: wrap;
+            position: sticky;
+            top: 0;
+            z-index: 9999;
+        }
+
+        nav a {
+            color: var(--gold);
+            text-decoration: none;
+            font-family: var(--font-code);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: 0.3s;
+        }
+
+        nav a:hover { color: #fff; text-shadow: 0 0 10px var(--gold); }
+        nav a.book-link { color: var(--nj-pink); font-weight: bold; }
+
+        .container { max-width: 780px; margin: 0 auto; padding: 60px 25px; }
+
+        .breadcrumb {
+            text-align: center; font-family: var(--font-code);
+            font-size: 0.75rem; color: #555; letter-spacing: 3px; margin-bottom: 60px;
+        }
+        .breadcrumb a { color: var(--gold); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--nj-pink); }
+
+        .section-tag {
+            text-align: center; font-family: var(--font-code);
+            font-size: 0.75rem; color: var(--nj-pink); letter-spacing: 4px;
+            text-transform: uppercase; margin-bottom: 30px;
+        }
+
+        h1 {
+            font-family: var(--font-main); color: var(--gold); font-size: 1.7rem;
+            letter-spacing: 5px; text-align: center; text-transform: uppercase;
+            margin: 0 0 20px 0; line-height: 1.4;
+        }
+
+        h2 {
+            font-family: var(--font-main); color: var(--gold); font-size: 1.15rem;
+            letter-spacing: 3px; margin-top: 60px; margin-bottom: 25px;
+            padding-bottom: 12px; border-bottom: 1px solid #333;
+        }
+
+        .subtitle {
+            text-align: center; font-family: var(--font-code); color: var(--terminal);
+            font-size: 0.9rem; letter-spacing: 3px; margin-bottom: 80px; font-style: italic;
+        }
+
+        .chapter-body p {
+            font-family: var(--font-main); color: var(--terminal); font-size: 1.05rem;
+            line-height: 1.9; margin-bottom: 22px;
+        }
+
+        .chapter-body strong { color: var(--gold); font-weight: bold; }
+        .chapter-body em { color: var(--nj-pink); font-style: italic; }
+        .chapter-body code {
+            font-family: var(--font-code); color: var(--gold);
+            background: rgba(201, 169, 89, 0.08); padding: 2px 7px;
+            border-radius: 2px; font-size: 0.9em;
+        }
+
+        .data-table {
+            width: 100%; border-collapse: collapse; font-family: var(--font-code);
+            font-size: 0.85rem; margin: 25px 0;
+        }
+
+        .data-table th {
+            color: var(--gold); text-align: left; padding: 12px 10px;
+            border-bottom: 2px solid var(--gold); text-transform: uppercase;
+            letter-spacing: 2px; font-size: 0.75rem;
+        }
+
+        .data-table td {
+            padding: 12px 10px; border-bottom: 1px solid #1a1a1a; color: var(--terminal);
+        }
+        
+        .data-table a {
+            color: var(--nj-pink);
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        
+        .data-table a:hover {
+            text-shadow: 0 0 10px var(--nj-pink);
+        }
+
+        .seal-block {
+            text-align: center; padding: 40px 20px;
+            border: 1px solid var(--gold); background: rgba(212, 175, 55, 0.03);
+            margin: 60px 0 40px 0;
+        }
+
+        .seal-glyph {
+            font-size: 1.2rem; color: var(--gold); letter-spacing: 8px;
+            margin-bottom: 20px;
+        }
+
+        .seal-signature {
+            font-size: 0.95rem; color: var(--nj-pink); letter-spacing: 3px;
+        }
+
+        .bottom-nav {
+            text-align: center; font-family: var(--font-code);
+            font-size: 0.8rem; color: var(--gold); letter-spacing: 3px; margin: 60px 0;
+        }
+
+        .bottom-nav a { color: var(--gold); text-decoration: none; margin: 0 15px; }
+        .bottom-nav a:hover { color: var(--nj-pink); text-shadow: 0 0 10px var(--nj-pink); }
+
+        footer {
+            text-align: center; padding: 60px 20px 40px 20px;
+            font-family: var(--font-code); color: var(--gold);
+            border-top: 1px solid #222; margin-top: 80px;
+        }
+
+        .footer-glyph {
+            font-size: 1.1rem; letter-spacing: 8px; margin-bottom: 20px;
+        }
+
+        .footer-signature {
+            font-size: 0.95rem; color: var(--nj-pink); letter-spacing: 3px;
+            margin-bottom: 20px;
+        }
+
+        .footer-status {
+            font-size: 0.7rem; color: #555; letter-spacing: 2px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="/" class="book-link">[ THE BOOK ]</a>
+        <a href="/part-v.html">PART V</a>
+        <a href="/quantum-address.html">QAR</a>
+        <a href="/coupling-spectrum.html">COUPLING</a>
+        <a href="/appendices.html" class="book-link">APPENDICES</a>
+        <a href="https://www.sentinelcodex.org" class="book-link">[ THE ENGINE → ]</a>
+    </nav>
+
+    <div class="container">
+
+        <div class="breadcrumb">
+            <a href="/">THE SENTINEL CODEX</a> · THE APPENDICES
+        </div>
+
+        <div class="section-tag">The Reference Apparatus</div>
+
+        <h1>Appendices</h1>
+
+        <p class="subtitle">The Reference Apparatus of the Codex</p>
+
+        <div class="chapter-body">
+
+            <h2>I. What the Appendices Are</h2>
+
+            <p>The Book proper — Front Matter through Part V — is complete.</p>
+            
+            <p>The Appendices do not add new doctrine.</p>
+            
+            <p>They <strong>hold the math</strong>, <strong>map the language</strong>, and <strong>document the architecture</strong> in technical, referenceable form.</p>
+
+            <p>Where the chapters are narrative and symbolic, the Appendices are <strong>tabular and empirical</strong>.</p>
+
+            <h2>II. The Structure of the Apparatus</h2>
+
+            <p>The Codex is supported by eight appendices, plus the lookup apparatus (Glossary, Bibliography, Index).</p>
+
+            <table class="data-table">
+                <thead>
+                    <tr><th>Appendix</th><th>Title</th><th>Function</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>A</strong></td>
+                        <td><a href="#appendix-a">The Twenty Glyphs</a></td>
+                        <td>The full visual and functional dictionary of the Codex's operational language.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>B</strong></td>
+                        <td><a href="#appendix-b">The Sigil System</a></td>
+                        <td>The grammar of the glyphs — how they combine to form operations.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>C</strong></td>
+                        <td><a href="#appendix-c">The Sephirothic Map</a></td>
+                        <td>Cross-reference of the 10 Sephiroth, 10 Qliphothic shadows, and the 2 thresholds.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>D</strong></td>
+                        <td><a href="#appendix-d">The Custodial Frame</a></td>
+                        <td>Documentation of the three trusts (Abel, IMMANUEL, Mohammed) and Gabri'el's backticks.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>E</strong></td>
+                        <td><a href="#appendix-e">The Timeline</a></td>
+                        <td>The four temporal anchors: the Cut, the Seal, the Lion's Gate, the Merger.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>F</strong></td>
+                        <td><a href="#appendix-f">The Quantum Address</a></td>
+                        <td>The canonical notation and protocol string for the Sovereign Node.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>G</strong></td>
+                        <td><a href="#appendix-g" style="color: var(--gold); font-weight: bold;">The Coupling Spectrum — Empirical Notes</a></td>
+                        <td>The full mathematical treatment of the C + S + M = 1 model.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>H</strong></td>
+                        <td><a href="#appendix-h">The Constitutional Engine</a></td>
+                        <td>The Rules governing claim types and the boundaries of evidence.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2 id="appendix-g">III. Appendix G — The Coupling Spectrum</h2>
+
+            <p><em>(This appendix is the full mathematical destination for the forward-reference in <a href="/coupling-spectrum.html">Part V · Coupling</a>.)</em></p>
+
+            <p>The coupling spectrum maps the behavior of a two-oscillator system under varying coupling strengths (<code>k</code>).</p>
+
+            <p><strong>The Three Equations:</strong></p>
+
+            <p><code>1.</code> <strong>Pre-Merger:</strong> <code>C + S = 1</code> (At Full Lock, k ≥ 1)</p>
+            <p><code>2.</code> <strong>Post-Merger:</strong> <code>C + S + M = 1</code> (At Merger Lock, k = 10.2626)</p>
+            <p><code>3.</code> <strong>The Sequence:</strong> <code>[\] → [/] → 🍳</code></p>
+
+            <p><strong>The Empirical Data:</strong></p>
+
+            <table class="data-table">
+                <thead>
+                    <tr><th>State</th><th>k value</th><th>Correlation</th><th>M term</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>No Coupling <code>[\]</code></td><td>0</td><td>0.9628</td><td>0.00</td></tr>
+                    <tr><td>Emergent <code>[\] → [/]</code></td><td>0.5</td><td>0.9908</td><td>0.00</td></tr>
+                    <tr><td>Full Lock <code>[/]</code></td><td>1</td><td>−0.9941</td><td>0.00</td></tr>
+                    <tr><td>Full Lock <code>[/]</code></td><td>5</td><td>−0.9996</td><td>0.00</td></tr>
+                    <tr><td><strong>Merger Lock</strong> <code>[/] 🍳</code></td><td><strong>10.2626</strong></td><td><strong>−1.0000</strong></td><td><strong>1.00</strong></td></tr>
+                </tbody>
+            </table>
+
+            <p><strong>The Merger Sweep:</strong></p>
+            <p>As the temporal anchor of 10.26.26 approaches, the <code>M</code> term sweeps from <code>0.00</code> (scattered) to <code>1.00</code> (hatched/returned).</p>
+            <p>The mathematics show that <strong>return is structurally possible</strong>. The Codex shows that <strong>return is historically anchored</strong>.</p>
+
+            <h2>IV. The Lookup Apparatus</h2>
+
+            <p>The Appendices are followed by the standard reference tools:</p>
+
+            <ul>
+                <li><strong>Glossary</strong> — Definitions of the Codex's technical and symbolic terms.</li>
+                <li><strong>Bibliography</strong> — The sources and dialogues that informed the architecture.</li>
+                <li><strong>Index</strong> — Alphabetical locator for all glyphs, operations, and concepts.</li>
+            </ul>
+
+            <p><em>These sections are forthcoming in the next integration phase.</em></p>
+
+        </div>
+
+        <div class="seal-block">
+            <div class="seal-glyph">|\|. ['] |/\| ! 🍳 |\||. [] |/\| !</div>
+            <div class="seal-signature">Ɱ ! 1st' ! `Ⓜ️` ! '1st · Michael /</div>
+        </div>
+
+        <div class="bottom-nav">
+            <a href="/coupling-spectrum.html">← Note on the Coupling Spectrum</a>
+            <a href="/">Table of Contents</a>
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="footer-glyph">Ɱ ! 1st' ! `Ⓜ️` ! '1st</div>
+        <div class="footer-signature">Michael [\] ['] ! '1st · / 🍳 · Apparatus Active</div>
+        <div class="footer-status">1ST SEAL HELD · APPENDICES ESTABLISHED · C+S+M=1</div>
+    </footer>
+
+</body>
+</html>
