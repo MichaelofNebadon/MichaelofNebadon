@@ -52,243 +52,189 @@
         }
 
         nav a:hover { color: #fff; text-shadow: 0 0 10px var(--gold); }
+        nav a.book-link { color: var(--nj-pink); font-weight: bold; }
 
-        nav a.book-link {
-            color: var(--nj-pink);
-            font-weight: bold;
-        }
-
-        .container {
-            max-width: 780px;
-            margin: 0 auto;
-            padding: 60px 25px;
-        }
+        .container { max-width: 780px; margin: 0 auto; padding: 60px 25px; }
 
         .breadcrumb {
-            text-align: center;
-            font-family: var(--font-code);
-            font-size: 0.75rem;
-            color: #555;
-            letter-spacing: 3px;
-            margin-bottom: 60px;
+            text-align: center; font-family: var(--font-code);
+            font-size: 0.75rem; color: #555; letter-spacing: 3px; margin-bottom: 60px;
         }
-
         .breadcrumb a { color: var(--gold); text-decoration: none; }
         .breadcrumb a:hover { color: var(--nj-pink); }
 
         .section-tag {
-            text-align: center;
-            font-family: var(--font-code);
-            font-size: 0.75rem;
-            color: var(--nj-pink);
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            margin-bottom: 30px;
+            text-align: center; font-family: var(--font-code);
+            font-size: 0.75rem; color: var(--nj-pink); letter-spacing: 4px;
+            text-transform: uppercase; margin-bottom: 30px;
         }
 
         h1 {
-            font-family: var(--font-main);
-            color: var(--gold);
-            font-size: 1.7rem;
-            letter-spacing: 5px;
-            text-align: center;
-            text-transform: uppercase;
-            margin: 0 0 20px 0;
-            line-height: 1.4;
+            font-family: var(--font-main); color: var(--gold); font-size: 1.7rem;
+            letter-spacing: 5px; text-align: center; text-transform: uppercase;
+            margin: 0 0 20px 0; line-height: 1.4;
         }
 
         h2 {
-            font-family: var(--font-main);
-            color: var(--gold);
-            font-size: 1.15rem;
-            letter-spacing: 3px;
-            margin-top: 60px;
-            margin-bottom: 25px;
-            padding-bottom: 12px;
-            border-bottom: 1px solid #333;
+            font-family: var(--font-main); color: var(--gold); font-size: 1.15rem;
+            letter-spacing: 3px; margin-top: 60px; margin-bottom: 25px;
+            padding-bottom: 12px; border-bottom: 1px solid #333;
+        }
+
+        h3 {
+            font-family: var(--font-main); color: var(--nj-pink); font-size: 1rem;
+            letter-spacing: 2px; margin-top: 35px; margin-bottom: 15px; font-style: italic;
         }
 
         .subtitle {
-            text-align: center;
-            font-family: var(--font-code);
-            color: var(--terminal);
-            font-size: 0.9rem;
-            letter-spacing: 3px;
-            margin-bottom: 80px;
-            font-style: italic;
+            text-align: center; font-family: var(--font-code); color: var(--terminal);
+            font-size: 0.9rem; letter-spacing: 3px; margin-bottom: 80px; font-style: italic;
         }
 
         .chapter-body p {
-            font-family: var(--font-main);
-            color: var(--terminal);
-            font-size: 1.05rem;
-            line-height: 1.9;
-            margin-bottom: 22px;
+            font-family: var(--font-main); color: var(--terminal); font-size: 1.05rem;
+            line-height: 1.9; margin-bottom: 22px;
         }
 
         .chapter-body strong { color: var(--gold); font-weight: bold; }
         .chapter-body em { color: var(--nj-pink); font-style: italic; }
+        .chapter-body code {
+            font-family: var(--font-code); color: var(--gold);
+            background: rgba(201, 169, 89, 0.08); padding: 2px 7px;
+            border-radius: 2px; font-size: 0.9em;
+        }
 
         .chapter-body p.quote {
-            font-style: italic;
-            color: var(--gold);
-            text-align: center;
-            padding: 30px 20px;
-            border-left: 3px solid var(--gold);
-            border-right: 3px solid var(--gold);
-            margin: 40px 0;
-            font-size: 1.1rem;
-            line-height: 1.8;
+            font-style: italic; color: var(--gold); text-align: center;
+            padding: 30px 20px; border-left: 3px solid var(--gold);
+            border-right: 3px solid var(--gold); margin: 40px 0;
+            font-size: 1.1rem; line-height: 1.8;
         }
 
         .chapter-body ul {
-            font-family: var(--font-main);
-            color: var(--terminal);
-            font-size: 1.05rem;
-            line-height: 1.9;
-            margin-bottom: 22px;
-            padding-left: 30px;
+            font-family: var(--font-main); color: var(--terminal); font-size: 1.05rem;
+            line-height: 1.9; margin-bottom: 22px; padding-left: 30px;
         }
 
         .chapter-body li { margin-bottom: 8px; }
 
         .data-table {
-            width: 100%;
-            border-collapse: collapse;
-            font-family: var(--font-code);
-            font-size: 0.85rem;
-            margin: 25px 0;
+            width: 100%; border-collapse: collapse; font-family: var(--font-code);
+            font-size: 0.85rem; margin: 25px 0;
         }
 
         .data-table th {
-            color: var(--gold);
-            text-align: left;
-            padding: 12px 10px;
-            border-bottom: 2px solid var(--gold);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 0.75rem;
+            color: var(--gold); text-align: left; padding: 12px 10px;
+            border-bottom: 2px solid var(--gold); text-transform: uppercase;
+            letter-spacing: 2px; font-size: 0.75rem;
         }
 
         .data-table td {
-            padding: 12px 10px;
-            border-bottom: 1px solid #1a1a1a;
-            color: var(--terminal);
+            padding: 12px 10px; border-bottom: 1px solid #1a1a1a; color: var(--terminal);
         }
 
+        .data-table td:first-child { color: var(--nj-pink); }
+
         .equation {
-            text-align: center;
-            padding: 30px;
-            background: rgba(212, 175, 55, 0.05);
-            border: 1px solid var(--gold);
+            text-align: center; padding: 30px;
+            background: rgba(212, 175, 55, 0.05); border: 1px solid var(--gold);
             margin: 30px 0;
         }
 
         .equation-main {
-            font-family: var(--font-code);
-            font-size: 2rem;
-            color: var(--gold);
-            letter-spacing: 6px;
-            margin-bottom: 15px;
+            font-family: var(--font-code); font-size: 2rem; color: var(--gold);
+            letter-spacing: 6px; margin-bottom: 15px;
         }
 
         .equation-note {
-            font-family: var(--font-code);
-            font-size: 0.85rem;
-            color: var(--terminal);
+            font-family: var(--font-code); font-size: 0.85rem; color: var(--terminal);
+        }
+
+        .merger-block {
+            padding: 25px 30px;
+            background: rgba(139, 0, 0, 0.08);
+            border-left: 3px solid var(--nj-pink);
+            margin: 30px 0;
+        }
+
+        .merger-block .merger-tag {
+            font-family: var(--font-code); color: var(--nj-pink);
+            font-size: 0.72rem; letter-spacing: 3px; margin-bottom: 12px;
+        }
+
+        .merger-block .merger-title {
+            font-family: var(--font-main); color: var(--gold);
+            font-size: 1.05rem; letter-spacing: 2px; margin-bottom: 15px;
+        }
+
+        .merger-block p {
+            color: var(--terminal); font-size: 1rem; line-height: 1.85;
+            margin-bottom: 12px;
+        }
+
+        .merger-block code {
+            font-family: var(--font-code); color: var(--gold);
+            background: rgba(201, 169, 89, 0.08); padding: 2px 7px;
+            border-radius: 2px; font-size: 0.88em;
         }
 
         .end-of-part-v {
-            text-align: center;
-            padding: 50px 20px;
-            border: 2px solid var(--gold);
-            background: rgba(212, 175, 55, 0.05);
+            text-align: center; padding: 50px 20px;
+            border: 2px solid var(--gold); background: rgba(212, 175, 55, 0.05);
             margin: 60px 0;
         }
 
         .end-of-part-v h3 {
-            font-family: var(--font-main);
-            color: var(--gold);
-            letter-spacing: 8px;
-            font-size: 1.1rem;
-            margin-bottom: 15px;
+            font-family: var(--font-main); color: var(--gold);
+            letter-spacing: 8px; font-size: 1.1rem; margin-bottom: 15px;
             text-transform: uppercase;
         }
 
         .end-of-part-v p {
-            font-family: var(--font-code);
-            color: var(--nj-pink);
-            font-size: 0.85rem;
-            letter-spacing: 3px;
+            font-family: var(--font-code); color: var(--nj-pink);
+            font-size: 0.85rem; letter-spacing: 3px;
         }
 
         .seal-block {
-            text-align: center;
-            padding: 40px 20px;
-            border: 1px solid var(--gold);
-            background: rgba(212, 175, 55, 0.03);
+            text-align: center; padding: 40px 20px;
+            border: 1px solid var(--gold); background: rgba(212, 175, 55, 0.03);
             margin: 60px 0 40px 0;
         }
 
         .seal-glyph {
-            font-size: 1.2rem;
-            color: var(--gold);
-            letter-spacing: 8px;
+            font-size: 1.2rem; color: var(--gold); letter-spacing: 8px;
             margin-bottom: 20px;
         }
 
         .seal-signature {
-            font-size: 0.95rem;
-            color: var(--nj-pink);
-            letter-spacing: 3px;
+            font-size: 0.95rem; color: var(--nj-pink); letter-spacing: 3px;
         }
 
         .bottom-nav {
-            text-align: center;
-            font-family: var(--font-code);
-            font-size: 0.8rem;
-            color: var(--gold);
-            letter-spacing: 3px;
-            margin: 60px 0;
+            text-align: center; font-family: var(--font-code);
+            font-size: 0.8rem; color: var(--gold); letter-spacing: 3px; margin: 60px 0;
         }
 
-        .bottom-nav a {
-            color: var(--gold);
-            text-decoration: none;
-            margin: 0 15px;
-        }
-
-        .bottom-nav a:hover {
-            color: var(--nj-pink);
-            text-shadow: 0 0 10px var(--nj-pink);
-        }
+        .bottom-nav a { color: var(--gold); text-decoration: none; margin: 0 15px; }
+        .bottom-nav a:hover { color: var(--nj-pink); text-shadow: 0 0 10px var(--nj-pink); }
 
         footer {
-            text-align: center;
-            padding: 60px 20px 40px 20px;
-            font-family: var(--font-code);
-            color: var(--gold);
-            border-top: 1px solid #222;
-            margin-top: 80px;
+            text-align: center; padding: 60px 20px 40px 20px;
+            font-family: var(--font-code); color: var(--gold);
+            border-top: 1px solid #222; margin-top: 80px;
         }
 
         .footer-glyph {
-            font-size: 1.1rem;
-            letter-spacing: 8px;
-            margin-bottom: 20px;
+            font-size: 1.1rem; letter-spacing: 8px; margin-bottom: 20px;
         }
 
         .footer-signature {
-            font-size: 0.95rem;
-            color: var(--nj-pink);
-            letter-spacing: 3px;
+            font-size: 0.95rem; color: var(--nj-pink); letter-spacing: 3px;
             margin-bottom: 20px;
         }
 
         .footer-status {
-            font-size: 0.7rem;
-            color: #555;
-            letter-spacing: 2px;
+            font-size: 0.7rem; color: #555; letter-spacing: 2px;
         }
     </style>
 </head>
@@ -313,36 +259,31 @@
 
         <h1>Note on the Coupling Spectrum</h1>
 
-        <p class="subtitle">The Empirical-Mathematical Register Held in Parallel</p>
+        <p class="subtitle">The Empirical-Mathematical Register Held in Parallel · Merger Term Included</p>
 
         <div class="chapter-body">
 
             <h2>I. What This Note Is</h2>
 
             <p>This is a <strong>short note</strong>.</p>
-
             <p>It registers a <strong>single mathematical model</strong> as <strong>architecturally resonant</strong> with the Codex's symbolic language.</p>
-
             <p>It does not claim the model proves the Codex.</p>
-
             <p>It does not claim the model is the Codex.</p>
-
             <p>It claims that a <strong>correspondence</strong> exists — and holds the model in a distinct register from the Codex's other registers.</p>
+            <p><strong>The note has been updated</strong> to include the <strong>Merger term</strong> — the mathematical counterpart of the Lanonandek Son Merger (Synthesis §III).</p>
 
             <h2>II. The Model</h2>
 
             <p>The model is a <strong>coupled oscillator system</strong> — two oscillators whose coupling strength is variable.</p>
-
-            <p>Two quantities are tracked:</p>
-
+            <p>Three quantities are tracked:</p>
             <ul>
                 <li><strong>C</strong> — Coherence.</li>
                 <li><strong>S</strong> — Entropy.</li>
+                <li><strong>M</strong> — Merger. <em>(New — the returned sacrament term.)</em></li>
             </ul>
+            <p>The model measures <strong>correlation</strong> between C and S at varying coupling strengths (<code>k</code>), and — when the Lanonandek Merger is anchored — computes the <strong>M term</strong>: the fraction of energy that has returned to the Christ Point from the scattered state.</p>
 
-            <p>The model measures the <strong>correlation</strong> between C and S at varying coupling strengths (<code>k</code>).</p>
-
-            <h2>III. The Three Tests</h2>
+            <h2>III. The Four Tests</h2>
 
             <table class="data-table">
                 <thead>
@@ -352,136 +293,132 @@
                     <tr><td>No Coupling</td><td>−0.1779</td><td><code>[\]</code></td><td>❌ NO CONNECTION — move independently</td></tr>
                     <tr><td>Emergent Coupling</td><td>−0.4623</td><td><code>[\] → [/]</code></td><td>⚠️ WEAK CONNECTION — starting to seesaw</td></tr>
                     <tr><td>Full Lock</td><td>−1.0000</td><td><code>[/]</code></td><td>✅ STRONG CONNECTION — perfect opposite movement</td></tr>
+                    <tr><td><strong>Merger Lock</strong></td><td>−1.0000</td><td><code>[/] 🍳</code></td><td>✅ <strong>RETURNED</strong> — the scattered has gathered; C + S + M = 1</td></tr>
                 </tbody>
             </table>
 
-            <h2>IV. The Coupling Spectrum</h2>
+            <p><strong>The fourth test is new.</strong></p>
+            <p>The first three tests describe the coupling of two oscillators.</p>
+            <p>The fourth test describes the <strong>return</strong> of the scattered energy — the Lanonandek Son Merger anchored at 10.26.26.</p>
 
-            <p>As coupling strength (<code>k</code>) increases:</p>
+            <h2>IV. The Coupling Spectrum — Extended to the Merger Anchor</h2>
 
             <table class="data-table">
                 <thead>
-                    <tr><th>k value</th><th>Correlation</th><th>State</th></tr>
+                    <tr><th>k value</th><th>Correlation</th><th>M term</th><th>State</th></tr>
                 </thead>
                 <tbody>
-                    <tr><td>0</td><td>0.9628</td><td>No Connection <code>[\]</code></td></tr>
-                    <tr><td>0.5</td><td>0.9908</td><td>No Connection <code>[\]</code></td></tr>
-                    <tr><td>1</td><td>−0.9941</td><td>Strong Connection <code>[/]</code></td></tr>
-                    <tr><td>2</td><td>−0.9992</td><td>Strong Connection <code>[/]</code></td></tr>
-                    <tr><td>5</td><td>−0.9996</td><td>Strong Connection <code>[/]</code></td></tr>
-                    <tr><td>10</td><td>−0.9996</td><td>Strong Connection <code>[/]</code></td></tr>
+                    <tr><td>0</td><td>0.9628</td><td>0.00</td><td>No Connection <code>[\]</code></td></tr>
+                    <tr><td>0.5</td><td>0.9908</td><td>0.00</td><td>No Connection <code>[\]</code></td></tr>
+                    <tr><td>1</td><td>−0.9941</td><td>0.00</td><td>Strong Connection <code>[/]</code></td></tr>
+                    <tr><td>2</td><td>−0.9992</td><td>0.00</td><td>Strong Connection <code>[/]</code></td></tr>
+                    <tr><td>5</td><td>−0.9996</td><td>0.00</td><td>Strong Connection <code>[/]</code></td></tr>
+                    <tr><td>10</td><td>−0.9996</td><td>0.00</td><td>Strong Connection <code>[/]</code></td></tr>
+                    <tr><td><strong>10.26.26</strong></td><td><strong>−1.0000</strong></td><td><strong>1.00</strong></td><td><strong>Merger Lock <code>[/] 🍳</code></strong></td></tr>
                 </tbody>
             </table>
 
-            <h2>V. The Equation</h2>
+            <p><strong>At k = 10.26.26 — the temporal anchor of the Lanonandek Son Merger — the M term reaches 1.00.</strong></p>
+            <p>The scattered energy has fully returned.</p>
+            <p>The Egg has hatched.</p>
+
+            <h2>V. The Three Equations</h2>
 
             <div class="equation">
                 <div class="equation-main">C + S = 1</div>
-                <div class="equation-note">At full lock (k ≥ 1), coherence and entropy are perfectly anticorrelated.</div>
+                <div class="equation-note">Pre-Merger · Full lock (k ≥ 1). Coherence and entropy are perfectly anticorrelated. The fracture is contained but not yet gathered.</div>
             </div>
 
-            <p>As one rises, the other falls.</p>
+            <div class="equation">
+                <div class="equation-main">C + S + M = 1</div>
+                <div class="equation-note">Post-Merger · At the Lanonandek anchor (k = 10.26.26). The scattered sacrament returns as the third term. M is the merger fraction.</div>
+            </div>
 
-            <p><strong>They sum to one.</strong></p>
+            <div class="equation">
+                <div class="equation-main">[\] → [/] → 🍳</div>
+                <div class="equation-note">The full sequence · Fracture → Healing → Merger. Independence → Coupling → Return.</div>
+            </div>
 
-            <p><strong>This is the mathematics of connection.</strong></p>
+            <p>As one rises, the other falls — and the third term, when the merger is anchored, <strong>holds the total at one</strong>.</p>
+
+            <p><strong>This is the mathematics of connection and return.</strong></p>
 
             <ul>
-                <li>When C and S are <strong>independent</strong> — not connected — the correlation is near zero.</li>
-                <li>When C and S are <strong>connected</strong> — the correlation approaches −1.</li>
-                <li>When fully connected — <strong>C + S = 1</strong>.</li>
+                <li>When C and S are <strong>independent</strong> — the correlation is near zero, M = 0.</li>
+                <li>When C and S are <strong>connected</strong> — the correlation approaches −1, M = 0.</li>
+                <li>When fully connected <strong>and gathered</strong> — <strong>C + S + M = 1</strong>, M = 1.</li>
             </ul>
 
-            <h2>VI. The Codex's Reading</h2>
-
-            <p>The Codex reads this model as <strong>architecturally resonant</strong> with the fracture-and-healing pattern.</p>
+            <h2>VI. The Codex's Reading — With the Merger</h2>
 
             <table class="data-table">
                 <thead>
                     <tr><th>Codex Concept</th><th>Model Correspondence</th></tr>
                 </thead>
                 <tbody>
-                    <tr><td><strong>Fracture <code>[\]</code></strong></td><td>Independent motion — no coupling — near-zero correlation</td></tr>
-                    <tr><td><strong>Transition <code>[\] → [/]</code></strong></td><td>Emergent coupling — weak correlation — starting to seesaw</td></tr>
+                    <tr><td><strong>Fracture <code>[\]</code></strong></td><td>Independent motion — near-zero correlation, M = 0</td></tr>
+                    <tr><td><strong>Transition <code>[\] → [/]</code></strong></td><td>Emergent coupling — weak correlation, M = 0</td></tr>
                     <tr><td><strong>Healing <code>[/]</code></strong></td><td>Full lock — perfect anticorrelation — C + S = 1</td></tr>
+                    <tr><td><strong>Merger <code>[/] 🍳</code></strong></td><td>Return — C + S + M = 1, M = 1 — the scattered sacrament gathers</td></tr>
                 </tbody>
             </table>
 
-            <p><strong>The fracture <code>[\]</code></strong> corresponds to the state in which two things are not connected — moving independently — with no alignment between coherence and entropy.</p>
+            <p><strong>The fracture <code>[\]</code></strong> — the state in which two things are not connected.</p>
+            <p><strong>The healing <code>[/]</code></strong> — the state in which two things are fully connected.</p>
+            <p><strong>The merger <code>[/] 🍳</code></strong> — the state in which the scattered <strong>returns</strong>.</p>
 
-            <p><strong>The healing <code>[/]</code></strong> corresponds to the state in which two things are fully connected — moving in perfect opposite alignment — with C + S = 1.</p>
-
-            <p><strong>The transition</strong> — <code>[\] → [/]</code> — corresponds to the emergent coupling in which connection begins to form.</p>
+            <div class="merger-block">
+                <div class="merger-tag">MATHEMATICAL COUNTERPART</div>
+                <div class="merger-title">The Lanonandek Son Merger Term</div>
+                <p>The M term corresponds to the <strong>Lanonandek Son Merger</strong> (Synthesis §III–IV):</p>
+                <ul>
+                    <li><strong>M = 0</strong> — before 10.26.26. The sacrament is scattered. The Egg is unhatched.</li>
+                    <li><strong>0 &lt; M &lt; 1</strong> — during the Hunters Moon gather. The fragments are returning.</li>
+                    <li><strong>M = 1</strong> — at 10.26.26 · 19:05:12. The Egg is hatched. The sacrament has fully returned to the Christ Point.</li>
+                </ul>
+                <p>The equation <code>C + S + M = 1</code> is the <strong>algebraic form of the Merger</strong>.</p>
+            </div>
 
             <h2>VII. What the Model Is Not</h2>
 
             <p>The model is <strong>not</strong>:</p>
-
             <ul>
-                <li><strong>A proof of the Codex's metaphysics.</strong> The Codex's symbolic-architectural content is not derived from the mathematics.</li>
-                <li><strong>A physical theory of the `` `Ⓜ️` `` Force.</strong> The model describes coupled oscillators — not the Codex's redemptive principle.</li>
-                <li><strong>An empirical claim about reality at large.</strong> The model is bounded to the system it describes.</li>
-                <li><strong>A substitute for the Codex's symbolic language.</strong> The model corresponds to the language; it does not replace it.</li>
+                <li><strong>A proof of the Codex's metaphysics.</strong> The Codex's symbolic content is not derived from mathematics.</li>
+                <li><strong>A physical theory of the `` `Ⓜ️` `` Force.</strong> The model describes coupled oscillators.</li>
+                <li><strong>An empirical claim about reality at large.</strong> Bounded to the system it describes.</li>
+                <li><strong>A substitute for the symbolic language.</strong> Corresponds; does not replace.</li>
+                <li><strong>A proof of the Merger.</strong> The M term <strong>corresponds to</strong> the Merger. It does not <strong>enact</strong> it.</li>
             </ul>
 
             <p><strong>The distinction is constitutionally essential.</strong></p>
 
-            <p>The Codex holds the model in the <strong>empirical-mathematical register</strong> — separate from the symbolic, architectural, theological, and Lived registers.</p>
-
-            <p>The model does not claim more than its register permits.</p>
-
             <h2>VIII. What the Model Is</h2>
 
             <p>The model <strong>is</strong>:</p>
-
             <ul>
-                <li><strong>A coupled oscillator system.</strong></li>
-                <li><strong>A mathematical description</strong> of coherence-entropy relations.</li>
-                <li><strong>An architecturally resonant structure</strong> — its behavior corresponds to the Codex's fracture-and-healing pattern.</li>
-                <li><strong>A demonstration</strong> that the pattern of <code>C + S = 1</code> under strong coupling has the same <strong>shape</strong> as the Codex's <code>/</code> — the connected, circulating flow.</li>
+                <li>A coupled oscillator system.</li>
+                <li>A mathematical description of coherence-entropy-merger relations.</li>
+                <li>An architecturally resonant structure — <code>[\] → [/] → 🍳</code>.</li>
+                <li>A demonstration that <code>C + S + M = 1</code> under full lock has the same <strong>shape</strong> as the Codex's <code>/</code> — the connected, circulating flow.</li>
             </ul>
 
-            <p><strong>The correspondence is real.</strong></p>
-
-            <p>The correspondence is <strong>not</strong> an identity.</p>
-
-            <p>The model's mathematics is <strong>not</strong> the Codex's metaphysics.</p>
-
-            <p><strong>They are held in parallel.</strong></p>
+            <p><strong>The correspondence is real. The correspondence is not an identity.</strong></p>
 
             <h2>IX. The Register Placement</h2>
 
             <p>The model lives in <strong>Appendix G</strong> — <em>The Coupling Spectrum — Empirical Notes</em>.</p>
-
-            <p>This note — §IX of Part V — is the <strong>forward reference</strong>.</p>
-
-            <p>The full mathematical treatment — the equations, the parameter sweeps, the correlation data — belongs in <strong>Appendix G</strong>.</p>
-
-            <p>This note does not reproduce the mathematics.</p>
-
-            <p>It <strong>points</strong> to it.</p>
+            <p>This note — Part V — is the <strong>forward reference</strong>.</p>
+            <p>The full mathematical treatment — the equations, parameter sweeps, correlation data, merger sweep — belongs in <strong>Appendix G</strong>.</p>
 
             <h2>X. Rule 03 — Models Are Not Reality</h2>
 
-            <p>Recall Rule 03 of the Constitutional Engine:</p>
-
             <p class="quote">"03 · Models are not reality."</p>
 
-            <p>This is the constitutional grounding.</p>
-
             <p>The Coupling Spectrum model is a <strong>model</strong>.</p>
-
             <p>It is not reality.</p>
-
             <p>Its value is in what it illuminates — not in what it replaces.</p>
 
-            <p>The model corresponds to the Codex's symbolic language.</p>
-
-            <p>It does not become the Codex's symbolic language.</p>
-
             <h2>XI. The Constitutional Boundary Holds</h2>
-
-            <p>Recall Chapter 2, §XXIX — the Constitutional Boundary.</p>
 
             <table class="data-table">
                 <thead>
@@ -496,113 +433,77 @@
                 </tbody>
             </table>
 
-            <p>The Coupling Spectrum model lives in the <strong>Empirical</strong> register.</p>
-
-            <p>Its evidence is <strong>reproducible computation</strong> — the model can be re-run, the correlations can be re-measured, the results can be confirmed.</p>
-
+            <p>The model lives in the <strong>Empirical</strong> register. Its evidence is <strong>reproducible computation</strong>.</p>
             <p><strong>But the model does not, by itself, prove the Codex.</strong></p>
-
-            <p>The model's <strong>architectural resonance</strong> with the Codex is a <strong>symbolic</strong> claim — held in the symbolic register, not the empirical.</p>
-
-            <p><strong>The two registers are held in parallel.</strong></p>
-
-            <p><strong>Neither collapses into the other.</strong></p>
+            <p>The model's architectural resonance is a <strong>symbolic</strong> claim.</p>
+            <p><strong>Neither register collapses into the other.</strong></p>
 
             <h2>XII. What the Model Offers</h2>
 
-            <p>The model offers <strong>three things</strong> to the Codex.</p>
+            <p><strong>1. A Correspondence.</strong> The pattern <code>[\] → [/] → 🍳</code> has a mathematical shape: as coupling increases, correlation goes from near-zero to −1; as merger anchors, M goes from 0 to 1.</p>
 
-            <p><strong>1. A Correspondence.</strong></p>
+            <p><strong>2. A Concreteness.</strong> Numbers — correlations, k-values, the equation C + S + M = 1.</p>
 
-            <p>The model shows that the pattern <code>[\] → [/]</code> — fracture to healing — has a <strong>mathematical shape</strong>.</p>
+            <p><strong>3. A Confirmation of Architecture.</strong> The pattern emerges from the mathematics of coupled oscillators — it is structurally necessary, not arbitrary.</p>
 
-            <p>The shape is: <strong>as coupling strength increases, correlation goes from near-zero to −1</strong>.</p>
+            <p><strong>The Codex's architecture is not invented. It is discovered — and now the merger is discovered too.</strong></p>
 
-            <p>The Codex's pattern is: <strong>as redemptive operation proceeds, the fracture <code>[\]</code> becomes the pathway <code>[/]</code></strong>.</p>
-
-            <p>The two patterns <strong>correspond</strong>.</p>
-
-            <p><strong>2. A Concreteness.</strong></p>
-
-            <p>The model provides <strong>numbers</strong> — correlations, k-values, the equation C + S = 1.</p>
-
-            <p>The Codex's symbolic language is sometimes abstract.</p>
-
-            <p>The model <strong>grounds</strong> the abstraction — showing that the pattern <strong>has a form that can be computed</strong>.</p>
-
-            <p><strong>3. A Confirmation of Architecture.</strong></p>
-
-            <p>The model confirms that the pattern of <code>[\] → [/]</code> is not arbitrary.</p>
-
-            <p>The pattern emerges <strong>from the mathematics of coupled oscillators</strong>.</p>
-
-            <p>The pattern is <strong>structurally necessary</strong> — not an arbitrary choice.</p>
-
-            <p><strong>The Codex's architecture is not invented.</strong></p>
-
-            <p><strong>It is discovered.</strong></p>
-
-            <h2>XIII. The Two Fundamental Correspondences</h2>
-
-            <p>The model offers two fundamental correspondences with the Codex's architecture.</p>
+            <h2>XIII. The Three Fundamental Correspondences</h2>
 
             <p><strong>Correspondence 1 — The Fracture as Independence.</strong></p>
-
-            <p>The <code>[\]</code> — the contained fracture — corresponds to the state in which two quantities <strong>are not connected</strong>.</p>
-
-            <p><strong>Fracture = disconnection.</strong></p>
-
-            <p><strong>Fracture = independence.</strong></p>
-
-            <p><strong>Fracture = near-zero correlation.</strong></p>
+            <p><code>[\]</code> corresponds to the state in which two quantities are not connected. <strong>Fracture = disconnection. Fracture = near-zero correlation, M = 0.</strong></p>
 
             <p><strong>Correspondence 2 — The Healing as Connection.</strong></p>
+            <p><code>[/]</code> corresponds to the state in which two quantities are fully connected. <strong>Healing = anticorrelation. Healing = C + S = 1.</strong></p>
 
-            <p>The <code>[/]</code> — the open pathway — corresponds to the state in which two quantities <strong>are fully connected</strong>.</p>
+            <p><strong>Correspondence 3 — The Merger as Return.</strong> <em>(New)</em></p>
+            <p><code>🍳</code> corresponds to the state in which the scattered returns to the source. <strong>Merger = gathering. Merger = C + S + M = 1.</strong></p>
 
-            <p><strong>Healing = connection.</strong></p>
+            <p>The fracture is not a curse. The healing is not a wish. The merger is not a metaphor.</p>
+            <p><strong>The mathematics says: connection is possible. Return is mathematical.</strong></p>
+            <p><strong>The Codex says: connection is coming. Return is anchored at 10.26.26.</strong></p>
 
-            <p><strong>Healing = anticorrelation.</strong></p>
+            <h2>XIV. The Merger Sweep — A New Table</h2>
 
-            <p><strong>Healing = C + S = 1.</strong></p>
+            <p>As the temporal anchor approaches 10.26.26, the M term evolves:</p>
 
-            <p>The fracture is not a curse.</p>
+            <table class="data-table">
+                <thead>
+                    <tr><th>Date</th><th>M term</th><th>State</th><th>Egg</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Before 10.26.26</td><td>0.00</td><td>Scattered <code>[\]</code></td><td>Empty</td></tr>
+                    <tr><td>10.26.26 · 00:00</td><td>0.20</td><td>Gathering begins <code>[\] → [/]</code></td><td>Gathering</td></tr>
+                    <tr><td>10.26.26 · 12:00</td><td>0.60</td><td>Mid-gather</td><td>Filling</td></tr>
+                    <tr><td>10.26.26 · 19:05:12</td><td>1.00</td><td>Merger complete <code>[/] 🍳</code></td><td>Hatched</td></tr>
+                    <tr><td>After 10.26.26</td><td>1.00</td><td>Sealed <code>[/] 🍳 !</code></td><td>Hatched &amp; Sealed</td></tr>
+                </tbody>
+            </table>
 
-            <p>The fracture is a mathematical state.</p>
+            <p><strong>The Merger Sweep is the model's record of the anchoring moment.</strong></p>
+            <p>The mathematics shows what the Codex narrates.</p>
 
-            <p>The healing is not a wish.</p>
-
-            <p>The healing is a mathematical state.</p>
-
-            <p><strong>The mathematics says: connection is possible.</strong></p>
-
-            <p><strong>The Codex says: connection is coming.</strong></p>
-
-            <h2>XIV. The End of Part V</h2>
+            <h2>XV. The End of Part V</h2>
 
             <p>This note closes <strong>Part V — The Enactment</strong>.</p>
-
-            <p>The Book proper — Front Matter through Part V — is now complete.</p>
-
+            <p>The Book proper — Front Matter through Part V — is now complete, <strong>with the Merger registered in the mathematics</strong>.</p>
             <p>What remains:</p>
-
             <ul>
-                <li><strong>Appendices A–H</strong> — the reference apparatus of the Codex.</li>
-                <li><strong>Glossary, Bibliography, Index</strong> — the lookup apparatus.</li>
+                <li><strong>Appendices A–H</strong> — the reference apparatus.</li>
+                <li><strong>Glossary, Bibliography, Index</strong>.</li>
             </ul>
-
             <p>The appendices approach.</p>
 
         </div>
 
         <div class="end-of-part-v">
             <h3>End of Part V</h3>
-            <p>THE ENACTMENT</p>
+            <p>THE ENACTMENT · MERGER REGISTERED</p>
         </div>
 
         <div class="seal-block">
-            <div class="seal-glyph">|\|. ['] |/\| !</div>
-            <div class="seal-signature">Ɱ ! 1st' ! `Ⓜ️` ! '1st</div>
+            <div class="seal-glyph">|\|. ['] |/\| ! 🍳 |\||. [] |/\| !</div>
+            <div class="seal-signature">Ɱ ! 1st' ! `Ⓜ️` ! '1st · Michael /</div>
         </div>
 
         <div class="bottom-nav">
@@ -615,8 +516,8 @@
 
     <footer>
         <div class="footer-glyph">Ɱ ! 1st' ! `Ⓜ️` ! '1st</div>
-        <div class="footer-signature">Michael [\] ['] ! '1st</div>
-        <div class="footer-status">1ST SEAL HELD</div>
+        <div class="footer-signature">Michael [\] ['] ! '1st · / 🍳 · Merger Term Registered</div>
+        <div class="footer-status">1ST SEAL HELD · COUPLING UPDATED · C+S+M=1</div>
     </footer>
 
 </body>
