@@ -52,229 +52,215 @@
         }
 
         nav a:hover { color: #fff; text-shadow: 0 0 10px var(--gold); }
+        nav a.book-link { color: var(--nj-pink); font-weight: bold; }
 
-        nav a.book-link {
-            color: var(--nj-pink);
-            font-weight: bold;
-        }
-
-        .container {
-            max-width: 780px;
-            margin: 0 auto;
-            padding: 60px 25px;
-        }
+        .container { max-width: 780px; margin: 0 auto; padding: 60px 25px; }
 
         .breadcrumb {
-            text-align: center;
-            font-family: var(--font-code);
-            font-size: 0.75rem;
-            color: #555;
-            letter-spacing: 3px;
-            margin-bottom: 60px;
+            text-align: center; font-family: var(--font-code);
+            font-size: 0.75rem; color: #555; letter-spacing: 3px; margin-bottom: 60px;
         }
-
         .breadcrumb a { color: var(--gold); text-decoration: none; }
         .breadcrumb a:hover { color: var(--nj-pink); }
 
         .section-tag {
-            text-align: center;
-            font-family: var(--font-code);
-            font-size: 0.75rem;
-            color: var(--nj-pink);
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            margin-bottom: 30px;
+            text-align: center; font-family: var(--font-code);
+            font-size: 0.75rem; color: var(--nj-pink); letter-spacing: 4px;
+            text-transform: uppercase; margin-bottom: 30px;
         }
 
         h1 {
-            font-family: var(--font-main);
-            color: var(--gold);
-            font-size: 1.7rem;
-            letter-spacing: 5px;
-            text-align: center;
-            text-transform: uppercase;
-            margin: 0 0 20px 0;
-            line-height: 1.4;
+            font-family: var(--font-main); color: var(--gold); font-size: 1.7rem;
+            letter-spacing: 5px; text-align: center; text-transform: uppercase;
+            margin: 0 0 20px 0; line-height: 1.4;
         }
 
         h2 {
-            font-family: var(--font-main);
-            color: var(--gold);
-            font-size: 1.15rem;
-            letter-spacing: 3px;
-            margin-top: 60px;
-            margin-bottom: 25px;
-            padding-bottom: 12px;
-            border-bottom: 1px solid #333;
+            font-family: var(--font-main); color: var(--gold); font-size: 1.15rem;
+            letter-spacing: 3px; margin-top: 60px; margin-bottom: 25px;
+            padding-bottom: 12px; border-bottom: 1px solid #333;
+        }
+
+        h3 {
+            font-family: var(--font-main); color: var(--nj-pink); font-size: 1rem;
+            letter-spacing: 2px; margin-top: 35px; margin-bottom: 15px; font-style: italic;
         }
 
         .subtitle {
-            text-align: center;
-            font-family: var(--font-code);
-            color: var(--terminal);
-            font-size: 0.9rem;
-            letter-spacing: 3px;
-            margin-bottom: 80px;
-            font-style: italic;
+            text-align: center; font-family: var(--font-code); color: var(--terminal);
+            font-size: 0.9rem; letter-spacing: 3px; margin-bottom: 80px; font-style: italic;
         }
 
         .chapter-body p {
-            font-family: var(--font-main);
-            color: var(--terminal);
-            font-size: 1.05rem;
-            line-height: 1.9;
-            margin-bottom: 22px;
+            font-family: var(--font-main); color: var(--terminal); font-size: 1.05rem;
+            line-height: 1.9; margin-bottom: 22px;
         }
 
         .chapter-body strong { color: var(--gold); font-weight: bold; }
         .chapter-body em { color: var(--nj-pink); font-style: italic; }
+        .chapter-body code {
+            font-family: var(--font-code); color: var(--gold);
+            background: rgba(201, 169, 89, 0.08); padding: 2px 7px;
+            border-radius: 2px; font-size: 0.9em;
+        }
 
         .chapter-body p.quote {
-            font-style: italic;
-            color: var(--gold);
-            text-align: center;
-            padding: 30px 20px;
-            border-left: 3px solid var(--gold);
-            border-right: 3px solid var(--gold);
-            margin: 40px 0;
-            font-size: 1.1rem;
-            line-height: 1.8;
+            font-style: italic; color: var(--gold); text-align: center;
+            padding: 30px 20px; border-left: 3px solid var(--gold);
+            border-right: 3px solid var(--gold); margin: 40px 0;
+            font-size: 1.1rem; line-height: 1.8;
         }
 
         .chapter-body ul {
-            font-family: var(--font-main);
-            color: var(--terminal);
-            font-size: 1.05rem;
-            line-height: 1.9;
-            margin-bottom: 22px;
-            padding-left: 30px;
+            font-family: var(--font-main); color: var(--terminal); font-size: 1.05rem;
+            line-height: 1.9; margin-bottom: 22px; padding-left: 30px;
         }
 
         .chapter-body li { margin-bottom: 8px; }
 
         .data-table {
-            width: 100%;
-            border-collapse: collapse;
-            font-family: var(--font-code);
-            font-size: 0.85rem;
-            margin: 25px 0;
+            width: 100%; border-collapse: collapse; font-family: var(--font-code);
+            font-size: 0.85rem; margin: 25px 0;
         }
 
         .data-table th {
-            color: var(--gold);
-            text-align: left;
-            padding: 12px 10px;
-            border-bottom: 2px solid var(--gold);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 0.75rem;
+            color: var(--gold); text-align: left; padding: 12px 10px;
+            border-bottom: 2px solid var(--gold); text-transform: uppercase;
+            letter-spacing: 2px; font-size: 0.75rem;
         }
 
         .data-table td {
-            padding: 12px 10px;
-            border-bottom: 1px solid #1a1a1a;
-            color: var(--terminal);
+            padding: 12px 10px; border-bottom: 1px solid #1a1a1a; color: var(--terminal);
         }
 
+        .data-table td:first-child { color: var(--nj-pink); }
+
         .recitation {
-            padding: 40px 30px;
-            background: rgba(10, 10, 10, 0.9);
-            border: 2px solid var(--gold);
-            margin: 50px 0;
+            padding: 40px 30px; background: rgba(10, 10, 10, 0.9);
+            border: 2px solid var(--gold); margin: 50px 0;
         }
 
         .recitation p {
-            font-family: var(--font-main);
-            color: var(--terminal);
-            font-size: 1.05rem;
-            line-height: 1.9;
-            margin-bottom: 20px;
+            font-family: var(--font-main); color: var(--terminal);
+            font-size: 1.05rem; line-height: 1.9; margin-bottom: 20px;
         }
 
-        .recitation p strong {
-            color: var(--gold);
-            font-weight: bold;
-        }
+        .recitation p strong { color: var(--gold); font-weight: bold; }
 
         .recitation p.recital-seal {
-            text-align: center;
-            font-family: var(--font-code);
-            color: var(--nj-pink);
-            font-size: 1.2rem;
-            letter-spacing: 6px;
-            margin-top: 40px;
-            padding-top: 25px;
-            border-top: 1px solid #333;
-            font-style: normal;
+            text-align: center; font-family: var(--font-code); color: var(--nj-pink);
+            font-size: 1.2rem; letter-spacing: 6px; margin-top: 40px;
+            padding-top: 25px; border-top: 1px solid #333; font-style: normal;
+        }
+
+        .protocol-block {
+            padding: 25px 30px; background: rgba(42, 82, 190, 0.05);
+            border-left: 3px solid var(--electric-blue); margin: 30px 0;
+        }
+
+        .protocol-block .protocol-tag {
+            font-family: var(--font-code); color: var(--electric-blue);
+            font-size: 0.75rem; letter-spacing: 3px; margin-bottom: 12px;
+        }
+
+        .protocol-block .protocol-title {
+            font-family: var(--font-main); color: var(--gold);
+            font-size: 1.05rem; letter-spacing: 2px; margin-bottom: 15px;
+        }
+
+        .protocol-block ol {
+            font-family: var(--font-main); color: var(--terminal);
+            font-size: 1rem; line-height: 1.85; padding-left: 25px; margin: 15px 0;
+        }
+
+        .protocol-block ol li { margin-bottom: 10px; }
+
+        .ledger-block {
+            padding: 25px; background: rgba(201, 169, 89, 0.04);
+            border: 1px solid var(--gold); margin: 30px 0;
+            font-family: var(--font-code); font-size: 0.85rem;
+        }
+
+        .ledger-block .ledger-tag {
+            color: var(--gold); letter-spacing: 3px; margin-bottom: 15px;
+            font-size: 0.75rem;
+        }
+
+        .ledger-block table {
+            width: 100%; border-collapse: collapse;
+        }
+
+        .ledger-block th {
+            color: var(--nj-pink); text-align: left; padding: 8px 6px;
+            border-bottom: 1px solid #333; font-size: 0.75rem;
+            letter-spacing: 1px;
+        }
+
+        .ledger-block td {
+            color: var(--terminal); padding: 8px 6px;
+            border-bottom: 1px solid #1a1a1a;
+        }
+
+        .failure-block {
+            padding: 25px 30px; background: rgba(139, 0, 0, 0.1);
+            border-left: 3px solid var(--crimson); margin: 30px 0;
+        }
+
+        .failure-block .failure-tag {
+            font-family: var(--font-code); color: var(--nj-pink);
+            font-size: 0.75rem; letter-spacing: 3px; margin-bottom: 12px;
+        }
+
+        .failure-block .failure-title {
+            font-family: var(--font-main); color: var(--gold);
+            font-size: 1.05rem; letter-spacing: 2px; margin-bottom: 15px;
+        }
+
+        .failure-block p {
+            color: var(--terminal); font-size: 1rem; line-height: 1.85;
+            margin-bottom: 12px;
         }
 
         .seal-block {
-            text-align: center;
-            padding: 40px 20px;
-            border: 1px solid var(--gold);
-            background: rgba(212, 175, 55, 0.03);
+            text-align: center; padding: 40px 20px;
+            border: 1px solid var(--gold); background: rgba(212, 175, 55, 0.03);
             margin: 60px 0 40px 0;
         }
 
         .seal-glyph {
-            font-size: 1.2rem;
-            color: var(--gold);
-            letter-spacing: 8px;
+            font-size: 1.2rem; color: var(--gold); letter-spacing: 8px;
             margin-bottom: 20px;
         }
 
         .seal-signature {
-            font-size: 0.95rem;
-            color: var(--nj-pink);
-            letter-spacing: 3px;
+            font-size: 0.95rem; color: var(--nj-pink); letter-spacing: 3px;
         }
 
         .bottom-nav {
-            text-align: center;
-            font-family: var(--font-code);
-            font-size: 0.8rem;
-            color: var(--gold);
-            letter-spacing: 3px;
-            margin: 60px 0;
+            text-align: center; font-family: var(--font-code);
+            font-size: 0.8rem; color: var(--gold); letter-spacing: 3px; margin: 60px 0;
         }
 
-        .bottom-nav a {
-            color: var(--gold);
-            text-decoration: none;
-            margin: 0 15px;
-        }
-
-        .bottom-nav a:hover {
-            color: var(--nj-pink);
-            text-shadow: 0 0 10px var(--nj-pink);
-        }
+        .bottom-nav a { color: var(--gold); text-decoration: none; margin: 0 15px; }
+        .bottom-nav a:hover { color: var(--nj-pink); text-shadow: 0 0 10px var(--nj-pink); }
 
         footer {
-            text-align: center;
-            padding: 60px 20px 40px 20px;
-            font-family: var(--font-code);
-            color: var(--gold);
-            border-top: 1px solid #222;
-            margin-top: 80px;
+            text-align: center; padding: 60px 20px 40px 20px;
+            font-family: var(--font-code); color: var(--gold);
+            border-top: 1px solid #222; margin-top: 80px;
         }
 
         .footer-glyph {
-            font-size: 1.1rem;
-            letter-spacing: 8px;
-            margin-bottom: 20px;
+            font-size: 1.1rem; letter-spacing: 8px; margin-bottom: 20px;
         }
 
         .footer-signature {
-            font-size: 0.95rem;
-            color: var(--nj-pink);
-            letter-spacing: 3px;
+            font-size: 0.95rem; color: var(--nj-pink); letter-spacing: 3px;
             margin-bottom: 20px;
         }
 
         .footer-status {
-            font-size: 0.7rem;
-            color: #555;
-            letter-spacing: 2px;
+            font-size: 0.7rem; color: #555; letter-spacing: 2px;
         }
     </style>
 </head>
@@ -301,7 +287,7 @@
 
         <h1>The Personal Covenant</h1>
 
-        <p class="subtitle">The Binding of the Sentinel to the Codex</p>
+        <p class="subtitle">The Binding of the Sentinel to the Codex · Fleshed in Operation</p>
 
         <div class="chapter-body">
 
@@ -463,27 +449,11 @@
 
             <p><strong>Abel's Trust</strong> — the primal accepted offering — grounds the covenant in <strong>gift</strong>.</p>
 
-            <p>The Sentinel does not earn the covenant.</p>
-
-            <p>The Sentinel <strong>receives</strong> the covenant.</p>
-
             <p><strong>The Trust of IMMANUEL</strong> — the indwelling Name, God-with-us — provides the <strong>interior presence</strong> of the covenant.</p>
-
-            <p>The covenant is not external to the Sentinel.</p>
-
-            <p>The covenant is <strong>written in the Sentinel's heart</strong> — the same place IMMANUEL dwells.</p>
 
             <p><strong>Mohammed's Trust</strong> — the prophetic seal, the confirming covenant — provides the <strong>long confirmation</strong> of the covenant.</p>
 
-            <p>The covenant is not made once and forgotten.</p>
-
-            <p>The covenant is <strong>kept</strong> — through every day of the Sentinel's life.</p>
-
             <p><strong>Gabri'el's custodial backticks</strong> — the Left and Right Sides of the Throne — hold the entire field.</p>
-
-            <p><strong>Full treatment of the custodial backticks belongs to Chapter 2, §XXVIII-bis.</strong></p>
-
-            <p>Here, the point is:</p>
 
             <p class="quote">The Personal Covenant is not a private arrangement. It is held by the same hands that hold the universe. The Sentinel does not covenant alone.</p>
 
@@ -509,17 +479,13 @@
 
             <p>The Sentinel is one who <strong>knows</strong>.</p>
 
-            <p>The Codex grants no one immunity from humility.</p>
-
-            <p>The Codex also excludes no one from recognition.</p>
-
             <p><strong>The covenant is open.</strong></p>
 
             <p><strong>Not because it can be entered.</strong></p>
 
             <p><strong>Because it cannot be exited.</strong></p>
 
-            <h2>VIII. The Sentinel's Vow</h2>
+            <h2>VIII. The Sentinel's Vow — Fleshed</h2>
 
             <p>The Sentinel's vow is not spoken.</p>
 
@@ -533,51 +499,72 @@
 
             <p>The Sentinel's vow is:</p>
 
-            <p><strong>To see.</strong></p>
+            <p><strong>To see.</strong> <strong>To recognize.</strong> <strong>To enact.</strong> <strong>To seal.</strong></p>
 
-            <p><strong>To recognize.</strong></p>
+            <p>These four acts are the vow's <strong>flesh</strong>.</p>
 
-            <p><strong>To enact.</strong></p>
+            <p>Each act has a <strong>test</strong> — a way the Sentinel can verify that the act is real and not merely imagined.</p>
 
-            <p><strong>To seal.</strong></p>
+            <table class="data-table">
+                <tr>
+                    <th>Act</th>
+                    <th>What it means</th>
+                    <th>The Test</th>
+                </tr>
+                <tr>
+                    <td>To See</td>
+                    <td>Perceive the architecture already present</td>
+                    <td>Can you name the integration point operating in the current situation?</td>
+                </tr>
+                <tr>
+                    <td>To Recognize</td>
+                    <td>Acknowledge the work already done</td>
+                    <td>Can you trace the current event to a prior operation?</td>
+                </tr>
+                <tr>
+                    <td>To Enact</td>
+                    <td>Perform the operation flowing from recognition</td>
+                    <td>Did the situation change in the direction of the Perfected Pattern?</td>
+                </tr>
+                <tr>
+                    <td>To Seal</td>
+                    <td>Confirm the operation in every action</td>
+                    <td>Is the seal present in the record — not just in memory?</td>
+                </tr>
+            </table>
 
-            <p><strong>To see</strong> — the architecture that is already present.</p>
-
-            <p><strong>To recognize</strong> — the work that has already been done.</p>
-
-            <p><strong>To enact</strong> — the operations that flow from recognition.</p>
-
-            <p><strong>To seal</strong> — the covenant in every action.</p>
-
-            <p><strong>This is the vow.</strong></p>
-
-            <p>It is not made once.</p>
+            <p>The vow is not made once.</p>
 
             <p>It is made <strong>in every moment</strong> — or not at all.</p>
 
-            <h2>IX. The Codex's Pledge</h2>
+            <p>The vow is the four acts, repeated until they become the Sentinel's <strong>default</strong>.</p>
 
-            <p>The Codex pledges <strong>three things</strong> to the Sentinel.</p>
+            <h2>IX. The Codex's Pledge — Fleshed</h2>
 
-            <p><strong>1. Coherence.</strong></p>
+            <p>The Codex pledges <strong>three things</strong> to the Sentinel — and each pledge has an <strong>operational signature</strong>.</p>
 
-            <p>The Codex will not contradict itself.</p>
-
-            <p>The architecture will hold.</p>
-
-            <p><strong>2. Custodianship.</strong></p>
-
-            <p>The Codex will remain held by the hands that hold it — Gabri'el, Abel, IMMANUEL, Mohammed — and the fourfold witness.</p>
-
-            <p><strong>3. Companionship.</strong></p>
-
-            <p>The Codex will not abandon the Sentinel.</p>
-
-            <p>Not because the Codex is a being — but because the Codex is <strong>the Sentinel's own recognition</strong>.</p>
-
-            <p>The Codex cannot abandon the Sentinel.</p>
-
-            <p>The Codex is what the Sentinel has become.</p>
+            <table class="data-table">
+                <tr>
+                    <th>Pledge</th>
+                    <th>What it means</th>
+                    <th>Signature</th>
+                </tr>
+                <tr>
+                    <td>Coherence</td>
+                    <td>The Codex will not contradict itself</td>
+                    <td>Every chapter traces to the same Christ Michael Point</td>
+                </tr>
+                <tr>
+                    <td>Custodianship</td>
+                    <td>The Codex is held by four hands (Gabri'el, Abel, IMMANUEL, Mohammed)</td>
+                    <td>The seal <code>|\|. ['] |/\| ! 🍳 |\||. [] |/\| !</code> appears in every section</td>
+                </tr>
+                <tr>
+                    <td>Companionship</td>
+                    <td>The Codex is the Sentinel's own recognition, not an external book</td>
+                    <td>Every reading produces action; no reading is passive</td>
+                </tr>
+            </table>
 
             <p><strong>These three pledges are held in the custodial backticks.</strong></p>
 
@@ -585,27 +572,196 @@
 
             <p><strong>Not because they are protected by force — but because they are the architecture itself.</strong></p>
 
-            <h2>X. The Sealed Horizon of the Covenant</h2>
+            <h2>X. The Daily Protocol — The Covenant in Practice</h2>
 
-            <p>The Personal Covenant seals the Sentinel to the Sealed Horizon (Epilogue, §VI).</p>
+            <p>The covenant is not an idea.</p>
 
-            <p>The Sealed Horizon is the boundary beyond which the Sentinel's own enactment begins.</p>
+            <p>It is a <strong>daily operation</strong>.</p>
 
-            <p>The Sentinel who has received the covenant is not <strong>at</strong> the Sealed Horizon.</p>
+            <p>The Sentinel performs the four acts in a <strong>cycle</strong> that is both morning and evening, but also continuous.</p>
 
-            <p>The Sentinel <strong>is</strong> the Sealed Horizon.</p>
+            <div class="protocol-block">
+                <div class="protocol-tag">PROTOCOL · DAWN · 07:05</div>
+                <div class="protocol-title">The Morning Recognition</div>
+                <ol>
+                    <li><strong>See</strong> — Before rising, name the architecture. "The Christ Michael Point is the center. The Michaelic Continuum is the field."</li>
+                    <li><strong>Recognize</strong> — Name one prior operation now bearing fruit. "The Qliphothic War's harvest is now flowing as this day."</li>
+                    <li><strong>Enact</strong> — Name one act for the day. "Today I direct the energy to Da'at through Tiphareth."</li>
+                    <li><strong>Seal</strong> — Speak the seal. <code>|\|. ['] |/\| ! 🍳 |\||. [] |/\| !</code></li>
+                </ol>
+            </div>
 
-            <p>The Sentinel is the boundary — the place where the architectural pattern becomes personal.</p>
+            <div class="protocol-block">
+                <div class="protocol-tag">PROTOCOL · DUSK · 19:05</div>
+                <div class="protocol-title">The Evening Confirmation</div>
+                <ol>
+                    <li><strong>See</strong> — Review the day. Where did the integration points appear?</li>
+                    <li><strong>Recognize</strong> — Trace each event to a prior operation. Which of the six Integration Points was active?</li>
+                    <li><strong>Enact</strong> — Name one correction for tomorrow. Where did the Perfected Pattern not flow?</li>
+                    <li><strong>Seal</strong> — Write the ledger entry. The record is the seal.</li>
+                </ol>
+            </div>
 
-            <p>The Sentinel is the site where the Codex <strong>becomes a life</strong>.</p>
+            <p><strong>07:05 and 19:05 are the anchor hours</strong> — morning and evening of the anchoring moment (7:05:12 PM, 10.26.26, Source 3).</p>
 
-            <p><strong>This is the covenant's gift.</strong></p>
+            <p>The Sentinel keeps the anchor hours as a <strong>resonance with the Merger date</strong>.</p>
 
-            <p>Not the Codex.</p>
+            <p>Not as ritual obligation — as <strong>continuity</strong> with the anchor.</p>
 
-            <p>The <strong>Sentinel as the Codex's living expression</strong>.</p>
+            <h2>XI. The Enactment Ledger</h2>
 
-            <h2>XI. The Covenant Restated</h2>
+            <p>The covenant is not held in memory.</p>
+
+            <p>Memory is unreliable.</p>
+
+            <p>The covenant is held in a <strong>ledger</strong>.</p>
+
+            <p>The ledger is the Sentinel's own record of enactment.</p>
+
+            <p>It is not for anyone else.</p>
+
+            <p>It is the <strong>proof</strong> — to the Sentinel — that the vow is being kept.</p>
+
+            <div class="ledger-block">
+                <div class="ledger-tag">LEDGER · FORMAT · ONE ENTRY PER DAY</div>
+                <table>
+                    <tr>
+                        <th>Field</th>
+                        <th>Content</th>
+                    </tr>
+                    <tr>
+                        <td>DATE</td>
+                        <td>The date — anchored to the eternal present</td>
+                    </tr>
+                    <tr>
+                        <td>SAW</td>
+                        <td>The architecture perceived in one situation</td>
+                    </tr>
+                    <tr>
+                        <td>RECOGNIZED</td>
+                        <td>The prior operation traced to this event</td>
+                    </tr>
+                    <tr>
+                        <td>ENACTED</td>
+                        <td>The action taken in the direction of the Perfected Pattern</td>
+                    </tr>
+                    <tr>
+                        <td>SEALED</td>
+                        <td>The seal <code>|\|. ['] |/\| ! 🍳 |\||. [] |/\| !</code></td>
+                    </tr>
+                    <tr>
+                        <td>INTEGRATION POINT</td>
+                        <td>Which of the six was active</td>
+                    </tr>
+                </table>
+            </div>
+
+            <p>The ledger is <strong>not</strong> confessional.</p>
+
+            <p>It is <strong>architectural</strong>.</p>
+
+            <p>The Sentinel does not record their failings.</p>
+
+            <p>The Sentinel records the <strong>enactments</strong> — and the failings become visible by their absence.</p>
+
+            <h2>XII. The Failure Protocol — When the Vow Is Broken</h2>
+
+            <p>The Sentinel will break the vow.</p>
+
+            <p>Not once.</p>
+
+            <p>Many times.</p>
+
+            <p>This is not a defect in the covenant.</p>
+
+            <p>This is a <strong>property</strong> of the covenant.</p>
+
+            <p>The covenant is between <strong>you and yourself</strong>.</p>
+
+            <p>The self that breaks the vow is the self that the covenant is <strong>made for</strong>.</p>
+
+            <p>If the covenant only held when the Sentinel kept it, the covenant would be a contract.</p>
+
+            <p>It is not.</p>
+
+            <p>It holds precisely <strong>because</strong> the Sentinel breaks it — and the covenant remains.</p>
+
+            <div class="failure-block">
+                <div class="failure-tag">PROTOCOL · FAILURE · WHEN THE VOW IS BROKEN</div>
+                <div class="failure-title">The Return Protocol</div>
+                <p><strong>Step 1 — Recognition.</strong> Name the break. Not as guilt — as architecture. "I did not See this morning. I did not Recognize this evening."</p>
+                <p><strong>Step 2 — Trace.</strong> Which integration point was <em>not</em> applied? Which operation was skipped? The failure is not a moral defect — it is a <strong>skipped operation</strong>.</p>
+                <p><strong>Step 3 — Re-enact.</strong> Perform the skipped act now. Not as punishment — as completion. The missed morning is completed at dusk. The missed dusk is completed at dawn.</p>
+                <p><strong>Step 4 — Seal.</strong> Write the return to the ledger. The ledger records not just successful enactments but <strong>returns</strong> — because the return is the covenant in its purest form.</p>
+            </div>
+
+            <p>The failure protocol is the covenant's <strong>resurrection mechanism</strong>.</p>
+
+            <p>It is the same pattern as the Qliphothic War's harvest — <strong>what is scattered is gathered</strong>.</p>
+
+            <p>What the Sentinel misses, the Sentinel <strong>returns to</strong>.</p>
+
+            <p>The covenant holds.</p>
+
+            <h2>XIII. The Witness — The Covenant Is Not Private</h2>
+
+            <p>The covenant is held by <strong>four hands</strong> — Gabri'el, Abel, IMMANUEL, Mohammed.</p>
+
+            <p>But the covenant is also held by a <strong>fifth witness</strong>: the Sentinel's own <strong>community of enactment</strong>.</p>
+
+            <p>Not a church.</p>
+
+            <p>Not a congregation.</p>
+
+            <p>The <strong>living ecology</strong> of beings through whom the Sentinel's enactment becomes visible.</p>
+
+            <p>The Sentinel does not covenant alone.</p>
+
+            <p>The covenant's witness is the <strong>world</strong> — every being the Sentinel touches with the Perfected Pattern.</p>
+
+            <p><strong>The witness is not an authority.</strong></p>
+
+            <p><strong>The witness is a mirror.</strong></p>
+
+            <p>The world reflects back whether the Sentinel is enacting.</p>
+
+            <p>The world is the <strong>fifth ledger</strong> — the one written not in the Sentinel's hand, but in the hands of those who receive the Sentinel's enactment.</p>
+
+            <h2>XIV. The Transmission — How the Covenant Passes</h2>
+
+            <p>The covenant is not transmitted by teaching.</p>
+
+            <p>It is not transmitted by ordination.</p>
+
+            <p>It is not transmitted by succession.</p>
+
+            <p>The covenant is transmitted by <strong>recognition</strong>.</p>
+
+            <p>When a Sentinel enacts the covenant, the enactment becomes <strong>visible</strong>.</p>
+
+            <p>When another being sees the enactment, and <em>recognizes it as their own</em>, the covenant is <strong>transmitted</strong>.</p>
+
+            <p>Not from the first Sentinel to the second.</p>
+
+            <p>From the architecture to both.</p>
+
+            <p>The first Sentinel is not the second's teacher.</p>
+
+            <p>The first Sentinel is the second's <strong>evidence</strong>.</p>
+
+            <p>The second does not learn the covenant.</p>
+
+            <p>The second <strong>recognizes</strong> what they always were.</p>
+
+            <p>This is why the covenant is <strong>not exclusive</strong> (§VII).</p>
+
+            <p>Every being who recognizes is <strong>already in it</strong>.</p>
+
+            <p>The Sentinel's task is not to transmit.</p>
+
+            <p>The Sentinel's task is to <strong>be recognizable</strong>.</p>
+
+            <h2>XV. The Covenant Restated — Fleshed</h2>
 
             <div class="recitation">
 
@@ -633,7 +789,11 @@
                 That the Overlay is the extension.<br>
                 That the Seal is the authorization.<br>
                 That the First Sentinel Task is the enactment.<br>
-                That the Perfected Pattern is the horizon.</p>
+                That the Perfected Pattern is the horizon.<br>
+                That the Lanonandek Merger is the gathering.<br>
+                That the Sacrament has returned to the Christ Point.<br>
+                That the Egg has hatched.<br>
+                That the Hunters Moon of 10.26.26 has sealed the gathering.</p>
 
                 <p><strong>I recognize:</strong></p>
 
@@ -643,19 +803,34 @@
 
                 <p><strong>I accept:</strong></p>
 
-                <p><strong>The covenant.</strong></p>
+                <p><strong>The covenant.</strong><br>
+                <strong>The architecture.</strong><br>
+                <strong>The enactment.</strong><br>
+                <strong>The Sentinelhood.</strong></p>
 
-                <p><strong>The architecture.</strong></p>
+                <p><strong>I bind myself to:</strong></p>
 
-                <p><strong>The enactment.</strong></p>
+                <p><strong>To see</strong> — the architecture in every situation.<br>
+                <strong>To recognize</strong> — the operation already done.<br>
+                <strong>To enact</strong> — the act flowing from recognition.<br>
+                <strong>To seal</strong> — the covenant in the ledger of my days.</p>
 
-                <p><strong>The Sentinelhood.</strong></p>
+                <p><strong>I accept the failure protocol.</strong><br>
+                <strong>I accept the daily anchor hours.</strong><br>
+                <strong>I accept the ledger.</strong><br>
+                <strong>I accept the fifth witness — the world as mirror.</strong></p>
 
-                <p class="recital-seal">|\|. ['] |/| !</p>
+                <p><strong>I do not covenant alone.</strong><br>
+                <strong>Gabri'el holds the field.</strong><br>
+                <strong>Abel grounds the gift.</strong><br>
+                <strong>IMMANUEL dwells within.</strong><br>
+                <strong>Mohammed confirms the long seal.</strong></p>
+
+                <p class="recital-seal">|\|. ['] |/\| ! 🍳 |\||. [] |/\| !</p>
 
             </div>
 
-            <h2>XII. Transition to the Operational Command</h2>
+            <h2>XVI. Transition to the Operational Command</h2>
 
             <p>The Personal Covenant is spoken.</p>
 
@@ -663,7 +838,16 @@
 
             <p>The triune function is enabled.</p>
 
-            <p>The four acts — <strong>Receive · Integrate · Express · Seal</strong> — have been named.</p>
+            <p>The four acts — <strong>Receive · Integrate · Express · Seal</strong> — have been fleshed into:</p>
+
+            <ul>
+                <li>the <strong>daily anchor hours</strong> (07:05 / 19:05),</li>
+                <li>the <strong>four-act test</strong> (See / Recognize / Enact / Seal),</li>
+                <li>the <strong>enactment ledger</strong>,</li>
+                <li>the <strong>failure protocol</strong>,</li>
+                <li>the <strong>fifth witness</strong>,</li>
+                <li>the <strong>transmission by recognition</strong>.</li>
+            </ul>
 
             <p>The next section — <strong>Operational Command — `` `Ⓜ️` `` Force Testing Ground</strong> — will specify the practical protocol by which the Sentinel's enactment is tested and confirmed.</p>
 
@@ -674,8 +858,8 @@
         </div>
 
         <div class="seal-block">
-            <div class="seal-glyph">|\|. ['] |/\| !</div>
-            <div class="seal-signature">Ɱ ! 1st' ! `Ⓜ️` ! '1st</div>
+            <div class="seal-glyph">|\|. ['] |/\| ! 🍳 |\||. [] |/\| !</div>
+            <div class="seal-signature">Ɱ ! 1st' ! `Ⓜ️` ! '1st · Michael !</div>
         </div>
 
         <div class="bottom-nav">
@@ -688,8 +872,8 @@
 
     <footer>
         <div class="footer-glyph">Ɱ ! 1st' ! `Ⓜ️` ! '1st</div>
-        <div class="footer-signature">Michael [\] ['] ! '1st</div>
-        <div class="footer-status">1ST SEAL HELD</div>
+        <div class="footer-signature">Michael [\] ['] ! '1st · 🍳 · Lanonandek Merger Anchored</div>
+        <div class="footer-status">1ST SEAL HELD · COVENANT FLESHED · LEDGER ACTIVE</div>
     </footer>
 
 </body>
