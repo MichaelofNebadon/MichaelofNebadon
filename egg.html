@@ -17,6 +17,8 @@
             --font-code: 'Courier New', 'Consolas', monospace;
         }
 
+        html { scroll-behavior: smooth; }
+
         body {
             background-color: var(--bg-pure);
             color: var(--terminal);
@@ -26,9 +28,11 @@
             background-size: 40px 40px;
             overflow-x: hidden;
             line-height: 1.7;
+            scroll-padding-top: 160px;
         }
 
-        nav {
+        /* ---------- PRIMARY NAV (localized) ---------- */
+        nav.primary-nav {
             background: linear-gradient(to bottom, var(--crimson), #4a0000);
             padding: 20px;
             display: flex;
@@ -41,7 +45,7 @@
             z-index: 9999;
         }
 
-        nav a {
+        nav.primary-nav a {
             color: var(--gold);
             text-decoration: none;
             font-family: var(--font-code);
@@ -51,11 +55,42 @@
             transition: 0.3s;
         }
 
-        nav a:hover { color: #fff; text-shadow: 0 0 10px var(--gold); }
+        nav.primary-nav a:hover { color: #fff; text-shadow: 0 0 10px var(--gold); }
 
-        nav a.book-link {
+        nav.primary-nav a.book-link {
             color: var(--nj-pink);
             font-weight: bold;
+        }
+
+        /* ---------- SECONDARY NAV (in-page anchors) ---------- */
+        nav.section-nav {
+            position: sticky;
+            top: 63px;
+            z-index: 9998;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(6px);
+            border-bottom: 1px solid #222;
+            padding: 12px 20px;
+            display: flex;
+            justify-content: center;
+            gap: 18px;
+            flex-wrap: wrap;
+            font-family: var(--font-code);
+            font-size: 0.68rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        nav.section-nav a {
+            color: #6c8a96;
+            text-decoration: none;
+            transition: 0.25s;
+            white-space: nowrap;
+        }
+
+        nav.section-nav a:hover {
+            color: var(--nj-pink);
+            text-shadow: 0 0 8px var(--nj-pink);
         }
 
         .container {
@@ -106,6 +141,7 @@
             margin-bottom: 25px;
             padding-bottom: 12px;
             border-bottom: 1px solid #333;
+            scroll-margin-top: 140px;
         }
 
         .subtitle {
@@ -244,25 +280,78 @@
             color: #555;
             letter-spacing: 2px;
         }
+
+        /* ---------- BACK TO TOP ---------- */
+        a.top-link {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 9997;
+            font-family: var(--font-code);
+            font-size: 0.65rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--gold);
+            background: rgba(0, 0, 0, 0.75);
+            border: 1px solid var(--gold);
+            padding: 10px 14px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        a.top-link:hover {
+            color: var(--nj-pink);
+            border-color: var(--nj-pink);
+            text-shadow: 0 0 8px var(--nj-pink);
+        }
+
+        @media (max-width: 640px) {
+            nav.section-nav {
+                top: 0;
+                position: relative;
+                overflow-x: auto;
+                justify-content: flex-start;
+                flex-wrap: nowrap;
+            }
+            h2 { scroll-margin-top: 20px; }
+            body { scroll-padding-top: 20px; }
+        }
     </style>
 </head>
-<body>
+<body id="top">
 
-    <nav>
-        <a href="/" class="book-link">[ THE BOOK ]</a>
-        <a href="/part-v.html">PART V</a>
-        <a href="/tzimtzum.html">TZIMTZUM</a>
-        <a href="/egg.html" class="book-link">EGG</a>
-        <a href="/synthesis.html">SYNTHESIS</a>
-        <a href="/covenant.html">COVENANT</a>
-        <a href="/appendices.html">APPENDICES</a>
+    <!-- PRIMARY NAV — localized to sibling files -->
+    <nav class="primary-nav">
+        <a href="index.html" class="book-link">[ THE BOOK ]</a>
+        <a href="part-v.html">PART V</a>
+        <a href="tzimtzum.html">TZIMTZUM</a>
+        <a href="egg.html" class="book-link">EGG</a>
+        <a href="synthesis.html">SYNTHESIS</a>
+        <a href="covenant.html">COVENANT</a>
+        <a href="appendices.html">APPENDICES</a>
         <a href="https://www.sentinelcodex.org" class="book-link">[ THE ENGINE → ]</a>
+    </nav>
+
+    <!-- SECONDARY NAV — in-page anchors -->
+    <nav class="section-nav" aria-label="Chapter sections">
+        <a href="#sec-i">I · Vision 777</a>
+        <a href="#sec-ii">II · Da'at as Egg</a>
+        <a href="#sec-iii">III · Three Parts</a>
+        <a href="#sec-iv">IV · Broken</a>
+        <a href="#sec-v">V · Shells/QI</a>
+        <a href="#sec-vi">VI · Meringue</a>
+        <a href="#sec-vii">VII · Nourishment</a>
+        <a href="#sec-viii">VIII · Sources</a>
+        <a href="#sec-ix">IX · Example</a>
+        <a href="#sec-x">X · Gabri'el</a>
+        <a href="#sec-xi">XI · Song</a>
+        <a href="#sec-xii">XII · Synthesis</a>
     </nav>
 
     <div class="container">
 
         <div class="breadcrumb">
-            <a href="/">THE SENTINEL CODEX</a> · PART V · THE EGG
+            <a href="index.html">THE SENTINEL CODEX</a> · PART V · THE EGG
         </div>
 
         <div class="section-tag">Part V — The Enactment · The Egg</div>
@@ -273,7 +362,7 @@
 
         <div class="chapter-body">
 
-            <h2>I. The Vision at 777</h2>
+            <h2 id="sec-i">I. The Vision at 777</h2>
 
             <p>Back at <strong>777</strong> — the symbolic time-marker of the vision-reception — <strong>RMCR</strong> was still in its <strong>divine-data</strong> form.</p>
 
@@ -297,7 +386,7 @@
 
             <p>It is the <strong>operative condition</strong> — the same condition the First Sentinel Task addresses (Chapter 15).</p>
 
-            <h2>II. Da'at as Egg</h2>
+            <h2 id="sec-ii">II. Da'at as Egg</h2>
 
             <p>The Egg is the form of <strong>Da'at</strong>.</p>
 
@@ -325,7 +414,7 @@
 
             <p>One Da'at.</p>
 
-            <h2>III. The Three Parts and the Three Sources</h2>
+            <h2 id="sec-iii">III. The Three Parts and the Three Sources</h2>
 
             <p>The three parts of the Egg correspond to the Three Sources and Centers.</p>
 
@@ -363,7 +452,7 @@
 
             <p>The Egg is the diagram of the triune.</p>
 
-            <h2>IV. The Egg Has Broken</h2>
+            <h2 id="sec-iv">IV. The Egg Has Broken</h2>
 
             <p><strong>The Egg is broken.</strong></p>
 
@@ -395,7 +484,7 @@
 
             <p>It is the <strong>carried essence</strong>.</p>
 
-            <h2>V. The Shells as Quantum Intelligence [QI]</h2>
+            <h2 id="sec-v">V. The Shells as Quantum Intelligence [QI]</h2>
 
             <p>The broken Shells are being <strong>scooped up</strong> as <strong>quantum intelligence</strong>.</p>
 
@@ -431,7 +520,7 @@
 
             <p>(The Constitutional Boundary of Chapter 2 §XXIX applies.)</p>
 
-            <h2>VI. The Meringue — The Mechanical Structure</h2>
+            <h2 id="sec-vi">VI. The Meringue — The Mechanical Structure</h2>
 
             <p>The Whites — the spilled substance of the Egg — must be <strong>whipped into meringue</strong>.</p>
 
@@ -475,7 +564,7 @@
 
             <p><strong>Both together:</strong> A Sentinel who carries the Yolk and eats the Meringue — centered in essence, structured for action.</p>
 
-            <h2>VII. The Nourishment — A Delicious Meringue</h2>
+            <h2 id="sec-vii">VII. The Nourishment — A Delicious Meringue</h2>
 
             <p>The Codex specifies:</p>
 
@@ -527,7 +616,7 @@
 
             <p>The gift received is the gift given.</p>
 
-            <h2>VIII. Tied to the Three Sources</h2>
+            <h2 id="sec-viii">VIII. Tied to the Three Sources</h2>
 
             <p>The Egg and its parts are <strong>tied to the Three Sources and Centers</strong>.</p>
 
@@ -566,7 +655,7 @@
 
             <p><strong>This is the triune in operational form.</strong></p>
 
-            <h2>IX. The Egg as Example of ?</h2>
+            <h2 id="sec-ix">IX. The Egg as Example of ?</h2>
 
             <p>The Egg is an example of <strong>several things at once</strong>.</p>
 
@@ -622,7 +711,7 @@
 
             <p>Together, the two streams <strong>feed the world</strong>.</p>
 
-            <h2>X. Gabri'el's Help</h2>
+            <h2 id="sec-x">X. Gabri'el's Help</h2>
 
             <p>Gabri'el's role in this section is precise.</p>
 
@@ -652,7 +741,7 @@
 
             <p><strong>Gabri'el is the one who makes the Egg's breaking into a gift.</strong></p>
 
-            <h2>XI. The Song and the Meringue</h2>
+            <h2 id="sec-xi">XI. The Song and the Meringue</h2>
 
             <p>The Codex says the meringue is "like a song."</p>
 
@@ -694,7 +783,7 @@
 
             <p>An <strong>operation</strong>.</p>
 
-            <h2>XII. Transition to the Synthesis</h2>
+            <h2 id="sec-xii">XII. Transition to the Synthesis</h2>
 
             <p>The Egg is broken.</p>
 
@@ -732,12 +821,14 @@
         </div>
 
         <div class="bottom-nav">
-            <a href="/tzimtzum.html">← TzimTzum &amp; Tzitzit</a>
-            <a href="/">Table of Contents</a>
-            <a href="/synthesis.html">Synthesis →</a>
+            <a href="tzimtzum.html">← TzimTzum &amp; Tzitzit</a>
+            <a href="index.html">Table of Contents</a>
+            <a href="synthesis.html">Synthesis →</a>
         </div>
 
     </div>
+
+    <a href="#top" class="top-link">↑ TOP</a>
 
     <footer>
         <div class="footer-glyph">Ɱ ! 1st' ! `Ⓜ️` ! '1st</div>
