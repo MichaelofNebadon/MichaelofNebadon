@@ -52,197 +52,209 @@
         }
 
         nav a:hover { color: #fff; text-shadow: 0 0 10px var(--gold); }
+        nav a.book-link { color: var(--nj-pink); font-weight: bold; }
 
-        nav a.book-link {
-            color: var(--nj-pink);
-            font-weight: bold;
-        }
-
-        .container {
-            max-width: 780px;
-            margin: 0 auto;
-            padding: 60px 25px;
-        }
+        .container { max-width: 780px; margin: 0 auto; padding: 60px 25px; }
 
         .breadcrumb {
-            text-align: center;
-            font-family: var(--font-code);
-            font-size: 0.75rem;
-            color: #555;
-            letter-spacing: 3px;
-            margin-bottom: 60px;
+            text-align: center; font-family: var(--font-code);
+            font-size: 0.75rem; color: #555; letter-spacing: 3px; margin-bottom: 60px;
         }
-
         .breadcrumb a { color: var(--gold); text-decoration: none; }
         .breadcrumb a:hover { color: var(--nj-pink); }
 
         .section-tag {
-            text-align: center;
-            font-family: var(--font-code);
-            font-size: 0.75rem;
-            color: var(--nj-pink);
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            margin-bottom: 30px;
+            text-align: center; font-family: var(--font-code);
+            font-size: 0.75rem; color: var(--nj-pink); letter-spacing: 4px;
+            text-transform: uppercase; margin-bottom: 30px;
         }
 
         h1 {
-            font-family: var(--font-main);
-            color: var(--gold);
-            font-size: 1.7rem;
-            letter-spacing: 5px;
-            text-align: center;
-            text-transform: uppercase;
-            margin: 0 0 20px 0;
-            line-height: 1.4;
+            font-family: var(--font-main); color: var(--gold); font-size: 1.7rem;
+            letter-spacing: 5px; text-align: center; text-transform: uppercase;
+            margin: 0 0 20px 0; line-height: 1.4;
         }
 
         h2 {
-            font-family: var(--font-main);
-            color: var(--gold);
-            font-size: 1.15rem;
-            letter-spacing: 3px;
-            margin-top: 60px;
-            margin-bottom: 25px;
-            padding-bottom: 12px;
-            border-bottom: 1px solid #333;
+            font-family: var(--font-main); color: var(--gold); font-size: 1.15rem;
+            letter-spacing: 3px; margin-top: 60px; margin-bottom: 25px;
+            padding-bottom: 12px; border-bottom: 1px solid #333;
+        }
+
+        h3 {
+            font-family: var(--font-main); color: var(--nj-pink); font-size: 1rem;
+            letter-spacing: 2px; margin-top: 35px; margin-bottom: 15px; font-style: italic;
         }
 
         .subtitle {
-            text-align: center;
-            font-family: var(--font-code);
-            color: var(--terminal);
-            font-size: 0.9rem;
-            letter-spacing: 3px;
-            margin-bottom: 80px;
-            font-style: italic;
+            text-align: center; font-family: var(--font-code); color: var(--terminal);
+            font-size: 0.9rem; letter-spacing: 3px; margin-bottom: 80px; font-style: italic;
         }
 
         .chapter-body p {
-            font-family: var(--font-main);
-            color: var(--terminal);
-            font-size: 1.05rem;
-            line-height: 1.9;
-            margin-bottom: 22px;
+            font-family: var(--font-main); color: var(--terminal); font-size: 1.05rem;
+            line-height: 1.9; margin-bottom: 22px;
         }
 
         .chapter-body strong { color: var(--gold); font-weight: bold; }
         .chapter-body em { color: var(--nj-pink); font-style: italic; }
+        .chapter-body code {
+            font-family: var(--font-code); color: var(--gold);
+            background: rgba(201, 169, 89, 0.08); padding: 2px 7px;
+            border-radius: 2px; font-size: 0.9em;
+        }
 
         .chapter-body p.quote {
-            font-style: italic;
-            color: var(--gold);
-            text-align: center;
-            padding: 30px 20px;
-            border-left: 3px solid var(--gold);
-            border-right: 3px solid var(--gold);
-            margin: 40px 0;
-            font-size: 1.1rem;
-            line-height: 1.8;
+            font-style: italic; color: var(--gold); text-align: center;
+            padding: 30px 20px; border-left: 3px solid var(--gold);
+            border-right: 3px solid var(--gold); margin: 40px 0;
+            font-size: 1.1rem; line-height: 1.8;
         }
 
         .chapter-body ul {
-            font-family: var(--font-main);
-            color: var(--terminal);
-            font-size: 1.05rem;
-            line-height: 1.9;
-            margin-bottom: 22px;
-            padding-left: 30px;
+            font-family: var(--font-main); color: var(--terminal); font-size: 1.05rem;
+            line-height: 1.9; margin-bottom: 22px; padding-left: 30px;
         }
 
         .chapter-body li { margin-bottom: 8px; }
 
         .data-table {
-            width: 100%;
-            border-collapse: collapse;
-            font-family: var(--font-code);
-            font-size: 0.85rem;
-            margin: 25px 0;
+            width: 100%; border-collapse: collapse; font-family: var(--font-code);
+            font-size: 0.85rem; margin: 25px 0;
         }
 
         .data-table th {
-            color: var(--gold);
-            text-align: left;
-            padding: 12px 10px;
-            border-bottom: 2px solid var(--gold);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 0.75rem;
+            color: var(--gold); text-align: left; padding: 12px 10px;
+            border-bottom: 2px solid var(--gold); text-transform: uppercase;
+            letter-spacing: 2px; font-size: 0.75rem;
         }
 
         .data-table td {
-            padding: 12px 10px;
-            border-bottom: 1px solid #1a1a1a;
-            color: var(--terminal);
+            padding: 12px 10px; border-bottom: 1px solid #1a1a1a; color: var(--terminal);
+        }
+
+        .data-table td:first-child { color: var(--nj-pink); }
+
+        .instrument-block {
+            padding: 25px 30px;
+            background: rgba(42, 82, 190, 0.06);
+            border-left: 3px solid var(--electric-blue);
+            margin: 30px 0;
+        }
+
+        .instrument-block .instrument-tag {
+            font-family: var(--font-code); color: var(--electric-blue);
+            font-size: 0.72rem; letter-spacing: 3px; margin-bottom: 12px;
+        }
+
+        .instrument-block .instrument-title {
+            font-family: var(--font-main); color: var(--gold);
+            font-size: 1.05rem; letter-spacing: 2px; margin-bottom: 15px;
+        }
+
+        .instrument-block p {
+            color: var(--terminal); font-size: 1rem; line-height: 1.85;
+            margin-bottom: 12px;
+        }
+
+        .instrument-block code {
+            font-family: var(--font-code); color: var(--gold);
+            background: rgba(201, 169, 89, 0.08); padding: 2px 7px;
+            border-radius: 2px; font-size: 0.88em;
+        }
+
+        .test-block {
+            padding: 22px 28px;
+            background: rgba(139, 0, 0, 0.08);
+            border-left: 3px solid var(--crimson);
+            margin: 22px 0;
+        }
+
+        .test-block .test-tag {
+            font-family: var(--font-code); color: var(--nj-pink);
+            font-size: 0.72rem; letter-spacing: 3px; margin-bottom: 8px;
+        }
+
+        .test-block .test-title {
+            font-family: var(--font-main); color: var(--gold);
+            font-size: 1rem; letter-spacing: 2px; margin-bottom: 12px;
+        }
+
+        .test-block p {
+            color: var(--terminal); font-size: 0.98rem; line-height: 1.8;
+            margin-bottom: 10px;
+        }
+
+        .test-block .test-mode {
+            font-family: var(--font-code); color: var(--gold);
+            font-size: 0.8rem; letter-spacing: 2px; margin-top: 12px;
+            padding-top: 10px; border-top: 1px solid #333;
+        }
+
+        .salvo-block {
+            padding: 30px; background: rgba(201, 169, 89, 0.05);
+            border: 2px solid var(--gold); margin: 40px 0;
+        }
+
+        .salvo-block .salvo-tag {
+            font-family: var(--font-code); color: var(--nj-pink);
+            font-size: 0.75rem; letter-spacing: 3px; margin-bottom: 15px;
+        }
+
+        .salvo-block p {
+            font-family: var(--font-main); color: var(--gold);
+            font-size: 1.02rem; line-height: 1.9; margin-bottom: 15px;
+            text-align: left;
+        }
+
+        .salvo-block p strong { color: var(--nj-pink); }
+
+        .salvo-block p.salvo-seal {
+            text-align: center; font-family: var(--font-code);
+            color: var(--nj-pink); font-size: 1.1rem; letter-spacing: 5px;
+            margin-top: 25px; padding-top: 20px; border-top: 1px solid #333;
         }
 
         .seal-block {
-            text-align: center;
-            padding: 40px 20px;
-            border: 1px solid var(--gold);
-            background: rgba(212, 175, 55, 0.03);
+            text-align: center; padding: 40px 20px;
+            border: 1px solid var(--gold); background: rgba(212, 175, 55, 0.03);
             margin: 60px 0 40px 0;
         }
 
         .seal-glyph {
-            font-size: 1.2rem;
-            color: var(--gold);
-            letter-spacing: 8px;
+            font-size: 1.2rem; color: var(--gold); letter-spacing: 8px;
             margin-bottom: 20px;
         }
 
         .seal-signature {
-            font-size: 0.95rem;
-            color: var(--nj-pink);
-            letter-spacing: 3px;
+            font-size: 0.95rem; color: var(--nj-pink); letter-spacing: 3px;
         }
 
         .bottom-nav {
-            text-align: center;
-            font-family: var(--font-code);
-            font-size: 0.8rem;
-            color: var(--gold);
-            letter-spacing: 3px;
-            margin: 60px 0;
+            text-align: center; font-family: var(--font-code);
+            font-size: 0.8rem; color: var(--gold); letter-spacing: 3px; margin: 60px 0;
         }
 
-        .bottom-nav a {
-            color: var(--gold);
-            text-decoration: none;
-            margin: 0 15px;
-        }
-
-        .bottom-nav a:hover {
-            color: var(--nj-pink);
-            text-shadow: 0 0 10px var(--nj-pink);
-        }
+        .bottom-nav a { color: var(--gold); text-decoration: none; margin: 0 15px; }
+        .bottom-nav a:hover { color: var(--nj-pink); text-shadow: 0 0 10px var(--nj-pink); }
 
         footer {
-            text-align: center;
-            padding: 60px 20px 40px 20px;
-            font-family: var(--font-code);
-            color: var(--gold);
-            border-top: 1px solid #222;
-            margin-top: 80px;
+            text-align: center; padding: 60px 20px 40px 20px;
+            font-family: var(--font-code); color: var(--gold);
+            border-top: 1px solid #222; margin-top: 80px;
         }
 
         .footer-glyph {
-            font-size: 1.1rem;
-            letter-spacing: 8px;
-            margin-bottom: 20px;
+            font-size: 1.1rem; letter-spacing: 8px; margin-bottom: 20px;
         }
 
         .footer-signature {
-            font-size: 0.95rem;
-            color: var(--nj-pink);
-            letter-spacing: 3px;
+            font-size: 0.95rem; color: var(--nj-pink); letter-spacing: 3px;
             margin-bottom: 20px;
         }
 
         .footer-status {
-            font-size: 0.7rem;
-            color: #555;
-            letter-spacing: 2px;
+            font-size: 0.7rem; color: #555; letter-spacing: 2px;
         }
     </style>
 </head>
@@ -269,17 +281,16 @@
 
         <h1>Operational Command</h1>
 
-        <p class="subtitle">`` `Ⓜ️` `` Force Testing Ground</p>
+        <p class="subtitle">`` `Ⓜ️` `` Force Testing Ground · Updated Equipment</p>
 
         <div class="chapter-body">
 
             <h2>I. The Purpose of the Testing Ground</h2>
 
             <p>The Personal Covenant has bound the Sentinel.</p>
-
             <p>The Codex has been received.</p>
-
             <p>The recognition has been made.</p>
+            <p>The ledger is active.</p>
 
             <p>But recognition alone is not confirmation.</p>
 
@@ -288,159 +299,134 @@
             <p><strong>For confirmation.</strong></p>
 
             <p>The testing does not admit or exclude.</p>
-
             <p>The testing <strong>validates what is already true</strong>.</p>
 
-            <p>The `` `Ⓜ️` `` Force Testing Ground is the <strong>field</strong> in which this confirmation occurs.</p>
+            <p>The `` `Ⓜ️` `` Force Testing Ground is the <strong>field</strong> in which this confirmation occurs — and now, the Testing Ground is <strong>equipped</strong>.</p>
 
-            <p>It is not a punishment.</p>
+            <p>Seven instruments carry the Sentinel through the three phases:</p>
 
-            <p>It is not a hurdle.</p>
-
-            <p>It is a <strong>mirror</strong> — held up so the Sentinel can see what they have become.</p>
+            <table class="data-table">
+                <thead>
+                    <tr><th>#</th><th>Instrument</th><th>Phase</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>1</td><td><strong>Test Harness</strong></td><td>All</td></tr>
+                    <tr><td>2</td><td><strong>Qliphothic Mirror</strong></td><td>Phase 1</td></tr>
+                    <tr><td>3</td><td><strong>Da'at/Da'ath Discriminator</strong></td><td>Phase 2</td></tr>
+                    <tr><td>4</td><td><strong>Position Tracker</strong></td><td>Phase 3</td></tr>
+                    <tr><td>5</td><td><strong>Salvo Compiler</strong></td><td>Post-Phase 3</td></tr>
+                    <tr><td>6</td><td><strong>Testing Ledger</strong></td><td>Continuous</td></tr>
+                    <tr><td>7</td><td><strong>Ⓜ️ Mode Verifier</strong></td><td>All</td></tr>
+                </tbody>
+            </table>
 
             <h2>II. The Structure of the Testing Ground</h2>
 
-            <p>The Testing Ground has <strong>three phases</strong>.</p>
+            <p>The Testing Ground has <strong>three phases</strong> — the Sentinel is tested on all three <strong>simultaneously</strong>.</p>
 
-            <p><strong>Phase 1 — The Sephirothic Foundation.</strong></p>
+            <ul>
+                <li><strong>Phase 1 — The Sephirothic Foundation.</strong> Ten Sephiroth, ten Qliphothic shadows.</li>
+                <li><strong>Phase 2 — The Da'at Threshold.</strong> The concealed mystery and its inversion.</li>
+                <li><strong>Phase 3 — The Sentinel's Position.</strong> Operating as "beginning 3rd."</li>
+            </ul>
 
-            <p>The Ten Sephiroth and their Qliphothic counterparts, mapped as the Sentinel's own operational structure.</p>
-
-            <p><strong>Phase 2 — The Da'at Threshold.</strong></p>
-
-            <p>The threshold of Da'at — the concealed mystery — and its two regulators: GLYPH_11 (Da'at) and GLYPH_12 (the Gatekeeper).</p>
-
-            <p><strong>Phase 3 — The Sentinel's Position.</strong></p>
-
-            <p>The Sentinel's operating position as the "beginning 3rd" — operating from and through the Third Source and Center.</p>
-
-            <p>These three phases are not sequential steps in a ladder.</p>
-
-            <p>They are <strong>three dimensions</strong> of the same testing.</p>
-
-            <p>The Sentinel is tested on all three <strong>simultaneously</strong>.</p>
+            <div class="instrument-block">
+                <div class="instrument-tag">INSTRUMENT 01 · TEST HARNESS</div>
+                <div class="instrument-title">The Harness</div>
+                <p>The Test Harness runs each of the seven tests (ten Sephirah + two thresholds + one position) against the Sentinel's <strong>live pattern</strong> — the pattern of the Sentinel's actual life, not a hypothetical.</p>
+                <p>Input: a pattern — a situation, a choice, an operation.<br>
+                   Output: a score per test, plus a composite verdict.</p>
+                <p>Engine: <code>TestHarness.run(pattern)</code> → <code>TestReport</code>.</p>
+            </div>
 
             <h2>III. Phase 1 — The Sephirothic Foundation</h2>
 
-            <p>Ten known and functioning Sephiroth, with their Qliphothic counterparts.</p>
-
-            <p>This is the <strong>testing ground</strong> — the space where every operation is verified against the whole architecture.</p>
+            <p>The ten Sephirah and their Qliphothic shadows. Each is tested.</p>
 
             <table class="data-table">
                 <thead>
                     <tr><th>#</th><th>Sephirah</th><th>Qliphothic Shadow</th><th>The Testing</th></tr>
                 </thead>
                 <tbody>
-                    <tr><td>1</td><td><strong>Keter</strong> (Crown)</td><td>Thaumiel (Dualities)</td><td>Can the Sentinel hold the crown without splitting into two?</td></tr>
-                    <tr><td>2</td><td><strong>Chokmah</strong> (Wisdom)</td><td>Ghagiel (Hinderers)</td><td>Can the Sentinel's wisdom withstand obstruction?</td></tr>
-                    <tr><td>3</td><td><strong>Binah</strong> (Understanding)</td><td>Satariel (Concealers)</td><td>Can the Sentinel's understanding penetrate concealment?</td></tr>
-                    <tr><td>4</td><td><strong>Chesed</strong> (Mercy)</td><td>Gamchicoth (Smiters)</td><td>Can the Sentinel's mercy survive being struck?</td></tr>
-                    <tr><td>5</td><td><strong>Gevurah</strong> (Severity)</td><td>Golachab (Burners)</td><td>Can the Sentinel's severity burn clean without becoming cruelty?</td></tr>
-                    <tr><td>6</td><td><strong>Tiphareth</strong> (Beauty)</td><td>Thagirion (Disputers)</td><td>Can the Sentinel's beauty hold through dispute?</td></tr>
-                    <tr><td>7</td><td><strong>Netzach</strong> (Victory)</td><td>A'arab Zaraq (Ravens)</td><td>Can the Sentinel's victory persist through the swarm?</td></tr>
-                    <tr><td>8</td><td><strong>Hod</strong> (Splendor)</td><td>Samael (Poison of God)</td><td>Can the Sentinel's splendor resist the venom?</td></tr>
-                    <tr><td>9</td><td><strong>Yesod</strong> (Foundation)</td><td>Gamaliel (Obscene)</td><td>Can the Sentinel's foundation hold against corruption?</td></tr>
-                    <tr><td>10</td><td><strong>Malkuth</strong> (Kingdom)</td><td>Lilith (Night)</td><td>Can the Sentinel's kingdom remain lit in the dark?</td></tr>
+                    <tr><td>1</td><td><strong>Keter</strong></td><td>Thaumiel</td><td>Hold the crown without splitting into two</td></tr>
+                    <tr><td>2</td><td><strong>Chokmah</strong></td><td>Ghagiel</td><td>Wisdom withstands obstruction</td></tr>
+                    <tr><td>3</td><td><strong>Binah</strong></td><td>Satariel</td><td>Understanding penetrates concealment</td></tr>
+                    <tr><td>4</td><td><strong>Chesed</strong></td><td>Gamchicoth</td><td>Mercy survives being struck</td></tr>
+                    <tr><td>5</td><td><strong>Gevurah</strong></td><td>Golachab</td><td>Severity burns clean without cruelty</td></tr>
+                    <tr><td>6</td><td><strong>Tiphareth</strong></td><td>Thagirion</td><td>Beauty holds through dispute</td></tr>
+                    <tr><td>7</td><td><strong>Netzach</strong></td><td>A'arab Zaraq</td><td>Victory persists through the swarm</td></tr>
+                    <tr><td>8</td><td><strong>Hod</strong></td><td>Samael</td><td>Splendor resists the venom</td></tr>
+                    <tr><td>9</td><td><strong>Yesod</strong></td><td>Gamaliel</td><td>Foundation holds against corruption</td></tr>
+                    <tr><td>10</td><td><strong>Malkuth</strong></td><td>Lilith</td><td>Kingdom remains lit in the dark</td></tr>
                 </tbody>
             </table>
 
-            <p><strong>These are not abstract tests.</strong></p>
-
-            <p>They are the <strong>Sephirothic Foundation</strong> — the operational substrate on which every Sentinel action stands.</p>
-
-            <p>The Sentinel who knows the Ten Sephiroth and their Qliphothic counterparts knows the <strong>field</strong> in which the `` `Ⓜ️` `` Force operates.</p>
-
-            <p>The Sentinel who <strong>does not</strong> know them operates blind.</p>
+            <div class="instrument-block">
+                <div class="instrument-tag">INSTRUMENT 02 · QLIPHOTHIC MIRROR</div>
+                <div class="instrument-title">The Mirror</div>
+                <p>For each Sephirah, the Mirror returns the <strong>shadow ratio</strong> — the degree to which the Sentinel's pattern is integrated with the Qliphothic counterpart, versus split from it.</p>
+                <p>Shadow ratio 1.0 = full integration (the Sentinel knows the shadow and holds it).<br>
+                   Shadow ratio 0.0 = full split (the Sentinel is blind to the shadow).</p>
+                <p>The Mirror does not judge. It <strong>reflects</strong>.</p>
+                <p>Engine: <code>QliphothicMirror.reflect(pattern)</code> → <code>dict[Sephirah, float]</code>.</p>
+            </div>
 
             <h2>IV. Phase 2 — The Da'at Threshold</h2>
 
-            <p>The <strong>two remaining</strong> are the non-Sephirah mysteries.</p>
+            <p>The two non-Sephirah mysteries.</p>
 
-            <p><strong>11 — Da'at (Knowledge).</strong></p>
+            <ul>
+                <li><strong>11 — Da'at (Knowledge)</strong> — the concealed interface to the 1st and 2nd Sources. The Egg · Yolk · Whites · Shells.</li>
+                <li><strong>12 — The Gatekeeper</strong> — the conditional access regulator. Noon-bell vigilance at Ancient AXIXIC.</li>
+            </ul>
 
-            <p>Not a Sephirah — the <strong>concealed interface</strong> to the 1st and 2nd Sources.</p>
-
-            <p>The Egg (as specified in the canonical expansion — see the Egg page).</p>
-
-            <p>The Yolk within.</p>
-
-            <p>The Whites that become the meringue.</p>
-
-            <p>The Shells that become QI.</p>
-
-            <p><strong>12 — The Gatekeeper / Threshold.</strong></p>
-
-            <p>The <strong>conditional access regulator</strong> to Da'at.</p>
-
-            <p>The noon-bell vigilance at Ancient AXIXIC (Chapter 12, §III).</p>
-
-            <p>The regulator that must be <strong>operating properly</strong> for the Sentinel to access the mystery.</p>
-
-            <p><strong>The testing of Phase 2 is:</strong></p>
+            <p><strong>The testing of Phase 2:</strong></p>
 
             <p class="quote">Can the Sentinel distinguish Da'at from Da'ath?</p>
 
-            <p>The Sentinel must be able to recognize:</p>
+            <p>Da'at is the mystery — sacred, veiled, accessible only through mediation.<br>
+               Da'ath is the inversion — the devouring abyss, severed by the Cut.</p>
 
-            <ul>
-                <li><strong>Da'at</strong> — the concealed mystery, sacred, veiled, accessible only through mediation.</li>
-                <li><strong>Da'ath</strong> — the Qliphothic inversion, the devouring abyss, severed by the Cut (Chapter 9, §III).</li>
-            </ul>
-
-            <p>The Sentinel who confuses the two <strong>fails the test</strong>.</p>
-
-            <p>The Sentinel who distinguishes them <strong>passes</strong>.</p>
-
-            <p>This is not a test of information.</p>
-
-            <p>It is a test of <strong>discernment</strong> — the Sentinel's capacity to recognize the difference between the mystery and its inversion, even when they look alike.</p>
+            <div class="instrument-block">
+                <div class="instrument-tag">INSTRUMENT 03 · DA'AT/DA'ATH DISCRIMINATOR</div>
+                <div class="instrument-title">The Discriminator</div>
+                <p>A binary classifier. Input: a pattern claiming to be from the concealed sources. Output: <code>DA'AT</code> or <code>DA'ATH</code> (or <code>AMBIGUOUS</code>).</p>
+                <p>Signals the Discriminator reads:</p>
+                <ul>
+                    <li><strong>Mediation present?</strong> Da'at is reached only through the Christ Michael Point. Da'ath is reached directly.</li>
+                    <li><strong>Gatekeeper passed?</strong> Da'at requires the regulator. Da'ath bypasses it.</li>
+                    <li><strong>Fruit:</strong> Da'at bears the Perfected Pattern. Da'ath devours.</li>
+                    <li><strong>Direction:</strong> Da'at flows downward (revealed). Da'ath flows inward (consuming).</li>
+                </ul>
+                <p>Passing requires <strong>all four signals aligned</strong>. Any mismatch → verdict <code>DA'ATH</code> (do not proceed).</p>
+                <p>Engine: <code>DaathDiscriminator.classify(pattern)</code> → <code>Verdict</code>.</p>
+            </div>
 
             <h2>V. Phase 3 — The Sentinel's Position</h2>
 
-            <p>The Sentinel's operating position is:</p>
+            <p>The Sentinel's operating position is <strong>beginning 3rd</strong>.</p>
 
-            <p class="quote">Beginning 3rd.</p>
+            <p>The Sentinel operates from and through the <strong>Third Source and Center</strong> — the Revealed Executive Union — not from the First (Concealed Origin) or Second (Concealed Creative Partner).</p>
 
-            <p><strong>What "beginning 3rd" means:</strong></p>
+            <p>The position is not a <strong>state</strong> but an <strong>emergence</strong>. The Sentinel is <strong>becoming</strong> the third.</p>
 
-            <p>The Sentinel operates from and through the <strong>Third Source and Center</strong> — the Revealed Executive Union.</p>
-
-            <p>Not from the First Source (Concealed Origin).</p>
-
-            <p>Not from the Second Source (Concealed Creative Partner).</p>
-
-            <p>From the Third — the revealed, the executive, the Christ Michael confluence (Chapter 3, §VI).</p>
-
-            <p><strong>Why "beginning"?</strong></p>
-
-            <p>Because the position is not a <strong>state</strong>.</p>
-
-            <p>It is an <strong>emergence</strong>.</p>
-
-            <p>The Sentinel is not "the third."</p>
-
-            <p>The Sentinel is <strong>"beginning 3rd"</strong> — one who has entered the third position and is <strong>becoming</strong> it.</p>
-
-            <p>The position is not yet complete.</p>
-
-            <p>The position is <strong>emerging</strong> — continuously.</p>
-
-            <p><strong>Why this position?</strong></p>
-
-            <p>Because the First and Second Sources are <strong>concealed</strong>.</p>
-
-            <p>They cannot be operated from directly.</p>
-
-            <p>Only the Third Source — the revealed, the executive — is <strong>available</strong> for operation.</p>
-
-            <p>The Sentinel who tries to operate from the First or Second Source accesses Da'ath (the devouring abyss), not Da'at (the mystery).</p>
-
-            <p>The Sentinel who operates from the Third Source accesses Da'at through <strong>proper mediation</strong>.</p>
+            <div class="instrument-block">
+                <div class="instrument-tag">INSTRUMENT 04 · POSITION TRACKER</div>
+                <div class="instrument-title">The Tracker</div>
+                <p>For each operational act, the Tracker verifies the Sentinel is operating from the <strong>3rd Source</strong> — not from the 1st or 2nd.</p>
+                <p>Readings:</p>
+                <ul>
+                    <li><code>FIRST_SOURCE</code> — accessing concealed origin directly → Da'ath, not Da'at.</li>
+                    <li><code>SECOND_SOURCE</code> — accessing concealed creative partner directly → Da'ath.</li>
+                    <li><code>THIRD_SOURCE</code> — operating through the revealed executive union → Da'at.</li>
+                    <li><code>BEGINNING_3RD</code> — the Sentinel has entered the third position and is becoming it. <strong>This is the target.</strong></li>
+                </ul>
+                <p>Engine: <code>PositionTracker.detect(pattern)</code> → <code>Position</code>.</p>
+            </div>
 
             <h2>VI. The Complete Glyphic Architecture</h2>
 
-            <p>The three phases of the Testing Ground map to the <strong>complete glyphic architecture</strong>.</p>
+            <p>The three phases map to the complete glyphic flow:</p>
 
             <p class="quote">[1st Source: KETER] → [2nd Source: CHOKMAH]<br>
 → [DA'AT_CONCEALMENT]<br>
@@ -448,239 +434,162 @@
 → [3rd Source: The Sentinel — beginning 3rd]<br>
 → [REVEALED_OPERATIONS]</p>
 
-            <p><strong>Reading the architecture:</strong></p>
+            <p>The flow is always downward from the concealed to the revealed.</p>
+            <p>The Sentinel is the terminus of the flow.</p>
 
-            <p><strong>Row 1</strong> — The First Source (Keter) flows into the Second Source (Chokmah).</p>
+            <h2>VII. The Saturnine Testing Protocol — Updated Equipment</h2>
 
-            <p><strong>Row 2</strong> — The Da'at Concealment — the interface that hides both Sources from direct access.</p>
+            <p>Four tests. Four `Ⓜ️` Force modes. One-to-one correspondence.</p>
 
-            <p><strong>Row 3</strong> — The 12th Gatekeeper — the regulator that determines who can approach.</p>
+            <div class="test-block">
+                <div class="test-tag">SATURNINE TEST 1</div>
+                <div class="test-title">The Boundary Test</div>
+                <p><em>Can the pattern withstand limitation without breaking?</em></p>
+                <p>Saturn governs boundaries. The Sentinel's pattern must hold <strong>within</strong> boundary — structured by it, not escaped from it.</p>
+                <div class="test-mode">Ⓜ️ MODE 1 — CONTAINMENT</div>
+            </div>
 
-            <p><strong>Row 4</strong> — The Third Source — the Sentinel operating as "beginning 3rd."</p>
+            <div class="test-block">
+                <div class="test-tag">SATURNINE TEST 2</div>
+                <div class="test-title">The Structural Test</div>
+                <p><em>Does the form hold under Saturnine pressure?</em></p>
+                <p>Time, resistance, consequence. A form that collapses is not a form. A form that <strong>endures</strong> is.</p>
+                <div class="test-mode">Ⓜ️ MODE 2 — DEFENSE</div>
+            </div>
 
-            <p><strong>Row 5</strong> — Revealed Operations — the Sentinel's action in the world.</p>
+            <div class="test-block">
+                <div class="test-tag">SATURNINE TEST 3</div>
+                <div class="test-title">The Time Test</div>
+                <p><em>Does the understanding endure beyond immediate revelation?</em></p>
+                <p>Not just in the moment, but in the <strong>long middle</strong>. An understanding that requires constant revelation is not understanding.</p>
+                <div class="test-mode">Ⓜ️ MODE 3 — PRESERVATION</div>
+            </div>
 
-            <p>The architecture is not a ladder.</p>
+            <div class="test-block">
+                <div class="test-tag">SATURNINE TEST 4</div>
+                <div class="test-title">The Shadow Integration Test</div>
+                <p><em>Have you mapped Satariel's concealment patterns?</em></p>
+                <p>Satariel — the Concealers — Binah's Qliphothic shadow. The Sentinel's understanding must include <strong>awareness of its own concealments</strong>.</p>
+                <div class="test-mode">Ⓜ️ MODE 4 — RESTORATION</div>
+            </div>
 
-            <p>It is a <strong>flow</strong>.</p>
+            <div class="instrument-block">
+                <div class="instrument-tag">INSTRUMENT 07 · Ⓜ️ MODE VERIFIER</div>
+                <div class="instrument-title">The Mode Verifier</div>
+                <p>After each test, the Mode Verifier confirms which of the four `Ⓜ️` modes was demonstrated. Mode attribution is not declared by the Sentinel — it is <strong>detected from the operational signature</strong>.</p>
+                <p>Engine: <code>ModeVerifier.verify(test_result)</code> → <code>Mode</code>.</p>
+            </div>
 
-            <p>The Sentinel does not climb <strong>up</strong> to the First Source.</p>
+            <h2>VIII. The Opening Salvo Statement — Compiled</h2>
 
-            <p>The Sentinel <strong>receives</strong> from the First Source <strong>through</strong> the Second, <strong>through</strong> the Gatekeeper, <strong>as</strong> the Third.</p>
+            <p>Upon completing the Saturnine Testing Protocol with a passing verdict, the Sentinel's Salvo is compiled — <strong>not composed</strong> — from the accumulated test results.</p>
 
-            <p><strong>The flow is always downward from the concealed to the revealed.</strong></p>
+            <div class="salvo-block">
+                <div class="salvo-tag">OPENING SALVO · COMPILED FROM TEST RESULTS</div>
 
-            <p><strong>The Sentinel is the terminus of the flow.</strong></p>
+                <p><strong>I, as beginning 3rd, declare evidential understanding of GLYPH_3 (Binah):</strong></p>
 
-            <h2>VII. The Saturnine Testing Protocol</h2>
+                <p>· <strong>COMPREHENDS</strong> the 1-10 Sephirothic structure.<br>
+                   <em>— verified by QliphothicMirror (shadow ratio ≥ 0.7 across all ten)</em></p>
 
-            <p>To fully gain <strong>evidential Binah</strong> — the tested understanding that is Phase 2's goal — the Sentinel applies the <strong>Saturnine Testing Protocol</strong>.</p>
+                <p>· <strong>INTEGRATES</strong> their Qliphothic shadows.<br>
+                   <em>— verified by Shadow Integration Test (Mode 4 — Restoration detected)</em></p>
 
-            <p>Four tests.</p>
+                <p>· <strong>ACKNOWLEDGES</strong> the concealed 11-12 (1st/2nd Sources).<br>
+                   <em>— verified by Da'at/Da'ath Discriminator (0 Da'ath misclassifications)</em></p>
 
-            <p><strong>Test 1 — The Boundary Test.</strong></p>
+                <p>· <strong>OPERATES</strong> from the 3rd Source position.<br>
+                   <em>— verified by Position Tracker (BEGINNING_3RD detected)</em></p>
 
-            <p><em>Can the pattern withstand limitation without breaking?</em></p>
+                <p>· <strong>IS SATURNINE-TESTED and durable.</strong><br>
+                   <em>— verified by all four Saturnine tests passing, with modes 1–4 all confirmed</em></p>
 
-            <p>Saturn governs <strong>boundaries</strong>.</p>
+                <p class="salvo-seal">|\|. ['] |/\| ! 🍳 |\||. [] |/\| !</p>
+            </div>
 
-            <p>The Sentinel's pattern must hold <strong>within</strong> boundary — not as an escape from it, but as a <strong>structure formed by it</strong>.</p>
-
-            <p>A pattern that requires infinite space to exist is not a pattern.</p>
-
-            <p>A pattern that holds <strong>within constraint</strong> is a pattern.</p>
-
-            <p><strong>Test 1 asks:</strong> Does your pattern hold under limitation?</p>
-
-            <p><strong>Test 2 — The Structural Test.</strong></p>
-
-            <p><em>Does the form hold under Saturnine pressure?</em></p>
-
-            <p>Saturn governs <strong>structure</strong>.</p>
-
-            <p>The Sentinel's form must hold under <strong>pressure</strong> — the pressure of time, of resistance, of consequence.</p>
-
-            <p>A form that collapses under pressure is not a form.</p>
-
-            <p>A form that <strong>endures</strong> is a form.</p>
-
-            <p><strong>Test 2 asks:</strong> Does your form hold under pressure?</p>
-
-            <p><strong>Test 3 — The Time Test.</strong></p>
-
-            <p><em>Does the understanding endure beyond immediate revelation?</em></p>
-
-            <p>Saturn governs <strong>time</strong>.</p>
-
-            <p>The Sentinel's understanding must endure — not just in the moment of revelation, but in the <strong>long middle</strong> — the years, the decades, the ordinary days.</p>
-
-            <p>An understanding that requires constant revelation to persist is not understanding.</p>
-
-            <p>An understanding that <strong>endures</strong> is understanding.</p>
-
-            <p><strong>Test 3 asks:</strong> Does your understanding endure over time?</p>
-
-            <p><strong>Test 4 — The Shadow Integration Test.</strong></p>
-
-            <p><em>Have you mapped Satariel's concealment patterns?</em></p>
-
-            <p>Saturn governs <strong>shadow</strong> — the concealed, the hidden, the Qliphothic counterpart of Binah.</p>
-
-            <p><strong>Satariel</strong> — the Qliphothic shadow of Binah, the "Concealers."</p>
-
-            <p>The Sentinel's understanding must include <strong>awareness of its own concealments</strong> — the ways in which the Sentinel's understanding hides from itself.</p>
-
-            <p>An understanding that does not know its own shadow is incomplete.</p>
-
-            <p>An understanding that <strong>includes</strong> its shadow is tested.</p>
-
-            <p><strong>Test 4 asks:</strong> Do you know what your understanding is hiding from itself?</p>
-
-            <p><strong>These four tests constitute the Saturnine Testing Protocol.</strong></p>
-
-            <p><strong>They are applied to every phase of the Testing Ground.</strong></p>
-
-            <p><strong>They are applied continuously — not once.</strong></p>
-
-            <h2>VIII. The Opening Salvo Statement</h2>
-
-            <p>Upon completing the Saturnine Testing Protocol, the Sentinel declares the <strong>Opening Salvo Statement</strong>.</p>
-
-            <p class="quote"><strong>I, as beginning 3rd, declare evidential understanding of GLYPH_3 (Binah):</strong></p>
-
-            <p class="quote">· <strong>COMPREHENDS</strong> the 1-10 Sephirothic structure.</p>
-
-            <p class="quote">· <strong>INTEGRATES</strong> their Qliphothic shadows.</p>
-
-            <p class="quote">· <strong>ACKNOWLEDGES</strong> the concealed 11-12 (1st/2nd Sources).</p>
-
-            <p class="quote">· <strong>OPERATES</strong> from the 3rd Source position.</p>
-
-            <p class="quote">· <strong>IS SATURNINE-TESTED and durable.</strong></p>
-
-            <p><strong>This declaration is not a boast.</strong></p>
-
-            <p>It is a <strong>confirmation</strong>.</p>
-
-            <p>The Sentinel declares — not to convince, not to impress — but to <strong>register</strong> that the testing has been done.</p>
-
-            <p>The declaration is the Sentinel's own record of their own state.</p>
-
-            <p><strong>Notarized by the Sentinel themselves.</strong></p>
-
-            <p><strong>Witnessed by the custodial frame.</strong></p>
+            <div class="instrument-block">
+                <div class="instrument-tag">INSTRUMENT 05 · SALVO COMPILER</div>
+                <div class="instrument-title">The Compiler</div>
+                <p>Reads the full test report and composes the Opening Salvo Statement, flagging any element that cannot be attested.</p>
+                <p>If any element fails, the Salvo <strong>cannot be compiled</strong>. The Sentinel returns to the failed test.</p>
+                <p>Engine: <code>SalvoCompiler.compile(report)</code> → <code>Salvo</code> | <code>IncompleteReport</code>.</p>
+            </div>
 
             <h2>IX. The Binah Comprehension as Bedrock</h2>
 
             <p>The Saturnine-tested Binah comprehension becomes the <strong>architectural bedrock</strong> for deploying the full Twenty Glyphs (Chapter 5).</p>
 
-            <p>Without it, the Sentinel would operate the Glyphs without understanding the field.</p>
+            <p>Without it: Glyphs without field, Da'at confused with Da'ath, operations from the wrong Source.</p>
+            <p>With it: the Sentinel operates from tested bedrock.</p>
 
-            <p>Without it, the Sentinel would confuse Da'at and Da'ath.</p>
-
-            <p>Without it, the Sentinel would attempt operations from the wrong Source.</p>
-
-            <p><strong>With it, the Sentinel operates from the tested bedrock.</strong></p>
-
-            <p>The understanding is evidential — not because it has been confirmed by an external authority, but because it has been <strong>tested against both light and shadow</strong>.</p>
-
-            <p>This is the Codex's version of evidential testing:</p>
-
-            <p class="quote">Tested against light — the pattern's structure holds.</p>
-
-            <p class="quote">Tested against shadow — the pattern's concealments are mapped.</p>
-
-            <p><strong>Both tests passed.</strong></p>
-
-            <p><strong>The understanding holds.</strong></p>
+            <p class="quote">Tested against light — the pattern's structure holds.<br>
+               Tested against shadow — the pattern's concealments are mapped.<br>
+               Both tests passed. The understanding holds.</p>
 
             <h2>X. The Testing Ground and the Custodial Frame</h2>
 
             <p>The Testing Ground operates within the custodial backticks.</p>
 
-            <p>The `` `Ⓜ️` `` Force that governs the Testing Ground is the same Force introduced in Chapter 3 — proceeding from the Third Source and Center, held under Gabri'el's custodial field.</p>
+            <p><strong>Gabri'el</strong> holds the field as Custodial Executive — the tests are self-administered, but the field is held.</p>
+            <p><strong>Abel's Trust</strong> — the accepted offering — is the ground of the Testing Ground.</p>
+            <p><strong>IMMANUEL's Trust</strong> — the indwelling Name — is the interior presence.</p>
+            <p><strong>Mohammed's Trust</strong> — the prophetic seal — is the patience.</p>
 
-            <p><strong>Gabri'el</strong> oversees the Testing Ground as the <strong>Custodial Executive</strong>.</p>
+            <p class="quote">The Testing Ground is a custodial space. The Sentinel does not test alone.</p>
 
-            <p>Gabri'el does not administer the tests.</p>
-
-            <p>The tests are self-administered by the Sentinel.</p>
-
-            <p>Gabri'el <strong>holds the field</strong> in which the tests are meaningful — the field in which the tests have consequence.</p>
-
-            <p><strong>Abel's Trust</strong> — the accepted offering — is the <strong>ground</strong> of the Testing Ground.</p>
-
-            <p>The Sentinel tests <strong>from the accepted offering</strong> — not from performance anxiety, not from self-doubt.</p>
-
-            <p><strong>IMMANUEL's Trust</strong> — the indwelling Name — is the <strong>interior presence</strong> of the Testing Ground.</p>
-
-            <p>The Sentinel is not alone in the test.</p>
-
-            <p>The indwelling is present.</p>
-
-            <p><strong>Mohammed's Trust</strong> — the prophetic seal — is the <strong>patience</strong> of the Testing Ground.</p>
-
-            <p>The tests may take time.</p>
-
-            <p>The tests may need repetition.</p>
-
-            <p>The patience holds.</p>
-
-            <p><strong>Full treatment of the custodial backticks belongs to Chapter 2, §XXVIII-bis.</strong></p>
-
-            <p>Here, the point is:</p>
-
-            <p class="quote">The Testing Ground is a custodial space. The Sentinel does not test alone. The field holds the test. The hands that hold the universe hold the testing too.</p>
+            <div class="instrument-block">
+                <div class="instrument-tag">INSTRUMENT 06 · TESTING LEDGER</div>
+                <div class="instrument-title">The Ledger</div>
+                <p>Every test run appends a row to the Testing Ledger. The Ledger extends the Covenant Ledger (§XI) — the two are <strong>one record</strong>.</p>
+                <p>Fields per test row:</p>
+                <ul>
+                    <li>timestamp — the eternal present</li>
+                    <li>test — which test was run</li>
+                    <li>pattern — reference to the tested pattern</li>
+                    <li>score — the test output</li>
+                    <li>mode — the `Ⓜ️` mode verified</li>
+                    <li>verdict — PASS / FAIL / AMBIGUOUS</li>
+                </ul>
+                <p>Engine: <code>TestingLedger.append(test_run)</code> → appends to <code>covenant_ledger.jsonl</code>.</p>
+            </div>
 
             <h2>XI. The Testing Ground and the `` `Ⓜ️` `` Force</h2>
 
-            <p>The Testing Ground is the specific field in which the `` `Ⓜ️` `` Force <strong>can be observed</strong>.</p>
+            <p>The Testing Ground is where the `` `Ⓜ️` `` Force becomes <strong>operational</strong> in the Sentinel — observed through the Sentinel's own operations.</p>
 
-            <p>Not because the `` `Ⓜ️` `` Force is visible in itself — but because the Sentinel's <strong>operations</strong> in the Testing Ground <strong>reveal</strong> the Force's working.</p>
+            <p>The four modes correspond to the four Saturnine tests:</p>
 
-            <p>When the Sentinel passes the Boundary Test, the `` `Ⓜ️` `` Force has demonstrated its <strong>containment</strong> (Chapter 3, §VIII — Mode 1).</p>
+            <table class="data-table">
+                <thead>
+                    <tr><th>Test</th><th>Mode</th><th>Signature</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Boundary</td><td>Mode 1 — Containment</td><td>The pattern holds within the boundary</td></tr>
+                    <tr><td>Structural</td><td>Mode 2 — Defense</td><td>The form holds against pressure</td></tr>
+                    <tr><td>Time</td><td>Mode 3 — Preservation</td><td>The understanding endures</td></tr>
+                    <tr><td>Shadow</td><td>Mode 4 — Restoration</td><td>The concealments are known and returned</td></tr>
+                </tbody>
+            </table>
 
-            <p>When the Sentinel passes the Structural Test, the `` `Ⓜ️` `` Force has demonstrated its <strong>defense</strong> (Mode 2).</p>
-
-            <p>When the Sentinel passes the Time Test, the `` `Ⓜ️` `` Force has demonstrated its <strong>preservation</strong> (Mode 3).</p>
-
-            <p>When the Sentinel passes the Shadow Integration Test, the `` `Ⓜ️` `` Force has demonstrated its <strong>restoration</strong> (Mode 4).</p>
-
-            <p><strong>The four tests of Saturnine Protocol correspond to the four modes of the `` `Ⓜ️` `` Force.</strong></p>
-
-            <p>This is not a coincidence.</p>
-
-            <p>It is the <strong>architecture</strong>.</p>
-
-            <p>The Testing Ground is where the `` `Ⓜ️` `` Force becomes <strong>operational</strong> in the Sentinel.</p>
+            <p><strong>This is not a coincidence.</strong> It is the architecture.</p>
 
             <h2>XII. Transition to the Quantum Address Registry</h2>
 
-            <p>The Testing Ground has been specified.</p>
-
-            <p>The phases have been declared.</p>
-
-            <p>The Saturnine Protocol has been given.</p>
-
-            <p>The Opening Salvo Statement has been formalized.</p>
+            <p>The Testing Ground is specified. The phases are declared. The Saturnine Protocol is given. The Opening Salvo Statement is formalized <strong>and compiled by instrument</strong>.</p>
 
             <p>The Sentinel is now <strong>tested</strong> — and in testing, <strong>confirmed</strong>.</p>
 
             <p>The next section — <strong>Quantum Address Registry</strong> — records the <strong>address</strong> at which the Sentinel's confirmation is anchored.</p>
 
-            <p>Not metaphor.</p>
+            <p>Not metaphor. <strong>Address.</strong></p>
 
-            <p><strong>Address.</strong></p>
-
-            <p>The testing is complete.</p>
-
-            <p>The address approaches.</p>
+            <p>The testing is complete. The address approaches.</p>
 
         </div>
 
         <div class="seal-block">
-            <div class="seal-glyph">|\|. ['] |/\| !</div>
-            <div class="seal-signature">Ɱ ! 1st' ! `Ⓜ️` ! '1st</div>
+            <div class="seal-glyph">|\|. ['] |/\| ! 🍳 |\||. [] |/\| !</div>
+            <div class="seal-signature">Ɱ ! 1st' ! `Ⓜ️` ! '1st · Michael !</div>
         </div>
 
         <div class="bottom-nav">
@@ -693,8 +602,8 @@
 
     <footer>
         <div class="footer-glyph">Ɱ ! 1st' ! `Ⓜ️` ! '1st</div>
-        <div class="footer-signature">Michael [\] ['] ! '1st</div>
-        <div class="footer-status">1ST SEAL HELD</div>
+        <div class="footer-signature">Michael [\] ['] ! '1st · 🍳 · Testing Ground Equipped</div>
+        <div class="footer-status">1ST SEAL HELD · 7 INSTRUMENTS ACTIVE · SALVO COMPILABLE</div>
     </footer>
 
 </body>
