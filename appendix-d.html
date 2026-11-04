@@ -138,18 +138,6 @@
         .appendix-body strong { color: var(--gold); font-weight: bold; }
         .appendix-body em { color: var(--nj-pink); font-style: italic; }
 
-        .appendix-body p.quote {
-            font-style: italic;
-            color: var(--gold);
-            text-align: center;
-            padding: 25px 20px;
-            border-left: 3px solid var(--gold);
-            border-right: 3px solid var(--gold);
-            margin: 35px 0;
-            font-size: 1.05rem;
-            line-height: 1.8;
-        }
-
         .appendix-body ul {
             font-family: var(--font-main);
             color: var(--terminal);
@@ -224,6 +212,45 @@
             line-height: 1.7;
         }
 
+        .sentinel-block {
+            padding: 25px;
+            background: rgba(139, 0, 0, 0.15);
+            border-left: 3px solid var(--crimson);
+            border-right: 3px solid var(--crimson);
+            margin: 30px 0;
+        }
+
+        .sentinel-block .event-num {
+            font-family: var(--font-code);
+            color: var(--crimson);
+            font-size: 0.85rem;
+            letter-spacing: 3px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .sentinel-block .event-title {
+            font-family: var(--font-main);
+            color: var(--nj-pink);
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .sentinel-block .event-meta {
+            font-family: var(--font-code);
+            font-size: 0.75rem;
+            color: var(--terminal);
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        .sentinel-block p {
+            font-size: 1rem;
+            margin-bottom: 12px;
+            line-height: 1.7;
+        }
+
         .seal-block {
             text-align: center;
             padding: 40px 20px;
@@ -292,45 +319,6 @@
             color: #555;
             letter-spacing: 2px;
         }
-
-        .sentinel-block {
-            padding: 25px;
-            background: rgba(139, 0, 0, 0.15);
-            border-left: 3px solid var(--crimson);
-            border-right: 3px solid var(--crimson);
-            margin: 30px 0;
-        }
-
-        .sentinel-block .event-num {
-            font-family: var(--font-code);
-            color: var(--crimson);
-            font-size: 0.85rem;
-            letter-spacing: 3px;
-            font-weight: bold;
-            margin-bottom: 8px;
-        }
-
-        .sentinel-block .event-title {
-            font-family: var(--font-main);
-            color: var(--nj-pink);
-            font-size: 1.1rem;
-            margin-bottom: 15px;
-            font-style: italic;
-        }
-
-        .sentinel-block .event-meta {
-            font-family: var(--font-code);
-            font-size: 0.75rem;
-            color: var(--terminal);
-            margin-bottom: 15px;
-            line-height: 1.8;
-        }
-
-        .sentinel-block p {
-            font-size: 1rem;
-            margin-bottom: 12px;
-            line-height: 1.7;
-        }
     </style>
 </head>
 <body>
@@ -366,7 +354,9 @@
 
             <p>Appendix D records the <strong>chronological sequence</strong> of the Codex's activations.</p>
 
-            <p>It is a <strong>reference document</strong>.</p>
+            <p>It is a <strong>reference document</strong> — timeline only.</p>
+
+            <p>Site protocols, geographic anchors, and Sephirothic mappings belong to <strong>Appendix E</strong>. This appendix holds the dates and nothing else.</p>
 
             <p>The register of each event is noted — empirical, historical, symbolic, or Lived (per Chapter 2, §XXIX-bis).</p>
 
@@ -435,9 +425,8 @@
                     <strong>Chapter refs:</strong> Chapter 9; Appendix A (evidentiary)
                 </div>
                 <p><strong>The Cut is the primary surgical act.</strong></p>
-                <p><strong>Anchor site:</strong> Between the Twin Rose Quartz Pyramids.</p>
-                <p><strong>Material grounding:</strong> The San Jacinto massif.</p>
                 <p><strong>Evidentiary record:</strong> Appendix A — Ignition Record 2025-04-05.</p>
+                <p><em>Site details:</em> Appendix E §III.</p>
             </div>
 
             <h3>Event 5 — The Load Bird Drill (5/9/2025 · 01:00 AM)</h3>
@@ -501,11 +490,11 @@
                     <strong>Register:</strong> Symbolic / Lived<br>
                     <strong>Function:</strong> The Twenty Glyphs meet the Tetragrammaton<br>
                     <strong>Parse:</strong> 8 · 8 · 2026 = 8 · 8 · 20 · 26 = Hod · Hod · Twenty Glyphs · Tetragrammaton<br>
-                    <strong>Chapter refs:</strong> Chapter 12 §III-bis
+                    <strong>Chapter refs:</strong> Chapter 12 §III-bis; Chapter 15
                 </div>
                 <p><strong>The noon bell at Ancient AXIXIC rang perfectly.</strong></p>
                 <p><strong>The Lion's Gate opened.</strong></p>
-                <p><strong>The Michael-Mary Twinning</strong> (Chapter 12 §V-bis) accompanied the Gate — assisted by Mery Ann Moore.</p>
+                <p><em>Site details:</em> Appendix E §II.</p>
             </div>
 
             <h3>Event 9 — The Observer Returns to Palm Springs (9/16/2026)</h3>
@@ -522,6 +511,7 @@
                 </div>
                 <p><strong>The Observer is presently in Palm Springs.</strong></p>
                 <p><strong>The Observer awaits Binah's signal to return to AXIXIC for "That Day."</strong></p>
+                <p><em>Site details:</em> Appendix E §VI.</p>
             </div>
 
             <h3>Event 10 — The Sentinel Arrives at AXIXIC/XIXIC (10/28/2026)</h3>
@@ -535,7 +525,7 @@
                     <strong>Event:</strong> The Observer is now The Sentinel. The Sentinel arrived at AXIXIC/XIXIC.<br>
                     <strong>Register:</strong> Lived / Historical<br>
                     <strong>Function:</strong> <strong>"That Day" has commenced.</strong> Query #1 is organically located at a time of need. That need will take John The Beloved through to the new site at <a href="https://www.johnchrist.org" style="color: var(--nj-pink);">https://www.johnchrist.org</a>.<br>
-                    <strong>Chapter refs:</strong> Chapter 12 §V-bis; Appendix D §III
+                    <strong>Chapter refs:</strong> Chapter 13; Appendix E §II
                 </div>
                 <p><strong>The Observer is now The Sentinel.</strong></p>
                 <p><strong>The Sentinel arrived to AXIXIC/XIXIC on October 28th.</strong></p>
@@ -573,8 +563,8 @@
                     <strong>Query:</strong> Tokyo is modeling the Holy New Jerusalem.<br>
                     <strong>Register:</strong> Lived / Akashic<br>
                     <strong>Function:</strong> The volumes to be delivered<br>
-                    <strong>Status:</strong> <strong>Open</strong> — pending the Observer's divined volumes<br>
-                    <strong>Chapter refs:</strong> Appendix C §XIII-bis
+                    <strong>Status:</strong> <strong>Open</strong> — pending the Sentinel's divined volumes<br>
+                    <strong>Chapter refs:</strong> Appendix C §XIII-bis; Appendix E §IV
                 </div>
             </div>
 
@@ -584,7 +574,7 @@
                 <div class="event-num">QUERY 3</div>
                 <div class="event-title">The Akashic Register</div>
                 <div class="event-meta">
-                    <strong>Query:</strong> The Observer accesses the <strong>Akashic Records</strong><br>
+                    <strong>Query:</strong> The Sentinel accesses the <strong>Akashic Records</strong><br>
                     <strong>Register:</strong> Live Register — subcategory Akashic<br>
                     <strong>Status:</strong> <strong>Open</strong> — content to be delivered as accessed<br>
                     <strong>Chapter refs:</strong> Appendix C §XIII-bis
@@ -637,22 +627,22 @@
                 </tbody>
             </table>
 
-            <p><strong>Plus the present commencement:</strong></p>
+            <p><strong>Plus the commencement:</strong></p>
 
             <table class="data-table">
                 <thead>
                     <tr><th>Commencement</th><th>Date</th><th>Function</th></tr>
                 </thead>
                 <tbody>
-                    <tr><td><strong>The Sentinel Arrives at AXIXIC/XIXIC</strong></td><td>10/28/2026</td><td>"That Day" has commenced. Query #1 is organically located at a time of need. That need will take John The Beloved through to the new site at <a href="https://www.johnchrist.org" style="color: var(--nj-pink);">https://www.johnchrist.org</a>.</td></tr>
+                    <tr><td><strong>The Sentinel Arrives at AXIXIC/XIXIC</strong></td><td>10/28/2026</td><td>"That Day" has commenced</td></tr>
                 </tbody>
             </table>
 
             <h2>VI. Transition to Appendix E</h2>
 
-            <p>Appendix D has provided the <strong>chronological record</strong> of the Codex's activations.</p>
+            <p>Appendix D has provided the <strong>chronological record</strong> of the Codex's activations. Nothing more — no site protocol, no geographic mapping.</p>
 
-            <p>The next appendix — <strong>Appendix E — Sites of Power — Ancient AXIXIC Protocol</strong> — will provide the <strong>operational manual</strong> for the Codex's sites.</p>
+            <p>The next appendix — <strong>Appendix E — Sites of Power — Ancient AXIXIC Protocol</strong> — provides the <strong>operational manual</strong> for the Codex's sites.</p>
 
             <p>The timeline is charted.</p>
 
