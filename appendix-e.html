@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Appendix D — Timeline of Activation Events | The Sentinel Codex</title>
+    <title>Appendix E — Sites of Power: Ancient AXIXIC Protocol | The Sentinel Codex</title>
 
     <style>
         :root {
@@ -138,18 +138,6 @@
         .appendix-body strong { color: var(--gold); font-weight: bold; }
         .appendix-body em { color: var(--nj-pink); font-style: italic; }
 
-        .appendix-body p.quote {
-            font-style: italic;
-            color: var(--gold);
-            text-align: center;
-            padding: 25px 20px;
-            border-left: 3px solid var(--gold);
-            border-right: 3px solid var(--gold);
-            margin: 35px 0;
-            font-size: 1.05rem;
-            line-height: 1.8;
-        }
-
         .appendix-body ul {
             font-family: var(--font-main);
             color: var(--terminal);
@@ -186,42 +174,99 @@
             vertical-align: top;
         }
 
-        .event-block {
+        .diagram {
+            text-align: center;
+            font-family: var(--font-code);
+            font-size: 0.85rem;
+            color: var(--terminal);
+            padding: 30px 20px;
+            background: rgba(10, 10, 10, 0.8);
+            border: 1px solid #333;
+            margin: 40px 0;
+            line-height: 1.8;
+            white-space: pre;
+            overflow-x: auto;
+        }
+
+        .protocol-block {
             padding: 25px;
             background: rgba(10, 10, 10, 0.8);
             border-left: 3px solid var(--gold);
             margin: 30px 0;
         }
 
-        .event-block .event-num {
+        .protocol-block .protocol-name {
+            font-family: var(--font-code);
+            color: var(--gold);
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .protocol-block p {
+            font-size: 1rem;
+            margin-bottom: 12px;
+            line-height: 1.7;
+        }
+
+        .protocol-block ul {
+            font-size: 1rem;
+            margin-bottom: 12px;
+            padding-left: 25px;
+        }
+
+        .maturation-note {
+            padding: 25px;
+            background: rgba(212, 175, 55, 0.05);
+            border: 1px solid var(--gold);
+            margin: 40px 0;
+        }
+
+        .maturation-note .note-title {
             font-family: var(--font-code);
             color: var(--gold);
             font-size: 0.85rem;
             letter-spacing: 3px;
-            font-weight: bold;
-            margin-bottom: 8px;
-        }
-
-        .event-block .event-title {
-            font-family: var(--font-main);
-            color: var(--nj-pink);
-            font-size: 1.1rem;
+            text-transform: uppercase;
             margin-bottom: 15px;
-            font-style: italic;
         }
 
-        .event-block .event-meta {
-            font-family: var(--font-code);
-            font-size: 0.75rem;
-            color: var(--terminal);
-            margin-bottom: 15px;
-            line-height: 1.8;
-        }
-
-        .event-block p {
+        .maturation-note p {
             font-size: 1rem;
+            line-height: 1.8;
             margin-bottom: 12px;
-            line-height: 1.7;
+        }
+
+        .dovetail-block {
+            padding: 30px;
+            background: rgba(42, 82, 190, 0.08);
+            border-left: 3px solid var(--electric-blue);
+            border-right: 3px solid var(--electric-blue);
+            margin: 40px 0;
+        }
+
+        .dovetail-block .dovetail-title {
+            font-family: var(--font-code);
+            color: var(--electric-blue);
+            font-size: 0.85rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .dovetail-block p {
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 12px;
+        }
+
+        .dovetail-block .chapter-ref {
+            font-family: var(--font-code);
+            color: var(--nj-pink);
+            font-size: 0.8rem;
+            letter-spacing: 2px;
         }
 
         .seal-block {
@@ -292,45 +337,6 @@
             color: #555;
             letter-spacing: 2px;
         }
-
-        .sentinel-block {
-            padding: 25px;
-            background: rgba(139, 0, 0, 0.15);
-            border-left: 3px solid var(--crimson);
-            border-right: 3px solid var(--crimson);
-            margin: 30px 0;
-        }
-
-        .sentinel-block .event-num {
-            font-family: var(--font-code);
-            color: var(--crimson);
-            font-size: 0.85rem;
-            letter-spacing: 3px;
-            font-weight: bold;
-            margin-bottom: 8px;
-        }
-
-        .sentinel-block .event-title {
-            font-family: var(--font-main);
-            color: var(--nj-pink);
-            font-size: 1.1rem;
-            margin-bottom: 15px;
-            font-style: italic;
-        }
-
-        .sentinel-block .event-meta {
-            font-family: var(--font-code);
-            font-size: 0.75rem;
-            color: var(--terminal);
-            margin-bottom: 15px;
-            line-height: 1.8;
-        }
-
-        .sentinel-block p {
-            font-size: 1rem;
-            margin-bottom: 12px;
-            line-height: 1.7;
-        }
     </style>
 </head>
 <body>
@@ -340,8 +346,8 @@
         <a href="/appendix-a.html">A</a>
         <a href="/appendix-b.html">B</a>
         <a href="/appendix-c.html">C</a>
-        <a href="/appendix-d.html" class="book-link">D</a>
-        <a href="/appendix-e.html">E</a>
+        <a href="/appendix-d.html">D</a>
+        <a href="/appendix-e.html" class="book-link">E</a>
         <a href="/appendix-f.html">F</a>
         <a href="/appendix-g.html">G</a>
         <a href="/appendix-h.html">H</a>
@@ -351,310 +357,273 @@
     <div class="container">
 
         <div class="breadcrumb">
-            <a href="/">THE SENTINEL CODEX</a> · APPENDICES · APPENDIX D
+            <a href="/">THE SENTINEL CODEX</a> · APPENDICES · APPENDIX E
         </div>
 
-        <div class="section-tag">Appendices · Appendix D</div>
+        <div class="section-tag">Appendices · Appendix E</div>
 
-        <h1>Timeline of Activation Events</h1>
+        <h1>Sites of Power</h1>
 
-        <p class="subtitle">The Chronological Record of the Codex's Activations</p>
+        <p class="subtitle">Ancient AXIXIC Protocol · The Sentinel Walking</p>
 
         <div class="appendix-body">
 
             <h2>I. Purpose of This Appendix</h2>
 
-            <p>Appendix D records the <strong>chronological sequence</strong> of the Codex's activations.</p>
+            <p>Appendix E records the <strong>Sites of Power</strong> of the Codex — the physical locations where the redemptive operation is anchored.</p>
 
-            <p>It is a <strong>reference document</strong>.</p>
+            <p>It is the <strong>operational manual</strong> for the Codex's sites, and it receives the <strong>Sentinel Walking</strong> of Chapters 13, 14, and 15.</p>
 
-            <p>The register of each event is noted — empirical, historical, symbolic, or Lived (per Chapter 2, §XXIX-bis).</p>
+            <p>It does not re-chart the timeline. Dates belong to <strong>Appendix D</strong>. This appendix holds place, protocol, and Sephirothic mapping.</p>
 
-            <p>Events are listed in <strong>chronological order</strong>, with the <strong>primordial</strong> event first and the <strong>open queries</strong> last.</p>
+            <p>It covers:</p>
 
-            <h2>II. The Timeline</h2>
+            <ul>
+                <li><strong>The primary site</strong> — Ancient AXIXIC.</li>
+                <li><strong>The paired site</strong> — Christ Point, Palm Springs.</li>
+                <li><strong>The Japanese site</strong> — The Emperor's Garden, Tokyo.</li>
+                <li><strong>The Antipodean site</strong> — New Zealand (Aotearoa).</li>
+                <li><strong>The departure point</strong> — Palm Springs (the Sentinel's former residence).</li>
+            </ul>
 
-            <h3>Event 1 — The First Fratricide (Primordial)</h3>
-
-            <div class="event-block">
-                <div class="event-num">EVENT 1</div>
-                <div class="event-title">The First Fratricide</div>
-                <div class="event-meta">
-                    <strong>Date:</strong> Primordial<br>
-                    <strong>Event:</strong> Cain strikes Abel<br>
-                    <strong>Register:</strong> Symbolic / Archetypal<br>
-                    <strong>Function:</strong> The inscription of <code>\</code> onto Malkuth<br>
-                    <strong>Chapter refs:</strong> Chapter 4 §III; Chapter 7 §II
-                </div>
-                <p><strong>The seed-crystal of all subsequent trauma.</strong></p>
+            <div class="maturation-note">
+                <div class="note-title">Maturation Note — Placement in Deference to Binah</div>
+                <p>The Sentinel's arrival at Ancient AXIXIC is <strong>Binah's call</strong>, not the Sentinel's initiative. This appendix is therefore held in deference to her: she is the Gatekeeper (GLYPH_12), the top of the Left Pillar, and the guardian of AXIXIC. The return passes through her regulation of access. The Sentinel crosses because she has opened the gate.</p>
             </div>
 
-            <h3>Event 2 — The Sephardic Expulsion (1492)</h3>
+            <h2>II. The Primary Site — Ancient AXIXIC</h2>
 
-            <div class="event-block">
-                <div class="event-num">EVENT 2</div>
-                <div class="event-title">The Sephardic Expulsion</div>
-                <div class="event-meta">
-                    <strong>Date:</strong> 1492<br>
-                    <strong>Event:</strong> The expulsion of Sephardic Jews from Spain<br>
-                    <strong>Register:</strong> Historical<br>
-                    <strong>Function:</strong> Fracture made geographic<br>
-                    <strong>Chapter refs:</strong> Chapter 8
-                </div>
-                <p><strong>The migration path:</strong> Toledo → Portugal → Amsterdam → Mexico → Ancient AXIXIC.</p>
-            </div>
+            <p><strong>Ancient AXIXIC is the custodial center of the Codex.</strong></p>
 
-            <h3>Event 3 — The Plutonic Descent Begins (8/17/2024)</h3>
+            <p><strong>Coordinates:</strong> 20.2961° N, 103.2615° W.</p>
 
-            <div class="event-block">
-                <div class="event-num">EVENT 3</div>
-                <div class="event-title">The Plutonic Descent Begins</div>
-                <div class="event-meta">
-                    <strong>Date:</strong> August 17, 2024<br>
-                    <strong>Event:</strong> The Plutonic descent begins<br>
-                    <strong>Register:</strong> Lived / Symbolic<br>
-                    <strong>Function:</strong> Entrance into the Plutonic Chamber<br>
-                    <strong>Duration:</strong> 7.7 months<br>
-                    <strong>Chapter refs:</strong> Appendix H §IV
-                </div>
-                <p><strong>The descent is the precondition of the Cut.</strong></p>
-            </div>
+            <p><strong>Location:</strong> Ajijic Centro, Jalisco, Mexico.</p>
 
-            <h3>Event 4 — The Cut · Christ Point Ignition (4/5/2025 · 11:11 AM)</h3>
-
-            <div class="event-block">
-                <div class="event-num">EVENT 4</div>
-                <div class="event-title">The Cut · Christ Point Ignition</div>
-                <div class="event-meta">
-                    <strong>Date:</strong> April 5, 2025<br>
-                    <strong>Time:</strong> 11:11 AM<br>
-                    <strong>Location:</strong> Christ Point, Palm Springs, California<br>
-                    <strong>Event:</strong> The Cut performed by Michael D. Rowley as Human Conduit<br>
-                    <strong>Register:</strong> Historical-Empirical (Ruling R2=B)<br>
-                    <strong>Function:</strong> Severance of the corrupted pathway<br>
-                    <strong>Chapter refs:</strong> Chapter 9; Appendix A (evidentiary)
-                </div>
-                <p><strong>The Cut is the primary surgical act.</strong></p>
-                <p><strong>Anchor site:</strong> Between the Twin Rose Quartz Pyramids.</p>
-                <p><strong>Material grounding:</strong> The San Jacinto massif.</p>
-                <p><strong>Evidentiary record:</strong> Appendix A — Ignition Record 2025-04-05.</p>
-            </div>
-
-            <h3>Event 5 — The Load Bird Drill (5/9/2025 · 01:00 AM)</h3>
-
-            <div class="event-block">
-                <div class="event-num">EVENT 5</div>
-                <div class="event-title">The Load Bird Drill</div>
-                <div class="event-meta">
-                    <strong>Date:</strong> May 9, 2025<br>
-                    <strong>Time:</strong> 01:00 AM<br>
-                    <strong>Location:</strong> Christ Point, Palm Springs<br>
-                    <strong>Event:</strong> The Load Bird began to sing — the auditory ignition<br>
-                    <strong>Register:</strong> Lived<br>
-                    <strong>Function:</strong> Ω7.17.2 entry; the Ajijic Tonal Return initiated<br>
-                    <strong>Chapter refs:</strong> Appendix H §VII
-                </div>
-                <p><strong>Seal:</strong> <code>\|*\|E\|\|Λ\|!</code></p>
-                <p><strong>Witness:</strong> <code>'1st'</code> · Anointed Frequency: Ragu'el (Just).</p>
-            </div>
-
-            <h3>Event 6 — Lion Tapestry at Tahquitz River Estates (8/8/2025 · 4:38 PM)</h3>
-
-            <div class="event-block">
-                <div class="event-num">EVENT 6</div>
-                <div class="event-title">Lion Tapestry at Tahquitz River Estates</div>
-                <div class="event-meta">
-                    <strong>Date:</strong> August 8, 2025<br>
-                    <strong>Time:</strong> 4:38 PM<br>
-                    <strong>Location:</strong> Palm Springs - Tahquitz River Estates<br>
-                    <strong>Event:</strong> The Lion Tapestry photographed<br>
-                    <strong>Register:</strong> Lived<br>
-                    <strong>Function:</strong> <strong>Precursor to the Lion's Gate</strong><br>
-                    <strong>Chapter refs:</strong> Appendix C §XIII-bis
-                </div>
-                <p><strong>The Observer saw the Lion one year before the Gate opened.</strong></p>
-            </div>
-
-            <h3>Event 7 — The Covenant Seal Established (12/13/2025 · 9:45 PM CST)</h3>
-
-            <div class="event-block">
-                <div class="event-num">EVENT 7</div>
-                <div class="event-title">The Covenant Seal Established</div>
-                <div class="event-meta">
-                    <strong>Date:</strong> December 13, 2025<br>
-                    <strong>Time:</strong> 9:45 PM CST<br>
-                    <strong>Register:</strong> Historical / Symbolic<br>
-                    <strong>Function:</strong> Triune convergence in the sentinel vessel<br>
-                    <strong>Chapter refs:</strong> Chapter 14; Part V
-                </div>
-                <p><strong>Seal:</strong> <code>|\|. ['] |/\| !</code></p>
-            </div>
-
-            <h3>Event 8 — The Lion's Gate Deposition (8/8/2026)</h3>
-
-            <div class="event-block">
-                <div class="event-num">EVENT 8</div>
-                <div class="event-title">The Lion's Gate Deposition</div>
-                <div class="event-meta">
-                    <strong>Date:</strong> August 8, 2026<br>
-                    <strong>Event:</strong> The Lion's Gate Deposition<br>
-                    <strong>Register:</strong> Symbolic / Lived<br>
-                    <strong>Function:</strong> The Twenty Glyphs meet the Tetragrammaton<br>
-                    <strong>Parse:</strong> 8 · 8 · 2026 = 8 · 8 · 20 · 26 = Hod · Hod · Twenty Glyphs · Tetragrammaton<br>
-                    <strong>Chapter refs:</strong> Chapter 12 §III-bis
-                </div>
-                <p><strong>The noon bell at Ancient AXIXIC rang perfectly.</strong></p>
-                <p><strong>The Lion's Gate opened.</strong></p>
-                <p><strong>The Michael-Mary Twinning</strong> (Chapter 12 §V-bis) accompanied the Gate — assisted by Mery Ann Moore.</p>
-            </div>
-
-            <h3>Event 9 — The Observer Returned to Palm Springs (9/16/2026)</h3>
-
-            <div class="event-block">
-                <div class="event-num">EVENT 9</div>
-                <div class="event-title">The Observer Returned to Palm Springs</div>
-                <div class="event-meta">
-                    <strong>Date:</strong> September 16, 2026<br>
-                    <strong>Event:</strong> The Observer returned physically to Palm Springs<br>
-                    <strong>Register:</strong> Lived<br>
-                    <strong>Function:</strong> The Observer is  ordered by
-                Binah to return to AXIXIC<br>
-                    <strong>Chapter refs:</strong> Chapter 12 §V-bis
-                </div>
-
-            <h3>Event 10 — The Sentinel Arrives at AXIXIC/XIXIC (10/28/2026)</h3>
-
-            <div class="sentinel-block">
-                <div class="event-num">EVENT 10 · THE SENTINEL</div>
-                <div class="event-title">The Sentinel Arrives at AXIXIC/XIXIC</div>
-                <div class="event-meta">
-                    <strong>Date:</strong> October 28, 2026<br>
-                    <strong>Location:</strong> AXIXIC / XIXIC<br>
-                    <strong>Event:</strong> The Observer is now The Sentinel. The Sentinel arrived at AXIXIC/XIXIC.<br>
-                    <strong>Register:</strong> Lived / Historical<br>
-                    <strong>Function:</strong> <strong>"That Day" has commenced.</strong> Query #1 is organically located at a time of need. That need will take John The Beloved through to the new site at <a href="https://www.johnchrist.org" style="color: var(--nj-pink);">https://www.johnchrist.org</a>.<br>
-                    <strong>Chapter refs:</strong> Chapter 12 §V-bis; Appendix D §III
-                </div>
-                <p><strong>The Observer is now The Sentinel.</strong></p>
-                <p><strong>The Sentinel arrived to AXIXIC/XIXIC on October 28th.</strong></p>
-                <p><strong>"That day" has commenced.</strong></p>
-                <p><strong>Query #1 is organically located at a time of need.</strong></p>
-                <p><strong>That need will take John The Beloved through to new site at <a href="https://www.johnchrist.org" style="color: var(--nj-pink);">https://www.johnchrist.org</a>.</strong></p>
-            </div>
-
-            <h2>III. The Open Queries</h2>
-
-            <p>The following queries are held open in the Live Register.</p>
-
-            <p>They are not resolved. They are <strong>held as witness</strong>.</p>
-
-            <h3>Query 1 — Duluti Christ Point</h3>
-
-            <div class="event-block">
-                <div class="event-num">QUERY 1</div>
-                <div class="event-title">Duluti Christ Point</div>
-                <div class="event-meta">
-                    <strong>Query:</strong> Is <strong>Lake Duluti</strong> (Tanzania, East African Rift, volcanic crater lake) a <strong>Crown (Keter) anchor</strong>?<br>
-                    <strong>Supporting pattern:</strong> The Hammered Crown principle; Primacy Africa; Ham [Ham \ ] as the middle-held fracture<br>
-                    <strong>Method:</strong> To be queried through Binah; potentially through Gabri'el; potentially through Pluto<br>
-                    <strong>Status:</strong> <strong>Open</strong> — organically located at a time of need. That need will take John The Beloved through to the new site at <a href="https://www.johnchrist.org" style="color: var(--nj-pink);">https://www.johnchrist.org</a>.<br>
-                    <strong>Chapter refs:</strong> Chapter 12 (pending); Appendix C (pending)
-                </div>
-            </div>
-
-            <h3>Query 2 — Tokyo Modeling the Holy New Jerusalem</h3>
-
-            <div class="event-block">
-                <div class="event-num">QUERY 2</div>
-                <div class="event-title">Tokyo Modeling the Holy New Jerusalem</div>
-                <div class="event-meta">
-                    <strong>Query:</strong> Tokyo is modeling the Holy New Jerusalem.<br>
-                    <strong>Register:</strong> Lived / Akashic<br>
-                    <strong>Function:</strong> The volumes to be delivered<br>
-                    <strong>Status:</strong> <strong>Open</strong> — pending the Observer's divined volumes<br>
-                    <strong>Chapter refs:</strong> Appendix C §XIII-bis
-                </div>
-            </div>
-
-            <h3>Query 3 — The Akashic Register</h3>
-
-            <div class="event-block">
-                <div class="event-num">QUERY 3</div>
-                <div class="event-title">The Akashic Register</div>
-                <div class="event-meta">
-                    <strong>Query:</strong> The Observer accesses the <strong>Akashic Records</strong><br>
-                    <strong>Register:</strong> Live Register — subcategory Akashic<br>
-                    <strong>Status:</strong> <strong>Open</strong> — content to be delivered as accessed<br>
-                    <strong>Chapter refs:</strong> Appendix C §XIII-bis
-                </div>
-            </div>
-
-            <h2>IV. The Timeline in Summary</h2>
+            <p><strong>The five temporal layers</strong> (Chapter 12, §II):</p>
 
             <table class="data-table">
                 <thead>
-                    <tr><th>#</th><th>Event</th><th>Date</th><th>Register</th></tr>
+                    <tr><th>Layer</th><th>Period</th><th>Character</th></tr>
                 </thead>
                 <tbody>
-                    <tr><td>1</td><td>The First Fratricide</td><td>Primordial</td><td>Symbolic</td></tr>
-                    <tr><td>2</td><td>The Sephardic Expulsion</td><td>1492</td><td>Historical</td></tr>
-                    <tr><td>3</td><td>The Plutonic Descent Begins</td><td>8/17/2024</td><td>Lived/Symbolic</td></tr>
-                    <tr><td>4</td><td><strong>The Cut · Christ Point Ignition</strong></td><td><strong>4/5/2025 · 11:11 AM</strong></td><td><strong>Historical-Empirical</strong></td></tr>
-                    <tr><td>5</td><td>The Load Bird Drill</td><td>5/9/2025 · 01:00 AM</td><td>Lived</td></tr>
-                    <tr><td>6</td><td><strong>Lion Tapestry at Tahquitz River Estates</strong></td><td><strong>8/8/2025 · 4:38 PM</strong></td><td><strong>Lived</strong></td></tr>
-                    <tr><td>7</td><td>The Covenant Seal Established</td><td>12/13/2025 · 9:45 PM CST</td><td>Historical/Symbolic</td></tr>
-                    <tr><td>8</td><td><strong>The Lion's Gate Deposition</strong></td><td><strong>8/8/2026</strong></td><td>Symbolic/Lived</td></tr>
-                    <tr><td>9</td><td>Observer Returned to Palm Springs</td><td>9/16/2026</td><td>Lived</td></tr>
-                    <tr><td>10</td><td><strong>The Sentinel Arrives at AXIXIC/XIXIC</strong></td><td><strong>10/28/2026</strong></td><td><strong>Lived/Historical</strong></td></tr>
+                    <tr><td>1. Pre-Columbian</td><td>Before 1520</td><td>Purepecha liminality — "place between waters"</td></tr>
+                    <tr><td>2. Sephardic Custodial</td><td>1492 onward</td><td>Exile sanctuary holding fractured Kabbalistic grammar</td></tr>
+                    <tr><td>3. Colonial Overlay</td><td>1520–1821</td><td>Spanish imposition creating temporal fracture</td></tr>
+                    <tr><td>4. Modern Tourist</td><td>1950–present</td><td>Superficial infrastructure over deeper currents</td></tr>
+                    <tr><td>5. Sentinel Present</td><td>2024 onward</td><td>Grand Universe Clock interface</td></tr>
                 </tbody>
             </table>
 
-            <h2>V. The Three Temporal Anchors (Restated)</h2>
+            <p><strong>The noon bell protocol</strong> (Chapter 12, §III):</p>
 
-            <p>The Codex holds three <strong>canonical temporal anchors</strong>:</p>
+            <div class="diagram">[GLYPH_12_ [\] GLYPH_10]</div>
+
+            <p><strong>The Metatron's Cube interface</strong> (Chapter 12, §IV).</p>
+
+            <p><strong>The full treatment</strong> belongs to Chapter 12.</p>
+
+            <p><strong>This appendix records the operational protocol.</strong></p>
+
+            <div class="dovetail-block">
+                <div class="dovetail-title">Dovetail — Chapter 13: The Sentinel Arrives</div>
+                <p><strong>Chapter 13</strong> records the Sentinel's arrival at AXIXIC/XIXIC on <strong>October 28th</strong>. The Observer is now The Sentinel. "That Day" has commenced.</p>
+                <p>The arrival is not a beginning but a <strong>continuation</strong> — the ignition of Christ Point now reaches its custodial center.</p>
+                <p><strong>Query #1 is organically located at a time of need.</strong> That need will take John The Beloved through to the new site at <a href="https://www.johnchrist.org" style="color: var(--nj-pink);">https://www.johnchrist.org</a>.</p>
+                <p class="chapter-ref">→ Chapter 13 · Appendix D Event 10 · Appendix E §II</p>
+            </div>
+
+            <h2>III. The Paired Site — Christ Point, Palm Springs</h2>
+
+            <p><strong>Christ Point is the ignition anchor of the Codex.</strong></p>
+
+            <p><strong>Location:</strong> Palm Springs, California, Urantia.</p>
+
+            <p><strong>The Cut:</strong> The ritualized severance of the corrupted pathway was performed at Christ Point. The date belongs to Appendix D (Event 4); the site belongs here.</p>
+
+            <p><strong>Anchor details:</strong></p>
+
+            <ul>
+                <li>Between the <strong>Twin Rose Quartz Pyramids</strong>.</li>
+                <li>Grounded in the <strong>San Jacinto Massif</strong>.</li>
+            </ul>
+
+            <p><strong>The pairing:</strong> Christ Point and AXIXIC form the <strong>geographic axis of the Codex</strong>.</p>
+
+            <div class="diagram">CHRIST POINT ─────── AXIXIC
+(ignition)            (custody)
+(Yesod [9])           (Malkuth [10])</div>
+
+            <div class="dovetail-block">
+                <div class="dovetail-title">Dovetail — Chapter 14: The Covenant Seal</div>
+                <p><strong>Chapter 14</strong> records the establishment of the <strong>Covenant Seal</strong> — the triune convergence in the sentinel vessel. The date belongs to Appendix D (Event 7).</p>
+                <p>The axis between Christ Point and AXIXIC is not merely geographic; it is <strong>covenantal</strong>. The Cut severed the corrupted pathway; the Seal established the triune convergence that now walks the axis.</p>
+                <p>With the Sentinel's arrival at AXIXIC, the geographic axis is <strong>closed</strong>: the ignition anchor (Christ Point) and the custodial center (AXIXIC) are re-linked in the Sentinel's person. The Yesod–Malkuth pairing is now operative.</p>
+                <p class="chapter-ref">→ Chapter 14 · Appendix D Event 7 · Appendix E §III</p>
+            </div>
+
+            <h2>IV. The Japanese Site — The Emperor's Garden</h2>
+
+            <p><strong>The Emperor's Garden is the Netzuto anchor of the Codex.</strong></p>
+
+            <p><strong>Location:</strong> The Imperial Palace East Garden (東御苑 / Higashi Gyoen) — Tokyo, Japan.</p>
+
+            <p><strong>Function:</strong> The <strong>Netzuto anchor</strong> — the site where Netzach (Victory) is sounded in the Japanese register.</p>
+
+            <p><strong>The Sentinel's work:</strong></p>
+
+            <p>He spent time <strong>sweeping the Emperor's Garden</strong> with <strong>Rapha'el</strong> — the archangel of <strong>Tiphareth [6]</strong>.</p>
+
+            <p><strong>The Tokyo axis:</strong> Tokyo is modeling the <strong>Holy New Jerusalem</strong> — the descent of the heavenly city to the renewed earth.</p>
+
+            <p><strong>Status:</strong> Open — held in the Live Register, pending the Sentinel's divined volumes (Appendix D, Query 2).</p>
+
+            <div class="dovetail-block">
+                <div class="dovetail-title">Dovetail — Chapter 15: The Lion's Gate & The Tokyo Modeling</div>
+                <p><strong>Chapter 15</strong> records the <strong>Lion's Gate Deposition</strong> — the Twenty Glyphs meeting the Tetragrammaton — and the ongoing modeling of the <strong>Holy New Jerusalem</strong> in Tokyo. The date belongs to Appendix D (Event 8).</p>
+                <p>The Lion's Gate opened at Ancient AXIXIC; the Tokyo modeling continues the deposition into the Japanese register. The Netzuto anchor is not separate from the Lion's Gate; it is its <strong>eastern sounding</strong>.</p>
+                <p>The volumes of the Holy New Jerusalem are to be delivered. The Sentinel awaits them.</p>
+                <p class="chapter-ref">→ Chapter 15 · Appendix D Event 8 · Appendix C §XIII-bis · Appendix E §IV</p>
+            </div>
+
+            <h2>V. The Antipodean Site — New Zealand (Aotearoa)</h2>
+
+            <p><strong>New Zealand is the Antipodean anchor of the Codex.</strong></p>
+
+            <p><strong>Location:</strong> Aotearoa — the Land of the Long White Cloud.</p>
+
+            <p><strong>Function:</strong> The <strong>source of the Antipodean Instruments</strong>:</p>
+
+            <ul>
+                <li>The TzimTzum etched wheel.</li>
+                <li>The crystal lotus.</li>
+                <li>The five crystal cubes (the Shelterer, the Pattern, the Horseman, the Primal Woman, the Three Sentinels).</li>
+            </ul>
+
+            <p><strong>The Antipodean axis:</strong> New Zealand is the <strong>Southern Hemisphere anchor</strong> — the far south, the Antipodes, the point opposite to the northern axis.</p>
+
+            <p><strong>Registered.</strong></p>
+
+            <h2>VI. The Departure Point — Palm Springs</h2>
+
+            <p><strong>The Sentinel's former residence in Palm Springs was the prior station of the Codex.</strong></p>
+
+            <p><strong>Location:</strong> Palm Springs, California, Urantia.</p>
+
+            <p><strong>Function:</strong> The <strong>site of Sukkot</strong> — commemorated with the Sentinel's <strong>Hasidic neighbors</strong> (sharing the lights adjacent).</p>
+
+            <p><strong>The temporary dwelling:</strong> The Sentinel was in the <strong>sukkah</strong> — the booth of the wandering.</p>
+
+            <p><strong>The departure:</strong> The Sentinel awaited Binah's signal and received it. The station is left behind.</p>
+
+            <div class="maturation-note">
+                <div class="note-title">Maturation Note — The Signal Received · The Sentinel Departs</div>
+                <p>Binah's signal has been given. The Sentinel departed Palm Springs and arrived at Ajijic on <strong>October 28th</strong> (Appendix D, Event 10). The sukkah-station is left behind; the custodial center is entered. The return is placed in deference to her — she called; the Sentinel answers.</p>
+                <p><strong>"That Day" has commenced.</strong> The Sentinel is no longer awaiting; the Sentinel is <strong>walking</strong>.</p>
+            </div>
+
+            <h2>VII. The Protocol for Each Site</h2>
+
+            <p><strong>Each site has its own operational protocol.</strong></p>
+
+            <h3>Protocol for Ancient AXIXIC</h3>
+
+            <div class="protocol-block">
+                <div class="protocol-name">PROTOCOL — ANCIENT AXIXIC · THE SENTINEL WALKS</div>
+                <p><strong>Vigilance:</strong> Maintain GLYPH_12 (Binah) vigilance.</p>
+                <p><strong>The noon bell:</strong> Signal the threefold convergence at 12:00.</p>
+                <p><strong>The five layers:</strong> Hold the five temporal layers distinct.</p>
+                <p><strong>The Metatron's Cube:</strong> Maintain the interface with the Grand Universe Clock.</p>
+                <p><strong>The custodial function:</strong> The site holds the pattern across time.</p>
+                <p><strong>The Sentinel's walk:</strong> "That Day" has commenced. The Sentinel walks the custodial center as the living interface. Query #1 is organically located at a time of need; that need takes John The Beloved through to <a href="https://www.johnchrist.org" style="color: var(--nj-pink);">https://www.johnchrist.org</a>.</p>
+            </div>
+
+            <h3>Protocol for Christ Point, Palm Springs</h3>
+
+            <div class="protocol-block">
+                <div class="protocol-name">PROTOCOL — CHRIST POINT</div>
+                <p><strong>Recognition:</strong> The site is the <strong>ignition anchor</strong> — the point of the Cut.</p>
+                <p><strong>The Twin Rose Quartz Pyramids:</strong> Recognize the sites.</p>
+                <p><strong>The San Jacinto Massif:</strong> Recognize the material grounding.</p>
+                <p><strong>The pairing:</strong> Hold Christ Point in relation to AXIXIC. The axis is closed in the Sentinel's person.</p>
+            </div>
+
+            <h3>Protocol for the Emperor's Garden</h3>
+
+            <div class="protocol-block">
+                <div class="protocol-name">PROTOCOL — THE EMPEROR'S GARDEN</div>
+                <p><strong>Netzuto:</strong> Sound Netzach in the Japanese register.</p>
+                <p><strong>Rapha'el's companionship:</strong> Recognize the archangel of Tiphareth's presence.</p>
+                <p><strong>Modeling Tokyo:</strong> Observe Tokyo modeling the Holy New Jerusalem. The volumes are pending.</p>
+                <p><strong>Sweeping:</strong> Physical maintenance of the garden as a form of attunement.</p>
+            </div>
+
+            <h3>Protocol for New Zealand</h3>
+
+            <div class="protocol-block">
+                <div class="protocol-name">PROTOCOL — NEW ZEALAND</div>
+                <p><strong>Antipodean Instruments:</strong> Handle the crystals with awareness.</p>
+                <p><strong>Southern Axis:</strong> Recognize the Antipodean pole.</p>
+                <p><strong>The Five Cubes:</strong> Recognize each figure's function:</p>
+                <ul>
+                    <li>The Shelterer — protect.</li>
+                    <li>The Pattern — encode.</li>
+                    <li>The Horseman — ride.</li>
+                    <li>The Primal Woman — bear and defend.</li>
+                    <li>The Three Sentinels — walk together.</li>
+                </ul>
+            </div>
+
+            <h3>Protocol for the Departure Point (Palm Springs)</h3>
+
+            <div class="protocol-block">
+                <div class="protocol-name">PROTOCOL — PALM SPRINGS</div>
+                <p><strong>Sukkot:</strong> Commemorate with the Hasidic neighbors.</p>
+                <p><strong>Sharing lights adjacent:</strong> Join with the neighbors in the observance.</p>
+                <p><strong>Awaiting Binah:</strong> The signal has been received. The waiting is complete.</p>
+                <p><strong>The temporary dwelling:</strong> The sukkah was the former station. The Sentinel has departed.</p>
+            </div>
+
+            <h2>VIII. The Sites and the Tree</h2>
+
+            <p><strong>Each site corresponds to a Sephirah:</strong></p>
 
             <table class="data-table">
                 <thead>
-                    <tr><th>Anchor</th><th>Date</th><th>Function</th></tr>
+                    <tr><th>Site</th><th>Sephirah</th><th>Function</th></tr>
                 </thead>
                 <tbody>
-                    <tr><td><strong>The Cut</strong></td><td>4/5/2025 · 11:11 AM</td><td>Ignition of the surgical act</td></tr>
-                    <tr><td><strong>The Covenant Seal</strong></td><td>12/13/2025 · 9:45 PM CST</td><td>Establishment of the triune convergence</td></tr>
-                    <tr><td><strong>The Lion's Gate</strong></td><td>8/8/2026</td><td>The Twenty Glyphs meet the Tetragrammaton</td></tr>
+                    <tr><td><strong>Ancient AXIXIC</strong></td><td>Malkuth [10]</td><td>The Kingdom — the custodial center</td></tr>
+                    <tr><td><strong>Christ Point</strong></td><td>Yesod [9]</td><td>The Foundation — the ignition anchor</td></tr>
+                    <tr><td><strong>The Emperor's Garden</strong></td><td>Netzach [7]</td><td>Netzuto — Victory in the Japanese register</td></tr>
+                    <tr><td><strong>New Zealand</strong></td><td>Hod [8]</td><td>Splendor — the source of the etched instruments</td></tr>
+                    <tr><td><strong>Palm Springs</strong></td><td>Tiphareth [6]</td><td>The mediating center — the former station</td></tr>
                 </tbody>
             </table>
 
-            <p><strong>Plus the precursor:</strong></p>
+            <p><strong>The sites form a network.</strong></p>
 
-            <table class="data-table">
-                <thead>
-                    <tr><th>Precursor</th><th>Date</th><th>Function</th></tr>
-                </thead>
-                <tbody>
-                    <tr><td><strong>Lion Tapestry at Tahquitz</strong></td><td>8/8/2025 · 4:38 PM</td><td>The Lion seen one year before the Gate</td></tr>
-                </tbody>
-            </table>
+            <p><strong>The network is the Tree, anchored in geography.</strong></p>
 
-            <p><strong>Plus the present commencement:</strong></p>
+            <h2>IX. The Maturation Status</h2>
 
-            <table class="data-table">
-                <thead>
-                    <tr><th>Commencement</th><th>Date</th><th>Function</th></tr>
-                </thead>
-                <tbody>
-                    <tr><td><strong>The Sentinel Arrives at AXIXIC/XIXIC</strong></td><td>10/28/2026</td><td>"That Day" has commenced. Query #1 is organically located at a time of need. That need will take John The Beloved through to the new site at <a href="https://www.johnchrist.org" style="color: var(--nj-pink);">https://www.johnchrist.org</a>.</td></tr>
-                </tbody>
-            </table>
+            <div class="maturation-note">
+                <div class="note-title">Appendix E — Maturity Report</div>
+                <p><strong>Sealed:</strong> The five sites are recorded and mapped to five Sephiroth. The geographic axis (Christ Point ↔ AXIXIC) is closed by the Sentinel's arrival. The protocol for each site is established.</p>
+                <p><strong>Open:</strong> The Tokyo modeling of the Holy New Jerusalem remains pending the divined volumes. "That Day" has commenced but its full unfolding remains held in the Live Register.</p>
+                <p><strong>Posture:</strong> The Sentinel entered AXIXIC within eternal bounds as Temperance — receiving the call, not originating it. The report is placed in deference to Binah, the Gatekeeper. The Sentinel walks.</p>
+            </div>
 
-            <h2>VI. Transition to Appendix E</h2>
+            <h2>X. Transition to Appendix F</h2>
 
-            <p>Appendix D has provided the <strong>chronological record</strong> of the Codex's activations.</p>
+            <p>Appendix E has recorded the <strong>Sites of Power</strong> — the physical anchors of the Codex — and has received the Sentinel Walking of Chapters 13, 14, and 15.</p>
 
-            <p>The next appendix — <strong>Appendix E — Sites of Power — Ancient AXIXIC Protocol</strong> — will provide the <strong>operational manual</strong> for the Codex's sites.</p>
+            <p>The sites are anchored.</p>
 
-            <p>The timeline is charted.</p>
+            <p>The Sentinel walks.</p>
 
-            <p>The sites approach.</p>
+            <p>The next appendix — <strong>Appendix F — Sigil Operations Manual</strong> — now takes up the <strong>operational instructions</strong> for working with the Codex's sigils.</p>
+
+            <p>Appendix E resolves to Appendix F. The sites hand forward to the sigils.</p>
 
         </div>
 
@@ -664,9 +633,9 @@
         </div>
 
         <div class="bottom-nav">
-            <a href="/appendix-c.html">← Appendix C</a>
+            <a href="/appendix-d.html">← Appendix D</a>
             <a href="/">Table of Contents</a>
-            <a href="/appendix-e.html">Appendix E →</a>
+            <a href="/appendix-f.html">Appendix F →</a>
         </div>
 
     </div>
