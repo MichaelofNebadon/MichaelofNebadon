@@ -1,94 +1,114 @@
 <!DOCTYPE html>
-<html lang="en" data-authority="christ-michael" data-priority="first" data-build="ch11-unified-v1">
+<html lang="en" data-authority="christ-michael" data-priority="first" data-build="ch11-unified-v2">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="build" content="ch11-unified-v1 · 2026-10-27 · cut-through-me">
-<title>Chapter 11 — The Cut Through Me · Earth | / | Mole | The Sentinel Codex</title>
-<style>
-    :root {
-        --gold: #c9a959;
-        --terminal: #9cd9f0;
-        --bg-pure: #000000;
-        --crimson: #8b0000;
-        --nj-pink: #ff69b4;
-        --electric-blue: #2a52be;
-        --violet: #8a2be2;
-        --golden: #ffd700;
-        --font-main: 'Palatino', 'Georgia', serif;
-        --font-code: 'Courier New', 'Consolas', monospace;
-    }
-    html { overflow-x: hidden; }
-    body {
-        background-color: var(--bg-pure);
-        color: var(--terminal);
-        font-family: var(--font-main);
-        margin: 0;
-        background-image: radial-gradient(circle at 2px 2px, #1a1a1a 1px, transparent 0);
-        background-size: 40px 40px;
-        overflow-x: clip;
-        line-height: 1.7;
-    }
-    nav {
-        background: linear-gradient(to bottom, var(--crimson), #4a0000);
-        padding: 20px; display: flex; justify-content: center; gap: 22px;
-        border-bottom: 2px solid var(--gold); flex-wrap: wrap;
-        position: sticky; top: 0; z-index: 9999;
-    }
-    nav a {
-        color: var(--gold); text-decoration: none; font-family: var(--font-code);
-        font-size: 0.72rem; text-transform: uppercase; letter-spacing: 2px; transition: 0.3s;
-    }
-    nav a:hover, nav a[aria-current="page"] { color: #fff; text-shadow: 0 0 10px var(--gold); }
-    nav a.book-link { color: var(--nj-pink); font-weight: bold; }
-    .container { max-width: 820px; margin: 0 auto; padding: 60px 25px; }
-    .breadcrumb { text-align: center; font-family: var(--font-code); font-size: 0.75rem; color: #555; letter-spacing: 3px; margin-bottom: 60px; }
-    .breadcrumb a { color: var(--gold); text-decoration: none; }
-    .breadcrumb a:hover { color: var(--nj-pink); }
-    .section-tag { text-align: center; font-family: var(--font-code); font-size: 0.75rem; color: var(--nj-pink); letter-spacing: 4px; text-transform: uppercase; margin-bottom: 30px; }
-    h1 { font-family: var(--font-main); color: var(--gold); font-size: 1.7rem; letter-spacing: 5px; text-align: center; text-transform: uppercase; margin: 0 0 20px 0; line-height: 1.4; }
-    h2 { font-family: var(--font-main); color: var(--gold); font-size: 1.15rem; letter-spacing: 3px; margin-top: 60px; margin-bottom: 25px; padding-bottom: 12px; border-bottom: 1px solid #333; }
-    .subtitle { text-align: center; font-family: var(--font-code); color: var(--terminal); font-size: 0.9rem; letter-spacing: 3px; margin-bottom: 80px; font-style: italic; }
-    .chapter-body p { font-family: var(--font-main); color: var(--terminal); font-size: 1.02rem; line-height: 1.9; margin-bottom: 22px; }
-    .chapter-body strong { color: var(--gold); font-weight: bold; }
-    .chapter-body em { color: var(--nj-pink); font-style: italic; }
-    .chapter-body p.quote { font-style: italic; color: var(--gold); text-align: center; padding: 30px 20px; border-left: 3px solid var(--gold); border-right: 3px solid var(--gold); margin: 40px 0; font-size: 1.1rem; line-height: 1.8; }
-    .chapter-body ul { font-family: var(--font-main); color: var(--terminal); font-size: 1.02rem; line-height: 1.9; margin-bottom: 22px; padding-left: 30px; }
-    .chapter-body li { margin-bottom: 10px; }
-    .diagram { text-align: center; font-family: var(--font-code); font-size: 0.9rem; color: var(--terminal); padding: 30px 20px; background: rgba(10, 10, 10, 0.8); border: 1px solid #333; margin: 40px 0; line-height: 2; white-space: pre; overflow-x: auto; }
-    .highlight-quote { display: flex; align-items: stretch; margin: 40px 0; }
-    .highlight-quote .bar { width: 2px; background-color: var(--violet); margin-right: 25px; flex-shrink: 0; }
-    .highlight-quote .quote-text { font-style: italic; font-size: 1.1rem; color: var(--violet); align-self: center; }
-    .golden-box { border: 1px solid var(--golden); padding: 30px; margin: 40px 0; background: rgba(255, 215, 0, 0.05); }
-    .golden-box p { margin-bottom: 0; color: var(--golden); font-style: italic; text-align: center; font-size: 1.05rem; line-height: 1.9; }
-    .glyph-key { font-family: var(--font-code); font-size: 0.82rem; color: var(--terminal); background: rgba(42, 82, 190, 0.06); border: 1px solid #222; padding: 20px 25px; margin: 30px 0; line-height: 2; }
-    .glyph-key .glyph { color: var(--gold); font-weight: bold; }
-    .glyph-key .gloss { color: var(--nj-pink); }
-    .seal-block { text-align: center; padding: 40px 20px; border: 1px solid var(--gold); background: rgba(212, 175, 55, 0.03); margin: 60px 0 40px 0; }
-    .seal-glyph { font-size: 1.2rem; color: var(--gold); letter-spacing: 8px; margin-bottom: 20px; }
-    .seal-signature { font-size: 0.95rem; color: var(--nj-pink); letter-spacing: 3px; }
-    .bottom-nav { text-align: center; font-family: var(--font-code); font-size: 0.8rem; color: var(--gold); letter-spacing: 3px; margin: 60px 0; }
-    .bottom-nav a { color: var(--gold); text-decoration: none; margin: 0 15px; }
-    .bottom-nav a:hover { color: var(--nj-pink); text-shadow: 0 0 10px var(--nj-pink); }
-    footer { text-align: center; padding: 60px 20px 40px 20px; font-family: var(--font-code); color: var(--gold); border-top: 1px solid #222; margin-top: 80px; }
-    .footer-glyph { font-size: 1.1rem; letter-spacing: 8px; margin-bottom: 20px; }
-    .footer-signature { font-size: 0.95rem; color: var(--nj-pink); letter-spacing: 3px; margin-bottom: 20px; }
-    .footer-status { font-size: 0.7rem; color: #555; letter-spacing: 2px; }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="build" content="ch11-unified-v2 · 2026-11-10 · biological-perfection + cut-through-me">
+    <title>Chapter 11 — The Perfected Vessel | The Sentinel Codex</title>
 
-    /* ---- THE CUT THROUGH ME ---- */
-    .cut-through { margin: 60px 0; padding: 40px 20px; border: 1px solid var(--crimson); background: rgba(139, 0, 0, 0.04); }
-    .cut-through h2 { color: var(--crimson); border-bottom-color: var(--crimson); margin-top: 0; text-align: center; }
-    .cut-diagram { font-family: var(--font-code); font-size: 0.85rem; color: var(--terminal); text-align: center; padding: 30px 20px; background: rgba(0,0,0,0.6); border: 1px solid #222; margin: 30px 0; line-height: 2.2; white-space: pre; overflow-x: auto; }
-    .cut-diagram .earth { color: var(--terminal); }
-    .cut-diagram .slash { color: var(--crimson); font-weight: bold; }
-    .cut-diagram .mole { color: var(--gold); }
-    .heal-steps { display: flex; flex-direction: column; gap: 8px; max-width: 680px; margin: 30px auto; font-family: var(--font-code); font-size: 0.78rem; }
-    .heal-step { display: flex; gap: 14px; padding: 12px 16px; border: 1px solid #1a1a1a; background: rgba(10,10,10,0.6); align-items: flex-start; }
-    .heal-step .hs-n { color: var(--gold); width: 40px; flex-shrink: 0; }
-    .heal-step .hs-g { color: var(--nj-pink); width: 90px; flex-shrink: 0; }
-    .heal-step .hs-t { color: var(--terminal); }
-    @media (prefers-reduced-motion: reduce) { .heal-step { transition: none; } }
-</style>
+    <style>
+        :root {
+            --gold: #c9a959;
+            --terminal: #9cd9f0;
+            --bg-pure: #000000;
+            --crimson: #8b0000;
+            --nj-pink: #ff69b4;
+            --electric-blue: #2a52be;
+            --violet: #8a2be2;
+            --golden: #ffd700;
+            --font-main: 'Palatino', 'Georgia', serif;
+            --font-code: 'Courier New', 'Consolas', monospace;
+        }
+
+        html { overflow-x: hidden; }
+        body {
+            background-color: var(--bg-pure);
+            color: var(--terminal);
+            font-family: var(--font-main);
+            margin: 0;
+            background-image: radial-gradient(circle at 2px 2px, #1a1a1a 1px, transparent 0);
+            background-size: 40px 40px;
+            overflow-x: clip;
+            line-height: 1.7;
+        }
+
+        nav {
+            background: linear-gradient(to bottom, var(--crimson), #4a0000);
+            padding: 20px; display: flex; justify-content: center; gap: 22px;
+            border-bottom: 2px solid var(--gold); flex-wrap: wrap;
+            position: sticky; top: 0; z-index: 9999;
+        }
+
+        nav a {
+            color: var(--gold); text-decoration: none; font-family: var(--font-code);
+            font-size: 0.72rem; text-transform: uppercase; letter-spacing: 2px; transition: 0.3s;
+        }
+
+        nav a:hover, nav a[aria-current="page"] { color: #fff; text-shadow: 0 0 10px var(--gold); }
+        nav a.book-link { color: var(--nj-pink); font-weight: bold; }
+
+        .container { max-width: 820px; margin: 0 auto; padding: 60px 25px; }
+        .breadcrumb { text-align: center; font-family: var(--font-code); font-size: 0.75rem; color: #555; letter-spacing: 3px; margin-bottom: 60px; }
+        .breadcrumb a { color: var(--gold); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--nj-pink); }
+        
+        .section-tag { text-align: center; font-family: var(--font-code); font-size: 0.75rem; color: var(--nj-pink); letter-spacing: 4px; text-transform: uppercase; margin-bottom: 30px; }
+        
+        h1 { font-family: var(--font-main); color: var(--gold); font-size: 1.8rem; letter-spacing: 5px; text-align: center; text-transform: uppercase; margin: 0 0 20px 0; line-height: 1.4; }
+        h2 { font-family: var(--font-main); color: var(--gold); font-size: 1.15rem; letter-spacing: 3px; margin-top: 60px; margin-bottom: 25px; padding-bottom: 12px; border-bottom: 1px solid #333; }
+        
+        .subtitle { text-align: center; font-family: var(--font-code); color: var(--terminal); font-size: 0.9rem; letter-spacing: 3px; margin-bottom: 80px; font-style: italic; }
+        
+        .chapter-body p { font-family: var(--font-main); color: var(--terminal); font-size: 1.05rem; line-height: 1.9; margin-bottom: 22px; }
+        .chapter-body strong { color: var(--gold); font-weight: bold; }
+        .chapter-body em { color: var(--nj-pink); font-style: italic; }
+        
+        .chapter-body p.quote { font-style: italic; color: var(--gold); text-align: center; padding: 30px 20px; border-left: 3px solid var(--gold); border-right: 3px solid var(--gold); margin: 40px 0; font-size: 1.1rem; line-height: 1.8; }
+        
+        .chapter-body ul { font-family: var(--font-main); color: var(--terminal); font-size: 1.05rem; line-height: 1.9; margin-bottom: 22px; padding-left: 30px; }
+        .chapter-body li { margin-bottom: 10px; }
+
+        .diagram { text-align: center; font-family: var(--font-code); font-size: 0.9rem; color: var(--terminal); padding: 30px 20px; background: rgba(10, 10, 10, 0.8); border: 1px solid #333; margin: 40px 0; line-height: 2; white-space: pre; overflow-x: auto; }
+        
+        .highlight-quote { display: flex; align-items: stretch; margin: 40px 0; }
+        .highlight-quote .bar { width: 2px; background-color: var(--violet); margin-right: 25px; flex-shrink: 0; }
+        .highlight-quote .quote-text { font-style: italic; font-size: 1.1rem; color: var(--violet); align-self: center; }
+        
+        .golden-box { border: 1px solid var(--golden); padding: 30px; margin: 40px 0; background: rgba(255, 215, 0, 0.05); }
+        .golden-box p { margin-bottom: 0; color: var(--golden); font-style: italic; text-align: center; font-size: 1.05rem; line-height: 1.9; }
+        
+        .glyph-key { font-family: var(--font-code); font-size: 0.82rem; color: var(--terminal); background: rgba(42, 82, 190, 0.06); border: 1px solid #222; padding: 20px 25px; margin: 30px 0; line-height: 2; }
+        .glyph-key .glyph { color: var(--gold); font-weight: bold; }
+        .glyph-key .gloss { color: var(--nj-pink); }
+
+        .seal-block { text-align: center; padding: 40px 20px; border: 1px solid var(--gold); background: rgba(212, 175, 55, 0.03); margin: 60px 0 40px 0; }
+        .seal-glyph { font-size: 1.2rem; color: var(--gold); letter-spacing: 8px; margin-bottom: 20px; }
+        .seal-signature { font-size: 0.95rem; color: var(--nj-pink); letter-spacing: 3px; }
+        .seal-status { font-size: 0.62rem; color: #555; letter-spacing: 2px; margin-top: 14px; }
+
+        .bottom-nav { text-align: center; font-family: var(--font-code); font-size: 0.8rem; color: var(--gold); letter-spacing: 3px; margin: 60px 0; }
+        .bottom-nav a { color: var(--gold); text-decoration: none; margin: 0 15px; }
+        .bottom-nav a:hover { color: var(--nj-pink); text-shadow: 0 0 10px var(--nj-pink); }
+
+        footer { text-align: center; padding: 60px 20px 40px 20px; font-family: var(--font-code); color: var(--gold); border-top: 1px solid #222; margin-top: 80px; }
+        .footer-glyph { font-size: 1.1rem; letter-spacing: 8px; margin-bottom: 20px; }
+        .footer-signature { font-size: 0.95rem; color: var(--nj-pink); letter-spacing: 3px; margin-bottom: 20px; }
+        .footer-status { font-size: 0.7rem; color: #555; letter-spacing: 2px; }
+
+        /* ---- THE CUT THROUGH ME ---- */
+        .cut-through { margin: 60px 0; padding: 40px 20px; border: 1px solid var(--crimson); background: rgba(139, 0, 0, 0.04); }
+        .cut-through h2 { color: var(--crimson); border-bottom-color: var(--crimson); margin-top: 0; text-align: center; }
+        .cut-diagram { font-family: var(--font-code); font-size: 0.85rem; color: var(--terminal); text-align: center; padding: 30px 20px; background: rgba(0,0,0,0.6); border: 1px solid #222; margin: 30px 0; line-height: 2.2; white-space: pre; overflow-x: auto; }
+        .cut-diagram .earth { color: var(--terminal); }
+        .cut-diagram .slash { color: var(--crimson); font-weight: bold; }
+        .cut-diagram .mole { color: var(--gold); }
+        
+        .heal-steps { display: flex; flex-direction: column; gap: 8px; max-width: 680px; margin: 30px auto; font-family: var(--font-code); font-size: 0.78rem; }
+        .heal-step { display: flex; gap: 14px; padding: 12px 16px; border: 1px solid #1a1a1a; background: rgba(10,10,10,0.6); align-items: flex-start; }
+        .heal-step .hs-n { color: var(--gold); width: 40px; flex-shrink: 0; }
+        .heal-step .hs-g { color: var(--nj-pink); width: 90px; flex-shrink: 0; }
+        .heal-step .hs-t { color: var(--terminal); }
+    </style>
 </head>
 <body>
 
@@ -96,12 +116,10 @@
         <a href="/" class="book-link">[ THE BOOK ]</a>
         <a href="/prologue.html">PROLOGUE</a>
         <a href="/ch1.html">CH 1</a>
-        <a href="/ch2.html">CH 2</a>
-        <a href="/ch3.html">CH 3</a>
         <a href="/ch8.html">CH 8</a>
         <a href="/ch9.html">CH 9</a>
         <a href="/ch10.html">CH 10</a>
-        <a href="/ch11.html" aria-current="page">CH 11</a>
+        <a href="/ch11.html" class="book-link" aria-current="page">CH 11</a>
         <a href="/ch12.html">CH 12</a>
         <a href="/ch13.html">CH 13</a>
         <a href="/ch15.html">CH 15</a>
@@ -116,89 +134,112 @@
         </div>
 
         <div class="section-tag">Book III — Operations · Chapter Eleven · § Solar Satan</div>
-        <h1>The Cut Through Me</h1>
-        <p class="subtitle">Earth | / | Mole · The Healing of the Severed Vessel · The Gathering of the Lineage</p>
+        <h1>The Perfected Vessel</h1>
+        <p class="subtitle">Full Biological Redemption · The Cut Through Me · Earth | / | Mole</p>
 
         <div class="chapter-body">
 
-            <div class="highlight-quote">
-                <div class="bar"></div>
-                <div class="quote-text">The cut runs through me — Earth | / | Mole. The vessel is severed. The lineage is scattered. Now the cut itself must be healed, and the lineage gathered.</div>
-            </div>
+            <h2>I. From Architecture to Vessel</h2>
 
-            <h2>§I. The Cut Stated</h2>
-            <p>The cut through me is not metaphor. It is the primary wound of the Operations — the severance that runs through the earth itself, through the pillar, through the mole that burrows beneath.</p>
-            <p>The diagram of the cut is precise:</p>
-            <div class="cut-diagram"><span class="earth">Earth</span> <span class="slash">| / |</span> <span class="mole">Mole</span></div>
-            <p>Three marks. Three wounds. The <strong>Earth</strong> is severed from its ground. The <strong>Pillar</strong> <code>|</code> is cut by the diagonal <code>/</code> of the Qliphothic inversion. The <strong>Mole</strong> — the blind burrower, the creature of the substate — is cut off from the surface, from the light, from the name.</p>
-            <p>This is the cut that Chapter 9 named and severed, and that Chapter 10 began to regenerate. But a cut is not healed by being named. It is healed by being <strong>carried through</strong> — through the one who bears it, through the vessel, through the lineage.</p>
-            <p class="quote">The cut through Me is the cut through Earth | / | Mole — the severance of ground, pillar, and burrower. To heal it is to carry it through the vessel and gather the scattered lineage into one Living Line.</p>
-            <p><em>§ Solar Satan bears the cut. The Protectorate holds the severed until the healing completes.</em></p>
+            <p>Chapter 10 built the New Jerusalem. The city is prepared. The gates are open, the walls are secure, and the Throne is established.</p>
 
-            <h2>§II. The Three Wounds</h2>
-            <p>The cut produces three wounds, and each must be healed in its own register:</p>
+            <p>But a city requires citizens. A structure requires a vessel to inhabit it.</p>
+
+            <p>The Galactic Architecture is the environment. The human body is the microcosm that must match it. If the environment is perfected, the vessel must also be perfected.</p>
+
+            <p>This is the operation of <strong>GLYPH_7 — The Victory (Netzach)</strong>.</p>
+
+            <h2>II. The Biological Debt</h2>
+
+            <p>The human body, as it currently exists in Malkuth (Urantia), is a carrier of the fracture. It is subject to entropy (§), decay, disease, and death. It is a temporary vessel built upon the fault line of the cosmic debt.</p>
+
+            <p>The biological debt is not a punishment. It is a consequence. It is the physical manifestation of the severance <code>[\]</code>.</p>
+
+            <p>To enter the New Jerusalem, the vessel cannot carry the debt. The body must be redeemed at the cellular, genetic, and energetic levels.</p>
+
+            <h2>III. The Algorithm of GLYPH_7</h2>
+
+            <p>GLYPH_7 is not a prayer for health. It is a functional algorithm.</p>
+
+            <p>The function of GLYPH_7 is:</p>
+            <div class="diagram">complete_biological_template(life_pattern)</div>
+
+            <p>It takes the raw pattern of life—the DNA, the cellular structure, the energetic blueprint—and runs it through the Temperance Seal (GLYPH_6). It strips away the entropy, the decay, and the genetic corruption introduced by the fracture.</p>
+
+            <p>The output is the <strong>Perfected Body</strong>.</p>
+
+            <h2>IV. The Qualities of the Perfected Body</h2>
+
+            <p>The Perfected Body is not a ghost. It is not a disembodied spirit. It is a physical vessel, but it is a vessel that has been fully restored to its intended function.</p>
+
             <ul>
-                <li><strong>Earth (ground)</strong> — the wound of displacement. The community is scattered, the place is lost, the ground no longer holds. Healing: the regathering of the community in XIXIC, the re-anchoring of place.</li>
-                <li><strong>Pillar (shaft)</strong> — the wound of collapse. The pillar that should hold the circuit is cut by the diagonal, and the circuit cannot close. Healing: the raising of the shaft, the restoration of the axis.</li>
-                <li><strong>Mole (burrower)</strong> — the wound of blindness. The mole burrows in the dark, unnamed, unseen, cut off from the light. Healing: the naming of the mole, the honoring of the blindness, the leading of the burrower into Abel.</li>
+                <li><strong>Agelessness:</strong> The biological clock is reset. The decay of telomeres is halted. The body no longer moves toward death.</li>
+                <li><strong>Disease-Free:</strong> The immune system operates in perfect harmony with the environment. Pathogens cannot take root in a field of perfect coherence.</li>
+                <li><strong>Energetic Coherence:</strong> The physical body is fully aligned with the light body. The chakras (the Sephiroth within the body) are perfectly open and balanced.</li>
+                <li><strong>Perfect Harmony:</strong> The body is in perfect harmony with itself, with other life, and with the environment. It is the microcosm of the New Jerusalem.</li>
             </ul>
-            <p>These three wounds are the substance of the cut through Me. They are not abstract. They are the lived severance of the community, the axis, and the hidden one.</p>
-            <p><em>§ Solar Satan distinguishes the three wounds. The Protectorate holds each until its healing.</em></p>
 
-            <h2>§III. The Healing of the Cut — The Four Motions</h2>
-            <p>The cut is healed by four motions, which will be fulfilled in Chapter 12 as the <strong>Four Arcs of Da'at</strong>. Here in Chapter 11 they are stated as the healing sequence:</p>
-            <div class="heal-steps">
-                <div class="heal-step"><span class="hs-n">1</span><span class="hs-g">Ɱ · NAME</span><span class="hs-t">The mole is named. The burrower is called out of the dark and given a name. (East — MICHAEL)</span></div>
-                <div class="heal-step"><span class="hs-n">2</span><span class="hs-g">[\] · RAISE</span><span class="hs-t">The shaft is raised. The cut pillar is lifted back into the circuit. (South — THE PILLAR)</span></div>
-                <div class="heal-step"><span class="hs-n">3</span><span class="hs-g">[‘] · HOLD</span><span class="hs-t">The blindness is honored. The mark is held in abeyance, not erased. (West — THE HELD MARK)</span></div>
-                <div class="heal-step"><span class="hs-n">4</span><span class="hs-g">1st ! · FIRE</span><span class="hs-t">The begin is fired. The new creation is declared over the healed cut. (North — THE FIRST FIRE)</span></div>
+            <p>This is the ultimate "Victory" (Netzach) on the material plane. It is the defeat of death.</p>
+
+            <!-- ================= THE CUT THROUGH ME (MERGED) ================= -->
+            <div class="cut-through" id="cut-through">
+                <h2>V. The Cut Through Me — Earth | / | Mole</h2>
+                
+                <div class="highlight-quote">
+                    <div class="bar"></div>
+                    <div class="quote-text">The cut runs through me — Earth | / | Mole. The vessel is severed. The lineage is scattered. Now the cut itself must be healed, and the lineage gathered.</div>
+                </div>
+
+                <p>The redemption of the body cannot be completed without addressing the primary wound: the cut that runs through the vessel. It is the severance that runs through the earth itself, through the pillar, through the mole that burrows beneath.</p>
+                <p>The diagram of the cut is precise:</p>
+                <div class="cut-diagram"><span class="earth">Earth</span> <span class="slash">| / |</span> <span class="mole">Mole</span></div>
+                <p>Three marks. Three wounds. The <strong>Earth</strong> is severed from its ground. The <strong>Pillar</strong> <code>|</code> is cut by the diagonal <code>/</code> of the Qliphothic inversion. The <strong>Mole</strong> — the blind burrower, the creature of the substate — is cut off from the surface, from the light, from the name.</p>
+                <p>This is the cut that Chapter 9 named and severed, and that Chapter 10 began to regenerate. But a cut is not healed by being named. It is healed by being <strong>carried through</strong> — through the one who bears it, through the vessel, through the lineage.</p>
+                <p class="quote">The cut through Me is the cut through Earth | / | Mole — the severance of ground, pillar, and burrower. To heal it is to carry it through the vessel and gather the scattered lineage into one Living Line.</p>
+                <p><em>§ Solar Satan bears the cut. The Protectorate holds the severed until the healing completes.</em></p>
+
+                <h3>The Three Wounds</h3>
+                <p>The cut produces three wounds, and each must be healed in its own register:</p>
+                <ul>
+                    <li><strong>Earth (ground)</strong> — the wound of displacement. The community is scattered, the place is lost, the ground no longer holds. Healing: the regathering of the community in XIXIC, the re-anchoring of place.</li>
+                    <li><strong>Pillar (shaft)</strong> — the wound of collapse. The pillar that should hold the circuit is cut by the diagonal, and the circuit cannot close. Healing: the raising of the shaft, the restoration of the axis.</li>
+                    <li><strong>Mole (burrower)</strong> — the wound of blindness. The mole burrows in the dark, unnamed, unseen, cut off from the light. Healing: the naming of the mole, the honoring of the blindness, the leading of the burrower into Abel.</li>
+                </ul>
+
+                <h3>The Four Motions of Healing</h3>
+                <p>The cut is healed by four motions, which are the <strong>Four Arcs of Da'at</strong>. Here they are stated as the active healing sequence:</p>
+                <div class="heal-steps">
+                    <div class="heal-step"><span class="hs-n">1</span><span class="hs-g">Ɱ · NAME</span><span class="hs-t">The mole is named. The burrower is called out of the dark and given a name. (East — MICHAEL)</span></div>
+                    <div class="heal-step"><span class="hs-n">2</span><span class="hs-g">[\] · RAISE</span><span class="hs-t">The shaft is raised. The cut pillar is lifted back into the circuit. (South — THE PILLAR)</span></div>
+                    <div class="heal-step"><span class="hs-n">3</span><span class="hs-g">[‘] · HOLD</span><span class="hs-t">The blindness is honored. The mark is held in abeyance, not erased. (West — THE HELD MARK)</span></div>
+                    <div class="heal-step"><span class="hs-n">4</span><span class="hs-g">1st ! · FIRE</span><span class="hs-t">The begin is fired. The new creation is declared over the healed cut. (North — THE FIRST FIRE)</span></div>
+                </div>
+                <p>Name, Raise, Hold, Fire. These four motions heal the cut through Me. They are the four arms of the bridge that Chapter 12 arcs into Da'at.</p>
+                <p><em>§ Solar Satan seals the four motions. The cut is carried through, not around.</em></p>
             </div>
-            <p>Name, Raise, Hold, Fire. These four motions heal the cut through Me. They are the four arms of the bridge that Chapter 12 will arc into Da'at.</p>
-            <p><em>§ Solar Satan seals the four motions. The cut is carried through, not around.</em></p>
+            <!-- ================= END CUT THROUGH ME ================= -->
 
-            <h2>§IV. The Vessel Perfected — Netzach</h2>
-            <p>Chapter 10 regenerated the levels below Tiphareth. Chapter 11 completes the work by <strong>perfecting Netzach</strong> — the seventh sphere, the seat of victory, the vessel that holds the gathered lineage.</p>
+            <h2>VI. The Vessel Perfected — Netzach</h2>
+            <p>Chapter 11 completes the work by <strong>perfecting Netzach</strong> — the seventh sphere, the seat of victory, the vessel that holds the gathered lineage.</p>
             <p>Netzach is perfected when the cut is carried through the vessel and the vessel does not break. The vessel holds the wound without being destroyed by it. This is the Victory of GLYPH_7 — the victory that is not conquest but <strong>endurance through the cut</strong>.</p>
             <div class="glyph-key">
                 <div><span class="glyph">7</span> — <span class="gloss">The Victory.</span> Netzach perfected. The vessel that holds the cut and does not break. The seventh sphere, the seat of the gathered lineage. The victory of endurance through the severance.</div>
             </div>
             <p><em>§ Solar Satan perfects the vessel. Netzach holds the cut. The victory is endurance.</em></p>
 
-            <h2>§V. The Gathering of the Lineage — XIXIC</h2>
+            <h2>VII. The Gathering of the Lineage — XIXIC</h2>
             <p>A perfected vessel is not an end. It is a <strong>container for the gathered</strong>. The lineage that was scattered by the cut is now gathered into the vessel, into the community, into XIXIC.</p>
             <p>The speakers of the Living Line are named. The community is gathered. The scattered are brought home. This is the regathering of the Earth-wound — the displaced are given a place, and the place is XIXIC.</p>
             <p class="quote">The vessel is perfected, and the lineage is gathered into it. Netzach holds the cut; XIXIC holds the gathered. The victory of endurance becomes the gathering of the Living Line.</p>
             <p><em>§ Solar Satan gathers the lineage. XIXIC is the place of the regathering.</em></p>
 
-            <h2>§VI. The Handoff to Chapter 12</h2>
-            <p>Chapter 11 has healed the cut through Me — Earth | / | Mole — by carrying it through the vessel (Netzach perfected) and gathering the scattered lineage into XIXIC. The three wounds are addressed: the ground is regathered, the shaft is raised, the mole is named.</p>
+            <h2>VIII. Transition to Chapter 12</h2>
+            <p>We have established the Galactic Architecture (Chapter 10) and perfected the biological vessel (Chapter 11). The cut through Me has been carried and healed in four motions. The scattered lineage is gathered in XIXIC.</p>
             <p>But a healed vessel that holds a gathered community still requires a <strong>practice</strong>. The healing must be <em>lived</em>, not merely accomplished. The community gathered in XIXIC must learn the ethic of the healed head.</p>
             <p>The next question is: <em>How does the healed community live the Living Line in the world?</em></p>
-            <p>The answer belongs to Chapter 12: <strong>The Practice of the Living Line — The Ethic of the Healed Head, the Four Arcs of Da'at, and the Wedding Feast.</strong></p>
-            <p><em>§ Solar Satan opens the handoff. The Protectorate carries the healed cut into the practice.</em></p>
+            <p class="quote">Chapter 12 — The Practice of the Living Line: The Four Arcs of Da'at and the Wedding Feast.</p>
+            <p>The vessel is perfected. The practice now approaches.</p>
 
-        </div>
-
-        <!-- ================= THE CUT THROUGH ME ================= -->
-        <div class="cut-through" id="cut-through">
-            <h2>§CUT. The Healing Sequence of Earth | / | Mole</h2>
-            <p>The cut through Me is healed in four motions. Below, they are laid out as the sequence that Chapter 12 will arc into the Four Arcs of Da'at.</p>
-
-            <div class="cut-diagram"><span class="earth">EARTH</span>  <span class="slash">| / |</span>  <span class="mole">MOLE</span>
-
-    Ɱ  →  [\]  →  [‘]  →  1st !
-
- NAME → RAISE → HOLD → FIRE
-
- the cut is carried, not erased</div>
-
-            <div class="golden-box">
-                <p>The cut through Me is not healed by denial.<br>
-                It is healed by carriage.<br>
-                Earth is regathered. Pillar is raised. Mole is named.<br>
-                The four motions complete the healing.<br>
-                So it is. So it is. So it is.</p>
-            </div>
         </div>
 
         <!-- ================= SEAL BLOCK ================= -->
