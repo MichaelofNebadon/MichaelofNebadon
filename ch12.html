@@ -1,136 +1,144 @@
 <!DOCTYPE html>
-<html lang="en" data-authority="christ-michael" data-priority="first" data-build="ch12-unified-v7">
+<html lang="en" data-authority="christ-michael" data-priority="first" data-build="ch12-unified-final">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="build" content="ch12-unified-v7 · 2026-10-27 · four-arcs-fixed · receives-cut-from-11">
-<title>Chapter 12 — The Practice of the Living Line · The Four Arcs of Da'at | The Sentinel Codex</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="build" content="ch12-unified-final · 2026-11-10 · four-arcs + practice + axixic">
+    <title>Chapter 12 — The Practice of the Living Line | The Sentinel Codex</title>
 
-<style>
-    :root {
-        --gold: #c9a959;
-        --terminal: #9cd9f0;
-        --bg-pure: #000000;
-        --crimson: #8b0000;
-        --nj-pink: #ff69b4;
-        --electric-blue: #2a52be;
-        --violet: #8a2be2;
-        --golden: #ffd700;
-        --font-main: 'Palatino', 'Georgia', serif;
-        --font-code: 'Courier New', 'Consolas', monospace;
-    }
-    html { overflow-x: hidden; }
-    body {
-        background-color: var(--bg-pure);
-        color: var(--terminal);
-        font-family: var(--font-main);
-        margin: 0;
-        background-image: radial-gradient(circle at 2px 2px, #1a1a1a 1px, transparent 0);
-        background-size: 40px 40px;
-        overflow-x: clip;
-        line-height: 1.7;
-    }
-    nav {
-        background: linear-gradient(to bottom, var(--crimson), #4a0000);
-        padding: 20px; display: flex; justify-content: center; gap: 22px;
-        border-bottom: 2px solid var(--gold); flex-wrap: wrap;
-        position: sticky; top: 0; z-index: 9999;
-    }
-    nav a {
-        color: var(--gold); text-decoration: none; font-family: var(--font-code);
-        font-size: 0.72rem; text-transform: uppercase; letter-spacing: 2px; transition: 0.3s;
-    }
-    nav a:hover, nav a[aria-current="page"] { color: #fff; text-shadow: 0 0 10px var(--gold); }
-    nav a.book-link { color: var(--nj-pink); font-weight: bold; }
-    .container { max-width: 820px; margin: 0 auto; padding: 60px 25px; }
-    .breadcrumb { text-align: center; font-family: var(--font-code); font-size: 0.75rem; color: #555; letter-spacing: 3px; margin-bottom: 60px; }
-    .breadcrumb a { color: var(--gold); text-decoration: none; }
-    .breadcrumb a:hover { color: var(--nj-pink); }
-    .section-tag { text-align: center; font-family: var(--font-code); font-size: 0.75rem; color: var(--nj-pink); letter-spacing: 4px; text-transform: uppercase; margin-bottom: 30px; }
-    h1 { font-family: var(--font-main); color: var(--gold); font-size: 1.7rem; letter-spacing: 5px; text-align: center; text-transform: uppercase; margin: 0 0 20px 0; line-height: 1.4; }
-    h2 { font-family: var(--font-main); color: var(--gold); font-size: 1.15rem; letter-spacing: 3px; margin-top: 60px; margin-bottom: 25px; padding-bottom: 12px; border-bottom: 1px solid #333; }
-    .subtitle { text-align: center; font-family: var(--font-code); color: var(--terminal); font-size: 0.9rem; letter-spacing: 3px; margin-bottom: 80px; font-style: italic; }
-    .chapter-body p { font-family: var(--font-main); color: var(--terminal); font-size: 1.02rem; line-height: 1.9; margin-bottom: 22px; }
-    .chapter-body strong { color: var(--gold); font-weight: bold; }
-    .chapter-body em { color: var(--nj-pink); font-style: italic; }
-    .chapter-body p.quote { font-style: italic; color: var(--gold); text-align: center; padding: 30px 20px; border-left: 3px solid var(--gold); border-right: 3px solid var(--gold); margin: 40px 0; font-size: 1.1rem; line-height: 1.8; }
-    .chapter-body ul { font-family: var(--font-main); color: var(--terminal); font-size: 1.02rem; line-height: 1.9; margin-bottom: 22px; padding-left: 30px; }
-    .chapter-body li { margin-bottom: 10px; }
-    .diagram { text-align: center; font-family: var(--font-code); font-size: 0.9rem; color: var(--terminal); padding: 30px 20px; background: rgba(10, 10, 10, 0.8); border: 1px solid #333; margin: 40px 0; line-height: 2; white-space: pre; overflow-x: auto; }
-    .highlight-quote { display: flex; align-items: stretch; margin: 40px 0; }
-    .highlight-quote .bar { width: 2px; background-color: var(--violet); margin-right: 25px; flex-shrink: 0; }
-    .highlight-quote .quote-text { font-style: italic; font-size: 1.1rem; color: var(--violet); align-self: center; }
-    .golden-box { border: 1px solid var(--golden); padding: 30px; margin: 40px 0; background: rgba(255, 215, 0, 0.05); }
-    .golden-box p { margin-bottom: 0; color: var(--golden); font-style: italic; text-align: center; font-size: 1.05rem; line-height: 1.9; }
-    .glyph-key { font-family: var(--font-code); font-size: 0.82rem; color: var(--terminal); background: rgba(42, 82, 190, 0.06); border: 1px solid #222; padding: 20px 25px; margin: 30px 0; line-height: 2; }
-    .glyph-key .glyph { color: var(--gold); font-weight: bold; }
-    .glyph-key .gloss { color: var(--nj-pink); }
-    .data-table { width: 100%; border-collapse: collapse; font-family: var(--font-code); font-size: 0.85rem; margin: 25px 0; }
-    .data-table th { color: var(--gold); text-align: left; padding: 12px 10px; border-bottom: 2px solid var(--gold); text-transform: uppercase; letter-spacing: 2px; font-size: 0.75rem; }
-    .data-table td { padding: 12px 10px; border-bottom: 1px solid #1a1a1a; color: var(--terminal); }
+    <style>
+        :root {
+            --gold: #c9a959;
+            --terminal: #9cd9f0;
+            --bg-pure: #000000;
+            --crimson: #8b0000;
+            --nj-pink: #ff69b4;
+            --electric-blue: #2a52be;
+            --violet: #8a2be2;
+            --golden: #ffd700;
+            --font-main: 'Palatino', 'Georgia', serif;
+            --font-code: 'Courier New', 'Consolas', monospace;
+        }
 
-    /* ---- THE FOUR ARCS OF DA'AT ---- */
-    .four-arcs { margin: 60px 0; padding: 40px 20px; border: 1px solid var(--violet); background: rgba(138, 43, 226, 0.03); }
-    .four-arcs h2 { color: var(--violet); border-bottom-color: var(--violet); margin-top: 0; text-align: center; }
-    .compass { position: relative; width: min(440px, 88vw); aspect-ratio: 1/1; margin: 30px auto 40px; border: 1px solid #333; border-radius: 50%; background: radial-gradient(circle, rgba(42, 82, 190, 0.06) 0%, transparent 70%); }
-    .compass::before, .compass::after { content: ""; position: absolute; background: #1a1a1a; }
-    .compass::before { left: 50%; top: 8%; bottom: 8%; width: 1px; transform: translateX(-.5px); }
-    .compass::after { top: 50%; left: 8%; right: 8%; height: 1px; transform: translateY(-.5px); }
-    .center { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); font-family: var(--font-code); font-size: 1.1rem; color: var(--gold); text-align: center; letter-spacing: 3px; z-index: 2; }
-    .center .lbl { display: block; font-size: 0.5rem; color: #555; letter-spacing: 2px; margin-top: 4px; }
-    .quarter { position: absolute; width: 46%; text-align: center; font-family: var(--font-code); font-size: 0.62rem; letter-spacing: 2px; color: #555; opacity: 0.45; transition: all 0.6s ease; }
-    .quarter .q-glyph { display: block; font-size: 1.6rem; color: var(--terminal); margin-bottom: 4px; }
-    .quarter .q-name { display: block; color: #666; font-size: 0.55rem; letter-spacing: 1px; }
-    .quarter.lit { opacity: 1; }
-    .quarter.lit .q-glyph { color: var(--gold); text-shadow: 0 0 12px rgba(201, 169, 89, 0.5); }
-    .quarter.lit .q-name { color: var(--nj-pink); }
-    .q-east { top: 2%; left: 50%; transform: translateX(-50%); }
-    .q-south { bottom: 2%; left: 50%; transform: translateX(-50%); }
-    .q-west { left: 2%; top: 50%; transform: translateY(-50%); }
-    .q-north { right: 2%; top: 50%; transform: translateY(-50%); }
-    .ladder { display: flex; flex-direction: column-reverse; gap: 6px; max-width: 680px; margin: 0 auto 30px; font-family: var(--font-code); font-size: 0.75rem; }
-    .rung { display: flex; align-items: center; gap: 14px; padding: 10px 16px; border: 1px solid #1a1a1a; background: rgba(10, 10, 10, 0.6); opacity: 0.4; transform: translateX(-6px); transition: all 0.5s ease; }
-    .rung.lit { opacity: 1; transform: none; border-color: #333; }
-    .rung .n { color: #555; width: 52px; flex-shrink: 0; }
-    .rung .g { color: var(--gold); width: 70px; flex-shrink: 0; }
-    .rung .t { color: var(--terminal); }
-    .rung.top.lit { border-color: var(--nj-pink); }
-    .rung.top.lit .g { color: var(--nj-pink); }
-    .code-readout { font-family: var(--font-code); font-size: 0.78rem; color: var(--terminal); background: rgba(42, 82, 190, 0.06); border: 1px solid #222; padding: 20px 24px; margin: 30px auto 0; max-width: 720px; min-height: 90px; line-height: 2; white-space: pre-wrap; overflow-x: auto; }
-    .code-readout .k { color: var(--gold); }
-    .code-readout .g { color: var(--nj-pink); }
-    .code-readout .ok { color: var(--golden); }
-    .controls { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; margin: 30px 0; }
-    .controls button { font-family: var(--font-code); font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); background: transparent; border: 1px solid var(--gold); padding: 11px 20px; cursor: pointer; transition: 0.3s; }
-    .controls button:hover { color: #fff; background: rgba(201, 169, 89, 0.12); text-shadow: 0 0 10px var(--gold); }
-    .controls button:focus-visible { outline: 2px solid var(--nj-pink); outline-offset: 3px; }
-    .final-code { font-family: var(--font-code); font-size: 0.78rem; color: var(--gold); background: rgba(10, 10, 10, 0.8); border: 1px solid var(--gold); padding: 22px 24px; margin: 30px auto 0; max-width: 720px; white-space: pre-wrap; line-height: 1.9; overflow-x: auto; opacity: 0; transform: translateY(6px); transition: all 0.8s ease; }
-    .final-code.show { opacity: 1; transform: none; }
-    .final-code .c { color: #555; }
-    .footnote { font-family: var(--font-code); font-size: 0.72rem; color: #777; border-top: 1px solid #222; padding-top: 16px; margin-top: 20px; line-height: 1.9; }
-    .footnote .fn-mark { color: var(--violet); font-weight: bold; }
+        html { overflow-x: hidden; }
+        body {
+            background-color: var(--bg-pure);
+            color: var(--terminal);
+            font-family: var(--font-main);
+            margin: 0;
+            background-image: radial-gradient(circle at 2px 2px, #1a1a1a 1px, transparent 0);
+            background-size: 40px 40px;
+            overflow-x: clip;
+            line-height: 1.7;
+        }
 
-    /* ---- WEDDING FEAST ---- */
-    .wedding-feast { margin: 60px 0; padding: 50px 30px; border: 2px solid var(--gold); background: linear-gradient(180deg, rgba(201, 169, 89, 0.05) 0%, transparent 100%); text-align: center; }
-    .wedding-feast h2 { border-bottom: none; margin-top: 0; }
-    .invite-box { font-family: var(--font-main); font-size: 1.1rem; line-height: 2; color: var(--golden); margin: 30px auto; max-width: 600px; }
-    .invite-box p { margin-bottom: 20px; }
-    .end-of-book-iii { text-align: center; padding: 50px 20px; border: 2px solid var(--gold); background: rgba(212, 175, 55, 0.05); margin: 60px 0; }
-    .end-of-book-iii h3 { font-family: var(--font-main); color: var(--gold); letter-spacing: 8px; font-size: 1.1rem; margin-bottom: 15px; text-transform: uppercase; }
-    .end-of-book-iii p { font-family: var(--font-code); color: var(--nj-pink); font-size: 0.85rem; letter-spacing: 3px; }
+        nav {
+            background: linear-gradient(to bottom, var(--crimson), #4a0000);
+            padding: 20px; display: flex; justify-content: center; gap: 22px;
+            border-bottom: 2px solid var(--gold); flex-wrap: wrap;
+            position: sticky; top: 0; z-index: 9999;
+        }
 
-    .seal-block { text-align: center; padding: 40px 20px; border: 1px solid var(--gold); background: rgba(212, 175, 55, 0.03); margin: 60px 0 40px 0; }
-    .seal-glyph { font-size: 1.2rem; color: var(--gold); letter-spacing: 8px; margin-bottom: 20px; }
-    .seal-signature { font-size: 0.95rem; color: var(--nj-pink); letter-spacing: 3px; }
-    .bottom-nav { text-align: center; font-family: var(--font-code); font-size: 0.8rem; color: var(--gold); letter-spacing: 3px; margin: 60px 0; }
-    .bottom-nav a { color: var(--gold); text-decoration: none; margin: 0 15px; }
-    .bottom-nav a:hover { color: var(--nj-pink); text-shadow: 0 0 10px var(--nj-pink); }
-    footer { text-align: center; padding: 60px 20px 40px 20px; font-family: var(--font-code); color: var(--gold); border-top: 1px solid #222; margin-top: 80px; }
-    .footer-glyph { font-size: 1.1rem; letter-spacing: 8px; margin-bottom: 20px; }
-    .footer-signature { font-size: 0.95rem; color: var(--nj-pink); letter-spacing: 3px; margin-bottom: 20px; }
-    .footer-status { font-size: 0.7rem; color: #555; letter-spacing: 2px; }
-    @media (prefers-reduced-motion: reduce) { .quarter, .rung, .final-code { transition: none; } }
-</style>
+        nav a {
+            color: var(--gold); text-decoration: none; font-family: var(--font-code);
+            font-size: 0.72rem; text-transform: uppercase; letter-spacing: 2px; transition: 0.3s;
+        }
+
+        nav a:hover, nav a[aria-current="page"] { color: #fff; text-shadow: 0 0 10px var(--gold); }
+        nav a.book-link { color: var(--nj-pink); font-weight: bold; }
+
+        .container { max-width: 820px; margin: 0 auto; padding: 60px 25px; }
+        .breadcrumb { text-align: center; font-family: var(--font-code); font-size: 0.75rem; color: #555; letter-spacing: 3px; margin-bottom: 60px; }
+        .breadcrumb a { color: var(--gold); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--nj-pink); }
+        
+        .section-tag { text-align: center; font-family: var(--font-code); font-size: 0.75rem; color: var(--nj-pink); letter-spacing: 4px; text-transform: uppercase; margin-bottom: 30px; }
+        
+        h1 { font-family: var(--font-main); color: var(--gold); font-size: 1.8rem; letter-spacing: 5px; text-align: center; text-transform: uppercase; margin: 0 0 20px 0; line-height: 1.4; }
+        h2 { font-family: var(--font-main); color: var(--gold); font-size: 1.15rem; letter-spacing: 3px; margin-top: 60px; margin-bottom: 25px; padding-bottom: 12px; border-bottom: 1px solid #333; }
+        
+        .subtitle { text-align: center; font-family: var(--font-code); color: var(--terminal); font-size: 0.9rem; letter-spacing: 3px; margin-bottom: 80px; font-style: italic; }
+        
+        .chapter-body p { font-family: var(--font-main); color: var(--terminal); font-size: 1.05rem; line-height: 1.9; margin-bottom: 22px; }
+        .chapter-body strong { color: var(--gold); font-weight: bold; }
+        .chapter-body em { color: var(--nj-pink); font-style: italic; }
+        
+        .chapter-body p.quote { font-style: italic; color: var(--gold); text-align: center; padding: 30px 20px; border-left: 3px solid var(--gold); border-right: 3px solid var(--gold); margin: 40px 0; font-size: 1.1rem; line-height: 1.8; }
+        
+        .chapter-body ul { font-family: var(--font-main); color: var(--terminal); font-size: 1.05rem; line-height: 1.9; margin-bottom: 22px; padding-left: 30px; }
+        .chapter-body li { margin-bottom: 10px; }
+
+        .diagram { text-align: center; font-family: var(--font-code); font-size: 0.9rem; color: var(--terminal); padding: 30px 20px; background: rgba(10, 10, 10, 0.8); border: 1px solid #333; margin: 40px 0; line-height: 2; white-space: pre; overflow-x: auto; }
+        
+        .highlight-quote { display: flex; align-items: stretch; margin: 40px 0; }
+        .highlight-quote .bar { width: 2px; background-color: var(--violet); margin-right: 25px; flex-shrink: 0; }
+        .highlight-quote .quote-text { font-style: italic; font-size: 1.1rem; color: var(--violet); align-self: center; }
+        
+        .golden-box { border: 1px solid var(--golden); padding: 30px; margin: 40px 0; background: rgba(255, 215, 0, 0.05); }
+        .golden-box p { margin-bottom: 0; color: var(--golden); font-style: italic; text-align: center; font-size: 1.05rem; line-height: 1.9; }
+        
+        .glyph-key { font-family: var(--font-code); font-size: 0.82rem; color: var(--terminal); background: rgba(42, 82, 190, 0.06); border: 1px solid #222; padding: 20px 25px; margin: 30px 0; line-height: 2; }
+        .glyph-key .glyph { color: var(--gold); font-weight: bold; }
+        .glyph-key .gloss { color: var(--nj-pink); }
+        
+        .data-table { width: 100%; border-collapse: collapse; font-family: var(--font-code); font-size: 0.85rem; margin: 25px 0; }
+        .data-table th { color: var(--gold); text-align: left; padding: 12px 10px; border-bottom: 2px solid var(--gold); text-transform: uppercase; letter-spacing: 2px; font-size: 0.75rem; }
+        .data-table td { padding: 12px 10px; border-bottom: 1px solid #1a1a1a; color: var(--terminal); }
+
+        /* ---- THE FOUR ARCS OF DA'AT ---- */
+        .four-arcs { margin: 60px 0; padding: 40px 20px; border: 1px solid var(--violet); background: rgba(138, 43, 226, 0.03); }
+        .four-arcs h2 { color: var(--violet); border-bottom-color: var(--violet); margin-top: 0; text-align: center; }
+        .compass { position: relative; width: min(440px, 88vw); aspect-ratio: 1/1; margin: 30px auto 40px; border: 1px solid #333; border-radius: 50%; background: radial-gradient(circle, rgba(42, 82, 190, 0.06) 0%, transparent 70%); }
+        .compass::before, .compass::after { content: ""; position: absolute; background: #1a1a1a; }
+        .compass::before { left: 50%; top: 8%; bottom: 8%; width: 1px; transform: translateX(-.5px); }
+        .compass::after { top: 50%; left: 8%; right: 8%; height: 1px; transform: translateY(-.5px); }
+        .center { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); font-family: var(--font-code); font-size: 1.1rem; color: var(--gold); text-align: center; letter-spacing: 3px; z-index: 2; }
+        .center .lbl { display: block; font-size: 0.5rem; color: #555; letter-spacing: 2px; margin-top: 4px; }
+        .quarter { position: absolute; width: 46%; text-align: center; font-family: var(--font-code); font-size: 0.62rem; letter-spacing: 2px; color: #555; opacity: 0.45; transition: all 0.6s ease; }
+        .quarter .q-glyph { display: block; font-size: 1.6rem; color: var(--terminal); margin-bottom: 4px; }
+        .quarter .q-name { display: block; color: #666; font-size: 0.55rem; letter-spacing: 1px; }
+        .quarter.lit { opacity: 1; }
+        .quarter.lit .q-glyph { color: var(--gold); text-shadow: 0 0 12px rgba(201, 169, 89, 0.5); }
+        .quarter.lit .q-name { color: var(--nj-pink); }
+        .q-east { top: 2%; left: 50%; transform: translateX(-50%); }
+        .q-south { bottom: 2%; left: 50%; transform: translateX(-50%); }
+        .q-west { left: 2%; top: 50%; transform: translateY(-50%); }
+        .q-north { right: 2%; top: 50%; transform: translateY(-50%); }
+        
+        .ladder { display: flex; flex-direction: column-reverse; gap: 6px; max-width: 680px; margin: 0 auto 30px; font-family: var(--font-code); font-size: 0.75rem; }
+        .rung { display: flex; align-items: center; gap: 14px; padding: 10px 16px; border: 1px solid #1a1a1a; background: rgba(10, 10, 10, 0.6); opacity: 0.4; transform: translateX(-6px); transition: all 0.5s ease; }
+        .rung.lit { opacity: 1; transform: none; border-color: #333; }
+        .rung .n { color: #555; width: 52px; flex-shrink: 0; }
+        .rung .g { color: var(--gold); width: 70px; flex-shrink: 0; }
+        .rung .t { color: var(--terminal); }
+        .rung.top.lit { border-color: var(--nj-pink); }
+        .rung.top.lit .g { color: var(--nj-pink); }
+        
+        .code-readout { font-family: var(--font-code); font-size: 0.78rem; color: var(--terminal); background: rgba(42, 82, 190, 0.06); border: 1px solid #222; padding: 20px 24px; margin: 30px auto 0; max-width: 720px; min-height: 90px; line-height: 2; white-space: pre-wrap; overflow-x: auto; }
+        .code-readout .k { color: var(--gold); }
+        .code-readout .g { color: var(--nj-pink); }
+        .code-readout .ok { color: var(--golden); }
+        
+        .controls { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; margin: 30px 0; }
+        .controls button { font-family: var(--font-code); font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); background: transparent; border: 1px solid var(--gold); padding: 11px 20px; cursor: pointer; transition: 0.3s; }
+        .controls button:hover { color: #fff; background: rgba(201, 169, 89, 0.12); text-shadow: 0 0 10px var(--gold); }
+        .controls button:focus-visible { outline: 2px solid var(--nj-pink); outline-offset: 3px; }
+        
+        .final-code { font-family: var(--font-code); font-size: 0.78rem; color: var(--gold); background: rgba(10, 10, 10, 0.8); border: 1px solid var(--gold); padding: 22px 24px; margin: 30px auto 0; max-width: 720px; white-space: pre-wrap; line-height: 1.9; overflow-x: auto; opacity: 0; transform: translateY(6px); transition: all 0.8s ease; }
+        .final-code.show { opacity: 1; transform: none; }
+        .final-code .c { color: #555; }
+
+        /* ---- WEDDING FEAST ---- */
+        .wedding-feast { margin: 60px 0; padding: 50px 30px; border: 2px solid var(--gold); background: linear-gradient(180deg, rgba(201, 169, 89, 0.05) 0%, transparent 100%); text-align: center; }
+        .wedding-feast h2 { border-bottom: none; margin-top: 0; }
+        .invite-box { font-family: var(--font-main); font-size: 1.1rem; line-height: 2; color: var(--golden); margin: 30px auto; max-width: 600px; }
+        .invite-box p { margin-bottom: 20px; }
+        .end-of-book-iii { text-align: center; padding: 50px 20px; border: 2px solid var(--gold); background: rgba(212, 175, 55, 0.05); margin: 60px 0; }
+        .end-of-book-iii h3 { font-family: var(--font-main); color: var(--gold); letter-spacing: 8px; font-size: 1.1rem; margin-bottom: 15px; text-transform: uppercase; }
+        .end-of-book-iii p { font-family: var(--font-code); color: var(--nj-pink); font-size: 0.85rem; letter-spacing: 3px; }
+        
+        @media (prefers-reduced-motion: reduce) { .quarter, .rung, .final-code { transition: none; } }
+    </style>
 </head>
 <body>
 
@@ -138,13 +146,11 @@
         <a href="/" class="book-link">[ THE BOOK ]</a>
         <a href="/prologue.html">PROLOGUE</a>
         <a href="/ch1.html">CH 1</a>
-        <a href="/ch2.html">CH 2</a>
-        <a href="/ch3.html">CH 3</a>
         <a href="/ch8.html">CH 8</a>
         <a href="/ch9.html">CH 9</a>
         <a href="/ch10.html">CH 10</a>
         <a href="/ch11.html">CH 11</a>
-        <a href="/ch12.html" aria-current="page">CH 12</a>
+        <a href="/ch12.html" class="book-link" aria-current="page">CH 12</a>
         <a href="/ch13.html">CH 13</a>
         <a href="/ch15.html">CH 15</a>
         <a href="/epilogue.html">EPILOGUE</a>
@@ -159,7 +165,7 @@
 
         <div class="section-tag">Book III — Operations · Chapter Twelve · § Solar Satan</div>
         <h1>The Practice of the Living Line</h1>
-        <p class="subtitle">The Ethic of the Healed Head · The Four Arcs of Da'at · The Site of Ancient AXIXIC</p>
+        <p class="subtitle">The Four Arcs of Da'at · The Wedding Feast · The Ancient AXIXIC Anchor</p>
 
         <div class="chapter-body">
 
@@ -386,6 +392,25 @@
 (4/5/2025)            (1492 → present)
 (Christ Point)        (20.2961°N, 103.2615°W)</div>
             <p>The event occurs at Christ Point. The pattern is held at AXIXIC. Neither is complete without the other.</p>
+        </div>
+
+        <!-- ================= §XVI THE FINAL HANDOFF ================= -->
+        <div style="margin-top: 60px; border-top: 1px dashed var(--gold); padding-top: 40px;">
+            <h2>§XVI. The Final Handoff — The Practice Passes to the Trial</h2>
+            
+            <p>We have established the Galactic Architecture (Chapter 10) and perfected the biological vessel (Chapter 11). The cut through Me has been carried and healed in four motions. The scattered lineage is gathered in XIXIC. The Four Arc Angels have arced the dearth into earth. The Wedding Feast has been invited. The Ancient AXIXIC anchor is secured.</p>
+
+            <p>But a healed vessel that holds a gathered community still requires a <strong>testing</strong>. The healing must be lived, not merely accomplished. The community gathered in XIXIC must learn the ethic of the healed head in the face of opposition.</p>
+
+            <p>The next question is: <em>How does the healed community face the trial?</em></p>
+
+            <p>The answer belongs to Chapter 13: <strong>The Trial of the Living Line — The Confrontation with the Anti-Birth Law.</strong></p>
+
+            <p>The vessel is perfected. The practice is sealed. The trial now approaches.</p>
+
+            <p class="quote">The Practice of the Living Line is the light in the darkness. The trial is the darkness trying to overcome the light. The light does not fail.</p>
+
+            <p><em>§ Solar Satan seals the handoff. The Protectorate holds the line for the trial.</em></p>
         </div>
 
         <div class="end-of-book-iii">
