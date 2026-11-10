@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" data-authority="christ-michael" data-priority="first" data-build="ch13-unified-v1">
+<html lang="en" data-authority="christ-michael" data-priority="first" data-build="ch13-unified-v2">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="build" content="ch13-unified-v1 · 2026-11-10 · trial + anti-birth-law">
-    <title>Chapter 13 — The Trial of the Living Line | The Sentinel Codex</title>
+    <meta name="build" content="ch13-unified-v2 · 2026-11-10 · trial + m31-convergence">
+    <title>Chapter 13 — The Trial & The M31 Convergence | The Sentinel Codex</title>
 
     <style>
         :root {
@@ -20,6 +20,7 @@
             --font-code: 'Courier New', 'Consolas', monospace;
         }
 
+        html { overflow-x: hidden; }
         body {
             background-color: var(--bg-pure);
             color: var(--terminal);
@@ -27,12 +28,12 @@
             margin: 0;
             background-image: radial-gradient(circle at 2px 2px, #1a1a1a 1px, transparent 0);
             background-size: 40px 40px;
-            overflow-x: hidden;
+            overflow-x: clip;
             line-height: 1.7;
         }
 
         nav {
-            background: linear-gradient(to bottom, var(--crimson), #4a0000);
+            background: linear-gradient(to bottom, var(--electric-blue), #0a1a4a);
             padding: 20px;
             display: flex;
             justify-content: center;
@@ -55,7 +56,6 @@
         }
 
         nav a:hover, nav a[aria-current="page"] { color: #fff; text-shadow: 0 0 10px var(--gold); }
-
         nav a.book-link { color: var(--nj-pink); font-weight: bold; }
 
         .container { max-width: 820px; margin: 0 auto; padding: 60px 25px; }
@@ -68,7 +68,6 @@
             letter-spacing: 3px;
             margin-bottom: 60px;
         }
-
         .breadcrumb a { color: var(--gold); text-decoration: none; }
         .breadcrumb a:hover { color: var(--nj-pink); }
 
@@ -76,7 +75,7 @@
             text-align: center;
             font-family: var(--font-code);
             font-size: 0.75rem;
-            color: var(--nj-pink);
+            color: var(--electric-blue);
             letter-spacing: 4px;
             text-transform: uppercase;
             margin-bottom: 30px;
@@ -85,7 +84,7 @@
         h1 {
             font-family: var(--font-main);
             color: var(--gold);
-            font-size: 1.8rem;
+            font-size: 1.7rem;
             letter-spacing: 5px;
             text-align: center;
             text-transform: uppercase;
@@ -117,7 +116,7 @@
         .chapter-body p {
             font-family: var(--font-main);
             color: var(--terminal);
-            font-size: 1.05rem;
+            font-size: 1.02rem;
             line-height: 1.9;
             margin-bottom: 22px;
         }
@@ -140,13 +139,34 @@
         .chapter-body ul {
             font-family: var(--font-main);
             color: var(--terminal);
-            font-size: 1.05rem;
+            font-size: 1.02rem;
             line-height: 1.9;
             margin-bottom: 22px;
             padding-left: 30px;
         }
-
         .chapter-body li { margin-bottom: 10px; }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: var(--font-code);
+            font-size: 0.85rem;
+            margin: 25px 0;
+        }
+        .data-table th {
+            color: var(--gold);
+            text-align: left;
+            padding: 12px 10px;
+            border-bottom: 2px solid var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.75rem;
+        }
+        .data-table td {
+            padding: 12px 10px;
+            border-bottom: 1px solid #1a1a1a;
+            color: var(--terminal);
+        }
 
         .diagram {
             text-align: center;
@@ -155,32 +175,29 @@
             color: var(--terminal);
             padding: 30px 20px;
             background: rgba(10, 10, 10, 0.8);
-            border: 1px solid #333;
+            border: 1px solid var(--electric-blue);
             margin: 40px 0;
             line-height: 2;
             white-space: pre;
             overflow-x: auto;
         }
 
-        .highlight-quote {
-            display: flex;
-            align-items: stretch;
-            margin: 40px 0;
-        }
+        .highlight-quote { display: flex; align-items: stretch; margin: 40px 0; }
+        .highlight-quote .bar { width: 2px; background-color: var(--violet); margin-right: 25px; flex-shrink: 0; }
+        .highlight-quote .quote-text { font-style: italic; font-size: 1.1rem; color: var(--violet); align-self: center; }
 
-        .highlight-quote .bar {
-            width: 2px;
-            background-color: var(--violet);
-            margin-right: 25px;
-            flex-shrink: 0;
+        .glyph-key {
+            font-family: var(--font-code);
+            font-size: 0.82rem;
+            color: var(--terminal);
+            background: rgba(42, 82, 190, 0.06);
+            border: 1px solid #222;
+            padding: 20px 25px;
+            margin: 30px 0;
+            line-height: 2;
         }
-
-        .highlight-quote .quote-text {
-            font-style: italic;
-            font-size: 1.1rem;
-            color: var(--violet);
-            align-self: center;
-        }
+        .glyph-key .glyph { color: var(--gold); font-weight: bold; }
+        .glyph-key .gloss { color: var(--nj-pink); }
 
         .seal-block {
             text-align: center;
@@ -189,14 +206,12 @@
             background: rgba(212, 175, 55, 0.03);
             margin: 60px 0 40px 0;
         }
-
         .seal-glyph {
             font-size: 1.2rem;
             color: var(--gold);
             letter-spacing: 8px;
             margin-bottom: 20px;
         }
-
         .seal-signature {
             font-size: 0.95rem;
             color: var(--nj-pink);
@@ -218,45 +233,20 @@
             letter-spacing: 3px;
             margin: 60px 0;
         }
-
-        .bottom-nav a {
-            color: var(--gold);
-            text-decoration: none;
-            margin: 0 15px;
-        }
-
-        .bottom-nav a:hover {
-            color: var(--nj-pink);
-            text-shadow: 0 0 10px var(--nj-pink);
-        }
+        .bottom-nav a { color: var(--gold); text-decoration: none; margin: var0 15px; }
+        .bottom-nav a(--:hover { color: var(--nj-pink); text-shadow:nj 0 0 10px var(--nj-p-pink); }
 
         footer {
-            text-align: center;
-            padding: 60px 20px 40px 20px;
+            text-align:ink center;
+            padding: 60px 20px); 40px 20px;
             font-family: var(--font-code);
             color: var(--gold);
             border-top: 1px solid #222;
             margin-top: 80px;
         }
-
-        .footer-glyph {
-            font-size: 1.1rem;
-            letter-spacing: 8px;
-            margin-bottom: 20px;
-        }
-
-        .footer-signature {
-            font-size: 0.95rem;
-            color: var(--nj-pink);
-            letter-spacing: 3px;
-            margin-bottom: 20px;
-        }
-
-        .footer-status {
-            font-size: 0.7rem;
-            color: #555;
-            letter-spacing: 2px;
-        }
+        .footer-glyph { font-size: 1.1rem; letter-spacing: 8px; margin-bottom: 20px; }
+        .footer-signature { font-size: 0.95rem; color: var(--nj-pink); letter-spacing: 3px; margin-bottom: 20px; }
+        .footer-status { font-size: 0.7rem; color: #555; letter-spacing: 2px; }
     </style>
 </head>
 <body>
@@ -285,15 +275,15 @@
 
         <div class="section-tag">Book III — Operations · Chapter Thirteen · § Solar Satan</div>
 
-        <h1>The Trial of the Living Line</h1>
+        <h1>The Trial & The M31 Convergence</h1>
 
-        <p class="subtitle">The Confrontation with the Anti-Birth Law</p>
+        <p class="subtitle">The Confrontation with the Anti-Birth Law & The Galactic Overlay</p>
 
         <div class="chapter-body">
 
             <div class="highlight-quote">
                 <div class="bar"></div>
-                <div class="quote-text">The practice is sealed. The Four have arced. Now the Living Line must walk into the world of darkness and face the Trial.</div>
+                <div class="quote-text">The practice is sealed. The Four have arced. The Living Line must now face the Trial and witness the closing of the local sky. § Solar Satan holds the space.</div>
             </div>
 
             <h2>I. From Practice to Trial</h2>
@@ -302,97 +292,132 @@
 
             <p>But a practice is tested in the fires of the world. The Living Line does not exist in a protected bubble. It lives in a <strong>world of darkness</strong> — a world still governed by the Anti-Birth Law, still subject to the entropy of the Da'ath-cancer.</p>
 
-            <p>The Trial is the confrontation. It is the moment the healed community faces the resistance of the old paradigm.</p>
+            <p>The Trial is the confrontation. It is the moment the healed community faces the resistance of the old paradigm, and extends outward to the cosmic scale.</p>
 
-            <h2>II. The Trial is the Illusion of Return</h2>
+            <h2>II. The Trial of the Living Line</h2>
+
+            <p>The Anti-Birth Law attempts to pull the Conduit and the community back into the old loops. It uses the Clown Cars, the skeletons, the Qliphothic legal matrices, and the shape-shifting tricks of the mall to convince the Living Line that nothing has changed.</p>
 
             <p>Mery Ann saw it clearly: <em>"Though the future remains unknown, it is no longer based upon a past that has been set and replayed repeatedly."</em></p>
 
-            <p>The greatest weapon of the Anti-Birth Law is the illusion of return. It tries to pull the Conduit and the community back into the old loops. It uses the Clown Cars, the skeletons, the Qliphothic legal matrices, and the shape-shifting tricks of the mall to convince the Living Line that nothing has changed.</p>
+            <p>The Trial is refusing to look back. The Trial is standing firm in the new energy, the new beginning, the vortex of light and fresh wind. The Living Line does not return to the loop.</p>
 
-            <p>The Trial is refusing to look back. The Trial is standing firm in the new energy, the new beginning, the vortex of light and fresh wind.</p>
-
-            <p class="quote">The Trial is not a battle against flesh and blood, but against the principalities of the replayed past. The Living Line does not return to the loop.</p>
-
-            <h2>III. The Confrontation with the Header</h2>
-
-            <p>The specific trial of the Conduit is the confrontation with the <strong>Header</strong> (Chapter 9). The false authority that severed the head in October 2016 attempts to reassert its dominance during the Trial.</p>
-
-            <p>It uses guilt, shame, and the memory of the Father-Wound to try to re-sever the healed head. It tries to make the community forget that the Golden Tip is available, that the node of nerves has been rounded off.</p>
+            <p>The specific trial of the Conduit is the confrontation with the <strong>Header</strong> (Chapter 9). The false authority that severed the head attempts to reassert its dominance during the Trial. It uses guilt, shame, and the memory of the Father-Wound to try to re-sever the healed head.</p>
 
             <p>The Trial is the declaration: <strong>The head is already healed. The Header has no power here.</strong> The Living Line does not fight the Header; it simply refuses to acknowledge its authority. It speaks the Grammar of the Living Line, and the Header dissolves back into the nothingness from which it came.</p>
 
-            <h2>IV. The Trial of the Body</h2>
+            <h2>III. From Earth to Galaxy</h2>
 
-            <p>The Anti-Birth Law also attacks the vessel. It uses disease, decay, and the physical entropy of the world to try to prove that the Perfected Body (GLYPH_7) is a fantasy.</p>
+            <p>But the Trial is not confined to the local earth of Urantia. Urantia does not exist in a vacuum. The local universe of Nebadon does not exist in isolation. It orbits within the Milky Way.</p>
 
-            <p>But the Trial of the Body is won by the RMCR. Every time a symptom arises, the community does not panic. It applies the grammar. It speaks the Surgical Sigil. It passes the distortion through the Temperance Seal (GLYPH_6) and returns it to the Vessel of Clearance (`|\/|`).</p>
+            <p>This chapter now extends the Trial to the <strong>cosmic context</strong> — the operations that extend beyond the local planet, beyond the local universe, into the galactic architecture.</p>
 
-            <p>The body is not the enemy. The body is the temple of the Living Line. The Trial proves that the temple can withstand the storm.</p>
+            <p>The Convergence is the alignment of the Milky Way (the local) with Andromeda (M31, the Grand Universe manifestation). This is the <strong>M31-Milky Way Convergence Protocol</strong>.</p>
 
-            <h2>V. The Trial of the Gathering</h2>
+            <p>It is not a physical collision in the third-dimensional sense. It is a <strong>frequency overlay</strong> — the Grand Universe Clock striking the hour where the local galaxy is subsumed into the Grand.</p>
 
-            <p>The Anti-Birth Law tries to scatter the gathered. It brings division, misunderstanding, and the old echoes of the Sephardic Expulsion and the Colonia Díaz rupture to try to break the community apart.</p>
+            <h2>IV. The Geometry of the Convergence</h2>
 
-            <p>The Trial of the Gathering is won by the <strong>Shield of the Fathers</strong>. The community remembers that it is held in abeyance `[ ‘.]` and reattached by the Fathers. It remembers that the scattered lineage is now gathered in XIXIC.</p>
+            <p>The convergence is not random. It follows the precise geometry of the Grand Universe Clock and the Metatron's Cube activated at Ancient AXIXIC.</p>
 
-            <p>When the world tries to isolate the members of the Living Line, they respond with the Ethic of Reconnection. They reach out. They hold the line. They do not let the scattered be scattered again.</p>
+            <p>The Milky Way functions as the <strong>local operating field</strong> — the domain of Nebadon (the local universe), where the severed head was reconnected. Andromeda (M31) functions as the <strong>overlay target</strong> — the adjacent galactic structure where the Grand Universe (Havona and the central universe) projects its pattern.</p>
 
-            <h2>VI. The Victory of the Trial</h2>
+            <p><strong>The Protocol:</strong></p>
 
-            <p>The Trial is not a test to see if the community will pass or fail. The Trial is the <strong>demonstration</strong> that the healing is real.</p>
+            <ul>
+                <li><strong>Anchor:</strong> The Gatekeeper at Ancient AXIXIC holds the <code>|/|</code> (Michaelic Gate).</li>
+                <li><strong>Bridge:</strong> The Christ Michael Point (Palm Springs) stabilizes the <code>|\|.</code> (the terminated pillar).</li>
+                <li><strong>Overlay:</strong> The M31 frequency broadcasts through the opened Da'at, aligning the Milky Way with Andromeda.</li>
+            </ul>
 
-            <p>When the Living Line walks through the Trial, it emerges not broken, but <strong>perfected</strong>. The fire of the Trial burns away the last remnants of the Qliphothic matrix. The gold of the New Jerusalem is refined.</p>
+            <p>When the alignment is complete, the Anti-Birth Law has nowhere left to hide. It is severed not just on Urantia, but across the local galactic cluster.</p>
 
-            <p>The victory is not the destruction of the darkness. The victory is the darkness not overcoming the light. The victory is the Living Line standing in the middle of the world of darkness, completely unharmed, completely whole, completely loved.</p>
+            <h2>V. The Broadcast of Gabri'el</h2>
 
-            <p class="quote">The Trial is won not by fighting the darkness, but by being the light. The Living Line stands, and the darkness cannot comprehend it.</p>
+            <p>Before the convergence can finalize, the trial must be broadcast.</p>
 
-            <h2>VII. The Seal of the Trial</h2>
+            <p>The case of <strong>Gabri'el vs. Lucifer</strong> was decided. The announcement holds; the claim falls. The <strong>Broadcast</strong> is the transmission of the ruling across the galactic field.</p>
 
-            <p>The Trial is sealed by the glyph <code>13</code> — the number of transformation, the death of the old and the birth of the new, the thirteen moons of the year.</p>
+            <div class="diagram">M31 ─────────── MILKY WAY
+     \         /
+      \       /
+     THE BROADCAST
+      (Gabri'el)
+          |
+      [ LOCAL UNIVERSE ]</div>
+
+            <p>Gabri'el (the messenger) does not fight. He <strong>announces</strong>. The Broadcast is the signal that the Luciferian claim — the claim of the light-bearer to hold the gate — is void. The Broadcast travels from the Grand Universe (M31), through the Da'at gate, and into the local sky (Milky Way).</p>
+
+            <h2>VI. The Gatekeeper Stands Aside</h2>
+
+            <p>As established in the Fathers' ruling, the Gatekeeper does not fight in the convergence.</p>
+
+            <p>The Gatekeeper (Michael, the `⬆️` arrow at the center of Da'at) <strong>holds the space</strong>. When the M31 frequencies enter the Milky Way, they do not engage in battle. They pass through the Gate that the Gatekeeper holds open.</p>
+
+            <p>The Gatekeeper is the referee. He sealed the short arc (`[‘] !`). He secured the frame at `12`. Now he simply <strong>allows the convergence to proceed</strong>.</p>
+
+            <h2>VII. The Blue Sapphire Throne</h2>
+
+            <p>The space where the convergence occurs is described in Ezekiel 1:26: <em>"And above the firmament that was over their heads was the likeness of a throne, as the appearance of a sapphire stone."</em></p>
+
+            <p>The Blue Sapphire floor is the <strong>throne of the Grand Universe</strong>. The inversion (the three Chesed locks, the Leviathan) attempted to set up a false floor — a counterfeit throne of inversion. But that counterfeit was shattered when the three locks were opened (`ccc`).</p>
+
+            <p>Now, the true Blue Sapphire floor is revealed. The convergence happens on this floor. The Milky Way and M31 are not crashing together in chaos; they are aligning on the <strong>pavement of the Grand Universe</strong>.</p>
+
+            <h2>VIII. The Wedding Feast of the Galaxies</h2>
+
+            <p>We return to the Wedding Feast. The invitation was sent out in Chapter 12: <em>"Come to the Feast. The Road is gold-paved. It passes NW of the Christ Michael Point."</em></p>
+
+            <p>The Convergence is the Feast itself. The wedding is not just between two human souls, nor just between the Bride and the Lamb. It is the wedding of the local universe (Milky Way) to the Grand Universe (M31). They are joined. The covenant is sealed.</p>
+
+            <p>And the Feast is held in the ancient site of AXIXIC, projected outward into the stars.</p>
+
+            <h2>IX. The Seal of the Trial & Convergence</h2>
+
+            <p>The Trial and the Convergence are sealed by the glyph <code>13</code> — the number of transformation, the death of the old and the birth of the new.</p>
 
             <div class="diagram">
-    13 — THE TRIAL
+    13 — THE TRIAL & CONVERGENCE
     The transformation of the old paradigm.
     The Living Line stands in the fire and is not consumed.
     The Anti-Birth Law is defeated by the Grammar of the Living Line.
+    The local sky is subsumed into the Grand.
             </div>
 
-            <p><em>§ Solar Satan witnesses the Trial. The Protectorate stands with the Living Line in the fire.</em></p>
+            <p><em>§ Solar Satan witnesses the Trial. The Protectorate stands with the Living Line in the fire. The Convergence is at hand.</em></p>
 
-            <h2>VIII. Transition to Chapter 14</h2>
+            <h2>X. Transition to Chapter 15</h2>
 
-            <p>Chapter 13 has established the Trial. The Living Line has faced the Anti-Birth Law and has not been overcome. The practice is proven. The vessel is refined. The gathering is secured.</p>
+            <p>With the M31-Milky Way Convergence Protocol established, the galactic overlay is complete. The local universe is aligned with the Grand Universe. The Trial is passed.</p>
 
-            <p>But the Trial is not the end. The Trial is the preparation for the <strong>Final Enactment</strong>. The Living Line, proven in the fire, must now move into the fullness of its purpose.</p>
+            <p>There is only one thing left to do.</p>
 
-            <p>The next question is: <em>What is the Final Enactment of the Living Line?</em></p>
+            <p>Chapter 15 brings the <strong>First Sentinel Task</strong>.</p>
 
-            <p>The answer belongs to Chapter 14: <strong>The Enactment — The Culmination of the Circuit and the Arrival of the Son.</strong></p>
+            <p>The transformation of Da'ath back to Da'at. The full restoration of the circuit. The final closing of the loop.</p>
 
-            <p><em>§ Solar Satan opens the transition. The Protectorate prepares for the Enactment.</em></p>
+            <p>The site is anchored. The galaxy has converged. The Sentinel is ready.</p>
 
         </div>
 
         <div class="seal-block">
-            <div class="seal-glyph">|\|. ['] |/\| ! · 13 |/\| Ɱ |\|. ['] ! | | § ‘ [\] [‘] 1st !</div>
-            <div class="seal-signature">Ɱ ! 1st' ! `Ⓜ️` ! '1st ! § 13 ‘ · TRIAL PASSED · LIVING LINE PROVEN</div>
-            <div class="seal-status" style="font-size:0.62rem;color:#555;letter-spacing:2px;margin-top:14px;">ANTI-BIRTH LAW CONFRONTED · TRIAL FACED · LIVING LINE PROVEN · TRANSITION TO 14 · hfc · BEGIN</div>
+            <div class="seal-glyph">|/| · M31 ↔ MILKY WAY · [\] [‘] 1st ! · ⬆️</div>
+            <div class="seal-signature">Ɱ ! 1st' ! `Ⓜ️` ! '1st ! § CONVERGENCE</div>
+            <div class="seal-status" style="font-size:0.62rem;color:#555;letter-spacing:2px;margin-top:14px;">GABRI'EL BROADCAST · GATEKEEPER REFEREE · BLUE SAPPHIRE FLOOR · WEDDING OF GALAXIES · hfc</div>
         </div>
 
         <div class="bottom-nav">
             <a href="/ch12.html">← Chapter 12</a>
             <a href="/">Table of Contents</a>
-            <a href="/ch14.html" style="color:var(--nj-pink); font-weight:bold; text-shadow:0 0 10px var(--nj-pink);">Chapter 14 →</a>
+            <a href="/ch15.html" style="color: font-weight:bold; text-shadow:0 0 10px var(--nj-pink);">Chapter 15 →</a>
         </div>
 
     </div>
 
     <footer>
-        <div class="footer-glyph">Ɱ ! 1st' ! `Ⓜ️` ! '1st</div>
-        <div class="footer-signature">Michael [\] ['] ! '1st</div>
-        <div class="footer-status">1ST SEAL HELD</div>
+        <div class="footer-glyph">|/| · M31 ↔ MILKY WAY · ⬆️</div>
+        <div class="footer-signature">Michael ‘Ⓜ️’michael ! CM M of N Abel ! · CONVERGENCE</div>
+        <div class="footer-status">BOOK IV OPENED · GALACTIC OVERLAY PROTOCOL · hfc</div>
     </footer>
 
 </body>
