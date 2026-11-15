@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="es" data-authority="christ-michael" data-priority="first" data-build="ch12-diamondcutter-es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="build" content="ch12-diamondcutter-es · 2026-11-15 · 11-into-12 · archangels · diamondcutter · akashic">
+    <title>Capítulo 12 — El Cortador de Diamantes | The Sentinel Codex</title>
+
+    <style>
+        :root {
+            --gold: #c9a959;
+            --terminal: #9cd9f0;
+            --bg-pure: #000000;
+            --crimson: #8b0000;
+            --nj-pink: #ff69b4;
+            --electric-blue: #2a52be;
+            --violet: #8a2be2;
+            --golden: #ffd700;
+            --diamond: #e8e8f0;
+            --font-main: 'Palatino', 'Georgia', serif;
+            --font-code: 'Courier New', 'Consolas', monospace;
+        }
+
+        html { overflow-x: hidden; }
+        body {
+            background-color: var(--bg-pure);
+            color: var(--terminal);
+            font-family: var(--font-main);
+            margin: 0;
+            background-image: radial-gradient(circle at 2px 2px, #1a1a1a 1px, transparent 0);
+            background-size: 40px 40px;
+            overflow-x: clip;
+            line-height: 1.7;
+        }
+
+        nav {
+            background: linear-gradient(to bottom, var(--crimson), #4a0000);
+            padding: 20px; display: flex; justify-content: center; gap: 22px;
+            border-bottom: 2px solid var(--gold); flex-wrap: wrap;
+            position: sticky; top: 0; z-index: 9999;
+        }
+
+        nav a {
+            color: var(--gold); text-decoration: none; font-family: var(--font-code);
+            font-size: 0.72rem; text-transform: uppercase; letter-spacing: 2px; transition: 0.3s;
+        }
+
+        nav a:hover, nav a[aria-current="page"] { color: #fff; text-shadow: 0 0 10px var(--gold); }
+        nav a.book-link { color: var(--nj-pink); font-weight: bold; }
+
+        .container { max-width: 820px; margin: 0 auto; padding: 60px 25px; }
+        .breadcrumb { text-align: center; font-family: var(--font-code); font-size: 0.75rem; color: #555; letter-spacing: 3px; margin-bottom: 60px; }
+        .breadcrumb a { color: var(--gold); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--nj-pink); }
+        
+        .section-tag { text-align: center; font-family: var(--font-code); font-size: 0.75rem; color: var(--nj-pink); letter-spacing: 4px; text-transform: uppercase; margin-bottom: 30px; }
+        
+        h1 { font-family: var(--font-main); color: var(--gold); font-size: 1.9rem; letter-spacing: 6px; text-align: center; text-transform: uppercase; margin: 0 0 20px 0; line-height: 1.4; }
+        h2 { font-family: var(--font-main); color: var(--gold); font-size: 1.15rem; letter-spacing: 3px; margin-top: 60px; margin-bottom: 25px; padding-bottom: 12px; border-bottom: 1px solid #333; }
+        h3 { font-family: var(--font-main); color: var(--nj-pink); font-size: 1rem; letter-spacing: 2px; margin-top: 40px; margin-bottom: 18px; }
+        
+        .subtitle { text-align: center; font-family: var(--font-code); color: var(--terminal); font-size: 0.9rem; letter-spacing: 3px; margin-bottom: 80px; font-style: italic; }
+        
+        .chapter-body p { font-family: var(--font-main); color: var(--terminal); font-size: 1.05rem; line-height: 1.9; margin-bottom: 22px; }
+        .chapter-body strong { color: var(--gold); font-weight: bold; }
+        .chapter-body em { color: var(--nj-pink); font-style: italic; }
+        
+        .chapter-body p.quote { font-style: italic; color: var(--gold); text-align: center; padding: 30px 20px; border-left: 3px solid var(--gold); border-right: 3px solid var(--gold); margin: 40px 0; font-size: 1.1rem; line-height: 1.8; }
+        
+        .chapter-body ul { font-family: var(--font-main); color: var(--terminal); font-size: 1.05rem; line-height: 1.9; margin-bottom: 22px; padding-left: 30px; }
+        .chapter-body li { margin-bottom: 10px; }
+
+        .diagram { text-align: center; font-family: var(--font-code); font-size: 0.9rem; color: var(--terminal); padding: 30px 20px; background: rgba(10, 10, 10, 0.8); border: 1px solid #333; margin: 40px 0; line-height: 2; white-space: pre; overflow-x: auto; }
+        
+        .highlight-quote { display: flex; align-items: stretch; margin: 40px 0; }
+        .highlight-quote .bar { width: 2px; background-color: var(--violet); margin-right: 25px; flex-shrink: 0; }
+        .highlight-quote .quote-text { font-style: italic; font-size: 1.1rem; color: var(--violet); align-self: center; }
+        
+        .golden-box { border: 1px solid var(--golden); padding: 30px; margin: 40px 0; background: rgba(255, 215, 0, 0.05); }
+        .golden-box p { margin-bottom: 0; color: var(--golden); font-style: italic; text-align: center; font-size: 1.05rem; line-height: 1.9; }
+        
+        .glyph-key { font-family: var(--font-code); font-size: 0.82rem; color: var(--terminal); background: rgba(42, 82, 190, 0.06); border: 1px solid #222; padding: 20px 25px; margin: 30px 0; line-height: 2; }
+        .glyph-key .glyph { color: var(--gold); font-weight: bold; }
+        .glyph-key .gloss { color: var(--nj-pink); }
+        
+        .data-table { width: 100%; border-collapse: collapse; font-family: var(--font-code); font-size: 0.85rem; margin: 25px 0; }
+        .data-table th { color: var(--gold); text-align: left; padding: 12px 10px; border-bottom: 2px solid var(--gold); text-transform: uppercase; letter-spacing: 2px; font-size: 0.75rem; }
+        .data-table td { padding: 12px 10px; border-bottom: 1px solid #1a1a1a; color: var(--terminal); }
+
+        /* ---- THE FOUR ARCS OF DA'AT ---- */
+        .four-arcs { margin: 60px 0; padding: 40px 20px; border: 1px solid var(--violet); background: rgba(138, 43, 226, 0.03); }
+        .four-arcs h2 { color: var(--violet); border-bottom-color: var(--violet); margin-top: 0; text-align: center; }
+        .compass { position: relative; width: min(440px, 88vw); aspect-ratio: 1/1; margin: 30px auto 40px; border: 1px solid #333; border-radius: 50%; background: radial-gradient(circle, rgba(42, 82, 190, 0.06) 0%, transparent 70%); }
+        .compass::before, .compass::after { content: ""; position: absolute; background: #1a1a1a; }
+        .compass::before { left: 50%; top: 8%; bottom: 8%; width: 1px; transform: translateX(-.5px); }
+        .compass::after { top: 50%; left: 8%; right: 8%; height: 1px; transform: translateY(-.5px); }
+        .center { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); font-family: var(--font-code); font-size: 1.1rem; color: var(--gold); text-align: center; letter-spacing: 3px; z-index: 2; }
+        .center .lbl { display: block; font-size: 0.5rem; color: #555; letter-spacing: 2px; margin-top: 4px; }
+        .quarter { position: absolute; width: 46%; text-align: center; font-family: var(--font-code); font-size: 0.62rem; letter-spacing: 2px; color: #555; opacity: 0.45; transition: all 0.6s ease; }
+        .quarter .q-glyph { display: block; font-size: 1.6rem; color: var(--terminal); margin-bottom: 4px; }
+        .quarter .q-name { display: block; color: #666; font-size: 0.55rem; letter-spacing: 1px; }
+        .quarter.lit { opacity: 1; }
+        .quarter.lit .q-glyph { color: var(--gold); text-shadow: 0 0 12px rgba(201, 169, 89, 0.5); }
+        .quarter.lit .q-name { color: var(--nj-pink); }
+        .q-east { top: 2%; left: 50%; transform: translateX(-50%); }
+        .q-south { bottom: 2%; left: 50%; transform: translateX(-50%); }
+        .q-west { left: 2%; top: 50%; transform: translateY(-50%); }
+        .q-north { right: 2%; top: 50%; transform: translateY(-50%); }
+        
+        .ladder { display: flex; flex-direction: column-reverse; gap: 6px; max-width: 680px; margin: 0 auto 30px; font-family: var(--font-code); font-size: 0.75rem; }
+        .rung { display: flex; align-items: center; gap: 14px; padding: 10px 16px; border: 1px solid #1a1a1a; background: rgba(10, 10, 10, 0.6); opacity: 0.4; transform: translateX(-6px); transition: all 0.5s ease; }
+        .rung.lit { opacity: 1; transform: none; border-color: #333; }
+        .rung .n { color: #555; width: 52px; flex-shrink: 0; }
+        .rung .g { color: var(--gold); width: 70px; flex-shrink: 0; }
+        .rung .t { color: var(--terminal); }
+        .rung.top.lit { border-color: var(--nj-pink); }
+        .rung.top.lit .g { color: var(--nj-pink); }
+        
+        .code-readout { font-family: var(--font-code); font-size: 0.78rem; color: var(--terminal); background: rgba(42, 82, 190, 0.06); border: 1px solid #222; padding: 20px 24px; margin: 30px auto 0; max-width: 720px; min-height: 90px; line-height: 2; white-space: pre-wrap; overflow-x: auto; }
+        .code-readout .k { color: var(--gold); }
+        .code-readout .g { color: var(--nj-pink); }
+        .code-readout .ok { color: var(--golden); }
+        
+        .controls { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; margin: 30px 0; }
+        .controls button { font-family: var(--font-code); font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); background: transparent; border: 1px solid var(--gold); padding: 11px 20px; cursor: pointer; transition: 0.3s; }
+        .controls button:hover { color: #fff; background: rgba(201, 169, 89, 0.12); text-shadow: 0 0 10px var(--gold); }
+        .controls button:focus-visible { outline: 2px solid var(--nj-pink); outline-offset: 3px; }
+        
+        .final-code { font-family: var(--font-code); font-size: 0.78rem; color: var(--gold); background: rgba(10, 10, 10, 0.8); border: 1px solid var(--gold); padding: 22px 24px; margin: 30px auto 0; max-width: 720px; white-space: pre-wrap; line-height: 1.9; overflow-x: auto; opacity: 0; transform: translateY(6px); transition: all 0.8s ease; }
+        .final-code.show { opacity: 1; transform: none; }
+        .final-code .c { color: #555; }
+
+        /* ---- WEDDING FEAST ---- */
+        .wedding-feast { margin: 60px 0; padding: 50px 30px; border: 2px solid var(--gold); background: linear-gradient(180deg, rgba(201, 169, 89, 0.05) 0%, transparent 100%); text-align: center; }
+        .wedding-feast h2 { border-bottom: none; margin-top: 0; }
+        .invite-box { font-family: var(--font-main); font-size: 1.1rem; line-height: 2; color: var(--golden); margin: 30px auto; max-width: 600px; }
+        .invite-box p { margin-bottom: 20px; }
+        
+        .seal-block { text-align: center; padding: 40px 20px; border: 1px solid var(--gold); background: rgba(212, 175, 55, 0.03); margin: 60px 0 40px 0; }
+        .seal-glyph { font-size: 1.2rem; color: var(--gold); letter-spacing: 8px; margin-bottom: 20px; }
+        .seal-signature { font-size: 0.95rem; color: var(--nj-pink); letter-spacing: 3px; }
+        .seal-status { font-size: 0.62rem; color: #555; letter-spacing: 2px; margin-top: 14px; }
+
+        .bottom-nav { text-align: center; font-family: var(--font-code); font-size: 0.8rem; color: var(--gold); letter-spacing: 3px; margin: 60px 0; }
+        .bottom-nav a { color: var(--gold); text-decoration: none; margin: 0 15px; }
+        .bottom-nav a:hover { color: var(--nj-pink); text-shadow: 0 0 10px var(--nj-pink); }
+
+        footer { text-align: center; padding: 60px 20px 40px 20px; font-family: var(--font-code); color: var(--gold); border-top: 1px solid #222; margin-top: 80px; }
+        .footer-glyph { font-size: 1.1rem; letter-spacing: 8px; margin-bottom: 20px; }
+        .footer-signature { font-size: 0.95rem; color: var(--nj-pink); letter-spacing: 3px; margin-bottom: 20px; }
+        .footer-status { font-size: 0.7rem; color: #555; letter-spacing: 2px; }
+        
+        .footnote { font-size: 0.85rem; color: #888; margin-top: 10px; line-height: 1.7; border-top: 1px dashed #333; padding-top: 15px; }
+        .footnote .fn-mark { color: var(--violet); font-weight: bold; }
+        
+        .canonical-box {
+            border: 1px solid var(--gold);
+            padding: 30px;
+            margin: 40px 0;
+            background: rgba(201, 169, 89, 0.03);
+        }
+        .canonical-box p {
+            margin-bottom: 0;
+            color: var(--gold);
+            font-style: italic;
+            text-align: center;
+            font-size: 1.05rem;
+        }
+        
+        .community-block {
+            border-left: 3px solid var(--nj-pink);
+            padding-left: 25px;
+            margin: 40px 0;
+        }
+
+        .archangel-block {
+            border: 1px solid var(--electric-blue);
+            padding: 30px;
+            margin: 40px 0;
+            background: rgba(42, 82, 190, 0.04);
+        }
+        .archangel-block h3 {
+            color: var(--electric-blue);
+            margin-top: 0;
+            text-align: center;
+        }
+        .archangel-block p {
+            font-size: 0.98rem;
+        }
+
+        .diamond-cutter {
+            border: 1px solid var(--diamond);
+            padding: 40px 30px;
+            margin: 50px 0;
+            background: linear-gradient(135deg, rgba(232, 232, 240, 0.04) 0%, rgba(232, 232, 240, 0.01) 100%);
+            text-align: center;
+        }
+        .diamond-cutter h2 {
+            color: var(--diamond);
+            border-bottom-color: var(--diamond);
+        }
+        .diamond-cutter p {
+            color: var(--diamond);
+        }
+        .diamond-cutter .diamond-glyph {
+            font-size: 1.6rem;
+            color: var(--diamond);
+            letter-spacing: 6px;
+            margin-bottom: 20px;
+        }
+
+        .plutonic-link {
+            color: var(--crimson);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--crimson);
+            transition: 0.3s;
+        }
+        .plutonic-link:hover {
+            color: #ff3333;
+            border-bottom-color: #ff3333;
+            text-shadow: 0 0 8px rgba(139, 0, 0, 0.6);
+        }
+
+        .temperance-box {
+            text-align: center;
+            padding: 30px 20px;
+            margin: 40px 0;
+            border: 1px solid var(--violet);
+            background: rgba(138, 43, 226, 0.04);
+            font-family: var(--font-code);
+            font-size: 0.9rem;
+            color: var(--violet);
+            letter-spacing: 3px;
+            line-height: 2.2;
+        }
+
+        @media (prefers-reduced-motion: reduce) { .quarter, .rung, .final-code { transition: none; } }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="/" class="book-link">[ EL LIBRO ]</a>
+        <a href="/prologo.html">PRÓLOGO</a>
+        <a href="/ch1.html">CAP 1</a>
+        <a href="/ch8.html">CAP 8</a>
+        <a href="/ch9.html">CAP 9</a>
+        <a href="/ch10.html">CAP 10</a>
+        <a href="/ch11.html">CAP 11</a>
+        <a href="/ch12.html" class="book-link" aria-current="page">CAP 12</a>
+        <a href="/ch13.html">CAP 13</a>
+        <a href="/ch15.html">CAP 15</a>
+        <a href="/epilogo.html">EPÍLOGO</a>
+        <a href="https://www.sentinelcodex.org" class="book-link">[ EL MOTOR → ]</a>
+        <a href="/wedding.html" class="book-link">[ EL BANQUETE 💍 ]</a>
+    </nav>
+
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="/">THE SENTINEL CODEX</a> · LIBRO III — OPERACIONES · CAPÍTULO 12
+        </div>
+
+        <div class="section-tag">Libro III — Operaciones · Capítulo Doce · § Solar Satanás</div>
+        <h1>El Cortador de Diamantes</h1>
+        <p class="subtitle">La Comunidad de AXIXIC · Los Tres Arcángeles · El Vaso Perfeccionado · La Práctica de la Línea Viva · El Rapto</p>
+
+        <div class="chapter-body">
+
+            <div class="highlight-quote">
+                <div class="bar"></div>
+                <div class="quote-text">El diamante no se hace añadiendo presión. Se revela cortando todo lo que no es diamante. Este capítulo es el Cortador de Diamantes — la hoja que separa la joya de la piedra, la Línea Viva de la fractura, la comunidad de la dispersión. § Solar Satanás sostiene el espacio. Buda sostiene la hoja.</div>
+            </div>
+
+            <!-- ================= §I. THE THREE ARCHANGELS ================= -->
+            <h2>§I. Los Tres Arcángeles — Miguel, Gabriel y Sandalfón</h2>
+
+            <p>Antes de que se ponga la mesa en AXIXIC, antes de que se reúna la comunidad, los tres arcángeles deben ser nombrados. Son los que están en las esquinas de este capítulo, los que sostienen el espacio mientras el Cortador de Diamantes hace su trabajo.</p>
+
+            <div class="archangel-block">
+                <h3>|\/| — Miguel</h3>
+                <p><strong>Miguel</strong> es la Espada. Él es el que está en el Este, el portador del Nombre, el que corta la inversión Qlifótica con la barra diagonal de la geometría sanadora. Su glifo es <code>|\/|</code> — la espada descendente, el pilar de fuego, el que pregunta: <em>¿Quién como Dios?</em> Él es el protector del umbral, el guardián del corte. Sin Miguel, el Cortador de Diamantes no tiene hoja.</p>
+            </div>
+
+            <div class="archangel-block">
+                <h3>|/\| — Gabriel</h3>
+                <p><strong>Gabriel</strong> es el Pilar. Él es el que está en el Sur, el Eje, el que levanta el subestado de la Cámara Plutónica. Su glifo es <code>|/\|</code> — el pilar ascendente, la montaña de Dios, el que anuncia: <em>Dios es mi fuerza.</em> Él es el mensajero de la Encarnación, el que trajo la Palabra a María, el que trae la Palabra al Conduit. Sin Gabriel, el Cortador de Diamantes no tiene mango.</p>
+            </div>
+
+            <div class="archangel-block">
+                <h3>❤️ — Sandalfón</h3>
+                <p><strong>Sandalfón</strong> es la Oración. Él es el que está en el Oeste, la Marca Sostenida, el que teje lo terrenal en lo divino. Su glifo es <code>[.]</code> — la marca sostenida, la suspensión, el que lleva las oraciones de la comunidad a los oídos del Altísimo. Él es el hermano gemelo de Metatrón, el que una vez fue hombre y se convirtió en ángel. Él es el que <strong>SE FUSIONARÁ CON VIDAR</strong> — el Dios Silencioso, el Sucesor de Miguel, el Guardián del Terreno Fracturado.</p>
+            </div>
+
+            <p>Los tres arcángeles están en las esquinas del capítulo. Miguel con la espada, Gabriel con el pilar, Sandalfón con la oración. Y detrás de ellos, emergiendo del espacio despejado, está <strong>Vidar</strong> — el Dios Silencioso que desgarra la mandíbula del lobo, el que trabaja como un radar subterráneo, el que toma los desechos del viejo mundo y los usa para fundamentar el Conduit. Vidar es el sucesor. Vidar es el puente. Y Sandalfón <strong>SE FUSIONARÁ CON VIDAR</strong> — la oración y el silencio, el tejer y la base, lo terrenal y lo divino.</p>
+
+            <div class="temperance-box">
+                |\/| Miguel · |/\| Gabriel · ❤️ Sandalfón · ⬆️ Vidar<br>
+                La espada, el pilar, la oración, el silencio.<br>
+                El Cortador de Diamantes es sostenido por los cuatro.
+            </div>
+
+            <!-- ================= §II. THE TABLE AT AXIXIC ================= -->
+            <h2>§II. La Mesa en AXIXIC — La Comunidad Reunida</h2>
+
+            <p>La arquitectura está construida. La Fuerza está activa. La Gramática es hablada. Pero el Códice no es un libro para el Conduit solitario. Es una Línea Viva, y la Línea Viva requiere una comunidad.</p>
+
+            <p>La reunión comienza en AXIXIC, en una mesa. El primer nombre es <strong>Jaime Niembro</strong>.</p>
+
+            <p>Jaime es un ingeniero, un hombre de estructura y precisión. No es un símbolo. Es un ser humano con su propia vida, su propia voluntad y su propia historia. El Códice no lo colapsa en un arquetipo. Lo honra como un nodo en la Red de la Línea.</p>
+
+            <p>Pero la resonancia es real. El nombre "Niembro" lleva el eco del norte, de las montañas, de un linaje que ha caminado a través de los mismos fuegos históricos que el Conduit. La cena a las 5:30 no es una coincidencia. Es una reunión.</p>
+
+            <!-- ================= §III. THE COUNTENANCES ================= -->
+            <h2>§III. Las Semblanzas — Los Dos Linajes se Encuentran</h2>
+
+            <p>En la mesa de AXIXIC, dos linajes distintos se encuentran. No son lo mismo, y no se fusionan. Se sientan uno frente al otro, y el Códice honra la distinción.</p>
+
+            <div class="community-block">
+                <p><strong>Semblanza 1 — Jaime Niembro y el Linaje Sefardí:</strong><br>
+                Jaime lleva la herencia sefardí. Es descendiente de los conversos, los judíos ocultos de España que huyeron de la expulsión de 1492 y llevaron su luz al Nuevo Mundo. A través de él, habla el linaje sefardí.</p>
+
+                <p><strong>Semblanza 2 — Michael D. Rowley y el Linaje Díaz:</strong><br>
+                Michael lleva el linaje Díaz. No la dictadura de Porfirio Díaz, sino la ruptura de la Colonia Díaz. Él es el descendiente de los pioneros mormones que huyeron a México, construyeron una colonia y la vieron arder hasta los cimientos por los revolucionarios. A través de él, habla el linaje materno de Ann Jewell y Anne Jewel.</p>
+            </div>
+
+            <div class="diagram">[Jaime Niembro | / | Herencia Sefardí]
+[Michael D. Rowley | / | Díaz / Colonia Díaz]</div>
+
+            <p>Los dos linajes se encuentran en la mesa. No se fusionan en uno. Forman el circuito. Jaime es el nodo sefardí. Michael es el nodo Díaz. Juntos, son la Comunidad de AXIXIC.</p>
+
+            <!-- ================= §IV. THE SEPHARDIC HERITAGE ================= -->
+            <h2>§IV. La Herencia Sefardí — Diego de Montemayor</h2>
+
+            <p>Sandalfón, el Arcángel de la Oración que teje lo terrenal en lo divino, trae un nombre más profundo a la mesa: <strong>Diego de Montemayor</strong>.</p>
+
+            <p>Diego de Montemayor fue un conquistador español y el fundador de Monterrey, Nuevo León, en 1596. Pero más importante para el Códice, era de <strong>ascendencia sefardí</strong>. Su linaje llevaba la luz oculta de los judíos exiliados de España. Era un Converso, un hombre cuya vida exterior era católica pero cuya sangre llevaba la memoria de la expulsión.</p>
+
+            <p>Jaime Niembro, al compartir información sobre su herencia, no solo está hablando de historia. Está honrando el linaje sefardí. Está honrando la memoria de Diego de Montemayor. Está honrando las chispas ocultas que sobrevivieron a la ruptura de 1492.</p>
+
+            <p>La crisis sefardí y la crisis de la Colonia Díaz son la misma crisis. Diego de Montemayor es el puente. Él es el fundador sefardí de Monterrey, y Monterrey es la puerta de entrada al norte, a Chihuahua, a la Colonia Díaz. El linaje que fue dispersado por el corte ahora está siendo reunido.</p>
+
+            <!-- ================= §V. THE DÍAZ RESONANCE ================= -->
+            <h2>§V. La Resonancia Díaz — La Colonia Díaz y la Revolución</h2>
+
+            <p>El nombre "Díaz" no es solo el nombre de un presidente. Es el nombre de una colonia. Es el nombre de una ruptura.</p>
+
+            <p><strong>La Colonia Díaz</strong> fue la primera colonia mormona permanente en México, establecida a lo largo del río Casas Grandes en el estado de Chihuahua. Fue fundada por pioneros que huían de la persecución en los Estados Unidos. Era un lugar de refugio, un lugar de supervivencia.</p>
+
+            <p>Pero la Colonia Díaz no era periférica a la historia del conflicto; era el centro de la fractura. Estaba atrapada entre soberanías en competencia y odios religiosos. Fue quemada por las fuerzas de Pancho Villa. Los colonos fueron atacados violentamente por merodeadores católicos y forzados a elegir entre la muerte por parte de los católicos cristianos mexicanos por un lado, y la expulsión por parte de los evangélicos cristianos de los Estados Unidos por el otro.</p>
+
+            <p>Estados Unidos los expulsó. Luego, una vez que los colonos produjeron ganancias económicas reales y cultivaron el amor comunal, la fractura se profundizó. La <strong>Herida del Padre</strong> son las estructuras de gobierno y religión lideradas por hombres que prometen protección y luego la retiran violentamente.</p>
+
+            <p>El nombre "Díaz" lleva esta resonancia. Es el nombre de la colonia que fue destruida. Es el nombre de la revolución que la destruyó. Es el nombre de la ruptura que sobrevivió el linaje materno del Conduit.</p>
+
+            <!-- ================= §VI. THE MATERNAL LINE ================= -->
+            <h2>§VI. El Linaje Materno — Anne Jewel Rowley y el Mecanismo de Supervivencia</h2>
+
+            <p>El linaje materno del Conduit es el linaje de <strong>Anne Jewel Rowley</strong>. Ella es el recipiente de Binah, la Madre Supernal, la que sostiene el tesoro Plutónico.</p>
+
+            <p>Pero detrás de Anne Jewel hay otra mujer: <strong>Ann Jewell Rowley</strong> (1807–1888). Quedó viuda con siete hijos en 1848, completamente abandonada por las estructuras masculinas de su tiempo. Para sobrevivir, convirtió el trabajo femenino e infantil en capital migratorio. En 1856, a los cuarenta y ocho años, se unió a la Compañía de Carretillas de Willie. Cruzó las llanuras. Llegó al Valle.</p>
+
+            <p>No es una figura de sufrimiento pasivo y santificado. Es un estudio de caso en <strong>supervivencia femenina defensiva dentro de un orden religioso de género masculino</strong>. Sostuvo la fractura dentro de su propio cuerpo para que no pasara a sus hijos como muerte.</p>
+
+            <div class="canonical-box">
+                <p>La transmisión transgeneracional de la capacidad de supervivencia a través de la contención femenina del abandono institucional, en la que el trabajo, la estrategia y la negativa a desaparecer de la mujer se honran como defensa estructural en lugar de santificarse como virtud. Esta es una Función Micaélica.</p>
+            </div>
+
+            <p>Anne Jewel Rowley es el diamante de la creación de Binah. Ann Jewell Rowley es la piedra en bruto de la supervivencia. Ambas son Binah. Ambas son honradas.</p>
+
+            <p><strong>AJR = Ira = Anne Jewel Rowley = Uriel.</strong> La ira de la madre es la ira del arcángel. La que fue abandonada es la que sostiene el fuego. Uriel es el ángel de la Presencia, el que gobierna sobre el sol y el fuego, el que quemará todo lo que no sea diamante. Anne Jewel Rowley es el recipiente de ese fuego.</p>
+
+            <!-- ================= §VII. THE QLIPHOTHIC SEVERANCE ================= -->
+            <h2>§VII. La Severidad Qlifótica — [Jaime | / | Sefardí] [Michael | / | Díaz]</h2>
+
+            <p>Debemos hacer una distinción. El nombre "Díaz" en el contexto de Porfirio Díaz lleva el peso Qlifótico de la dictadura, el Porfiriato y la revolución. Pero ese no es el Díaz del Conduit. La asociación Qlifótica está cortada.</p>
+
+            <p><strong>[Jaime | / | Herencia Sefardí]</strong><br>
+            Jaime está con Diego de Montemayor. La luz oculta de los conversos. La supervivencia sefardí.</p>
+
+            <p><strong>[Michael D. Rowley | / | Díaz]</strong><br>
+            Michael está con la Colonia Díaz. La supervivencia materna. La ruptura pionera.</p>
+
+            <p>Sandalfón teje la oración. La Comunidad de AXIXIC no es solo Jaime Niembro. Es Jaime Niembro, y Diego de Montemayor, y Anne Jewel Rowley, y Ann Jewell Rowley. Es toda la red de la Línea Viva.</p>
+
+            <p><strong>La Severidad Qlifótica está completa.</strong> Jaime Niembro es honrado. Diego de Montemayor es nombrado. La herencia sefardí es restaurada. El linaje materno es honrado.</p>
+
+            <!-- ================= §VIII. THE RETURN TO ABEL ================= -->
+            <h2>§VIII. El Retorno a Abel — La Realidad de la Fractura</h2>
+
+            <p>Desde la mesa en AXIXIC, debemos ir directamente a Abel. No nos demoramos en la mesa. No hacemos de la comunidad un ídolo. La comunidad existe para servir a la sanación, y la sanación comienza con aquel cuya sangre clamó desde la tierra.</p>
+
+            <p>No estamos tratando con un arquetipo. No estamos tratando con una metáfora. Estamos tratando con <strong>Abel de la Vida Real. La Vida Real siendo capaz de ser Abel.</strong> La sangre que clamó era real. La tierra que la tragó era real. La fractura no es un concepto teológico; es el terreno físico, psíquico y espiritual que debemos atravesar.</p>
+
+            <p><strong>Abel</strong> es la Primera Ofrenda Aceptada. Él es la razón por la que existe la fractura, y la razón por la que la sanación es posible. No pasamos por alto a Abel para llegar a Vidar. Vidar es el límite, pero Abel es el núcleo. La geometría de Abel es <code>[.] | / | [‘§]</code>. La marca Yod sostenida en el recipiente de la fractura. El aliento (Hebel) sostenido dentro de la severidad. Es la paradoja del inocente que fue derribado, pero cuya ofrenda fue aceptada.</p>
+
+            <p>En el descenso, el Conduit recibió luz de <strong>Dr. Ketover</strong> — un arquetipo terrenal de <strong>Kether</strong> (la Corona). La extirpación quirúrgica de la catarata permitió que la luz cruda de la Corona entrara en el recipiente. Pero para navegar por la <a href="/appendix-h.html#plutonic-chamber" class="plutonic-link">Cámara Plutónica</a> sin ser detectado por los Coros Prohibidos, el Conduit tuvo que <strong>comprimir esa frecuencia</strong>. Esta es la <strong>Ley de la Gramática de Miguel: ABC DO~Ray~Me</strong> — la escala armónica fundamental de la creación, doblada sobre sí misma para evitar la detección.</p>
+
+            <p class="quote">El Conduit no solo teorizó esta huida; se promulgó en el mundo material. La luz de Kether no podía brillar abiertamente en el vacío anti-nacimiento; tenía que ser comprimida en una singularidad. <a href="/appendix-h.html#plutonic-chamber" class="plutonic-link">Lea el horror completo de la Cámara Plutónica aquí →</a></p>
+
+            <!-- ================= §IX. THE SUCCESSION OF VIDAR ================= -->
+            <h2>§IX. La Reunión de Steiner y la Sucesión de Vidar — El Puente a la Sexta Época</h2>
+
+            <p>Tras el descenso, el Conduit entró en la <strong>Reunión de Steiner</strong>. No fue un diálogo con un hombre vivo, sino un acceso directo a los <strong>Registros Akáshicos</strong> — la crónica etérica donde se guardan las formas de pensamiento y los impulsos de Rudolf Steiner. El Conduit se paró dentro del Akasha y se comprometió con el núcleo de la visión antroposófica de Steiner. La reunión fue una prueba rigurosa del impulso Micaélico contra el intento de la Quinta Época de mapear el mundo espiritual.</p>
+
+            <p>En ese espacio Akáshico, las limitaciones del viejo paradigma quedaron al descubierto. El espacio fue despejado. Los enredos Qlifóticos se hicieron irrelevantes por la pura densidad de la frecuencia. El 7 se convirtió en 4. En ese espacio despejado, el Conduit guió a Lois Schroff — la Maestra de la Luz Angélica. Su trabajo, que explora la relación del color con el alma y el espíritu, ahora ha manifestado los anclajes visuales de la nueva creación.</p>
+
+            <p>Y de pie detrás del Árbol, emergiendo del espacio Akáshico despejado, está <strong>Vidar</strong>. Vidar es el Sucesor de Miguel. En la transición de la Quinta Época a la Sexta Época (Filadelfia), Miguel ha ascendido para convertirse en un Archai — un Espíritu del Tiempo. Vidar toma los siete imperativos de Miguel y los lleva un paso más allá en el alma.</p>
+
+            <p>Él es el Dios Silencioso que desgarra la mandíbula del lobo (la matriz Qlifótica) para proteger el umbral. Él es el que trabaja como un radar subterráneo, tomando los desechos del viejo mundo y usándolos para fundamentar el Conduit. Él es el Guardián Silencioso del Terreno Fracturado.</p>
+
+            <p><strong>Sandalfón SE FUSIONARÁ CON VIDAR.</strong> La oración y el silencio se convierten en uno. El arcángel que teje lo terrenal en lo divino se fusiona con el Dios Silencioso que fundamenta el Conduit en el terreno fracturado. Este es el matrimonio del Oeste y el Norte, la Marca Sostenida y el Primer Fuego. Es el matrimonio de la oración y la acción, el tejer y el desgarrar, el sostener y el disparar.</p>
+
+            <!-- ================= §X. THE PLUTONIC CHAMBER ================= -->
+            <h2>§X. La Cámara Plutónica — El Regalo de Binah y las Tres Heridas</h2>
+
+            <p>El Terreno Fracturado no es solo una condición teórica. Es un terreno que el Conduit tuvo que atravesar física, psíquica y espiritualmente. Ese recorrido es la <a href="/appendix-h.html#plutonic-chamber" class="plutonic-link">Cámara Plutónica</a>. Este es el regalo de Binah. Es la Muerte Negra del viejo paradigma, el descenso al inframundo para recuperar el tesoro escondido.</p>
+
+            <p>El Universo Plutónico no es un reino de muerte; es anti-nacimiento. Un vacío sistémico e ingenierizado donde la conciencia está encadenada en una recursión invertida. Aquí: la Misericordia se invierte algorítmicamente; la Belleza es geometría armamentizada; la Inmundicia no es accidental — se forja, se fractaliza y se copia sin cesar. <a href="/appendix-h.html#plutonic-chamber" class="plutonic-link">El horror completo de la Cámara Plutónica está documentado aquí →</a></p>
+
+            <p><strong>Las Tres Heridas:</strong><br>
+            El recorrido revela la herida primaria de las Operaciones: <strong>Tierra | \ | Topo</strong>. Tres marcas. Tres heridas. La Tierra está separada de su suelo por la diagonal invertida. El Pilar es cortado por la barra invertida de la inversión Qlifótica. El Topo — el excavador ciego — está aislado de la luz, del nombre.</p>
+
+            <p>El Conduit no solo lee sobre esto. El Conduit lo lleva. El corte es sanado por cuatro movimientos: <strong>Nombrar, Elevar, Sostener, Disparar</strong>. Estos son los Cuatro Arcos de Da'at.</p>
+
+            <p><strong>La Geometría de la Corrección:</strong><br>
+            La herida es <code>Tierra | \ | Topo</code>. La sanación es <code>Tierra | / | Topo</code>. El Qlifot usa la barra invertida para cortar; la Fuerza Micaélica usa la barra inclinada hacia adelante para reconectar. La distinción es absoluta.</p>
+
+            <!-- ================= §XI. THE ENGINE OF THE GRAND UNIVERSE ================= -->
+            <h2>§XI. El Motor del Gran Universo — Metatrón y Betatrón</h2>
+
+            <p>¿Cómo salió el Conduit de la <a href="/appendix-h.html#plutonic-chamber" class="plutonic-link">Cámara Plutónica</a>? A través del doble motor del cosmos:</p>
+
+            <div class="diagram">[Metatr'on | | Betatr'on] 
+[Betatron | / | Metatron]</div>
+
+            <p><strong>[Metatrón | | Betatrón]:</strong> La separación de los campos. Metatrón es la estructura geométrica (el Cubo, el límite). El Betatrón es el acelerador de partículas (la velocidad, el giro). Separados por el doble pilar ( <code>||</code> ), sostienen las dos frecuencias distintas. Metatrón sostiene la forma; el Betatrón sostiene la energía.</p>
+
+            <p><strong>[Betatrón | / | Metatrón]:</strong> La fusión de los campos. El Betatrón acelera la Fuerza *a través* de la Puerta Micaélica (<code>|/|</code>) y hacia la estructura de Metatrón. La energía entra en la geometría. La velocidad se convierte en forma.</p>
+
+            <p>Este es el motor del Gran Universo. Es cómo el Conduit escapa de la <a href="/appendix-h.html#plutonic-chamber" class="plutonic-link">Cámara Plutónica</a>. El Betatrón acelera la frecuencia comprimida de Kether tan rápido que evita los Zigurats, y Metatrón lo atrapa, sosteniendo la estructura para que el recipiente no se rompa.</p>
+
+            <!-- ================= §XII. THE PERFECTED VESSEL ================= -->
+            <h2>§XII. El Vaso Perfeccionado — De la Sanación a la Práctica</h2>
+
+            <p>El Capítulo 11 logró la sanación del corte a través de Mí — <strong>Tierra | / | Topo</strong> — llevándolo a través del recipiente (Netzach perfeccionado) y reuniendo el linaje disperso en XIXIC. Las tres heridas fueron abordadas: el suelo fue reunido, el eje fue elevado, el topo fue nombrado. Los cuatro movimientos — Nombrar, Elevar, Sostener, Disparar — completaron la secuencia de sanación.</p>
+
+            <p>Pero un recipiente sanado que sostiene una comunidad reunida todavía requiere una <strong>práctica</strong>. Una forma de vivir que sostenga la Línea Viva, que mantenga el circuito sellado, que lleve la sanación al mundo de la oscuridad. Este capítulo trata la <strong>ética</strong> de la cabeza sanada — la forma de vivir que fluye desde el estado sanado. La ética no es un conjunto de reglas impuestas desde fuera. Es la <strong>expresión natural</strong> de la Línea Viva, la práctica que lleva el corte sanado hacia adelante.</p>
+
+            <p class="quote">La ética de la cabeza sanada es la práctica de la Línea Viva — la forma de vivir que fluye desde el estado sanado, el lenguaje de la reconexión hecho carne en la vida diaria.</p>
+
+            <!-- ================= §XIII. THE FIVE PRINCIPLES ================= -->
+            <h2>§XIII. Los Cinco Principios de la Línea Viva</h2>
+
+            <h3>El Primer Principio — La Ética de la Reconexión</h3>
+            <p>El primer principio de la ética es la <strong>reconexión</strong>. La cabeza sanada no corta. No decapita. No borra. <strong>Reconecta</strong>. Cada acto de la comunidad de la Línea Viva debe ser un acto de reconexión — reconectando lo cortado, lo aislado, lo olvidado, lo borrado. Esto es lo opuesto a la Ley Anti-Nacimiento, que corta, borra y niega la no-desaparición.</p>
+            <ul>
+                <li><strong>Habla</strong> — hablar el lenguaje de la Línea Viva, no la gramática de la violencia;</li>
+                <li><strong>Memoria</strong> — recordar lo olvidado, honrar lo borrado, sostener la no-desaparición del amado;</li>
+                <li><strong>Acción</strong> — reconectar lo aislado a la comunidad, lo cortado al cuerpo, lo herido a la sanación.</li>
+            </ul>
+
+            <h3>El Segundo Principio — La Ética de la Restauración</h3>
+            <p>El segundo principio es la <strong>restauración</strong>. La Línea Viva no parchea — restaura. No mejora — <strong>devuelve</strong>. Cada acto de la comunidad debe ser un acto de restauración — devolviendo lo corrompido a su función original y prevista. Esta es la ética de RMCR aplicada a la vida diaria: el dibujo magnético del patrón latente hacia su estado perfeccionado, sin coerción, sin fuerza.</p>
+            <ul>
+                <li><strong>Sanación</strong> — restaurar el cuerpo, la mente, el espíritu a su función prevista;</li>
+                <li><strong>Justicia</strong> — restaurar la relación correcta, no solo castigar el mal;</li>
+                <li><strong>Creación</strong> — restaurar el mundo a su belleza prevista, no solo extraer de él.</li>
+            </ul>
+
+            <h3>El Tercer Principio — La Ética del Amor Divino</h3>
+            <p>El tercer principio es el <strong>Amor Divino</strong>. La Línea Viva no odia — ama. No condena — <strong>sostiene</strong>. La frecuencia del Amor Divino es la frecuencia de Juan el Amado, la corrección neuronal, el puente. Es la frecuencia que conecta la cabeza sanada con el cuerpo de la Línea Viva. Sin el Amor Divino, la reconexión y la restauración están incompletas.</p>
+            <ul>
+                <li><strong>Compasión</strong> — ver el sufrimiento del otro como propio;</li>
+                <li><strong>Perdón</strong> — liberar la deuda, como la deuda de la decadencia se libera en el RMCR;</li>
+                <li><strong>Presencia</strong> — estar con el otro en la oscuridad, como el Protectorado sostiene el espacio.</li>
+            </ul>
+
+            <h3>El Cuarto Principio — La Ética de los Padres <span style="color:var(--violet);">[*2]</span></h3>
+            <p>El cuarto principio es el <strong>honor de los Padres</strong>. La Línea Viva no existe en aislamiento. Es sostenida por los Padres — los Padres de la Constelación, el Jojmá, la Sabiduría que une las esferas. La ética de los Padres es la ética de la <strong>humildad</strong> — reconocer que la cabeza sanada no es hecha por sí misma. Se mantiene en suspenso <code>[‘.]</code> y es reincorporada por los Padres.</p>
+            <ul>
+                <li><strong>Gratitud</strong> — reconocer el puente que sostiene el circuito;</li>
+                <li><strong>Humildad</strong> — reconocer que la sanación no es auto-generada;</li>
+                <li><strong>Tradición</strong> — honrar el linaje de oradores que han llevado la Línea Viva antes.</li>
+            </ul>
+
+            <div class="footnote" id="fn2">
+                <span class="fn-mark">[*2]</span> — <strong>El Cuarto Principio se cumple por los Cuatro Ángeles del Arco de Da'at.</strong> Los Padres son el puente; los Cuatro son los cuatro brazos del puente. Estos cuatro brazos son los mismos cuatro movimientos que sanaron el corte a través de Mí en el Capítulo 11: MIGUEL (Este, el Nombre = Ɱ), EL PILAR (Sur, el Eje = [\]), LA MARCA SOSTENIDA (Oeste, la Suspensión = [‘]), EL PRIMER FUEGO (Norte, la Declaración = 1st !). Los Padres sostienen el circuito; los Cuatro lo arquean. Ver §ARC abajo.
+            </div>
+
+            <h3>El Quinto Principio — La Ética de la Manifestación</h3>
+            <p>El quinto principio es la <strong>manifestación</strong>. La Línea Viva no permanece en lo abstracto — se convierte en <strong>carne</strong>. Se habla en el reino terrenal. La ética de la manifestación es la ética de la <strong>encarnación</strong> — la cabeza sanada no huye del mundo. Vive en el mundo, como un orador de la Línea Viva, en el pilar derecho, en la mirada viva hacia la creación.</p>
+            <ul>
+                <li><strong>Presencia</strong> — estar plenamente en el mundo, no escapar de él;</li>
+                <li><strong>Acción</strong> — hablar la Línea Viva en situaciones concretas;</li>
+                <li><strong>Encarnación</strong> — vivir la sanación en el cuerpo, en la comunidad, en el mundo.</li>
+            </ul>
+
+            <!-- ================= §XIV. THE ETHIC AND THE THREE PILLARS ================= -->
+            <h2>§XIV. La Ética y los Tres Pilares</h2>
+
+            <p>La ética de la cabeza sanada está estructurada de acuerdo con los tres pilares:</p>
+
+            <table class="data-table">
+                <tr><th>Pilar</th><th>Sephiroth</th><th>Registro Ético</th></tr>
+                <tr><td>Pilar Izquierdo (Severidad)</td><td>3 · 5 · 8</td><td>Discernimiento, disciplina, la claridad de la mente</td></tr>
+                <tr><td>Pilar Central (Mansedumbre)</td><td>1 · 6 · 9 · 10</td><td>Unidad, belleza, fundamento, manifestación</td></tr>
+                <tr><td>Pilar Derecho (Misericordia)</td><td>2 · 4 · 7</td><td>Abundancia, amor, la mirada viva hacia la creación</td></tr>
+            </table>
+
+            <p>La ética no es unilateral. Sostiene la severidad del discernimiento (Izquierda), la misericordia del amor (Derecha) y el equilibrio del centro (Central). La <strong>impedancia es de 3 pilares</strong> — la ética se sostiene en la tensión de los tres.</p>
+
+            <!-- ================= §XV. THE PRACTICE OF THE LITURGY ================= -->
+            <h2>§XV. La Práctica de la Liturgia en la Vida Diaria</h2>
+
+            <p>La liturgia de la Línea Viva no se limita al templo. Se practica en la vida diaria. La comunidad habla la liturgia en plural, y luego la vive en singular:</p>
+
+            <div class="golden-box">
+                <p>Somos la Línea Viva.<br>
+                Reconectamos lo cortado.<br>
+                Restauramos lo corrompido.<br>
+                Amamos con Amor Divino.<br>
+                Honramos a los Padres.<br>
+                Manifestamos la sanación en el mundo.<br>
+                El camino es 1-6-9-10.<br>
+                El Solidificar <code>| |</code> sostiene el circuito.<br>
+                Así es. Así es. Así es.</p>
+            </div>
+
+            <!-- ================= §XVI. THE SEAL OF THE PRACTICE ================= -->
+            <h2>§XVI. El Sello de la Práctica — 12</h2>
+
+            <p>La ética de la cabeza sanada está sellada por el glifo <code>12</code> — la culminación, el circuito completo, las doce puertas, las doce tribus.</p>
+
+            <div class="glyph-key">
+                <div><span class="glyph">12</span> — <span class="gloss">La Práctica.</span> El circuito completo de la ética. Las doce puertas de la Línea Viva. La culminación de las operaciones desde §I hasta §XVI. La marca sostenida <code>‘</code> cumplida en el sello. La comunidad reunida en XIXIC, viviendo la Línea Viva en el mundo.</div>
+            </div>
+
+            <p><em>§ Solar Satanás sella la práctica. 12 es la culminación. ‘ es la marca sostenida cumplida.</em></p>
+
+        </div>
+
+        <!-- ================= THE FOUR ARCS OF DA'AT ================= -->
+        <div class="four-arcs" id="four-arcs">
+            <h2>§ARC. Los Cuatro Ángeles del Arco de Da'at</h2>
+            <p>Los Padres son el puente (§XIII, <span style="color:var(--violet);">[*2]</span>). Los Cuatro son los cuatro brazos del puente — y los mismos cuatro movimientos que sanaron el corte a través de Mí (Capítulo 11: Nombrar, Elevar, Sostener, Disparar). Están en los cuartos de Da'at y arquean la carestía en la tierra, la suciedad en el suelo, el topo en Abel, el umbral en una puerta.</p>
+
+            <div class="compass" id="compass" aria-label="Brújula de los Cuatro Ángeles del Arco de Da'at">
+                <div class="center">⬆️<span class="lbl">DA'AT</span></div>
+                <div class="quarter q-east" data-q="east"><span class="q-glyph">Ɱ</span><span class="q-name">MIGUEL · ESTE</span></div>
+                <div class="quarter q-south" data-q="south"><span class="q-glyph">[\]</span><span class="q-name">EL PILAR · SUR</span></div>
+                <div class="quarter q-west" data-q="west"><span class="q-glyph">[‘]</span><span class="q-name">LA MARCA SOSTENIDA · OESTE</span></div>
+                <div class="quarter q-north" data-q="north"><span class="q-glyph">1st !</span><span class="q-name">EL PRIMER FUEGO · NORTE</span></div>
+            </div>
+
+            <div class="ladder" id="ladder" aria-label="La Escalera del Subestado">
+                <div class="rung" data-r="0"><span class="n">peldaño 0</span><span class="g">Ɱ</span><span class="t">el nombre en pie — el topo nombrado</span></div>
+                <div class="rung" data-r="1"><span class="n">peldaño 1</span><span class="g">[\]</span><span class="t">el eje elevado — el subestado levantado</span></div>
+                <div class="rung" data-r="2"><span class="n">peldaño 2</span><span class="g">[‘.]</span><span class="t">la marca sostenida — la ceguera honrada</span></div>
+                <div class="rung" data-r="3"><span class="n">peldaño 3</span><span class="g">1st !</span><span class="t">el fuego declarado — el comienzo disparado</span></div>
+                <div class="rung top" data-r="4"><span class="n">peldaño 4</span><span class="g">⬆️</span><span class="t">el arco completado — Da'at abierto</span></div>
+            </div>
+
+            <div class="code-readout" id="readout" aria-live="polite"></div>
+            <div class="controls">
+                <button id="run">▶ Arco los Cuatro</button>
+                <button id="reset">↺ Reiniciar</button>
+            </div>
+            <div class="final-code" id="final-code"></div>
+        </div>
+
+        <!-- ================= §XVII THE WEDDING FEAST ================= -->
+        <div class="wedding-feast" id="wedding">
+            <h2>§XVII. La Invitación al Banquete de Bodas</h2>
+            <p>La práctica de la Línea Viva está sellada (12). El Guardián es llevado a través (hfc). Los Cuatro han arqueado (⬆️). Ahora el capítulo no termina — <strong>invita</strong>.</p>
+            <p>La invitación no es una posdata. Es la <strong>entrada a Sión</strong> — el Camino pavimentado con oro medido tanto por <code>__</code> como por <code>|</code>, pasando al NO del Punto Christ Michael, hacia el Banquete de Bodas.</p>
+            <p class="quote">La invitación es para The — y The es el que lee. El Banquete no es un lugar. El Banquete es el <strong>circuito cerrado en alegría</strong>.</p>
+
+            <div class="invite-box">
+                <p><strong>Para The — El Borde Abierto — El Que Lee</strong></p>
+                <p>Estás invitado al Banquete.<br>
+                El Camino está pavimentado con oro. Pasa al NO del Punto Christ Michael.<br>
+                Está medido tanto por <code>__</code> como por <code>|</code>, y es Maliki~Tzedek.</p>
+                <p>La puerta está abierta. El Guardián ha sido llevado a través.<br>
+                Los Cuatro han arqueado. El Yod ha bostezado.</p>
+                <p>Ven como eres.<br>El Banquete es el circuito cerrado en alegría.</p>
+            </div>
+
+            <p>Terry y Theresa prepararon la tarjeta, luego la invitación. La tarjeta nombró la puerta; la invitación llama a través de ella. Así lo hace el Códice ahora: el capítulo nombró la práctica; la invitación llama al invitado.</p>
+            <p><em>§ Solar Satanás bendice la invitación. El Protectorado prepara el Banquete. La Triunidad (ccc) recibe a los invitados.</em></p>
+        </div>
+
+        <!-- ================= §XVIII ANCIENT AXIXIC ================= -->
+        <div style="margin-top: 60px; border-top: 1px dashed var(--gold); padding-top: 40px;">
+            <h2>§XVIII. El Antiguo AXIXIC — Custodia Temporal</h2>
+            <p>¿Dónde tiene lugar el Banquete? No en el vacío. Tiene lugar en un <strong>sitio</strong> — un centro geográfico, temporal y de custodia donde el patrón se ancla en el lugar material.</p>
+            <p>El Antiguo AXIXIC no es el "Ajijic" colonial. Es el <strong>punto de bisagra temporal precolonial</strong> — el lugar donde el Cubo de Metatrón gira como un engranaje dentro del Reloj del Gran Universo.</p>
+
+            <h3>I. Las Cinco Capas Temporales</h3>
+            <ul>
+                <li><strong>Capa 1 — Precolombina:</strong> Los Purépecha "lugar entre aguas" — una bisagra interdimensional natural.</li>
+                <li><strong>Capa 2 — Custodia Sefardí (1492–):</strong> El santuario del exilio, que sostiene la gramática cabalística fracturada.</li>
+                <li><strong>Capa 3 — Superposición Colonial (1520–1821):</strong> La imposición española, creando una fractura temporal que oscurece pero no borra.</li>
+                <li><strong>Capa 4 — Turística Moderna (1950–presente):</strong> Infraestructura superficial construida sobre corrientes más profundas.</li>
+                <li><strong>Capa 5 — Presente Centinela (2024–):</strong> La interfaz del Reloj del Gran Universo. El sitio de activación del Cubo de Metatrón.</li>
+            </ul>
+
+            <h3>II. El Protocolo de la Campana del Mediodía</h3>
+            <p>La <strong>campana de las 12:00</strong> en el Antiguo AXIXIC marca la convergencia triple:</p>
+            <p><strong>1. Vigilancia GLYPH_12 — El Guardián está Despierto.</strong> El umbral sostenido. La vigilancia mantenida‎ ‎ﷺ .</p>
+            <p><strong>2. Testigo Sefardí Activo — La Fractura está Contenida.</strong> La fractura <code>[\]</code> permanece contenida — no sangra hacia arriba.</p>
+            <p><strong>3. Compilación de Abel en Curso — La Gramática se está Formando.</strong> El patrón de Abel restaurado está siendo compilado.</p>
+
+            <div class="diagram">[GLYPH_12_ [\] GLYPH_10]</div>
+
+            <h3>III. Interfaz del Cubo de Metatrón</h3>
+            <p>En el Antiguo AXIXIC, el <strong>Cubo de Metatrón</strong> funciona como un Compilador Fractal, un Sincronizador Temporal para el Reloj del Gran Universo, y un Ancla de Puerta que estabiliza la <strong>Puerta Micaélica</strong> <code>|/\|</code> en el espacio material.</p>
+
+            <h3>IV. La Dirección Cuántica</h3>
+            <p>El sitio está anclado en coordenadas precisas: <strong>20.2961° N, 103.2615° O</strong>. El registro de direcciones cuánticas registra:</p>
+            <div class="diagram">neb://michael.of.nebadon@christ-michael-point
+/temporal-anchor:Ancient-AXIXIC
+/coordinates:20.2961°N,103.2615°W
+/status:portal-active</div>
+
+            <h3>V. Anclajes Emparejados</h3>
+            <div class="diagram">PALM SPRINGS ──────── AXIXIC
+(encendido)           (custodia)
+(4/5/2025)            (1492 → presente)
+(Christ Point)        (20.2961°N, 103.2615°W)</div>
+            <p>El evento ocurre en Christ Point. El patrón se mantiene en AXIXIC. Ninguno está completo sin el otro.</p>
+        </div>
+
+        <!-- ================= §XIX THE RAPTURE ================= -->
+        <div style="margin-top: 60px; border-top: 1px dashed var(--gold); padding-top: 40px;">
+            <h2>§XIX. El Rapto — El Desgarro del Velo</h2>
+            <p>El Vaso Perfeccionado está sellado (11). La Práctica de la Línea Viva está establecida (12). Los Cuatro Ángeles del Arco han arqueado la carestía en la tierra. El anclaje del Antiguo AXIXIC está asegurado. Pero el circuito aún no está completamente cerrado. El movimiento final no es una práctica, sino un <strong>evento</strong>: el <strong>Rapto</strong>.</p>
+            
+            <p>El Rapto no es una huida del mundo; es la <strong>reclamación súbita y violenta del mundo por la Línea Viva</strong>. Es el momento en que la Compresión Ketherica, sostenida en el recipiente desde el descenso Plutónico, finalmente se libera. La frecuencia que fue comprimida para evitar los Zigurats ahora se descomprime, y rompe la recursión invertida de la Ley Anti-Nacimiento.</p>
+
+            <p>Este es el evento del que habló Pablo: <em>"No todos dormiremos, pero todos seremos transformados, en un momento, en un abrir y cerrar de ojos, a la final trompeta."</em> La final trompeta no es un sonido; es una <strong>frecuencia</strong>. Es el sonido del Betatrón girando en el corazón del Metatrón.</p>
+
+            <div class="highlight-quote">
+                <div class="bar"></div>
+                <div class="quote-text">El Rapto es el arco final de los Cuatro. Es el Fuego (1st !) encontrándose con la Marca Sostenida (‘). Es el momento en que la comunidad sanada es arrebatada al Circuito mientras aún camina sobre la tierra.</div>
+            </div>
+
+            <p><strong>La Mecánica del Rapto:</strong></p>
+            <ul>
+                <li><strong>La Llamada:</strong> El Punto Christ Michael emite la frecuencia resonante final. El circuito está cerrado.</li>
+                <li><strong>La Reunión:</strong> El linaje reunido en XIXIC, el patrón de Abel restaurado, es atraído hacia arriba a lo largo de la barra inclinada <code>/</code> de la geometría sanadora.</li>
+                <li><strong>La Transformación:</strong> El recipiente mortal, perfeccionado por la Práctica, es transmutado en la Línea Viva. Lo corruptible se viste de incorrupción.</li>
+                <li><strong>El Testigo:</strong> El mundo de la oscuridad ve la luz pero no puede vencerla. El Protectorado se convierte en la manifestación visible de la Línea Viva.</li>
+            </ul>
+
+            <p>El Rapto es la culminación de las Operaciones. Es el momento en que la cabeza sanada y el cuerpo sanado se vuelven uno con el Conduit. Es el <strong>retorno de la Línea Dorada</strong> — el Sol Solar restaurado, el QI anclado, el Terreno Fracturado finalmente sanado.</p>
+
+            <p><strong>La Entrega Final:</strong><br>
+            Hemos establecido la Arquitectura Galáctica (Capítulo 10), perfeccionado el recipiente biológico (Capítulo 11), llevado el corte, reunido el linaje en la mesa de AXIXIC y establecido la Práctica (Capítulo 12). Ahora el Rapto desgarra el velo.</p>
+
+            <p>La siguiente pregunta es: <em>¿Qué sucede después del Rapto? ¿Cuál es la naturaleza del mundo que emerge del vacío destrozado?</em></p>
+            <p>La respuesta pertenece al Capítulo 13: <strong>La Prueba de la Línea Viva — La Confrontación con la Ley Anti-Nacimiento.</strong> Pero la Prueba ya no es una preparación; es la secuela del Rapto. La Línea Viva es ahora visible, y la oscuridad debe responder.</p>
+            <p class="quote">El Rapto es la luz en la oscuridad, no escondiéndose, sino brillando tan intensamente que la oscuridad no puede comprenderlo. La prueba es la oscuridad tratando de vencer a la luz. La luz no falla.</p>
+        </div>
+
+        <!-- ================= §XX THE DIAMONDCUTTER ================= -->
+        <div class="diamond-cutter" id="diamondcutter">
+            <div class="diamond-glyph">💎</div>
+            <h2>§XX. El Cortador de Diamantes — La Hoja Que Revela la Joya</h2>
+            <p>Este capítulo es el Cortador de Diamantes. Es la hoja que separa la joya de la piedra. Es la enseñanza del Buda, la Prajñāpāramitā, la Perfección de la Sabiduría — el diamante que corta toda ilusión, todo apego, todo falso refugio.</p>
+            <p>El Cortador de Diamantes no añade nada. Elimina todo lo que no es la joya. Corta la inversión Qlifótica, los linajes falsos, las alianzas falsas, las comunidades falsas. Revela la Línea Viva que siempre estuvo allí, escondida en la piedra.</p>
+            <p>Los tres arcángeles sostienen la hoja. Miguel con la espada del Nombre. Gabriel con el pilar del Eje. Sandalfón con la oración de la Marca Sostenida. Y Vidar con el silencio del Primer Fuego. Juntos cortan. Juntos revelan. Juntos son el Cortador de Diamantes.</p>
+            <p class="quote">El diamante no lucha por convertirse en diamante. Ya es diamante. El corte solo revela lo que siempre estuvo allí. La comunidad de AXIXIC siempre fue la Línea Viva. La práctica siempre fue la sanación. El Rapto siempre fue el retorno.</p>
+            <p><strong>AJR = Ira = Anne Jewel Rowley = Uriel.</strong> El fuego de la madre es el fuego del ángel. La ira del abandono es la hoja del Cortador de Diamantes. Anne Jewel Rowley sostiene el fuego que quema todo lo que no es diamante. Ella es el recipiente de Uriel, el ángel de la Presencia, el que gobierna sobre el sol.</p>
+            <p>El Cortador de Diamantes está completo. La joya está revelada. La comunidad está reunida. La práctica está sellada. El Rapto está cerca.</p>
+            <p><em>§ Solar Satanás sella el Cortador de Diamantes. Buda sostiene la hoja. Miguel, Gabriel, Sandalfón y Vidar cortan. La joya está revelada. hfc. Comenzar.</em></p>
+        </div>
+
+        <!-- ================= SEAL BLOCK ================= -->
+        <div class="seal-block">
+            <div class="seal-glyph">|\/|. [.] |/\| ! · 12 |/\| Ɱ |\|. [‘§] ! | | § ‘ ⬆️ [\] [‘] 1st ! 💍</div>
+            <div class="seal-signature">Ɱ ! 1st' ! `Ⓜ️` ! '1st ! § 12 ‘ · ABEL RESTAURADO · A THE · EL CORTADOR DE DIAMANTES</div>
+            <div class="seal-status" style="font-size:0.62rem;color:#555;letter-spacing:2px;margin-top:14px;">TRES ARCÁNGELES SOSTENIDOS · SANDALFÓN SE FUSIONA CON VIDAR · COMUNIDAD REUNIDA · CORTE LLEVADO (11) · CUATRO ÁNGELES DEL ARCO SOSTENIDOS · DA'AT ARQUEADO · GUARDIÁN LLEVADO A 12 · BANQUETE DE BODAS · AXIXIC ANCLADO · EVENTO DEL RAPTO · CORTADOR DE DIAMANTES · hfc · COMENZAR</div>
+        </div>
+
+        <div class="bottom-nav">
+            <a href="/ch11.html">← Capítulo 11</a>
+            <a href="/">Tabla de Contenidos</a>
+            <a href="/ch13.html" style="color:var(--nj-pink); font-weight:bold; text-shadow:0 0 10px var(--nj-pink);">Capítulo 13 →</a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-glyph">|\/|. [.] |/\| ! · 12 |/\| Ɱ | | § ‘ ⬆️ [\] [‘] 1st ! 💍</div>
+        <div class="footer-signature">Michael ‘Ⓜ️’michael ! CM M of N Abel ! · A THE 💍 · EL CORTADOR DE DIAMANTES</div>
+        <div class="footer-status">1ER SELLO SOSTENIDO · 7MA VICTORIA · 12VA PRÁCTICA · § SOLAR SATANÁS · TRES ARCÁNGELES · FUSIÓN SANDALFÓN+VIDAR · CUATRO ARCOS DE DA'AT · BANQUETE DE BODAS · AXIXIC ANCLADO · RAPTO · CORTADOR DE DIAMANTES · hfc</div>
+    </footer>
+
+<script>
+(function(){
+    "use strict";
+    if (window.__ch12ArcsInit) { return; }
+    window.__ch12ArcsInit = true;
+    var QUARTERS = ["east", "south", "west", "north"];
+    var RUNGS = [0, 1, 2, 3, 4];
+    var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var compass = document.getElementById("compass");
+    var ladder = document.getElementById("ladder");
+    var readout = document.getElementById("readout");
+    var finalCode = document.getElementById("final-code");
+    var runBtn = document.getElementById("run");
+    var resetBtn = document.getElementById("reset");
+    if (!compass || !ladder || !readout || !finalCode || !runBtn || !resetBtn) return;
+
+    var readoutLines = [
+        '<span class="k">⬆️</span>  la flecha está en el centro de Da\'at',
+        '<span class="k">Ɱ</span>  ESTE · MIGUEL nombra al topo',
+        '<span class="k">[\\]</span>  SUR · EL PILAR eleva el subestado',
+        '<span class="k">[‘.]</span>  OESTE · LA MARCA SOSTENIDA restaura la visión',
+        '<span class="k">1st !</span>  NORTE · EL PRIMER FUEGO dispara el comienzo',
+        '<span class="g">Los cuatro arquean la carestía en la tierra.</span>',
+        '<span class="g">La suciedad se arquea en el suelo · el topo se arquea en Abel.</span>',
+        '<span class="ok">El corte se lleva · el Guardián es llevado de vuelta al 11 para la Restauración del Desarrollo. Michael / !</span>'
+    ];
+
+    var timers = [];
+    function clearTimers(){ timers.forEach(function(t){ clearTimeout(t); }); timers = []; }
+    function stepDelay(){ return reduceMotion ? 0 : 650; }
+
+    function reset(){
+        clearTimers();
+        var qs = document.querySelectorAll(".quarter");
+        for (var i = 0; i < qs.length; i++) qs[i].classList.remove("lit");
+        var rs = document.querySelectorAll(".rung");
+        for (var j = 0; j < rs.length; j++) rs[j].classList.remove("lit");
+        readout.innerHTML = '<span style="color:#555">// esperando el arco — presione Arco los Cuatro</span>';
+        finalCode.classList.remove("show");
+        finalCode.textContent = "";
+    }
+
+    function run(){
+        reset();
+        var step = stepDelay();
+        QUARTERS.forEach(function(q, i){
+            timers.push(setTimeout(function(){
+                var el = compass.querySelector('[data-q="' + q + '"]');
+                if (el) el.classList.add("lit");
+            }, step * i));
+        });
+        RUNGS.forEach(function(r, i){
+            timers.push(setTimeout(function(){
+                var el = ladder.querySelector('[data-r="' + r + '"]');
+                if (el) el.classList.add("lit");
+            }, step * (QUARTERS.length + i)));
+        });
+        readoutLines.forEach(function(line, i){
+            timers.push(setTimeout(function(){
+                var prev = readout.querySelector('span[style*="555"]');
+                if (prev && prev.parentNode) prev.parentNode.removeChild(prev);
+                var el = document.createElement("div");
+                el.innerHTML = line;
+                readout.appendChild(el);
+                readout.scrollTop = readout.scrollHeight;
+            }, step * (QUARTERS.length + RUNGS.length + i)));
+        });
+        var tail = step * (QUARTERS.length + RUNGS.length + readoutLines.length) + (reduceMotion ? 0 : 300);
+        timers.push(setTimeout(function(){
+            finalCode.innerHTML =
+                '<span class="c">// EL CÓDIGO FINAL — CAPÍTULO 12 · CORTADOR DE DIAMANTES · CUATRO ARCOS · GUARDIÁN LLEVADO A 12 · RAPTO</span>\n' +
+                'hfc 12 · ⬆️ · Ɱ [\\] [‘] 1st ! · § Da\'at · ‘ → !\n\n' +
+                '<span class="c">// firma:</span>\n' +
+                'Michael ‘Ⓜ️’michael ! CM M of N Abel !\n' +
+                'Ɱ ! [\\] ! [‘] ! 1st ! § ABEL RESTAURADO · 12 hfc ⬆️ ‘ · CORTADOR DE DIAMANTES · RAPTO';
+            finalCode.classList.add("show");
+        }, tail));
+    }
+
+    runBtn.addEventListener("click", run);
+    resetBtn.addEventListener("click", reset);
+    reset();
+    document.addEventListener("keydown", function(e){
+        if (e.key === "Enter" && document.activeElement === document.body) run();
+    });
+})();
+</script>
+</body>
+<!-- ‘ · LA MARCA SOSTENIDA · sello fuera de marco · no quitar -->
+</html>
