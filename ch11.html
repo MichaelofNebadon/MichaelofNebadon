@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en" data-authority="christ-michael" data-priority="first" data-build="ch11-unified-final">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="build" content="ch11-unified-final · 2026-11-17 · countenances + community">
+    <title>Chapter 11 — The Community of AXIXIC | The Sentinel Codex</title>
+
+    <style>
+        :root {
+            --gold: #c9a959;
+            --terminal: #9cd9f0;
+            --bg-pure: #000000;
+            --crimson: #8b0000;
+            --nj-pink: #ff69b4;
+            --electric-blue: #2a52be;
+            --violet: #8a2be2;
+            --golden: #ffd700;
+            --font-main: 'Palatino', 'Georgia', serif;
+            --font-code: 'Courier New', 'Consolas', monospace;
+        }
+
+        html { overflow-x: hidden; }
+        body {
+            background-color: var(--bg-pure);
+            color: var(--terminal);
+            font-family: var(--font-main);
+            margin: 0;
+            background-image: radial-gradient(circle at 2px 2px, #1a1a1a 1px, transparent 0);
+            background-size: 40px 40px;
+            overflow-x: clip;
+            line-height: 1.7;
+        }
+
+        nav {
+            background: linear-gradient(to bottom, var(--crimson), #4a0000);
+            padding: 20px; display: flex; justify-content: center; gap: 22px;
+            border-bottom: 2px solid var(--gold); flex-wrap: wrap;
+            position: sticky; top: 0; z-index: 9999;
+        }
+
+        nav a {
+            color: var(--gold); text-decoration: none; font-family: var(--font-code);
+            font-size: 0.72rem; text-transform: uppercase; letter-spacing: 2px; transition: 0.3s;
+        }
+
+        nav a:hover, nav a[aria-current="page"] { color: #fff; text-shadow: 0 0 10px var(--gold); }
+        nav a.book-link { color: var(--nj-pink); font-weight: bold; }
+
+        .container { max-width: 820px; margin: 0 auto; padding: 60px 25px; }
+
+        .breadcrumb {
+            text-align: center;
+            font-family: var(--font-code);
+            font-size: 0.75rem;
+            color: #555;
+            letter-spacing: 3px;
+            margin-bottom: 60px;
+        }
+        .breadcrumb a { color: var(--gold); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--nj-pink); }
+
+        .section-tag {
+            text-align: center;
+            font-family: var(--font-code);
+            font-size: 0.75rem;
+            color: var(--electric-blue);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-family: var(--font-main);
+            color: var(--gold);
+            font-size: 1.7rem;
+            letter-spacing: 5px;
+            text-align: center;
+            text-transform: uppercase;
+            margin: 0 0 20px 0;
+            line-height: 1.4;
+        }
+
+        h2 {
+            font-family: var(--font-main);
+            color: var(--gold);
+            font-size: 1.15rem;
+            letter-spacing: 3px;
+            margin-top: 60px;
+            margin-bottom: 25px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #333;
+        }
+
+        .subtitle {
+            text-align: center;
+            font-family: var(--font-code);
+            color: var(--terminal);
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+            margin-bottom: 80px;
+            font-style: italic;
+        }
+
+        .chapter-body p {
+            font-family: var(--font-main);
+            color: var(--terminal);
+            font-size: 1.05rem;
+            line-height: 1.9;
+            margin-bottom: 22px;
+        }
+
+        .chapter-body strong { color: var(--gold); font-weight: bold; }
+        .chapter-body em { color: var(--nj-pink); font-style: italic; }
+
+        .chapter-body p.quote {
+            font-style: italic;
+            color: var(--gold);
+            text-align: center;
+            padding: 30px 20px;
+            border-left: 3px solid var(--gold);
+            border-right: 3px solid var(--gold);
+            margin: 40px 0;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .chapter-body ul {
+            font-family: var(--font-main);
+            color: var(--terminal);
+            font-size: 1.05rem;
+            line-height: 1.9;
+            margin-bottom: 22px;
+            padding-left: 30px;
+        }
+        .chapter-body li { margin-bottom: 10px; }
+
+        .diagram {
+            text-align: center;
+            font-family: var(--font-code);
+            font-size: 0.9rem;
+            color: var(--terminal);
+            padding: 30px 20px;
+            background: rgba(10, 10, 10, 0.8);
+            border: 1px solid var(--electric-blue);
+            margin: 40px 0;
+            line-height: 2;
+            white-space: pre;
+            overflow-x: auto;
+        }
+
+        .highlight-quote { display: flex; align-items: stretch; margin: 40px 0; }
+        .highlight-quote .bar { width: 2px; background-color: var(--violet); margin-right: 25px; flex-shrink: 0; }
+        .highlight-quote .quote-text { font-style: italic; font-size: 1.1rem; color: var(--violet); align-self: center; }
+
+        .canonical-box {
+            border: 1px solid var(--gold);
+            padding: 30px;
+            margin: 40px 0;
+            background: rgba(201, 169, 89, 0.03);
+        }
+        .canonical-box p {
+            margin-bottom: 0;
+            color: var(--gold);
+            font-style: italic;
+            text-align: center;
+            font-size: 1.05rem;
+        }
+
+        .seal-block {
+            text-align: center;
+            padding: 40px 20px;
+            border: 1px solid var(--gold);
+            background: rgba(212, 175, 55, 0.03);
+            margin: 60px 0 40px 0;
+        }
+        .seal-glyph {
+            font-size: 1.2rem;
+            color: var(--gold);
+            letter-spacing: 8px;
+            margin-bottom: 20px;
+        }
+        .seal-signature {
+            font-size: 0.95rem;
+            color: var(--nj-pink);
+            letter-spacing: 3px;
+        }
+        
+        .seal-status {
+            font-size: 0.62rem;
+            color: #555;
+            letter-spacing: 2px;
+            margin-top: 14px;
+        }
+
+        .bottom-nav {
+            text-align: center;
+            font-family: var(--font-code);
+            font-size: 0.8rem;
+            color: var(--gold);
+            letter-spacing: 3px;
+            margin: 60px 0;
+        }
+        .bottom-nav a { color: var(--gold); text-decoration: none; margin: 0 15px; }
+        .bottom-nav a:hover { color: var(--nj-pink); text-shadow: 0 0 10px var(--nj-pink); }
+
+        footer {
+            text-align: center;
+            padding: 60px 20px 40px 20px;
+            font-family: var(--font-code);
+            color: var(--gold);
+            border-top: 1px solid #222;
+            margin-top: 80px;
+        }
+        .footer-glyph { font-size: 1.1rem; letter-spacing: 8px; margin-bottom: 20px; }
+        .footer-signature { font-size: 0.95rem; color: var(--nj-pink); letter-spacing: 3px; margin-bottom: 20px; }
+        .footer-status { font-size: 0.7rem; color: #555; letter-spacing: 2px; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="/" class="book-link">[ THE BOOK ]</a>
+        <a href="/prologue.html">PROLOGUE</a>
+        <a href="/ch1.html">CH 1</a>
+        <a href="/ch8.html">CH 8</a>
+        <a href="/ch9.html">CH 9</a>
+        <a href="/ch10.html">CH 10</a>
+        <a href="/ch11.html" class="book-link" aria-current="page">CH 11</a>
+        <a href="/ch12.html">CH 12</a>
+        <a href="/ch13.html">CH 13</a>
+        <a href="/ch14.html">CH 14</a>
+        <a href="/ch15.html">CH 15</a>
+        <a href="/epilogue.html">EPILOGUE</a>
+        <a href="https://www.sentinelcodex.org" class="book-link">[ THE ENGINE → ]</a>
+    </nav>
+
+    <div class="container">
+
+        <div class="breadcrumb">
+            <a href="/">THE SENTINEL CODEX</a> · BOOK III — OPERATIONS · CHAPTER 11
+        </div>
+
+        <div class="section-tag">Book III — Operations · Chapter Eleven</div>
+
+        <h1>The Community of AXIXIC</h1>
+
+        <p class="subtitle">The Countenances of the Lineage · The Sephardic and Maternal Ruptures</p>
+
+        <div class="chapter-body">
+
+            <div class="highlight-quote">
+                <div class="bar"></div>
+                <div class="quote-text">The Ascent is complete. The Gold Line is drawn. Now the Community must be gathered. We start with the one who sits across the table.</div>
+            </div>
+
+            <h2>I. The Table at AXIXIC</h2>
+
+            <p>The architecture is built. The Force is active. The Grammar is spoken. But the Codex is not a book for the solitary Conduit. It is a Living Line, and the Living Line requires a community.</p>
+
+            <p>The gathering begins in AXIXIC, at a table. The first name is <strong>Jaime Niembro</strong>.</p>
+
+            <p>Jaime is an engineer, a man of structure and precision. He is not a symbol. He is a human being with his own life, his own will, and his own history. The Codex does not collapse him into an archetype. It honors him as a node in the Network of the Line.</p>
+
+            <p>But the resonance is real. The name "Niembro" carries the echo of the north, of the mountains, of a lineage that has walked through the same historical fires as the Conduit. The dinner at 5:30 is not a coincidence. It is a gathering.</p>
+
+            <h2>II. The Countenances — The Two Lines Meet</h2>
+
+            <p>At the table at AXIXIC, two distinct lineages meet. They are not the same, and they do not merge. They sit across from each other, and the Codex honors the distinction.</p>
+
+            <p><strong>Countenance 1 — Jaime Niembro and the Sephardic Line:</strong><br>
+            Jaime carries the Sephardic heritage. He is a descendant of the conversos, the hidden Jews of Spain who fled the 1492 expulsion and carried their light into the New World. Through him, the Sephardic line speaks.</p>
+
+            <p><strong>Countenance 2 — Michael D. Rowley and the Díaz Line:</strong><br>
+            Michael carries the Díaz line. Not the dictatorship of Porfirio Díaz, but the rupture of Colonia Díaz. He is the descendant of the Mormon pioneers who fled to Mexico, built a colony, and had it burned to the ground by revolutionaries. Through him, the maternal line of Ann Jewell and Anne Jewel speaks.</p>
+
+            <div class="diagram">[Jaime Niembro | / | Sephardic Heritage]
+[Michael D. Rowley | / | Díaz / Colonia Díaz]</div>
+
+            <p>The two lines meet at the table. They do not merge into one. They form the circuit. Jaime is the Sephardic node. Michael is the Díaz node. Together, they are the Community of AXIXIC.</p>
+
+            <h2>III. The Sephardic Heritage — Diego de Montemayor</h2>
+
+            <p>Sandalphon, the Archangel of Prayer who weaves the earthly into the divine, brings a deeper name to the table: <strong>Diego de Montemayor</strong>.</p>
+
+            <p>Diego de Montemayor was a Spanish conquistador and the founder of Monterrey, Nuevo León, in 1596. But more importantly for the Codex, he was of <strong>Sephardic descent</strong>. His lineage carried the hidden light of the exiled Jews of Spain. He was a Converso, a man whose outer life was Catholic but whose blood carried the memory of the expulsion.</p>
+
+            <p>Jaime Niembro, by sharing information about his heritage, is not just talking about history. He is honoring the Sephardic line. He is honoring the memory of Diego de Montemayor. He is honoring the hidden sparks that survived the 1492 rupture.</p>
+
+            <p>The Sephardic crisis and the Colonia Díaz crisis are the same crisis. Diego de Montemayor is the bridge. He is the Sephardic founder of Monterrey, and Monterrey is the gateway to the north, to Chihuahua, to Colonia Díaz. The lineage that was scattered by the cut is now being gathered.</p>
+
+            <h2>IV. The Díaz Resonance — Colonia Díaz and the Revolution</h2>
+
+            <p>The name "Díaz" is not just the name of a president. It is the name of a colony. It is the name of a rupture.</p>
+
+            <p><strong>Colonia Díaz</strong> was the first permanent Mormon colony in Mexico, established along the Casas Grandes River in the state of Chihuahua. It was founded by pioneers fleeing persecution in the United States. It was a place of refuge, a place of survival.</p>
+
+            <p>But Colonia Díaz was not peripheral to the history of conflict; it was the center of the fracture. It was caught between competing sovereignties and religious hatreds. It was burned down by Pancho Villa’s forces. The colonists were violently attacked by Catholic marauders and forced between death from Mexican Christian Catholics on one side, and expulsion by United States Christian Evangelicals on the other.</p>
+
+            <p>The United States kicked them out. Then, once the colonists produced real economic gains and cultivated communal love—the fracture deepened. The <strong>Father-Wound</strong> is the male-led structures of governance and religion promising protection, and then violently withdrawing it.</p>
+
+            <p>The name "Díaz" carries this resonance. It is the name of the colony that was destroyed. It is the name of the revolution that destroyed it. It is the name of the rupture that the Conduit’s maternal line survived.</p>
+
+            <h2>V. The Maternal Line — Anne Jewel Rowley and the Survival Mechanism</h2>
+
+            <p>The Conduit’s maternal line is the line of <strong>Anne Jewel Rowley</strong>. She is the Binah-container, the Supernal Mother, the one who holds the Plutonic treasure.</p>
+
+            <p>But behind Anne Jewel is another woman: <strong>Ann Jewell Rowley</strong> (1807–1888). She was left a widow with seven children in 1848, entirely abandoned by the male structures of her time. To survive, she converted female and child labor into migration capital. In 1856, at forty-eight, she joined the Willie Handcart Company. She crossed the plains. She reached the Valley.</p>
+
+            <p>She is not a figure of passive, sanctified suffering. She is a case study in <strong>defensive feminine survival within a masculine-gendered religious order</strong>. She held the fracture inside her own body so it would not pass into her children as death.</p>
+
+            <div class="canonical-box">
+                <p>The trans-generational transmission of survival capacity through feminine containment of institutional abandonment, in which the woman's labor, strategy, and refusal to disappear are honored as structural defense rather than sanctified as virtue.</p>
+            </div>
+
+            <p>Anne Jewel Rowley is the diamond of Binah’s creation. Ann Jewell Rowley is the rough stone of survival. Both are Binah. Both are honored.</p>
+
+            <h2>VI. The Qliphothic Severance — [Jaime | / | Sephardic] [Michael | / | Díaz]</h2>
+
+            <p>We must make a distinction. The name "Díaz" in the context of Porfirio Díaz carries the Qliphothic weight of the dictatorship, the Porfiriato, and the revolution. But that is not the Díaz of the Conduit. The Qliphothic association is severed.</p>
+
+            <p><strong>[Jaime | / | Sephardic Heritage]</strong><br>
+            Jaime stands with Diego de Montemayor. The hidden light of the conversos. The Sephardic survival.</p>
+
+            <p><strong>[Michael D. Rowley | / | Díaz]</strong><br>
+            Michael stands with Colonia Díaz. The maternal survival. The pioneer rupture.</p>
+
+            <p>Sandalphon weaves the prayer. The Community of AXIXIC is not just Jaime Niembro. It is Jaime Niembro, and Diego de Montemayor, and Anne Jewel Rowley, and Ann Jewell Rowley. It is the entire network of the Living Line.</p>
+
+            <p><strong>The Qliphothic Severance is complete.</strong> Jaime Niembro is honored. Diego de Montemayor is named. The Sephardic heritage is restored. The maternal line is honored.</p>
+
+            <h2>VII. Transition to Chapter 12</h2>
+
+            <p>Chapter 11 has established the Community of AXIXIC. The table is set. Jaime Niembro is named. The maternal line is honored. The Sephardic crisis is mapped. The regathering is underway.</p>
+
+            <p>But a community requires a practice. It requires an ethic. It requires a way of living that sustains the Living Line.</p>
+
+            <p>The next chapter is the Practice of the Living Line—the ethic of the healed head, the Four Arcs of Da'at, and the Wedding Feast.</p>
+
+            <p class="quote">Chapter 12 — The Practice of the Living Line: The Four Arcs of Da'at.</p>
+
+            <p>The community is gathered. The practice now approaches.</p>
+
+        </div>
+
+        <div class="seal-block">
+            <div class="seal-glyph">|\|. [§] |/\| ! · Ɱ [\] [‘] 1st !</div>
+            <div class="seal-signature">Ɱ ! 1st' ! `Ⓜ️` ! '1st ! § THE COMMUNITY OF AXIXIC</div>
+            <div class="seal-status" style="font-size:0.62rem;color:#555;letter-spacing:2px;margin-top:14px;">JAIME NIEMBRO HONORED · DIEGO DE MONTEMAYOR NAMED · COLONIA DIAZ MAPPED · QLIPHOTHIC SEVERANCE COMPLETE · hfc</div>
+        </div>
+
+        <div class="bottom-nav">
+            <a href="/ch10.html">← Chapter 10</a>
+            <a href="/">Table of Contents</a>
+            <a href="/ch12.html">Chapter 12 →</a>
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="footer-glyph">Ɱ ! 1st' ! `Ⓜ️` ! '1st</div>
+        <div class="footer-signature">Michael [\] ['] ! '1st</div>
+        <div class="footer-status">1ST SEAL HELD</div>
+    </footer>
+
+</body>
+</html>
