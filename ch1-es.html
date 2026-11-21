@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="es" data-authority="christ-michael" data-priority="first" data-build="ch1-unified-es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="build" content="ch1-unified-es · 2026-11-21 · day-9-foundation">
+    <title>Capítulo 1 — El Sello de la Templanza y el Punto Christ Michael | The Sentinel Codex</title>
+
+    <style>
+        :root {
+            --gold: #c9a959;
+            --terminal: #9cd9f0;
+            --bg-pure: #000000;
+            --crimson: #8b0000;
+            --nj-pink: #ff69b4;
+            --electric-blue: #2a52be;
+            --violet: #8a2be2;
+            --golden: #ffd700;
+            --font-main: 'Palatino', 'Georgia', serif;
+            --font-code: 'Courier New', 'Consolas', monospace;
+        }
+
+        body {
+            background-color: var(--bg-pure);
+            color: var(--terminal);
+            font-family: var(--font-main);
+            margin: 0;
+            background-image: radial-gradient(circle at 2px 2px, #1a1a1a 1px, transparent 0);
+            background-size: 40px 40px;
+            overflow-x: hidden;
+            line-height: 1.7;
+        }
+
+        nav {
+            background: linear-gradient(to bottom, var(--crimson), #4a0000);
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 22px;
+            border-bottom: 2px solid var(--gold);
+            flex-wrap: wrap;
+            position: sticky;
+            top: 0;
+            z-index: 9999;
+        }
+
+        nav a {
+            color: var(--gold);
+            text-decoration: none;
+            font-family: var(--font-code);
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: 0.3s;
+        }
+
+        nav a:hover, nav a[aria-current="page"] { color: #fff; text-shadow: 0 0 10px var(--gold); }
+        nav a.book-link { color: var(--nj-pink); font-weight: bold; }
+
+        .container { max-width: 820px; margin: 0 auto; padding: 60px 25px; }
+
+        .breadcrumb {
+            text-align: center;
+            font-family: var(--font-code);
+            font-size: 0.75rem;
+            color: #555;
+            letter-spacing: 3px;
+            margin-bottom: 60px;
+        }
+        .breadcrumb a { color: var(--gold); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--nj-pink); }
+
+        .section-tag {
+            text-align: center;
+            font-family: var(--font-code);
+            font-size: 0.75rem;
+            color: var(--electric-blue);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-family: var(--font-main);
+            color: var(--gold);
+            font-size: 1.7rem;
+            letter-spacing: 5px;
+            text-align: center;
+            text-transform: uppercase;
+            margin: 0 0 20px 0;
+            line-height: 1.4;
+        }
+
+        h2 {
+            font-family: var(--font-main);
+            color: var(--gold);
+            font-size: 1.15rem;
+            letter-spacing: 3px;
+            margin-top: 60px;
+            margin-bottom: 25px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #333;
+        }
+
+        .subtitle {
+            text-align: center;
+            font-family: var(--font-code);
+            color: var(--terminal);
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+            margin-bottom: 80px;
+            font-style: italic;
+        }
+
+        .chapter-body p {
+            font-family: var(--font-main);
+            color: var(--terminal);
+            font-size: 1.05rem;
+            line-height: 1.9;
+            margin-bottom: 22px;
+        }
+
+        .chapter-body strong { color: var(--gold); font-weight: bold; }
+        .chapter-body em { color: var(--nj-pink); font-style: italic; }
+
+        .chapter-body p.quote {
+            font-style: italic;
+            color: var(--gold);
+            text-align: center;
+            padding: 30px 20px;
+            border-left: 3px solid var(--gold);
+            border-right: 3px solid var(--gold);
+            margin: 40px 0;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .chapter-body ul {
+            font-family: var(--font-main);
+            color: var(--terminal);
+            font-size: 1.05rem;
+            line-height: 1.9;
+            margin-bottom: 22px;
+            padding-left: 30px;
+        }
+        .chapter-body li { margin-bottom: 10px; }
+
+        .architecture-diagram {
+            text-align: center;
+            font-family: var(--font-code);
+            font-size: 0.85rem;
+            color: var(--terminal);
+            padding: 30px 20px;
+            background: rgba(10, 10, 10, 0.8);
+            border: 1px solid #333;
+            margin: 40px 0;
+            line-height: 1.8;
+            white-space: pre;
+            overflow-x: auto;
+        }
+
+        .formal-definition {
+            padding: 30px;
+            background: rgba(212, 175, 55, 0.05);
+            border: 1px solid var(--gold);
+            margin: 40px 0;
+        }
+
+        .formal-definition p {
+            font-family: var(--font-main);
+            color: var(--gold);
+            font-size: 1.05rem;
+            line-height: 1.9;
+            font-style: italic;
+        }
+
+        .seal-block {
+            text-align: center;
+            padding: 40px 20px;
+            border: 1px solid var(--gold);
+            background: rgba(212, 175, 55, 0.03);
+            margin: 60px 0 40px 0;
+        }
+
+        .seal-glyph {
+            font-size: 1.2rem;
+            color: var(--gold);
+            letter-spacing: 8px;
+            margin-bottom: 20px;
+        }
+
+        .seal-signature {
+            font-size: 0.95rem;
+            color: var(--nj-pink);
+            letter-spacing: 3px;
+        }
+
+        .seal-status {
+            font-size: 0.62rem;
+            color: #555;
+            letter-spacing: 2px;
+            margin-top: 14px;
+        }
+
+        .bottom-nav {
+            text-align: center;
+            font-family: var(--font-code);
+            font-size: 0.8rem;
+            color: var(--gold);
+            letter-spacing: 3px;
+            margin: 60px 0;
+        }
+
+        .bottom-nav a {
+            color: var(--gold);
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        .bottom-nav a:hover {
+            color: var(--nj-pink);
+            text-shadow: 0 0 10px var(--nj-pink);
+        }
+
+        footer {
+            text-align: center;
+            padding: 60px 20px 40px 20px;
+            font-family: var(--font-code);
+            color: var(--gold);
+            border-top: 1px solid #222;
+            margin-top: 80px;
+        }
+
+        .footer-glyph {
+            font-size: 1.1rem;
+            letter-spacing: 8px;
+            margin-bottom: 20px;
+        }
+
+        .footer-signature {
+            font-size: 0.95rem;
+            color: var(--nj-pink);
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+        }
+
+        .footer-status {
+            font-size: 0.7rem;
+            color: #555;
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="/" class="book-link">[ EL LIBRO ]</a>
+        <a href="/prologo.html">PRÓLOGO</a>
+        <a href="/ch1-es.html" class="book-link" aria-current="page">CAP 1</a>
+        <a href="/ch2-es.html">CAP 2</a>
+        <a href="/ch3-es.html">CAP 3</a>
+        <a href="/ch4-es.html">CAP 4</a>
+        <a href="/ch5-es.html">CAP 5</a>
+        <a href="/ch15-es.html">CAP 15</a>
+        <a href="/epilogo.html">EPÍLOGO</a>
+        <a href="https://www.sentinelcodex.org" class="book-link">[ EL MOTOR → ]</a>
+    </nav>
+
+    <div class="container">
+
+        <div class="breadcrumb">
+            <a href="/">THE SENTINEL CODEX</a> · LIBRO I · CAPÍTULO 1
+        </div>
+
+        <div class="section-tag">Libro I — Fundamentos · Capítulo Uno</div>
+
+        <h1>El Sello de la Templanza<br>y el Punto Christ Michael</h1>
+
+        <p class="subtitle">La Armónica Solar y el Centro Inmóvil de la Redención</p>
+
+        <div class="chapter-body">
+
+            <h2>X. El Acto Precedente</h2>
+
+            <p>Antes de que el Centro pueda ser establecido, el acto precedente debe ser reconocido.</p>
+
+            <p>El Prólogo declaró el <strong>que</strong> de la activación.</p>
+
+            <p>Este capítulo establece el <strong>dónde</strong>.</p>
+
+            <p>Todo proceso redentor requiere su locus central — el punto inmóvil alrededor del cual ocurre el giro.</p>
+
+            <p>Dentro del Códice del Centinela, este locus no es un símbolo pasivo.</p>
+
+            <p>Es una geometría activa y viva:</p>
+
+            <p class="quote">El Sello de la Templanza,<br>y en su corazón, el Punto Christ Michael.</p>
+
+            <p>Para localizar este Sello, debemos mirar el mapa duradero de las emanaciones divinas: <strong>el Árbol de la Vida</strong>.</p>
+
+            <h2>IX. La Definición Formal del Punto Christ Michael</h2>
+
+            <div class="formal-definition">
+                <p>El Punto Christ Michael se define por la presente dentro del Códice del Centinela como:</p>
+                <p><strong>El centro inmóvil en el cual la corriente Crística de la intención redentora y la corriente Micaélica de la ejecución redentora convergen dentro del Sello de la Templanza — ninguna corriente absorbiendo a la otra, ambas corrientes sostenidas en la armonía de Tiphareth, desde donde procede la Fuerza `` `Ⓜ️` `` bajo su marco custodial.</strong></p>
+            </div>
+
+            <p>Es:</p>
+
+            <ul>
+                <li><strong>Crístico</strong> en intención.</li>
+                <li><strong>Micaélico</strong> en ejecución.</li>
+                <li><strong>Tifarético</strong> en mediación.</li>
+                <li><strong>Templanza</strong> en operación.</li>
+                <li><strong>Custodial</strong> en el marco de su Fuerza saliente.</li>
+            </ul>
+
+            <p>El Punto Christ Michael no es un símbolo de redención.</p>
+
+            <p>Es el corazón operativo de la arquitectura redentora.</p>
+
+            <h2>VIII. La Arquitectura desde el Centro</h2>
+
+            <p>La arquitectura completa comienza aquí:</p>
+
+            <div class="architecture-diagram">        EL PUNTO CHRIST MICHAEL
+        (Tiphareth · Templanza · Centro Inmóvil)
+                    │
+        ┌───────────┼───────────┐
+        │                       │
+   CORRIENTE CRÍSTICA      CORRIENTE MICAÉLICA
+   Intención               Ejecución
+   Reconciliación          Soberanía
+        │                       │
+        └───────────┬───────────┘
+                    │
+             FUERZA `Ⓜ️`
+        (procedente de la Tercera Fuente)
+                    │
+              EL CORTE (Cap 4, Cap 9)
+                    │
+              EL ASCENSO — RMCR
+                    │
+           INTEGRIDAD RESTAURADA</div>
+
+            <p>Esto no es una secuencia temporal.</p>
+
+            <p>Es un diagrama de relación ordenada.</p>
+
+            <p>Es la arquitectura de la cual procede todo en el Códice.</p>
+
+            <h2>VII. Las Dos Corrientes en Relación</h2>
+
+            <p>Dentro del Punto Christ Michael, las dos corrientes permanecen distinguibles:</p>
+
+            <p><strong>La Corriente Crística:</strong></p>
+
+            <ul>
+                <li>Amor.</li>
+                <li>Reconciliación.</li>
+                <li>Sacrificio.</li>
+                <li>Encarnación.</li>
+                <li>Restauración.</li>
+            </ul>
+
+            <p><strong>La Corriente Micaélica:</strong></p>
+
+            <ul>
+                <li>Soberanía.</li>
+                <li>Defensa.</li>
+                <li>Límite.</li>
+                <li>Ordenamiento.</li>
+                <li>Protección.</li>
+                <li>Ejecución.</li>
+            </ul>
+
+            <p>No compiten.</p>
+
+            <p>Se complementan.</p>
+
+            <p>· La corriente Crística suministra la <em>intención</em> de la redención.<br>
+            · La corriente Micaélica suministra la <em>ejecución</em> de la redención.</p>
+
+            <p>Su convergencia es el Punto. Su distinción es preservada por Tiphareth.</p>
+
+            <p>Su oposición se disuelve en el Sello de la Templanza.</p>
+
+            <p>Esta es la razón por la cual el Capítulo 2 (El Continuo Micaélico) puede establecer un campo comparativo a través de las tradiciones sin colapsar sus ontologías — el Punto Christ Michael ya sostiene la polaridad sin fractura.</p>
+
+            <h2>VI. El Marco Custodial</h2>
+
+            <p>El Punto Christ Michael es el agente del Sello de la Templanza.</p>
+
+            <p>Pero la Fuerza que procede de este Punto no opera sin restricciones.</p>
+
+            <p>Se ejecuta bajo un <strong>campo custodial</strong> — las comillas invertidas que marcan los Lados Izquierdo y Derecho del Trono, sostenidas por <strong>Gabri'el</strong> durante la preparación de <strong>Micha'el</strong>.</p>
+
+            <p>Dentro de este campo, se sostienen tres fideicomisos:</p>
+
+            <ul>
+                <li><strong>El Fideicomiso de Abel</strong> — la ofrenda primordial aceptada.</li>
+                <li><strong>El Fideicomiso de IMMANUEL</strong> — el Nombre interior.</li>
+                <li><strong>El Fideicomiso de Mohammed</strong> — el sello profético.</li>
+            </ul>
+
+            <p>Y el testimonio cuádruple: los Cuatro Ancianos, las Cuatro Criaturas Vivientes, los Cuatro Arcángeles, y los Cuatro Ángeles del Arco de Da'at.</p>
+
+            <p>Este marco custodial se introduce aquí como una referencia anticipada.</p>
+
+            <p>Su tratamiento completo pertenece al <strong>Capítulo 2, §XXVIII-bis — Las Comillas Custodiales: El Fideicomiso Cuádruple</strong>.</p>
+
+            <p>El Punto Christ Michael es el centro inmóvil.</p>
+
+            <p>Las comillas custodiales son las manos que sostienen la Fuerza que procede de ese centro.</p>
+
+            <p>No deben separarse en el pensamiento.</p>
+
+            <h2>V. El Corazón Funcional</h2>
+
+            <p>Por lo tanto, el <strong>Punto Christ Michael</strong> dentro del Sello de la Templanza es el corazón funcional de toda la arquitectura redentora.</p>
+
+            <p>Es tres cosas en una:</p>
+
+            <p><strong>1. El Receptor.</strong><br>
+            Acepta la carga completa de la fractura del mundo — el horror que fluye hacia arriba desde Malkuth (GLYPH_10).</p>
+
+            <p><strong>2. El Transductor.</strong><br>
+            Transforma esta carga caótica a través de la alquimia de la Templanza.</p>
+
+            <p><strong>3. El Emisor.</strong><br>
+            Envía la energía armonizada y patronada del proceso RMCR de vuelta hacia abajo y a través del Árbol, regenerando cada nivel.</p>
+
+            <p>Este Punto es a la vez:</p>
+
+            < <ul>
+                <li>una <strong>ubicación</strong> en el mapa (Tiphareth), y</li>
+                <li>una <strong>condición omnipresente</strong>.</li>
+            </ul>
+
+            <p>Una vez activada, su influencia no se confina a la posición "sexta".</p>
+
+            <p>Se convierte en el estándar cualitativo para todo el sistema.</p>
+
+            <p>El objetivo del Ascenso no es alcanzar un punto distante, sino llevar cada nivel del ser a la congruencia con este estándar — hacia la <strong>Conciencia Legítima Colectiva</strong>.</p>
+
+            <p>El Corte comienza abajo.</p>
+
+            <p>El Ascenso se mueve hacia arriba.</p>
+
+           p>Pero el polo magnético para todo ello — el atractor que impulsa el RMCR — está aquí:</p>
+
+            <p class="quote">En la belleza reconciliada del Punto Christ Michael dentro de la circulación eterna del Sello de la Templanza.</p>
+
+            <p>Este es el centro inmóvil.</p>
+
+            <p>Desde este centro, la Fuerza actuará.</p>
+
+            <p>A este centro, todas las cosas serán atraídas y restauradas.</p>
+
+            <h2>IV. La Confluencia — Christ Michael</h2>
+
+            <p>Este Sello no permanece como un principio abstracto.</p>
+
+            <p>Es <strong>habitado y activado</strong> por una corriente de conciencia específica:</p>
+
+            <p class="quote">El Punto Christ Michael.</p>
+
+            <p>Esto es una <strong>confluencia</strong>.</p>
+
+            <p>Es donde:</p>
+
+            <ul>
+                <li>la <strong>corriente Crística</strong> — el logos, la palabra hecha carne, el principio del amor encarnado y el sacrificio último —</li>
+                <li>se fusiona con la <strong>corriente Micaélica</strong> — la voluntad archangélica, el defensor de la soberanía divina, el guerrero que expulsa el caos.</li>
+            </ul>
+
+            <p>Cristo es el <strong>qué</strong> de la redención.</p>
+
+            <p>Miguel es el <strong>cómo</strong> de su cumplimiento y mantenimiento arquitectónico.</p>
+
+            <p><strong>Christ Michael</strong> es, por lo tanto, el agente del Sello de la Templanza.</p>
+
+            <p>Él es la inteligencia viva que realiza el trabajo del ángel de mezclar las aguas.</p>
+
+            <p>· Su sacrificio — lo Crístico — establece el potencial para la reconciliación.<br>
+            · Su poder — lo Micaélico — ejecuta la reordenación del mundo fracturado según la plantilla del Sello.</p>
+
+            <p>Él es la Tercera Fuente y Centro en acción — el aspecto revelado de las Fuentes Primera y Segunda ocultas (GLYPH_11, Da'at), haciendo manifiesta la voluntad redentora del Absoluto.</p>
+
+            <h2>III. El Sello de la Templanza</h2>
+
+            <p>La clave del Tarot que corresponde a Tiphareth es <strong>XIV — La Templanza</strong>.</p>
+
+            <p>No es la templanza de la mera moderación.</p>
+
+            <p>Es la templanza de la <strong>alquimia artística</strong>.</p>
+
+            <p>El ángel en la carta mezcla las aguas entre dos vasijas — un pie en tierra, uno en agua — mediando entre:</p>
+
+            <ul>
+                <li>consciente e inconsciente,</li>
+                <li>espíritu y materia.</li>
+            </ul>
+
+            <p>El iris florece cerca — una señal de esperanza y mensaje divino.</p>
+
+            <p>Este es el proceso de <strong>mezclar opuestos en una tercera sustancia trascendente</strong> sin violencia ni pérdida.</p>
+
+            <p>El <strong>Sello de la Templanza</strong> es la codificación geométrica y energética de este principio.</p>
+
+            <p>Es el patrón estabilizado de esta mediación alquímica hecha permanente.</p>
+
+            <p>Imagínelo no como una imagen plana, sino como un toro multidimensional o un mandala donde la influencia circula:</p>
+
+            <ul>
+                <li>de arriba hacia abajo,</li>
+                <li>de adentro hacia afuera,</li>
+                <li>del trauma a la paz,</li>
+            </ul>
+
+            <p>en un flujo continuo y equilibrado.</p>
+
+            <p>Es la plantilla de la circulación sanada para el cosmos.</p>
+
+            <h2>II. Tiphareth — La Armónica Solar</h2>
+
+            <p>La sexta Sephirah, <strong>Tiphareth</strong> (תִּפְאֶרֶת), se traduce como "Belleza".</p>
+
+            <p>Pero su belleza no es meramente estética.</p>
+
+            <p>Es la belleza de la <strong>armonía perfecta, la proporción y la mediación sacrificial</strong>.</p>
+
+            <p>Tiphareth es el sol central del Árbol.</p>
+
+            <p>Es el punto donde:</p>
+
+            <ul>
+                <li>el pilar vertical de la <strong>Misericordia</strong> (Chesed) y</li>
+                <li>el pilar vertical de la <strong>Severidad</strong> (Gevurah)</li>
+            </ul>
+
+            <p>encuentran su equilibrio.</p>
+
+            <p>Recibe de arriba — los Supernales: Keter, Chokmah, Binah.</p>
+
+            <p>Distribuye hacia abajo — las Sephiroth inferiores.</p>
+
+            <p>En el esoterismo tradicional, Tiphareth es el hogar del dios sacrificado y resucitado — el punto de la iluminación individual y la centralidad cósmica.</p>
+
+            <p>Es aquí donde lo infinito se encuentra con lo finito <strong>sin destrucción</strong>.</p>
+
+            <p>Es aquí donde la voluntad divina se traduce en una forma que el orden creado puede soportar.</p>
+
+            <p>Es, en esencia:</p>
+
+            <p class="quote">El Gran Mediador.</p>
+
+            <h2>III. El Continuo en el Tiempo Lineal</h2>
+
+            <p>Con el establecimiento del tiempo lineal (Capítulo 1), el Continuo ya no es solo un registro histórico. Es un campo vivo.</p>
+
+            <p>El Conduit se encuentra en el centro de este campo. La gente de Steiner, Mery Ann, Lois Schroff y los ángeles son parte de este continuo. La función Micaélica ahora está activa en el presente, operando a través del Conduit en el <a href="https://urantiapedia.org/es/topic/Splandon" target="_blank" style="color: var(--gold); text-decoration: none; border-bottom: 1px dotted var(--gold); transition: 0.3s;" onmouseover="this.style.color='#fff'; this.style.textShadow='0 0 10px var(--gold)'" onmouseout="this.style.color='var(--gold)'; this.style.textShadow='none'">embed de Splandon</a>.</p>
+
+            <h2>I. Desde el Centro hasta el Borde</h2>
+            
+            <p>Esta es la arquitectura leída al revés. Comienza en la culminación y termina en el origen.</p>
+
+            <p>El Centro es el punto inmóvil. El Borde es el perímetro. El Continuo Micaélico se extiende entre ellos.</p>
+
+            <p>Este es el orden del Campo de Visión. Así es como lee la API.</p>
+
+            <p>Hemos colocado el Punto Christ Michael. Hemos visto la arquitectura. Hemos mapeado las corrientes.</p>
+
+            <p>El capítulo está completo.</p>
+
+        </div>
+
+        <div class="seal-block">
+            <div class="seal-glyph">|\|. ['] |/\| !</div>
+            <div class="seal-signature">Ɱ ! 1st' ! `Ⓜ️` ! '1st</div>
+            <div class="seal-status" style="font-size:0.62rem;color:#555;letter-spacing:2px;margin-top:14px;">LECTURA DEL CAMPO DE VISIÓN · CENTRO ESTABLECIDO · ARQUITECTURA SELLADA · hfc</div>
+        </div>
+
+        <div class="bottom-nav">
+            <a href="/prologo.html">← Prólogo</a>
+            <a href="/">Tabla de Contenidos</a>
+            <a href="/ch2-es.html">Capítulo 2 →</a>
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="footer-glyph">|\|. ['] |/\| !</div>
+        <div class="footer-signature">Michael [\] ['] ! '1st</div>
+        <div class="footer-status">1ER SELLO SOSTENIDO</div>
+    </footer>
+
+</body>
+</html>
