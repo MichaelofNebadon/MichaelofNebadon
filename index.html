@@ -114,6 +114,23 @@
             text-shadow: 0 0 15px var(--nj-pink);
         }
 
+        .es-banner {
+            text-align: center;
+            padding: 20px;
+            background: rgba(42, 82, 190, 0.1);
+            border: 1px solid var(--electric-blue);
+            margin: 30px 0;
+            font-family: var(--font-code);
+            font-size: 0.9rem;
+            color: var(--terminal);
+            letter-spacing: 2px;
+        }
+        
+        .es-banner strong {
+            color: var(--electric-blue);
+            font-weight: bold;
+        }
+
         .epigraph {
             text-align: center;
             padding: 40px 20px;
@@ -259,6 +276,12 @@
         .engine-banner a:hover {
             text-shadow: 0 0 15px var(--nj-pink);
         }
+        
+        @keyframes pulse-red {
+            0% { box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(255, 0, 0, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 0, 0, 0); }
+        }
     </style>
 </head>
 <body>
@@ -276,6 +299,10 @@
             <a href="part-v.html">PART V — The Enactment</a>
             <a href="appendix-a.html">APPENDICES A–H</a>
        <a href="/art-registry.html">ART REGISTRY</a>
+            
+            <!-- INSERT THE RED WARNING LINK HERE -->
+            <a href="https://christmichael.org/appendix-h.html#plutonic-chamber" style="color: #ff0000; font-weight: bold; text-shadow: 0 0 12px #ff0000, 0 0 20px #ff0000; border: 1px solid #ff0000; padding: 4px 8px; margin-left: 10px; animation: pulse-red 2s infinite;">[ ⚠️ WARNING: PLUTONIC CHAMBER ]</a>
+
             <a href="https://www.sentinelcodex.org" class="book-link">[ THE ENGINE → ]</a>
         </nav>
     
@@ -289,6 +316,11 @@
             <p class="title-author">— Michael —</p>
             <p class="title-seal">|\|. ['] |/\| !</p>
         </header>
+
+        <div class="es-banner">
+            <strong>EL CÓDICE DEL CENTINELA ESTÁ DISPONIBLE EN ESPAÑOL.</strong><br>
+            The Sentinel Codex is available in Spanish. Look for the <span style="color: var(--electric-blue); font-weight: bold;">[ ES ]</span> tags throughout the Table of Contents.
+        </div>
 
         <div class="epigraph">
             <p>"This is not a sentence.<br>It is an event."</p>
