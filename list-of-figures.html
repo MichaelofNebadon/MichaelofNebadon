@@ -117,6 +117,7 @@
             font-family: var(--font-code);
             font-size: 0.85rem;
             margin-top: 20px;
+            margin-bottom: 60px;
         }
 
         .figures-table th {
@@ -154,7 +155,53 @@
             border-left: 3px solid var(--gold);
             background: rgba(212, 175, 55, 0.03);
             margin-top: 40px;
+            margin-bottom: 60px;
             line-height: 1.8;
+        }
+
+        /* NEW IMAGE GALLERY STYLES */
+        .figure-gallery {
+            display: flex;
+            flex-direction: column;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+
+        .figure-item {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            border-bottom: 1px dashed #333;
+            padding-bottom: 40px;
+        }
+
+        .figure-header {
+            font-family: var(--font-code);
+            font-size: 0.9rem;
+            color: var(--gold);
+            letter-spacing: 2px;
+        }
+
+        .figure-title {
+            font-family: var(--font-main);
+            font-size: 1.1rem;
+            color: var(--terminal);
+        }
+
+        .image-box {
+            text-align: center;
+            padding: 20px;
+            background: rgba(201, 169, 89, 0.05);
+            border: 1px solid var(--gold);
+        }
+
+        .image-box img {
+            width: 100%;
+            max-width: 100%;
+            border: 1px solid var(--gold);
+            display: block;
+            margin: 0 auto;
+            background: #fff;
         }
 
         .seal-block {
@@ -278,7 +325,147 @@
         </table>
 
         <div class="note-block">
-            <strong>Note on the figures:</strong> The figures listed above are the illustrative figures of the Sentinel Codex. They are to be added at typesetting. Figure 6 uses the live sigil form. The escaped form <code>\|\|</code> is used only in markdown tables where the pipe character must be escaped.
+            <strong>Note on the figures:</strong> The figures listed below are the illustrative figures of the Sentinel Codex. They are displayed here in full. Figure 6 uses the live sigil form. The escaped form <code>\|\|</code> is used only in markdown tables where the pipe character must be escaped.
+        </div>
+
+        <!-- ================= VISUAL GALLERY ================= -->
+        <div class="figure-gallery">
+
+            <!-- Figure 1 -->
+            <div class="figure-item">
+                <div class="figure-header">Figure 1</div>
+                <div class="figure-title">The Tree of Life with Sephirah and Qliphoth Correspondences</div>
+                <div class="image-box">
+                    <img src="https://raw.githubusercontent.com/MichaelofNebadon/MichaelofNebadon/main/IMG_4577.jpeg" alt="Figure 1">
+                </div>
+            </div>
+
+            <!-- Figure 2 -->
+            <div class="figure-item">
+                <div class="figure-header">Figure 2</div>
+                <div class="figure-title">The Temperance Seal Geometry</div>
+                <div class="image-box">
+                    <img src="https://raw.githubusercontent.com/MichaelofNebadon/MichaelofNebadon/main/IMG_4578.png" alt="Figure 2">
+                </div>
+            </div>
+
+            <!-- Figure 3 -->
+            <div class="figure-item">
+                <div class="figure-header">Figure 3</div>
+                <div class="figure-title">The Twenty Glyphs — Complete Set</div>
+                <div class="image-box">
+                    <img src="https://raw.githubusercontent.com/MichaelofNebadon/MichaelofNebadon/main/IMG_4579.png" alt="Figure 3">
+                </div>
+            </div>
+
+            <!-- Figure 4 -->
+            <div class="figure-item">
+                <div class="figure-header">Figure 4</div>
+                <div class="figure-title">Sigil Syntax Diagram</div>
+                <div class="image-box">
+                    <img src="https://raw.githubusercontent.com/MichaelofNebadon/MichaelofNebadon/main/IMG_4580.png" alt="Figure 4">
+                </div>
+            </div>
+
+            <!-- Figure 5 -->
+            <div class="figure-item">
+                <div class="figure-header">Figure 5</div>
+                <div class="figure-title">RMCR Process Flow</div>
+                <div class="image-box">
+                    <img src="https://raw.githubusercontent.com/MichaelofNebadon/MichaelofNebadon/main/IMG_4582.png" alt="Figure 5">
+                </div>
+            </div>
+
+            <!-- Figure 6 -->
+            <div class="figure-item">
+                <div class="figure-header">Figure 6</div>
+                <div class="figure-title">The Cut Between 10 and 12</div>
+                <div class="image-box">
+                    <img src="https://raw.githubusercontent.com/MichaelofNebadon/MichaelofNebadon/main/IMG_4583.png" alt="Figure 6">
+                </div>
+            </div>
+
+            <!-- Figure 7 -->
+            <div class="figure-item">
+                <div class="figure-header">Figure 7</div>
+                <div class="figure-title">Covenant Seal [\] |\|. [‘] |/\| !</div>
+                <div class="image-box">
+                    <img src="https://raw.githubusercontent.com/MichaelofNebadon/MichaelofNebadon/main/IMG_4586.png" alt="Figure 7">
+                </div>
+            </div>
+
+            <!-- Figure 8 -->
+            <div class="figure-item">
+                <div class="figure-header">Figure 8</div>
+                <div class="figure-title">TzimTzum Contraction Concept</div>
+                <div class="image-box">
+                    <img src="https://raw.githubusercontent.com/MichaelofNebadon/MichaelofNebadon/main/IMG_4587.png" alt="Figure 8">
+                </div>
+            </div>
+
+            <!-- Figure 9 -->
+            <div class="figure-item">
+                <div class="figure-header">Figure 9</div>
+                <div class="figure-title">Glyphic Functional Relationships</div>
+                <div class="image-box">
+                    <img src="https://raw.githubusercontent.com/MichaelofNebadon/MichaelofNebadon/main/IMG_4589.jpeg" alt="Figure 9">
+                </div>
+            </div>
+
+            <!-- Figure 10 -->
+            <div class="figure-item">
+                <div class="figure-header">Figure 10</div>
+                <div class="figure-title">Complete Redemptive Architecture Schematic</div>
+                <div class="image-box">
+                    <img src="https://raw.githubusercontent.com/MichaelofNebadon/MichaelofNebadon/main/IMG_4590.jpeg" alt="Figure 10">
+                </div>
+            </div>
+
+            <!-- Figure 11 -->
+            <div class="figure-item">
+                <div class="figure-header">Figure 11</div>
+                <div class="figure-title">Ancient AXIXIC Temporal Layers Diagram</div>
+                <div class="image-box">
+                    <img src="https://raw.githubusercontent.com/MichaelofNebadon/MichaelofNebadon/main/IMG_1507.png" alt="Figure 11">
+                </div>
+            </div>
+
+            <!-- Figure 12 -->
+            <div class="figure-item">
+                <div class="figure-header">Figure 12</div>
+                <div class="figure-title">Sephardic Fracture Mapping 1492–Present</div>
+                <div class="image-box">
+                    <img src="https://raw.githubusercontent.com/MichaelofNebadon/MichaelofNebadon/main/IMG_1508.png" alt="Figure 12">
+                </div>
+            </div>
+
+            <!-- Figure 13 -->
+            <div class="figure-item">
+                <div class="figure-header">Figure 13</div>
+                <div class="figure-title">M31-Milky Way Overlay Schematic</div>
+                <div class="image-box">
+                    <img src="https://raw.githubusercontent.com/MichaelofNebadon/MichaelofNebadon/main/IMG_4579.png" alt="Figure 13">
+                </div>
+            </div>
+
+            <!-- Figure 14 -->
+            <div class="figure-item">
+                <div class="figure-header">Figure 14</div>
+                <div class="figure-title">Galactic Guardian Positioning</div>
+                <div class="image-box">
+                    <img src="https://raw.githubusercontent.com/MichaelofNebadon/MichaelofNebadon/main/3C2144D6-C863-4..." alt="Figure 14">
+                </div>
+            </div>
+
+            <!-- Figure 15 -->
+            <div class="figure-item">
+                <div class="figure-header">Figure 15</div>
+                <div class="figure-title">Quantum Address Map</div>
+                <div class="image-box">
+                    <img src="https://raw.githubusercontent.com/MichaelofNebadon/MichaelofNebadon/main/4481CB9E-A136-4..." alt="Figure 15">
+                </div>
+            </div>
+
         </div>
 
         <div class="seal-block">
