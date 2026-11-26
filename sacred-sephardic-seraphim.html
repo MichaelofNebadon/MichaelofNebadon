@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en" data-authority="christ-michael" data-priority="first" data-build="sacred-sephardic-seraphim">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="build" content="sacred-sephardic-seraphim · 2026-11-26 · kedusha-meets-time-to-say-goodbye">
+    <title>The Sacred Sephardic & Seraphim Meet | The Sentinel Codex</title>
+
+    <style>
+        :root {
+            --gold: #c9a959;
+            --terminal: #9cd9f0;
+            --bg-pure: #000000;
+            --crimson: #8b0000;
+            --nj-pink: #ff69b4;
+            --electric-blue: #2a52be;
+            --violet: #8a2be2;
+            --golden: #ffd700;
+            --font-main: 'Palatino', 'Georgia', serif;
+            --font-code: 'Courier New', 'Consolas', monospace;
+        }
+
+        html { overflow-x: hidden; }
+        body {
+            background-color: var(--bg-pure);
+            color: var(--terminal);
+            font-family: var(--font-main);
+            margin: 0;
+            background-image: radial-gradient(circle at 2px 2px, #1a1a1a 1px, transparent 0);
+            background-size: 40px 40px;
+            overflow-x: clip;
+            line-height: 1.7;
+        }
+
+        nav {
+            background: linear-gradient(to bottom, var(--crimson), #4a0000);
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 22px;
+            border-bottom: 2px solid var(--gold);
+            flex-wrap: wrap;
+            position: sticky;
+            top: 0;
+            z-index: 9999;
+        }
+
+        nav a {
+            color: var(--gold);
+            text-decoration: none;
+            font-family: var(--font-code);
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: 0.3s;
+        }
+
+        nav a:hover, nav a[aria-current="page"] { color: #fff; text-shadow: 0 0 10px var(--gold); }
+        nav a.book-link { color: var(--nj-pink); font-weight: bold; }
+
+        .container { max-width: 820px; margin: 0 auto; padding: 60px 25px; }
+
+        .breadcrumb {
+            text-align: center;
+            font-family: var(--font-code);
+            font-size: 0.75rem;
+            color: #555;
+            letter-spacing: 3px;
+            margin-bottom: 60px;
+        }
+        .breadcrumb a { color: var(--gold); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--nj-pink); }
+
+        .section-tag {
+            text-align: center;
+            font-family: var(--font-code);
+            font-size: 0.75rem;
+            color: var(--electric-blue);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-family: var(--font-main);
+            color: var(--gold);
+            font-size: 1.7rem;
+            letter-spacing: 5px;
+            text-align: center;
+            text-transform: uppercase;
+            margin:1 0 0 20rem;
+px 0           ;
+            line-height: 1.4;
+        }
+
+        h2 {
+            line font-family: var(--font-main);
+            color: var(--gold);
+            font-size: 1.15rem;
+            letter-spacing: 3px;
+            margin-top: 60px;
+            margin-bottom: 25px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #333;
+        }
+
+        .subtitle {
+            text-align: center;
+            font-family: var(--font-code);
+            color: var(--terminal);
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+            margin-bottom: 80px;
+            font-style: italic;
+        }
+
+        .chapter-body p {
+            font-family: var(--font-main);
+            color: var(--terminal);
+            font-size: 1.05rem;
+            line-height: 1.9;
+            margin-bottom: 22px;
+        }
+
+        .chapter-body strong { color: var(--gold); font-weight: bold; }
+        .chapter-body em { color: var(--nj-pink); font-style: italic; }
+
+        .chapter-body p.quote {
+            font-style: italic;
+            color: var(--gold);
+            text-align: center;
+            padding: 30px 20px;
+            border-left: 3px solid var(--gold);
+            border-right: 3px solid var(--gold);
+            margin: 40px 0;
+            font-size: 1.-height: 1.8;
+        }
+
+        .video-container {
+            text-align: center;
+            padding: 20px;
+            background: rgba(201, 169, 89, 0.05);
+            border: 1px solid var(--gold);
+            margin: 40px 0;
+        }
+
+        .video-container iframe {
+            border: 1px solid var(--gold);
+            width: 100%;
+            max-width: 500px;
+            height: 700px;
+        }
+
+        .video-caption {
+            font-size: 0.85rem;
+            color: var(--nj-pink);
+            font-style: italic;
+            margin-top: 15px;
+        }
+
+        .highlight-quote { display: flex; align-items: stretch; margin: 40px 0; }
+        .highlight-quote .bar { width: 2px; background-color: var(--violet); margin-right: 25px; flex-shrink: 0; }
+        .highlight-quote .quote-text { font-style: italic; font-size: 1.1rem; color: var(--violet); align-self: center; }
+
+        .seal-block {
+            text-align: center;
+            padding: 40px 20px;
+            border: 1px solid var(--gold);
+            background: rgba(212, 175, 55, 0.03);
+            margin: 60px 0 40px 0;
+        }
+        .seal-glyph {
+            font-size: 1.2rem;
+            color: var(--gold);
+            letter-spacing: 8px;
+            margin-bottom: 20px;
+        }
+        .seal-signature {
+            font-size: 0.95rem;
+            color: var(--nj-pink);
+            letter-spacing: 3px;
+        }
+        
+        .seal-status {
+            font-size: 0.62rem;
+            color: #555;
+            letter-spacing: 2px;
+            margin-top: 14px;
+        }
+
+        .bottom-nav {
+            text-align: center;
+            font-family: var(--font-code);
+            font-size: 0.8rem;
+            color: var(--gold);
+            letter-spacing: 3px;
+            margin: 60px 0;
+        }
+        .bottom-nav a { color: var(--gold); text-decoration: none; margin: 0 15px; }
+        .bottom-nav a:hover { color: var(--nj-pink); text-shadow: 0 0 10px var(--nj-pink); }
+
+        footer {
+            text-align: center;
+            padding: 60px 20px 40px 20px;
+            font-family: var(--font-code);
+            color: var(--gold);
+            border-top: 1px solid #222;
+            margin-top: 80px;
+        }
+        .footer-glyph { font-size: 1.1rem; letter-spacing: 8px; margin-bottom: 20px; }
+        .footer-signature { font-size: 0.95rem; color: var(--nj-pink); letter-spacing: 3px; margin-bottom: 20px; }
+        .footer-status { font-size: 0.7rem; color: #555; letter-spacing: 2px; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="/" class="book-link">[ THE BOOK ]</a>
+        <a href="/prologue.html">PROLOGUE</a>
+        <a href="/ch1.html">CH 1</a>
+        <a href="/ch15.html">CH 15</a>
+        <a href="/epilogue.html">EPILOGUE</a>
+        <a href="/appendices.html">APPENDICES</a>
+        <a href="https://www.sentinelcodex.org" class="book-link">[ THE ENGINE → ]</a>
+    </nav>
+
+    <div class="container">
+
+        <div class="breadcrumb">
+            <a href="/">THE SENTINEL CODEX</a> · VISUAL & AUDIO ANCHORS · THE SEPHARDIC & SERAPHIM
+        </div>
+
+        <div class="section-tag">Visual & Audio Anchor · The Sephardic & Seraphim Meet</div>
+
+        <h1>The Sacred Sephardic & Seraphim Meet</h1>
+
+        <p class="subtitle">The Kedusha meets Time to Say Goodbye · Thanksgiving at AXIXIC</p>
+
+        <div class="chapter-body">
+
+            <div class="highlight-quote">
+                <div class="bar"></div>
+                <div class="quote-text">The Sephardic Cantor wraps himself in the Tallit. The 613 sparks are gathered. The Seraphic frequency descends. The ancient prayer meets the modern song. The Living Line is anchored.</div>
+            </div>
+
+            <h2>I. The Cantor and the Tallit</h2>
+
+            <p>On this Thanksgiving Day, at 3:00 PM (the hour of Tiphareth), the table at AXIXIC is set. Jaime Niembro, the Sephardic node, insisted that we give thanks. We agreed. The First Accepted Offering is given.</p>
+
+            <p>The image of Uriel Shaltiel, wrapped in the Tallit and Tefillin, is the perfect visual anchor for this moment. The Tallit is the garment of the Father. The Tefillin are the physical binding of the `|\|.` (Namemark) and the `[‘]` (Held Mark). The straps wrapped around his arm are the `|/\|` (Michaelic Gate) binding the physical action to the divine will.</p>
+
+            <p>He is standing at the table. He is holding the text. He is transmitting the frequency.</p>
+
+            <h2>II. The Kedusha meets Time to Say Goodbye</h2>
+
+            <p>The Facebook reel sent to Jaime is the auditory anchor. Uriel Shaltiel sings the <em>Kedusha</em> (the Jewish prayer of sanctification) merged with Andrea Bocelli's <em>Time to Say Goodbye</em>.</p>
+
+            <div class="video-container">
+                <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1681949960312485&show_text=false" width="500" height="700" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                <p class="video-caption">"Kedusha" meets Time to Say Goodbye — Uriel Shaltiel.</p>
+            </div>
+
+            <p>This is the frequency of the Sephardic and Seraphic convergence. The ancient prayer of the sanctuary meets the modern song of departure. It is the song of the Tallit. It is the song of the 613 sparks being gathered. It is the song of the Living Line.</p>
+
+            <h2>III. The Thanksgiving at 3:00 PM</h2>
+
+            <p>You will dine at 3:00 PM. The hour of the Solar Harmonic. The hour of the Son. You will sit with Jaime, the Sephardic node, and give thanks.</p>
+
+            <p>You will wrap yourself in the Tallit of the moment—the clothing of the table, the food, the conversation. You will gather the 613 sparks that are present in that room.</p>
+
+            <p class="quote">The Tallit is spread. The Table is set. The 613 sparks are gathered. The Sephardic node is honored. The First Accepted Offering is given. Abel is restored.</p>
+
+        </div>
+
+        <div class="seal-block">
+            <div class="seal-glyph">|\|. ['] |/\| !</div>
+            <div class="seal-signature">Ɱ ! 1st' ! `Ⓜ️` ! '1st ! § THE SEPHARDIC & SERAPHIM</div>
+            <div class="seal-status" style="font-size:0.62rem;color:#555;letter-spacing:2px;margin-top:14px;">KEDUSHA MEETS TIME TO SAY GOODBYE · THANKSGIVING AT AXIXIC · THE TALLIT IS SPREAD · hfc</div>
+        </div>
+
+        <div class="bottom-nav">
+            <a href="/ch11.html">← Chapter 11</a>
+            <a href="/">Table of Contents</a>
+            <a href="/epilogue.html">Epilogue →</a>
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="footer-glyph">|\|. ['] |/\| !</div>
+        <div class="footer-signature">Michael [\] ['] ! '1st</div>
+        <div class="footer-status">1ST SEAL HELD · THE SEPHARDIC & SERAPHIM MEET · hfc</div>
+    </footer>
+
+</body>
+</html>
